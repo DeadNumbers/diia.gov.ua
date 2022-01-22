@@ -1,0 +1,627 @@
+$contentBackground: #fff;
+$sidebarBorder: #e1e1e1;
+$sidebarBackground: #f9f9f9;
+$scrollbarColorHover: #999;
+$scrollbarColor: #ccc;
+
+html {
+	// scroll-behavior: smooth;
+	min-height: 100vh;
+
+	&:not(.Mac-OS) {
+		&::-webkit-scrollbar {
+			display: none
+		}
+	}
+}
+
+body {
+	// height: 100%; // then => document.documentElement.scrollTop = 0;
+	min-height: 100vh;
+	overflow: auto;
+	overflow-x: hidden;
+	font-family: $font;
+	font-weight: 400;
+	// text-rendering: optimizeSpeed;
+	background: #F5F5F5;
+	color: $black;
+
+	&:not(.Mac-OS) {
+		&::-webkit-scrollbar {
+			-webkit-appearance: none
+		}
+
+		&::-webkit-scrollbar:vertical {
+			// width: 10px;
+		}
+
+		&::-webkit-scrollbar:horizontal {
+			// height: 16px;
+		}
+
+		&::-webkit-scrollbar-button,
+		&::-webkit-scrollbar-corner {
+			display: none
+		}
+
+		&::-webkit-scrollbar-track {
+			// background: $contentBackground;
+			// border: 1px solid $contentBackground;
+
+			&:hover {
+				// background: $sidebarBackground;
+				// border-color: $sidebarBorder;
+			}
+
+			&:horizontal {
+				border-width: 1px 1px 0 1px;
+				border-radius: 2px 2px 0 0
+			}
+
+			&:vertical {
+				border-width: 0 0 0 1px;
+
+				&:corner-present {
+					border-width: 0 0 1px 1px;
+					border-radius: 0 0 0 2px
+				}
+			}
+		}
+
+		&::-webkit-scrollbar-thumb {
+			height: 50px;
+			background: $scrollbarColor;
+			// background: rgba(0,75,193,0.75);
+			background-clip: padding-box;
+			border: 5px solid transparent;
+			border-radius: 10px;
+
+			&:hover,
+			&:active {
+				background-color: $scrollbarColorHover;
+				// background-color: rgba(0,75,193,1);
+				border-width: 4px;
+			}
+		}
+	}
+
+	* {
+		word-break: keep-all;
+		word-wrap: break-word;
+		font-family: $font;
+		outline: none;
+
+		@include media("<lg") {
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+
+	&.active {
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	&.menu-opened {
+		overflow: hidden;
+		min-height: auto;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		height: auto;
+	}
+}
+
+.wrapper {
+	min-height: 100%;
+	min-height: 100vh;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 100%;
+	background-color: $white;
+	background-color: #F5F5F5;
+	@include box-shadow(0, 1px, 8px, 0, rgba(0, 0, 0, 0.2));
+
+	@include media(">=lg") {
+		position: relative;
+	}
+
+	header,
+	main,
+	footer {
+		@include media(">=xxl") {
+			max-width: 1680px;
+			margin: 0 auto;
+		}
+	}
+
+	header,
+	main {
+		background-color: $white;
+		overflow: hidden;
+	}
+
+	&-services {
+		&-item {
+			.header-sm_fixed-inner:after {
+				display: none;
+			}
+
+			.header-sm_toggle {
+				border-bottom: none;
+			}
+		}
+	}
+
+	&-life-sit {
+		header,
+		main {
+			background-color: #E6EBE6;
+		}
+	}
+}
+
+.img-fluid {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	&:not([class]) {
+		color: #000;
+	}
+
+	&:hover {
+		color: #000;
+	}
+}
+
+.font-weight {
+	&-medium {
+		font-weight: 500 !important;
+	}
+
+	&-semi {
+		font-weight: 600 !important;
+	}
+}
+
+.container {
+	max-width: 100% !important;
+
+	@include media(">=sm") {
+		padding: 0 64px;
+	}
+
+	@include media(">=xl") {
+		// max-width: 1150px;
+		padding: 0 80px;
+	}
+
+	@include media(">=xxl") {
+		max-width: 1680px !important;
+		// padding: 0 135px;
+	}
+}
+
+.content {
+	&_wrapper {
+		padding: 60px 0;
+	}
+
+	&-wrapper {
+		padding: 80px;
+
+		@include media(">=md", "<xl") {
+			padding: 56px 32px;
+		}
+
+		@include media("<md") {
+			padding: 32px 16px;
+		}
+
+		&:last-child {
+			@include media("<md") {
+				padding: 32px 16px 40px;
+			}
+		}
+	}
+}
+
+.cursor {
+	&-default {
+		cursor: default;
+	}
+}
+
+.article-level {
+
+	&-1,
+	&-2,
+	&-3,
+	&-4,
+	&-5,
+	&-6,
+	&-7,
+	&-8 {
+		font-family: $font;
+		letter-spacing: -0.02em;
+		margin: 0px;
+
+	}
+
+	&-1 {
+		font-size: 56px;
+		line-height: 56px;
+		margin-top: 20px;
+		margin-bottom: 60px;
+		font-weight: 400;
+
+		@include media("<lg") {
+			margin-top: 15px;
+			margin-bottom: 30px;
+			font-size: 26px;
+			line-height: 26px;
+		}
+	}
+
+	&-2 {
+		font-size: 38px;
+		line-height: 46px;
+		margin-top: 20px;
+		margin-bottom: 46px;
+
+		@include media("<lg") {
+			margin-top: 15px;
+			margin-bottom: 30px;
+			font-size: 20px;
+			line-height: 24px;
+		}
+	}
+
+	&-3 {
+		font-size: 28px;
+		line-height: 32px;
+	}
+
+	&-4 {
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+	&-5 {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	&-6 {
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	&-7 {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+}
+
+*::selection {
+	color: $white;
+	background: $selection;
+}
+
+hr {
+	border-top: 1px solid rgba(51, 51, 51, 0.1);
+	width: 100%;
+	display: block;
+}
+
+.hr {
+	&-header {
+		display: block;
+		max-width: 100%;
+		background-color: $black;
+		height: 2px;
+		border: none;
+		margin: 15px 0 25px;
+	}
+
+	&-faq {
+		&-container {
+			height: 2px;
+			background-color: $black;
+			border: none;
+			display: none;
+
+			@include media(">=md") {
+				display: block;
+			}
+		}
+	}
+}
+
+a {
+}
+
+p {
+}
+
+b,
+strong {
+	font-weight: 700;
+	font-family: $font;
+}
+
+.page {
+	&-question {
+		padding-bottom: 80px;
+
+		@include media("<lg") {
+			padding-bottom: 25px;
+		}
+	}
+}
+
+/* MARGIN */
+
+// margin top
+.mt-15 {
+	margin-top: 15px;
+}
+
+.mt-40 {
+	margin-top: 40px;
+
+	@include media("<md") {
+		margin-top: 15px;
+	}
+}
+
+.mt-60 {
+	margin-top: 60px;
+
+	@include media(">=xs", "<md") {
+		margin-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-top: 30px;
+	}
+}
+
+.mt-80 {
+	margin-top: 80px;
+
+	@include media(">=xs", "<md") {
+		margin-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-top: 40px;
+	}
+}
+
+.mt-100 {
+	margin-top: 100px;
+
+	@include media(">=xs", "<md") {
+		margin-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-top: 60px;
+	}
+}
+
+.mt-120 {
+	margin-top: 120px;
+
+	@include media(">=xs", "<md") {
+		margin-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-top: 70px;
+	}
+}
+
+.mt-140 {
+	margin-top: 140px;
+
+	@include media(">=xs", "<md") {
+		margin-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-top: 80px;
+	}
+}
+
+//      margin bottom
+.mb-15 {
+	margin-bottom: 15px;
+}
+
+.mb-40 {
+	margin-bottom: 40px;
+
+	@include media("<md") {
+		margin-bottom: 15px;
+	}
+}
+
+.mb-60 {
+	margin-bottom: 60px;
+
+	@include media(">=xs", "<md") {
+		margin-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-bottom: 30px;
+	}
+}
+
+.mb-80 {
+	margin-bottom: 80px;
+
+	@include media(">=xs", "<md") {
+		margin-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-bottom: 40px;
+	}
+}
+
+.mb-100 {
+	margin-bottom: 100px;
+
+	@include media(">=xs", "<md") {
+		margin-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-bottom: 60px;
+	}
+}
+
+.mb-120 {
+	margin-bottom: 120px;
+
+	@include media(">=xs", "<md") {
+		margin-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-bottom: 70px;
+	}
+}
+
+.mb-140 {
+	margin-bottom: 140px;
+
+	@include media(">=xs", "<md") {
+		margin-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		margin-bottom: 80px;
+	}
+}
+
+//   padding top
+.pt-40 {
+	padding-top: 40px;
+
+	@include media("<md") {
+		padding-top: 15px;
+	}
+}
+
+.pt-60 {
+	padding-top: 60px;
+
+	@include media(">=xs", "<md") {
+		padding-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-top: 40px;
+	}
+}
+
+.pt-80 {
+	padding-top: 80px;
+
+	@include media(">=xs", "<md") {
+		padding-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-top: 50px;
+	}
+}
+
+.pt-100 {
+	padding-top: 100px;
+
+	@include media(">=xs", "<md") {
+		padding-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-top: 60px;
+	}
+}
+
+.pt-120 {
+	padding-top: 120px;
+
+	@include media(">=xs", "<md") {
+		padding-top: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-top: 70px;
+	}
+}
+
+//    padding  bottom
+.pb-40 {
+	padding-bottom: 40px;
+
+	@include media("<md") {
+		padding-bottom: 15px;
+	}
+}
+
+.pb-60 {
+	padding-bottom: 60px;
+
+	@include media(">=xs", "<md") {
+		padding-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-bottom: 40px;
+	}
+}
+
+.pb-80 {
+	padding-bottom: 80px;
+
+	@include media(">=xs", "<md") {
+		padding-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-bottom: 50px;
+	}
+}
+
+.pb-100 {
+	padding-bottom: 100px;
+
+	@include media(">=xs", "<md") {
+		padding-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-bottom: 60px;
+	}
+}
+
+.pb-120 {
+	padding-bottom: 120px;
+
+	@include media(">=xs", "<md") {
+		padding-bottom: 15px;
+	}
+
+	@include media(">=md", "<xl") {
+		padding-bottom: 70px;
+	}
+}

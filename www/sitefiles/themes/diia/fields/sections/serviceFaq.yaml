@@ -1,0 +1,10 @@
+templates: service
+
+title: Faq
+
+tabs:
+  fields:
+    fields[title]:
+      label: Заголовок
+      comment: в цей блок будуть завантажені зв'язані запитання
+      commentHtml: true

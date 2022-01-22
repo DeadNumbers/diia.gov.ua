@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: kitsoft.faq::lang.category.columns.id
+        searchable: true
+    name:
+        label: kitsoft.faq::lang.category.columns.name
+        searchable: true
+    slug:
+        label: kitsoft.faq::lang.category.columns.slug
+        searchable: true
+    is_top:
+        label: Закріплено
+        type: switch
+        searchable: false

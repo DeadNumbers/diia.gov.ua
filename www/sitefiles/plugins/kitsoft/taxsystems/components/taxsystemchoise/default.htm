@@ -1,0 +1,23 @@
+<form data-request="onChoiseTaxSystem">
+	{% for item in __SELF__.questions %}
+		<input type="hidden" name="questions[]" value="{{ item.id }}">
+		<h2 {% if item.depends_on_option_id|length %}data-depends-on-option="{{ item.depends_on_option_id }}"{% endif %}>{{ item.title }}</h2>
+
+		{% for option in item.entrepreneur_options %}
+			{% if option.type == 'option' %}
+				<div class="form-check">
+					{% if item.type == 'radio' %}
+						<input class="form-check-input" type="radio" name="{{ item.input_name }}" id="option_{{ option.id }}" value="{{ option.id }}">
+					{% elseif item.type == 'checkbox' %}
+						<input class="form-check-input" type="checkbox" name="{{ item.input_name }}[]" id="option_{{ option.id }}" value="{{ option.id }}">
+					{% endif %}
+					<label class="form-check-label" for="option_{{ option.id }}">{{ option.text }}</label>
+					<div>{{ option.description }}</div>
+				</div>
+			{% elseif option.type == 'label' %}
+				<p>{{ option.text }}</p>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+	<input type="submit" name="OK">
+</form>

@@ -1,0 +1,19 @@
+<label for="<?= $this->getId('model'); ?>">Тип</label>
+
+<select
+    id="<?= $this->getId('model'); ?>"
+    name="<?= $this->getInputName('model'); ?>"
+    class='form-control custom-select'
+>
+    <option value="">-</option>
+
+    <?php foreach ($models as $key => $row) : ?>
+        <option
+            value="<?= $key; ?>"
+            <?php if ($key == $model) : ?>selected="true"<?php endif ?>
+        >
+            <?= $row; ?>
+        </option>
+    <?php endforeach ?>
+
+</select>

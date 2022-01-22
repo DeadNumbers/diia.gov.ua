@@ -1,0 +1,66 @@
+description = "Default layout"
+
+[multiLanguage]
+[googleAnalytics]
+==
+{#{% set test = (this.page.url == '/') ? 'wrapper-main' : null %}#}
+
+<!DOCTYPE html>
+<html lang="{{ getActiveLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ this.page.title }} | {{ "Дія"|_ }}</title>
+
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+        <meta name="generator" content="">
+
+        {% partial 'site/openGraph' %}
+        {% partial 'site/favicon' %}
+
+        {% styles %}
+
+        <link rel="stylesheet" type="text/css" href="{{ [
+            'assets/vendor/swiper-5.3.0/css/swiper.min.css',
+            'assets/javascript/build/style.css'
+        ]|theme }}"/>
+
+        {% component 'googleAnalytics' %}
+
+        {% component 'googleTracker' %}
+    </head>
+
+    <body>
+        <div class="wrapper{{ this.page.bodyClass }}" id="layout-wrapper">
+            {% if page.data.slug == '/' %}
+                {% partial 'site/header' %}
+            {% else %}
+                {% partial 'site/thinHeader' %}
+            {% endif %}
+
+            <main id="layout-main">
+                {% page %}
+            </main>
+            {% partial 'site/footer' %}
+        </div>
+        {% partial 'site/cookie' %}
+        {% partial 'site/chatbot' %}
+        <div class="d-none" id="page-hash" data-hash="{{ this.page.hash }}"></div>
+        <div class="overlay-full-screen"></div>
+        {% partial 'site/ieBlock' %}
+
+        <script type="text/javascript" src="{{ [
+            'assets/vendor/jquery-3.4.0/jquery-3.4.0.min.js',
+            'assets/vendor/bootstrap-4.3.1/bootstrap.bundle.min.js',
+            'assets/vendor/moment-2.24.0/moment.min.js',
+            'assets/vendor/moment-2.24.0/locale/uk.js',
+            '@framework',
+            '@framework.extras'
+        ]|theme }}">
+        </script>
+
+        {% scripts %}
+    </body>
+</html>

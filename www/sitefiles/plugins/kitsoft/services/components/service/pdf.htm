@@ -1,0 +1,8 @@
+<html>
+	<head></head>
+		<body>
+		{% for item in pdfSections %}
+		    {% partial 'site/sections/inlinerender/' ~ item.name data = item.fields %}
+		{% endfor %}
+	</body>
+</html>

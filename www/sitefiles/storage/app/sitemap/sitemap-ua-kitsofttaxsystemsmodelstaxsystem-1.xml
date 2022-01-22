@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+	<loc>https://diia.gov.ua/tax-systems/1-grupa</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-12-09T14:54:17+02:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://diia.gov.ua/tax-systems/2-grupa</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-12-09T14:56:11+02:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://diia.gov.ua/tax-systems/3-grupa</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-12-09T14:57:21+02:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://diia.gov.ua/tax-systems/zagalna-sistema-opodatkuvannya</loc>
+		<priority>0.5</priority>
+		<lastmod>2019-12-09T14:58:39+02:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+</urlset>
+

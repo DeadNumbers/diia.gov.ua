@@ -1,0 +1,110 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+bodyClass = ' wrapper-services-item'
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->service->service->title;
+}
+?>
+==
+
+{% set service = service.service %}
+
+<section class="service-type_wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<a href="/" class="service-type_link back">{{ "На головну"|_ }}</a>
+			</div>
+			{% if service.isPrintable %}
+				<div class="col-6">
+					<div class="service-type_link-box">
+						<a href="{{ service.full_url }}?pdf" target="_blank" rel="noopener noreferrer" data-url="{{ service.full_url }}?pdf" class="service-type_link print" id="print-instruction"> <span>{{ "Роздрукувати інструкцію"|_ }}</span></a>
+						<!-- Button trigger modal -->
+						<a href="javascript:void(0)" class="service-type_link email" data-toggle="modal" data-target="#exampleModal"><span>{{ "Відправити на email "|_ }}</span></a>
+						<!-- END Button trigger modal -->
+					</div>
+				</div>
+			{% endif %}
+			<div class="col-12">
+				{% if service.title %}
+					<div class="service-type_title">{{ service.title }}</div>
+				{% endif %}
+				{% if service.fields.link %}
+					<div class="text-center">
+						<a {% if not service.fields.link_modal %}href="{{ service.fields.link }}"{%else%}href="javascript:void(0)"{% endif %} {% if service.fields.target %}target="_blank"{% endif %} class="btn btn-fill mt-0" {% if service.fields.link_modal %}data-toggle="modal" data-target="#exampleModalRedirect"{% endif %}>{{ service.fields.link_label }}</a>
+					</div>
+					{% if service.fields.link_description %}
+				       	<div class="service-type_login-text">{{ service.fields.link_description }}</div>
+				    {% endif %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal modal-service fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-service_dialog" role="document">
+		    <div class="modal-content modal-service_content">
+				<div class="modal-service_close icn_modal-close-service" data-dismiss="modal" aria-label="Close"></div>
+			    <div class="modal-service_body">
+			    	<div class="modal-service_title">
+			    		{{ "Відправити інструкцію на email"|_ }}
+			    	</div>
+			    	<form class="form form-service" accept-charset="utf-8" id="modal-send-email">
+                        <div class="input-border-gradient">
+                            <input type="email" name="email" class="input form-service_input" placeholder="Твій email">
+                            <div class="border-gradient"></div>
+                        </div>
+			    		<button {#data-request="onPdfServiceSendToMail"#} class="btn btn-fill" id="modal-send-email-btn">{{ "Відправити інструкцію"|_ }}</button>
+			    	</form>
+			    </div>
+                <div class="modal-service_done">
+                    <div class="modal-service_done-icn"></div>
+                    <div class="modal-service_done-title">{{ "Інструкція відправлена на пошту"|_ }}</div>
+                    <div class="modal-service_done-text">{{ __SELF__.form.success_text|raw }}</div>
+                    <div class="modal-service_done-btn">
+                        <a href="/" class="btn btn_default"><span>{{ "На головну"|_ }}</span></a>
+                    </div>
+                </div>
+		    </div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<!-- Modal -->
+	{% if service.fields.link_modal %}
+		<div class="modal modal-service fade" id="exampleModalRedirect" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-service_dialog" role="document">
+			    <div class="modal-content modal-service_content">
+					<div class="modal-service_close icn_modal-close-service" data-dismiss="modal" aria-label="Close"></div>
+	                <div class="modal-service_warn">
+	                    <div class="modal-service_warn-icn"></div>
+	                    <div class="modal-service_warn-title">{{ "Увага"|_ }}</div>
+	                    <div class="modal-service_warn-text">{{ service.fields.link_modal_text }}</div>
+	                    <div class="modal-service_warn-btn">
+
+	                        <a href="{{ service.fields.link }}" class="btn btn_default" {% if service.fields.target %}target="_blank"{% endif %}><span>{{ "Продовжити"|_ }}</span></a>
+	                    </div>
+	                </div>
+			    </div>
+			</div>
+		</div>
+	{% endif %}
+	<!-- Modal -->
+</section>
+
+{% for item in service.raw_sections %}
+    {% partial 'site/sections/' ~ item.name data = item.fields %}
+{% endfor %}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ 'assets/vendor/validate-1.19.1/jquery.validate.min.js'|theme }}"></script>
+    <script type="text/javascript" src="{{ 'assets/javascript/build/serviceitem.bundle.js'|theme }}"></script>
+{% endput %}

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.tagsmanager::lang.tag.record_name
+
+# Model Form Field configuration
+form: $/kitsoft/tagsmanager/models/tag/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\TagsManager\Models\Tag
+
+# Default redirect location
+defaultRedirect: kitsoft/tagsmanager/tags
+
+# Create page
+create:
+    title: kitsoft.tagsmanager::lang.tag.create_title
+    redirect: kitsoft/tagsmanager/tags/update/:id
+    redirectClose: kitsoft/tagsmanager/tags
+
+# Update page
+update:
+    title: kitsoft.tagsmanager::lang.tag.update_title
+    redirect: kitsoft/tagsmanager/tags
+    redirectClose: kitsoft/tagsmanager/tags
+
+# Preview page
+preview:
+    title: kitsoft.tagsmanager::lang.tag.preview_title

@@ -1,0 +1,60 @@
+1573816982a:1:{s:7:"404.htm";a:8:{s:8:"fileName";s:7:"404.htm";s:7:"content";s:1324:"title = "404"
+layout = "404"
+url = "404"
+==
+
+<body>
+    <div class="notfound">
+        <div class="container notfound_content">
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{ '/'|url }}" class="notfound_link">
+                        <div class="notfound_icon">
+                            <div class="notfound_icon-gerb"></div>
+                            <div class="notfound_icon-diya"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div class="notfound_error">
+                        <div class="notfound_error-code">404</div>
+                        <div class="notfound_error-description">{{ "Такої сторінки не існує"|_ }}</div>
+                        <div class="notfound_error-proposition">{{ "Схоже, це неправильна адреса, або сторінка переїхала"|_ }}</div>
+                        <a href="{{ '/'|url }}" class="btn_filled">{{ "На головну"|_ }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}";s:5:"mtime";i:1573726723;s:6:"markup";s:1279:"<body>
+    <div class="notfound">
+        <div class="container notfound_content">
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{ '/'|url }}" class="notfound_link">
+                        <div class="notfound_icon">
+                            <div class="notfound_icon-gerb"></div>
+                            <div class="notfound_icon-diya"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div class="notfound_error">
+                        <div class="notfound_error-code">404</div>
+                        <div class="notfound_error-description">{{ "Такої сторінки не існує"|_ }}</div>
+                        <div class="notfound_error-proposition">{{ "Схоже, це неправильна адреса, або сторінка переїхала"|_ }}</div>
+                        <a href="{{ '/'|url }}" class="btn_filled">{{ "На головну"|_ }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}";s:4:"code";N;s:5:"title";s:3:"404";s:6:"layout";s:3:"404";s:3:"url";s:3:"404";}}

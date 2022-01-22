@@ -1,0 +1,25 @@
+1573816982a:1:{s:18:"site/openGraph.htm";a:5:{s:8:"fileName";s:18:"site/openGraph.htm";s:7:"content";s:557:"{% set og = partial('og').fields %}
+
+<meta property="og:url" content="{{ url_current() }}" />
+<meta property="og:title" content="{{ this.page.meta_title ?? this.page.title }}" />
+<meta property="og:description" content="{{ this.page.meta_description }}" />
+
+{% if this.page.og_image %}
+    <meta property="og:image" content="{{ this.page.og_image }}" />
+{% elseif og.image %}
+    <meta property="og:image" content="{{ url(og.image|media) }}" />
+{% else %}
+    <meta property="og:image" content="{{ 'assets/images/sharing-social.jpg'|theme }}" />
+{% endif %}";s:5:"mtime";i:1571554335;s:6:"markup";s:557:"{% set og = partial('og').fields %}
+
+<meta property="og:url" content="{{ url_current() }}" />
+<meta property="og:title" content="{{ this.page.meta_title ?? this.page.title }}" />
+<meta property="og:description" content="{{ this.page.meta_description }}" />
+
+{% if this.page.og_image %}
+    <meta property="og:image" content="{{ this.page.og_image }}" />
+{% elseif og.image %}
+    <meta property="og:image" content="{{ url(og.image|media) }}" />
+{% else %}
+    <meta property="og:image" content="{{ 'assets/images/sharing-social.jpg'|theme }}" />
+{% endif %}";s:4:"code";N;}}

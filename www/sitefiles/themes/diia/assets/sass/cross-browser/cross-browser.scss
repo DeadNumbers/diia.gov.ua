@@ -1,0 +1,23 @@
+@import "ieBlock";
+
+body {
+    &.ie {
+        .wrapper {
+            display: none !important;
+        }
+
+        .browser_container {
+            display: block;
+        }
+    }
+
+    &.ios.iOS,
+    &.ios,
+    &.iOS,
+    &.android,
+    &.Android-OS {
+        .main-breadcrumbs .breadcrumb-item {
+            line-height: 1.1em;
+        }
+    }
+}

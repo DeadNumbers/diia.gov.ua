@@ -1,0 +1,71 @@
+<div class="col-md-8">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="main-page-news-list">
+                {% for post in posts|slice(0, 6) %}
+                    <li>
+                        {% if loop.index in [1,2] %}
+                            <div class="main-item">
+                                {% if post.featured_images.count %}
+                                    <div class="background"
+                                         style="background-image:url({{ post.featured_images|first.path|resize(680,480) }})">
+                                        <a href="{{ post.url|url }}"><span class="visuallyhidden">{{ post.title }}</span></a>
+                                    </div>
+                                    <div class="background-filter"></div>
+                                {% else %}
+                                    <div class="background">
+                                        <a href="{{ post.url|url }}"></a>
+                                    </div>
+                                    <div class="background-filter"></div>
+                                {% endif %}
+                                <div class="addition">
+                                    {% if post.tags|length %}
+                                        <a href="{{ post.tags|first.url|url }}" class="tag">
+                                            {{ post.tags|first.name }}
+                                        </a>
+                                    {% endif %}
+                                    <div class="time">
+                                        {{ post.published_at|date('d F') }}  {{ post.published_at|date('H:i') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main_item_text">
+                                <a href="{{ post.url|url }}">
+                                    <span>{{ post.title }}</span>
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="news-item">
+                                <a href="{{ post.url|url }}" class="title">
+                                    <span>{{ post.title }}</span>
+                                </a>
+                                <div class="addition">
+                                    <div class="time">{{ post.published_at|date('d F') }} {{ post.published_at|date('H:i') }}</div>
+                                    {% if post.tags|length %}
+                                        <a href="{{ post.tags|first.url|url }}" class="tag">{{  post.tags|first.name }}</a>
+                                    {% endif %}
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                <div class="clearfix"></div>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 other-news">
+    {% for post in posts|slice(6) %}
+        <ul class="news-list">
+            <li>
+                <div class="date">
+                    {{ post.published_at|date('H:i') }}, {{ post.published_at|date('d F') }}
+                </div>
+                <a href="{{ post.url|url }}" class="title">
+                    <span>{{ post.title }}</span>
+                </a>
+            </li>
+        </ul>
+    {% endfor %}
+</div>

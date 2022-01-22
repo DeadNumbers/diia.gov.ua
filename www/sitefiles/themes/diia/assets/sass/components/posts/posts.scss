@@ -1,0 +1,60 @@
+.posts {
+    &_item {
+        border-bottom: 2px solid $black;
+        margin-bottom: 80px;
+
+        @include media ("<lg") {
+            margin-bottom: 40px;
+        }
+        @include media ("<sm") {
+            margin-bottom: 30px;
+        }
+
+        &-preview {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 200px;
+            width: 100%;
+            margin-bottom: 20px;
+            display: block;
+            @include media ("<sm") {
+                height: 170px;
+                margin-bottom: 15px;
+            }
+        }
+
+        &-title {
+            margin: 20px 0 25px;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            color: $black;
+            height: 96px;
+            @include text-cut(4);
+            &:hover {
+                text-decoration: underline;
+            }
+            @include media ("<sm") {
+                font-size: 16px;
+                line-height: 20px;
+                margin: 15px 0;
+                height: auto;
+            }
+        }
+
+        &-date {
+            margin:25px 0 10px;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.02em;
+            color: $black;
+            opacity: 0.5;
+            @include media ("<sm") {
+                font-size: 10px;
+                line-height: 14px;
+                margin:15px 0 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('kitsoft/services/lifesituations/create') ?>"
+        class="btn btn-primary oc-icon-plus">
+        <?= trans('kitsoft.services::lang.life_situations.new_life_situations'); ?>
+    </a>
+
+    <a href="<?= Backend::url('kitsoft/services/lifesituations/reorder'); ?>" class="btn btn-default oc-icon-sitemap">
+        <?= trans('kitsoft.services::lang.life_situation.reorder'); ?>
+    </a>
+
+    <button
+        class="btn btn-danger oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+        data-request="onDelete"
+        data-request-confirm="<?= trans('kitsoft.services::lang.life_situations.delete_confirm'); ?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled')"
+        data-stripe-load-indicator>
+        <?= trans('kitsoft.services::lang.life_situations.delete_selected'); ?>
+    </button>
+</div>

@@ -1,0 +1,11 @@
+fields:
+  date_from:
+    label: kitsoft.forms::lang.inbox.fields.date_from
+    span: left
+    type: datepicker
+    mode: date
+  date_to:
+    label: kitsoft.forms::lang.inbox.fields.date_to
+    span: right
+    type: datepicker
+    mode: date

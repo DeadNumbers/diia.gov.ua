@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: kitsoft.faq::lang.category.fields.name
+        span: left
+
+    slug:
+        label: kitsoft.faq::lang.category.fields.slug
+        span: right
+        preset: name
+
+secondaryTabs:
+    fields:
+        is_top:
+            label: Закріплено
+            type: checkbox

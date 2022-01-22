@@ -1,0 +1,7 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+form: ~/plugins/kitsoft/multilanguage/models/locale/fields.yaml
+modelClass: KitSoft\MultiLanguage\Models\Locale
+defaultRedirect: kitsoft/multilanguage/locales

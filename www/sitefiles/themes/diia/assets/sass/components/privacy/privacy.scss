@@ -1,0 +1,66 @@
+.privacy {
+	&_body {
+		// overflow-y: scroll;
+		height: 100vh;
+		overflow-x: hidden;
+		background-image: url('../../images/policy-bg.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	&_container {
+		background-color: $white;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 92px 16px;
+
+		@include media("<lg") {
+			padding: 40px 16px;
+		}
+	}
+
+	&_header {
+		&-link {
+			display: inline-flex;
+			@include media(">=lg") {
+				margin: 0 auto 30px;
+			}
+
+			&-w {
+                display: flex;
+                justify-content: center;
+			}
+		}
+
+		&-img {}
+
+		&-title {
+			font-family: $font;
+			font-size: 36px;
+			line-height: 40px;
+			text-align: center;
+			letter-spacing: -0.02em;
+			color: #000;
+			font-weight: 500;
+			margin-bottom: 30px;
+			max-width: 624px;
+			margin: 30px auto 48px;
+
+			@include media("<lg") {
+				font-size: 24px;
+				line-height: 28px;
+				margin: 15px auto 24px;
+			}
+		}
+	}
+
+	&_content {
+		max-width: 640px;
+		margin: 0 auto;
+
+		&:empty {
+			display: none;
+		}
+	}
+}

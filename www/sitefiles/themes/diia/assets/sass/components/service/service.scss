@@ -1,0 +1,648 @@
+.service {
+    &-item {
+    }
+
+    &-title {
+        &_link {
+            display: inline-flex;
+            padding: 45px 100px 45px 0;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                margin-top: -12px;
+                right: 3px;
+                width: 24px;
+                height: 24px;
+                transition: 0.2s ease-in-out;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVHgB7ZRBDYAwEAQXB0g4KaAAJIACJABKkIAEJIADpJRtaANfSO/T3CSTNGmy8zvgG0IHKFHSkzo6QokuBCxikZwixeszBQ1tw3uicww46NDHwII0CK3C+6A1EiJ4btWO+3bZuI3nNu7ZNMc9Qlet8V9cfnw5vFKAy+YAAAAASUVORK5CYII=');
+
+                @include media ("<lg") {
+                    width: 16px;
+                    height: 16px;
+                    margin-top: -8px;
+                }
+            }
+
+            @include media (">=md", "<xl") {
+                padding: 35px 80px 35px 0;
+            }
+
+            @include media ("<md") {
+                padding: 15px 30px 15px 0;
+            }
+
+            a {
+                font-size: 28px;
+                line-height: 32px;
+                letter-spacing: -0.02em;
+                color: $black;
+
+                @include media ("<lg") {
+                    font-size: 16px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+
+    &-type {
+        &_wrap {
+            padding: 70px 0;
+            background: #E7EEF3;
+            margin-bottom: 80px;
+
+            @include media ("<md") {
+                padding: 30px 0 60px;
+                margin-bottom: 25px;
+            }
+        }
+
+        &_title {
+            font-size: 56px;
+            line-height: 56px;
+            text-align: center;
+            letter-spacing: -0.02em;
+            color: $black;
+            margin: 15px 0 40px;
+
+            @include media ("<md") {
+                font-size: 26px;
+                line-height: 26px;
+                margin: 70px 0 40px;
+            }
+        }
+
+        &_login-text {
+            margin: 10px auto;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            letter-spacing: -0.02em;
+            color: $black;
+            opacity: 0.5;
+            max-width: 290px;
+
+            @include media ("<md") {
+                font-size: 10px;
+                line-height: 14px;
+                margin: 5px auto;
+            }
+        }
+
+        &_link {
+            font-size: 12px;
+            line-height: 16px;
+            color: $black;
+            padding-left: 35px;
+            position: relative;
+            display: inline-flex;
+            margin-bottom: 15px;
+
+            @include media ("<md") {
+                font-size: 10px;
+                line-height: 14px;
+            }
+
+            span {
+                @include media ("<md") {
+                    display: none;
+                }
+            }
+
+            &:before {
+                content: '';
+                left: 2px;
+                width: 24px;
+                height: 24px;
+                top: 50%;
+                margin-top: -12px;
+                display: block;
+                position: absolute;
+            }
+
+            &.print {
+                &:before {
+                    @include background(contain, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQgN0gxMFY4SDE0VjdaTTggN1Y4SDZINFYxMFYxNVYxN0g2SDdWMThWMjBIOUgxNUgxN1YxOFYxN0gxOEgyMFYxNVYxMFY4SDE4SDE2VjdWNUgxNEgxMEg4VjdaTTE3IDE1SDE4VjEwSDE2SDE0SDEwSDhINlYxNUg3VjE0SDlIMTVIMTdWMTVaTTkgMTZIMTVWMThIOVYxNloiIGZpbGw9ImJsYWNrIiAvPgo8L3N2Zz4=');
+                }
+
+                @include media ("<md") {
+                    width: 24px;
+                    height: 24px;
+                    margin-bottom: 0;
+                }
+            }
+
+            &.email {
+                &:before {
+                    @include background(contain, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMjk2NyA4SDcuNzAzMjZMMTIgMTEuNjgyOUwxNi4yOTY3IDhaTTYgOS4xNzQyMlYxNkgxOFY5LjE3NDIyTDEyLjY1MDggMTMuNzU5M0wxMiAxNC4zMTcxTDExLjM0OTIgMTMuNzU5M0w2IDkuMTc0MjJaTTQgNkg2SDE4SDIwVjhWMTZWMThIMThINkg0VjE2VjhWNloiIGZpbGw9ImJsYWNrIiAvPgo8L3N2Zz4=');
+                }
+
+                @include media ("<md") {
+                    width: 24px;
+                    height: 24px;
+                    margin-bottom: 0;
+                }
+            }
+
+            &.back {
+                &:before {
+                    transform: rotate(180deg);
+                    @include background(cover, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuMjY2OSA1LjI2OTUzTDIwLjQ2NDEgMTEuOTk5OUwxMy4yNjY5IDE4LjczMDNMMTEuOTAwOSAxNy4yNjk1TDE2LjQ2NjYgMTIuOTk5OUw0IDEyLjk5OTlMNCAxMC45OTk5TDE2LjQ2NjYgMTAuOTk5OUwxMS45MDA5IDYuNzMwMzJMMTMuMjY2OSA1LjI2OTUzWiIgZmlsbD0iYmxhY2siIC8+Cjwvc3ZnPgo=');
+                }
+            }
+
+            &.disabled {
+                opacity: 0.2;
+                pointer-events: none;
+            }
+
+            &-box {
+                display: flex;
+                justify-content: flex-end;
+
+                @include media (">=md") {
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-wrap: wrap;
+        background-image: linear-gradient(35.8deg, #c3aab2 -4.77%, #9ec 46.72%, #80c0c8 90.23%, #4b8bfa 134.46%);
+
+        &_section {
+            margin: 80px 0;
+
+            @include media ("<md") {
+                margin: 25px 0;
+            }
+        }
+
+        &_first {
+            padding: 2px 2px 0px 2px;
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            @include media (">=lg") {
+                padding: 2px 1px 2px 2px;
+                flex: 0 0 33.33333%;
+                max-width: 33.33333%;
+            }
+
+            &-item {
+                margin-bottom: 20px;
+
+                @include media ("<md") {
+                    display: flex;
+                    margin-bottom: 15px;
+                }
+
+                &:last-child {
+                    @include media ("<md") {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &-label {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+                color: $black;
+                font-weight: 300;
+
+                @include media ("<md") {
+                    font-size: 13px;
+                    line-height: 21px;
+                }
+            }
+
+            &-text {
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: -0.02em;
+                color: $black;
+
+                @include media ("<md") {
+                    font-size: 14px;
+                    padding-left: 5px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        &_second {
+            padding: 2px;
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            @include media (">=lg") {
+                padding: 2px 2px 2px 1px;
+                flex: 0 0 66.66667%;
+                max-width: 66.66667%;
+            }
+
+            &-item {
+                margin-bottom: 20px;
+
+                @include media ("<md") {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-label {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+                color: $black;
+                margin-bottom: 20px;
+                font-weight: 300;
+
+                @include media ("<md") {
+                    font-size: 13px;
+                    line-height: 18px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            &-text {
+                font-size: 20px;
+                line-height: 32px;
+                letter-spacing: -0.02em;
+                color: $black;
+
+                @include media ("<md") {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        &_content {
+            padding: 45px 60px 25px;
+            background: $white;
+            height: 100%;
+
+            @include media ("<md") {
+                padding: 16px;
+            }
+        }
+    }
+
+    /* Стилі для меншого за розмірами акордеону ще є в файлі life-sit.scss */
+    &-acc {
+        &_section {
+            & + .service-acc_section {
+                .service-acc_item {
+                    border-top: none;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 80px;
+
+                @include media ("<md") {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        &_title {
+            font-size: 56px;
+            line-height: 56px;
+            letter-spacing: -0.02em;
+            color: $black;
+            margin-bottom: 60px;
+            margin-top: 20px;
+        }
+
+        &_item {
+            border-top: 2px solid $black;
+
+            .services-byletter_title {
+                a {
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    @include media ("<lg") {
+                        font-size: 13px;
+                        line-height: 18px;
+                    }
+                }
+            }
+
+            &:last-child {
+                border-bottom: 2px solid $black;
+            }
+
+            &-quest {
+                cursor: pointer;
+            }
+
+            &-service,
+            &-quest {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 45px 100px 45px 0;
+                font-size: 28px;
+                line-height: 32px;
+                letter-spacing: -0.02em;
+                color: $black;
+                transition: padding .4s, background .4s;
+
+                @include media (">=lg", "<xl") {
+                    padding: 35px 80px 35px 0;
+                }
+
+                @include media ("<lg") {
+                    font-size: 16px;
+                    line-height: 28px;
+                    padding: 15px 25px 15px 0;
+                    min-height: auto;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -12px;
+                    right: 3px;
+                    width: 24px;
+                    height: 24px;
+                    @include transition(.2s ease-in-out);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuMDAwMSAzSDExLjAwMDFWMTFMMyAxMVYxM0gxMS4wMDAxVjIxSDEzLjAwMDFWMTNIMjFWMTFMMTMuMDAwMSAxMVYzWiIgZmlsbD0iYmxhY2siIC8+Cjwvc3ZnPg==');
+
+                    @include media ("<lg") {
+                        width: 16px;
+                        height: 16px;
+                        margin-top: -8px;
+                    }
+                }
+
+                &.active {
+                    &:before {
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMSAxMVYxM0wzIDEzTDMgMTFMMjEgMTFaIiBmaWxsPSJibGFjayIgLz4KPC9zdmc+');
+                    }
+                }
+
+                &:hover:not(.active) {
+                    padding-left: 35px;
+                    background: $black;
+                    color: $white;
+
+                    @include media ("<lg") {
+                        padding-left: 25px;
+                    }
+
+                    &:before {
+                        right: 35px;
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuMDAwMSAzSDExLjAwMDFWMTFMMyAxMVYxM0gxMS4wMDAxVjIxSDEzLjAwMDFWMTNIMjFWMTFMMTMuMDAwMSAxMVYzWiIgZmlsbD0id2hpdGUiIC8+Cjwvc3ZnPg==');
+
+                        @include media ("<lg") {
+                            right: 15px;
+                        }
+                    }
+                }
+            }
+
+            &-service {
+                &:before {
+                    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xIDExLjYwNjVMMjIuMjU4NyAxMS42NTJNMjIuMjU4NyAxMS42NTJMMTEuNjA2NyAxTTIyLjI1ODcgMTEuNjUyTDExLjY1MjEgMjIuMjU4NiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIC8+Cjwvc3ZnPg==');
+                }
+
+                &:hover:not(.active) {
+                    &:before {
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xIDExLjYwNjVMMjIuMjU4NyAxMS42NTJNMjIuMjU4NyAxMS42NTJMMTEuNjA2NyAxTTIyLjI1ODcgMTEuNjUyTDExLjY1MjEgMjIuMjU4NiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiAvPgo8L3N2Zz4=');
+                    }
+                }
+            }
+
+            &-answer {
+            }
+
+            &-link {
+                &-box {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 20px;
+                    // counter-reset: section;
+                    @include media ("<lg") {
+                        margin-bottom: 15px;
+                    }
+                }
+
+                max-width: 50%;
+                flex: 0 1 50%;
+                margin-bottom: 25px;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: -0.02em;
+                color: $black;
+
+                @include media ("<md") {
+                    max-width: 100%;
+                    flex: 0 1 100%;
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+
+                @include media ("<lg") {
+                    margin-bottom: 15px;
+                }
+
+                &:nth-child(even) {
+                    padding-left: 15px;
+
+                    @include media ("<md") {
+                        padding-left: 0;
+                    }
+                }
+
+                &:nth-child(odd) {
+                    padding-right: 15px;
+
+                    @include media ("<md") {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        &_simple {
+            margin-bottom: 50px;
+
+            @include media ("<lg") {
+                margin-bottom: 20px;
+            }
+
+            .btn_default {
+                margin-bottom: 0;
+            }
+
+            &-lead {
+                font-size: 20px;
+                line-height: 24px;
+                margin: 20px 0 40px;
+
+                @include media ("<md") {
+                    font-size: 13px;
+                    line-height: 18px;
+                    margin: 10px 0 20px;
+                }
+            }
+
+            &-title,
+            &-text {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+                color: $black;
+                margin: 0px 0 15px;
+                font-weight: 300;
+                @include media ("<md") {
+                    font-size: 13px;
+                    line-height: 18px;
+                    margin: 15px 0;
+                }
+            }
+
+            &-text {
+                font-weight: 300;
+            }
+
+            &-label {
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: -0.02em;
+                color: $black;
+                margin: 0px 0 25px;
+                display: inline-block;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &:empty {
+                    @include media ("<lg") {
+                        display: none;
+                    }
+                }
+
+                @include media ("<md") {
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-bottom: 15px;
+                }
+
+                &:not(a) {
+                    display: block;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        &_big {
+            padding: 2px;
+            margin: 60px 0;
+            margin: 0 0 40px;
+            background-image: linear-gradient(35.8deg, #c3aab2 -4.77%, #9ec 46.72%, #80c0c8 90.23%, #4b8bfa 134.46%);
+            @include media ("<md") {
+                margin: 20px 0 25px;
+            }
+
+            &-inner {
+                background: $white;
+                padding: 60px;
+                padding: 40px;
+                display: flex;
+                flex-wrap: wrap;
+
+                @include media ("<md") {
+                    padding: 20px 0 15px;
+                }
+            }
+
+            &-label {
+                font-size: 38px;
+                line-height: 40px;
+                letter-spacing: -0.02em;
+                color: $black;
+                margin: 0 0 20px;
+
+                @include media ("<md") {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+
+            &-title {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+                color: $black;
+                margin: 0 0 25px;
+                font-weight: 300;
+
+                @include media ("<md") {
+                    font-size: 13px;
+                    line-height: 18px;
+                    margin: 0 0 15px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    /* Стилі для меншого за розмірами акордеону ще є в файлі life-sit.scss */
+    &_not-found {
+        max-width: 450px;
+        margin: 80px 0 65px;
+
+        @include media ("<lg") {
+            margin: 60px 0 45px;
+        }
+
+        &-title {
+            margin-bottom: 15px;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: -0.02em;
+            color: $black;
+
+            @include media ("<lg") {
+                font-size: 16px;
+                line-height: 20px;
+                margin-bottom: 5px;
+                max-width: 250px;
+            }
+        }
+
+        &-btn {
+            max-width: 270px;
+        }
+    }
+
+    &-in-block {
+
+    }
+}

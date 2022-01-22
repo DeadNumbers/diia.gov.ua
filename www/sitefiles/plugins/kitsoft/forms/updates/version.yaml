@@ -1,0 +1,41 @@
+1.0.1: First version of Forms
+1.0.2:
+  - Create Forms and Fields tables
+  - create_forms_table.php
+  - create_fields_table.php
+1.0.3.1:
+  - Create Inbox table
+  - create_inbox_table.php
+1.0.4:
+  - Alter Table forms, add is_system column
+  - 2018_11_23_alter_table_forms_fields_inbox.php
+1.0.5:
+  - Alter Table fields, add file extenions validate
+  - 2019_03_28_add_files_extensions.php
+1.0.6:
+  - 2020-05-15. Implement [Settings] model by revisions.
+2.0.1:
+  - Fields, forms and inboxed extended to MultiSite
+  - Fields and forms extended to MultiLanguage
+  - Name and Code fields in the Forms are now required
+  - Fields bound to a form are deleted following it
+  - 2020_05_05_bind_multisite.php
+2.0.2:
+  - 2020-06-02. Fix mail sending with attached files.
+2.1.0:
+  - 2020-06-24. Add multicheckbox field type.
+2.1.1:
+  - 2020-06-25. Add new field type - [phone].
+2.1.2:
+  - 2021-04-06. Add rules options.
+  - 2021_04_05_add_rules_options.php
+2.1.3:
+  - 2021-07-22. Add selecttree field type.
+2.1.4:
+  - 2021-08-16. Fix inboxes view for multi-language site
+2.1.5:
+  - 2021-08-17. Fix inboxes files preview
+2.1.6:
+  - 2021-10-28. Fix XSS for display inbox data in adminpanel
+2.1.7:
+  - 2021-10-28. Fix XSS, save fields to DB only from form builder, display only string

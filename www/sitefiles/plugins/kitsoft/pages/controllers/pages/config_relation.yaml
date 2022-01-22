@@ -1,0 +1,25 @@
+components:
+    label: Components
+    view:
+        list: ~/plugins/kitsoft/pages/models/component/columns.yaml
+        toolbarButtons: create|delete
+        toolbarPartial: $/kitsoft/pages/controllers/components/_relation_toolbar.htm
+        defaultSort:
+            column: id
+            direction: asc
+        recordOnClick: "$.oc.relationBehavior.clickViewListRecord(:id, 'Pages-update-RelationController-components');"
+    manage:
+        form: ~/plugins/kitsoft/pages/models/component/fields.yaml
+
+sections:
+    label: Sections
+    view:
+        list: ~/plugins/kitsoft/pages/models/section/columns.yaml
+        toolbarButtons: create|delete
+        toolbarPartial: $/kitsoft/pages/controllers/sections/_relation_toolbar.htm
+        defaultSort:
+            column: id
+            direction: asc
+        recordOnClick: "$.oc.relationBehavior.clickViewListRecord(:id, 'Pages-update-RelationController-sections');"
+    manage:
+        form: ~/plugins/kitsoft/pages/models/section/fields.yaml

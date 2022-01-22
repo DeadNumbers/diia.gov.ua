@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Sub Category
+
+# Model Form Field configuration
+form: $/kitsoft/services/models/subcategory/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Services\Models\SubCategory
+
+# Default redirect location
+defaultRedirect: kitsoft/services/subcategories
+
+# Create page
+create:
+    title: kitsoft.services::lang.subcategories.create_subcategory
+    redirect: kitsoft/services/subcategories/update/:id
+    redirectClose: kitsoft/services/subcategories
+
+# Update page
+update:
+    title: kitsoft.services::lang.subcategories.edit_subcategory
+    redirect: kitsoft/services/subcategories
+    redirectClose: kitsoft/services/subcategories
+
+# Preview page
+preview:
+    title: Preview Sub Category

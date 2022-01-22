@@ -1,0 +1,28 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: kitsoft.rlblogxt::lang.author.name
+        placeholder: kitsoft.rlblogxt::lang.author.name_placeholder
+        span: left
+
+    slug:
+        label: kitsoft.rlblogxt::lang.author.slug
+        span: right
+        placeholder: kitsoft.rlblogxt::lang.author.slug_placeholder
+        preset: name
+
+    description:
+        label: kitsoft.rlblogxt::lang.author.description
+        size: large
+        oc.commentPosition: ''
+        span: full
+        type: textarea
+
+    uri:
+        label: kitsoft.rlblogxt::lang.author.uri
+        size: large
+        span: full

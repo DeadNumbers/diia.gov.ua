@@ -1,0 +1,13 @@
+.cms-adm-panel {
+    @include media ("<lg") {
+        display: none !important;
+    }
+}
+
+.navbar.navbar-expand-lg.navbar-dark.bg-dark.p-0.justify-content-between {
+
+    // display: none;
+    @include media ("<lg") {
+        display: none !important;
+    }
+}

@@ -1,0 +1,13 @@
+fields:
+  from:
+    label: Дата з
+    type: datepicker
+    mode: date
+    span: auto
+    default: first day of this month
+  to:
+    label: Дата по
+    type: datepicker
+    mode: date
+    span: auto
+    default: now

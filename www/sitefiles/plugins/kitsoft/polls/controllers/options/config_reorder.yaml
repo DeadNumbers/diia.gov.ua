@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: Відсортувати
+
+# Attribute name
+nameFrom: text
+
+# Model Class name
+modelClass: kitSoft\Polls\Models\Option
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

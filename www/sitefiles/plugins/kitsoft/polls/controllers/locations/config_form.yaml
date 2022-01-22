@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Location
+
+# Model Form Field configuration
+form: $/kitsoft/polls/models/location/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Polls\Models\Location
+
+# Default redirect location
+defaultRedirect: kitsoft/polls/locations
+
+# Create page
+create:
+    title: Create Location
+    redirect: kitsoft/polls/locations/update/:id
+    redirectClose: kitsoft/polls/locations
+
+# Update page
+update:
+    title: Edit Location
+    redirect: kitsoft/polls/locations
+    redirectClose: kitsoft/polls/locations
+
+# Preview page
+preview:
+    title: Preview Location

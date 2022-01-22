@@ -1,0 +1,53 @@
+.breadcrumb {
+    display: flex;
+    padding: 50px 0 0px;
+    @include media ("<lg") {
+        padding: 30px 0 0px;
+    }
+    @include media ("<sm") {
+        flex-wrap: wrap;
+    }
+    &_item {
+        font-size: 11px;
+        line-height: 16px;
+        color: rgba(0,0,0,0.5);
+        max-width: 40%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-right: 10px;
+        @include media ("<lg") {
+            font-size: 10px;
+            line-height: 14px;
+            margin-bottom: 3px;
+        }
+        @include media ("<sm") {
+            max-width: 100%;
+        }
+        &:not(:first-child) {
+            padding-left: 12px;
+            position:relative;
+            &:before {
+                content: '|';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 16px;
+                height: 100%;
+                color: rgba(0,0,0,0.5);
+            }
+        }
+        &.active {
+            display: none;
+        }
+        &-main {
+
+        }
+        &-link {
+            font-size: 11px;
+            line-height: 16px;
+            color: rgba(0,0,0,0.5);
+        }
+    }
+}

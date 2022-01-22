@@ -1,0 +1,109 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: kitsoft.pages::lang.page.fields.title
+        span: left
+
+    slug:
+        label: kitsoft.pages::lang.page.fields.slug
+        span: right
+        preset:
+            field: title
+            type: slug
+
+tabs:
+    fields:
+
+        content:
+            label: kitsoft.pages::lang.page.fields.content
+            type: richeditor
+            size: giant
+            tab: kitsoft.pages::lang.page.tabs.main
+
+        # LINK
+        fields[link][url]:
+            label: kitsoft.pages::lang.page.fields.link_url
+            span: auto
+            tab: kitsoft.pages::lang.page.tabs.options
+        fields[link][target]:
+            label: kitsoft.pages::lang.page.fields.link_target
+            span: auto
+            type: balloon-selector
+            options:
+                _self: self
+                _blank: blank
+            tab: kitsoft.pages::lang.page.tabs.options
+            default: _self
+
+        fields[navigation_hidden]:
+            label: kitsoft.pages::lang.page.fields.navigation_hidden
+            type: checkbox
+            tab: kitsoft.pages::lang.page.tabs.options
+
+        # SEO
+        fields[meta_title]:
+            label: kitsoft.pages::lang.page.fields.meta_title
+            tab: kitsoft.pages::lang.page.tabs.seo
+        fields[meta_description]:
+            label: kitsoft.pages::lang.page.fields.meta_description
+            type: textarea
+            tab: kitsoft.pages::lang.page.tabs.seo
+        fields[og][image]:
+            label: kitsoft.pages::lang.page.fields.og.image
+            type: mediafinder
+            mode: image
+            span: auto
+            tab: kitsoft.pages::lang.page.tabs.seo
+
+        # childs
+        childs:
+            tab: kitsoft.pages::lang.page.tabs.childs
+            type: partial
+            path: $/kitsoft/pages/controllers/pages/_childs.htm
+
+secondaryTabs:
+    fields:
+        preview@update:
+            type: partial
+            path: $/kitsoft/pages/controllers/pages/_preview_field.htm
+            
+        published:
+            label: kitsoft.pages::lang.page.fields.published
+            type: checkbox
+            default: true
+
+        published_at:
+            type: datepicker
+            mode: datetime
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+
+        sluggable:
+            label: kitsoft.pages::lang.page.fields.sluggable
+            type: checkbox
+            comment: '<i><a href="javascript:;" data-toggle="tooltip" data-placement="right" data-delay="1" title="Поле посилання має містити маску з параметрами, які будуть встановлені у компонентах, відповідно до кінця посилання на фронтенді. Наприклад :id, :slug, :id/:slug, :category_slug/:post_slug та ін.">детальніше</a></i>'
+            commentHtml: true
+            trigger:
+                action: hide
+                field: is_system
+                condition: value[false]
+        
+        layout:
+            label: kitsoft.pages::lang.page.fields.layout
+            type: dropdown
+            default: page
+
+        parent_id:
+            label: kitsoft.pages::lang.page.fields.parent_id
+            type: dropdown
+
+        fields[source_id]:
+            cssClass: hidden
+        fields[source_uri]:
+            cssClass: hidden

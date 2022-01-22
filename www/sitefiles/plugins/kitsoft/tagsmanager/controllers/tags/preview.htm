@@ -1,0 +1,19 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('kitsoft/tagsmanager/tags') ?>"><?= e(trans('kitsoft.tagsmanager::lang.tag.tags')) ?></a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <div class="form-preview">
+        <?= $this->formRenderPreview() ?>
+    </div>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('kitsoft/tagsmanager/tags') ?>" class="btn btn-default"><?= e(trans('kitsoft.tagsmanager::lang.tag.return_to_list')) ?></a></p>
+
+<?php endif ?>

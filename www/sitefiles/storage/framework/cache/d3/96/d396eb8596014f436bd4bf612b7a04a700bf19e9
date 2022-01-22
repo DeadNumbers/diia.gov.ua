@@ -1,0 +1,135 @@
+1573816982a:1:{s:11:"service.htm";a:11:{s:8:"fileName";s:11:"service.htm";s:7:"content";s:2615:"layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->service->service->title;
+}
+?>
+==
+{% set service = service.service %}
+<section class="service-type_wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<a href="/" class="service-type_link back">На головну</a>
+			</div>
+			<div class="col-6">
+				<div class="service-type_link-box">
+					<a href="javascript:void(0)" class="service-type_link print">Роздрукувати інструкцію</a>
+					<!-- Button trigger modal -->
+					<a href="javascript:void(0)" class="service-type_link email" data-toggle="modal" data-target="#exampleModal">Відправити на email</a>
+					<!-- END Button trigger modal -->
+				</div>
+			</div>
+			<div class="col-12">
+				{% if service.title %}
+					<div class="service-type_title">{{ service.title }}</div>
+				{% endif %}
+				{% if service.fields.link %}
+					<div class="text-center">
+						<a href="{{ service.fields.link }}" {% if service.fields.target %}target="_blank"{% endif %} class="btn btn_filled">{{ service.fields.link_label }}</a>
+					</div>
+					
+					{% if service.fields.login_required %}
+				       	<div class="service-type_login-text">{{ 'Потрібен вхід за допомогою цифрового підпису, BankID або MobileID'|_ }}</div>
+				    {% endif %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal modal-service fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-service_dialog" role="document">
+		    <div class="modal-content modal-service_content">
+				<div class="modal-service_close icn_modal-close-service" data-dismiss="modal" aria-label="Close"></div>
+			    <div class="modal-service_body">
+			    	<div class="modal-service_title">
+			    		Відправити інструкцію на email
+			    	</div>
+			    	<form class="form form-service" method="POST" accept-charset="utf-8">
+			    		<input type="text" name="" class="input form-service_input" placeholder="Твій email">
+			    		<button class="btn btn_filled">Відправити інструкцію</button>
+			    	</form>	
+			    </div>
+		    </div>
+		</div>
+	</div>
+	<!-- Modal -->
+</section>
+
+{% for item in service.raw_sections %}
+    {% partial 'site/sections/' ~ item.name data = item.fields %}
+{% endfor %}
+
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ 'assets/javascript/build/serviceitem.bundle.js'|theme }}"></script>
+{% endput %}";s:5:"mtime";i:1573572179;s:6:"markup";s:2423:"{% set service = service.service %}
+<section class="service-type_wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<a href="/" class="service-type_link back">На головну</a>
+			</div>
+			<div class="col-6">
+				<div class="service-type_link-box">
+					<a href="javascript:void(0)" class="service-type_link print">Роздрукувати інструкцію</a>
+					<!-- Button trigger modal -->
+					<a href="javascript:void(0)" class="service-type_link email" data-toggle="modal" data-target="#exampleModal">Відправити на email</a>
+					<!-- END Button trigger modal -->
+				</div>
+			</div>
+			<div class="col-12">
+				{% if service.title %}
+					<div class="service-type_title">{{ service.title }}</div>
+				{% endif %}
+				{% if service.fields.link %}
+					<div class="text-center">
+						<a href="{{ service.fields.link }}" {% if service.fields.target %}target="_blank"{% endif %} class="btn btn_filled">{{ service.fields.link_label }}</a>
+					</div>
+					
+					{% if service.fields.login_required %}
+				       	<div class="service-type_login-text">{{ 'Потрібен вхід за допомогою цифрового підпису, BankID або MobileID'|_ }}</div>
+				    {% endif %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal modal-service fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-service_dialog" role="document">
+		    <div class="modal-content modal-service_content">
+				<div class="modal-service_close icn_modal-close-service" data-dismiss="modal" aria-label="Close"></div>
+			    <div class="modal-service_body">
+			    	<div class="modal-service_title">
+			    		Відправити інструкцію на email
+			    	</div>
+			    	<form class="form form-service" method="POST" accept-charset="utf-8">
+			    		<input type="text" name="" class="input form-service_input" placeholder="Твій email">
+			    		<button class="btn btn_filled">Відправити інструкцію</button>
+			    	</form>	
+			    </div>
+		    </div>
+		</div>
+	</div>
+	<!-- Modal -->
+</section>
+
+{% for item in service.raw_sections %}
+    {% partial 'site/sections/' ~ item.name data = item.fields %}
+{% endfor %}
+
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ 'assets/javascript/build/serviceitem.bundle.js'|theme }}"></script>
+{% endput %}";s:4:"code";s:77:"function onEnd()
+{
+    $this->page->title = $this->service->service->title;
+}";s:6:"layout";s:7:"default";s:10:"components";s:1:"1";s:8:"sections";s:0:"";s:11:"hideContent";s:1:"1";s:9:"deletable";s:0:"";s:4:"page";a:0:{}}}

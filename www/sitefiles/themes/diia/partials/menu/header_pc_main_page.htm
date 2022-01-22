@@ -1,0 +1,78 @@
+<div class="header_fixed">
+    <div class="header_fixed-inner">
+        <nav class="menu">
+            <ul class="menu_list">
+                {% for item in items if not item.isHidden %}
+                    {% if not item.items|length %}
+                        <li class="menu_list-item">
+                            <a href="{{ item.url ? item.url|url : 'javascript:void(0)' }}" {% if item.isExternal %} target="_blank" {% endif %} class="menu_list-link">{{ item.title }}</a>
+                        </li>
+                    {% else %}
+                        <li class="menu_list-item">
+                            <a href="{{ item.url ? item.url|url : 'javascript:void(0)' }}" class="menu_list-link menu_list-link-sub" data-menu-target="menu-sub-{{ loop.index }}">{{ item.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="header_sign-wrap">
+            <div class="header_sign" id="header_sign">
+                <a href="{{ header.registerLink|relationFinder.url|url }}" class="btn btn_register" {% if header.registerLink.target %}target="_blank"{% endif %}>{{ header.registerLink|relationFinder.title }}</a>
+                <a href="{{ header.loginLink|relationFinder.url|url }}" class="btn_sign js-btn_sign" {% if header.loginLink.target %}target="_blank"{% endif %}>{{ header.loginLink|relationFinder.title }}</a>
+            </div>
+            <div class="header_sign header_sign-auth" id="header_sign-auth">
+                <a href="{{ header.loginLink|relationFinder.url|url }}" class="btn_sign-auth js-btn_sign-auth" {% if header.loginLink.target %}target="_blank"{% endif %}></a>
+            </div>
+        </div>
+    </div>
+    {% for item in items if not item.isHidden %}
+        {% if item.items|length %}
+            <div class="menu-sub" id="menu-sub-{{ loop.index }}">
+                <div class="menu-sub_inner">
+                    <div class="container">
+                        <div class="row">
+                            {% for child in item.items|slice(0,2) %}
+                                <div class="col-lg-6">
+                                    {% if not child.isHidden %}
+                                        <a
+                                            href="{{ child.url ? child.url|url : 'javascript:void(0)' }}"
+                                            {% if child.isExternal %}target="_blank" {% endif %}
+                                            class="menu-sub_title"
+                                            >{{ child.title }}</a>
+                                    {% endif %}
+                                    {% if child.items|length %}
+                                    <ul class="menu-sub_list">
+                                        {% for subChild in child.items if not subChild.isHidden %}
+                                            <li class="menu-sub_list-item diia-animated">
+                                                <a href="{{ subChild.url ? subChild.url|url : 'javascript:void(0)' }}"
+                                                   class="menu-sub_list-link"
+                                                   {% if subChild.isExternal %} target="_blank"{% endif %}>{{ subChild.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if item.items|length >= 3 and loop.first %}
+                            <div class="hr-header"></div>
+                            <div class="row">
+                                {% for child in item.items|slice(2,3) %}
+                                    <div class="col-lg-6">
+                                        {% if not child.isHidden %}
+                                            <a
+                                                href="{{ child.url ? child.url|url : 'javascript:void(0)' }}"
+                                                {% if child.isExternal %}target="_blank" {% endif %}
+                                                class="menu-sub_list-link arrow"
+                                                >{{ child.title }}</a>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

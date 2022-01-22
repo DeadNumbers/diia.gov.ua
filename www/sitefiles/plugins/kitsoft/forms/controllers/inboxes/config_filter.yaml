@@ -1,0 +1,16 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    form:
+        label: kitsoft.forms::lang.inbox.filters.form
+        modelClass: KitSoft\Forms\Models\Form
+        conditions: form_id in (:filtered)
+        nameFrom: name
+    status:
+        label: kitsoft.forms::lang.inbox.filters.status
+        type: group
+        modelClass: KitSoft\Forms\Models\Inbox
+        conditions: status in (:filtered)
+        options: getStatusOptions

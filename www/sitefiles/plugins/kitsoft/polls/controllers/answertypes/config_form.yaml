@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Answer Type
+
+# Model Form Field configuration
+form: $/kitsoft/polls/models/answertype/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Polls\Models\AnswerType
+
+# Default redirect location
+defaultRedirect: kitsoft/polls/answertypes
+
+# Create page
+create:
+    title: Create Answer Type
+    redirect: kitsoft/polls/answertypes/update/:id
+    redirectClose: kitsoft/polls/answertypes
+
+# Update page
+update:
+    title: Edit Answer Type
+    redirect: kitsoft/polls/answertypes
+    redirectClose: kitsoft/polls/answertypes
+
+# Preview page
+preview:
+    title: Preview Answer Type

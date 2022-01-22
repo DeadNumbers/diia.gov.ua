@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Заголовок
+        searchable: true
+    question:
+        label: Запитання
+        relation: question
+        select: title

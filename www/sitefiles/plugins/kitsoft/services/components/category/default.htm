@@ -1,0 +1,11 @@
+<h4>{{ serviceCategory.item.name }}</h4>
+
+<ul>
+	{% for item in serviceCategory.item.subcategories_tree %}
+		<li>
+			<a href="{{ (serviceCategory.item.url ~ '/' ~ item.slug)|url }}">
+				{{ item.name }}
+			</a>
+		</li>
+	{% endfor %}
+</ul>

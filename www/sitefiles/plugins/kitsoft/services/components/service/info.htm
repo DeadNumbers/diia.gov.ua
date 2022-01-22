@@ -1,0 +1,3 @@
+{% for item in sections %}
+    {% partial 'site/sections/mailrender/' ~ item.name data = item.fields %}
+{% endfor %}

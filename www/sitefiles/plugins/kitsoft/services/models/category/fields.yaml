@@ -1,0 +1,38 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+      label: kitsoft.services::lang.category.name
+      span: left
+      type: text
+    slug:
+      label: kitsoft.services::lang.category.slug
+      span: right
+      preset:
+          field: name
+          type: slug
+
+tabs:
+  fields:
+    description:
+      label: kitsoft.services::lang.service.description
+      type: richeditor
+      tab: kitsoft.services::lang.tabs.main
+    subcategories_list:
+      label: kitsoft.services::lang.service.subcategories
+      type: relation
+      tab: kitsoft.services::lang.tabs.subcategories
+      span: auto
+    reorder_subcategories:
+      label: kitsoft.services::lang.categories.reorder
+      type: partial
+      tab: kitsoft.services::lang.tabs.subcategories
+      span: auto
+
+secondaryTabs:
+  fields:
+    is_top:
+      label: kitsoft.services::lang.service.is_top
+      type: checkbox

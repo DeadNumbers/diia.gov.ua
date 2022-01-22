@@ -1,0 +1,65 @@
+fields:
+    elasticSection:
+        label: Elastic Search Settings
+        type: section
+
+    is_elastic:
+        label: Use Elastic
+        type: switch
+        span: auto
+        comment: Don`t forget to set routes settings
+
+    elastic_events:
+        label: Update elastic index
+        type: switch
+        span: auto
+        comment: Update, create, delete index from code
+        trigger:
+            action: enable
+            field: is_elastic
+            condition: checked
+
+    elastic_host:
+        label: Elastic Host
+        type: text
+        placeholder: https://some.host.com:9200
+        comment: https://some.host.com:9200
+        span: left
+
+    elastic_auth:
+        label: Elastic authorization
+        type: checkbox
+
+    elastic_login:
+        label: Login
+        span: left
+        trigger:
+            action: show
+            field: elastic_auth
+            condition: checked
+
+    elastic_password:
+        label: Password
+        span: right
+        trigger:
+            action: show
+            field: elastic_auth
+            condition: checked
+
+    elastic_analyzer:
+        label: Analyzer
+        type: text
+        span: auto
+        placeholder: ukrainian
+
+    elastic_per_page:
+        label: Number of items to show
+        comment: can be change by per_page api param
+        type: number
+        span: auto
+        placeholder: default set to 5
+
+    elastic_max_items_limit:
+        label: Max items to show
+        type: number
+        span: auto

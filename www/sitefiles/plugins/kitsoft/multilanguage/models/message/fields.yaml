@@ -1,0 +1,7 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    message@create:
+      label: kitsoft.multilanguage::lang.messages.fields.message

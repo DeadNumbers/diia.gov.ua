@@ -1,0 +1,6 @@
+<?php if ($this->action == 'create') : ?>
+	<br>
+	<b><i>Please Save Poll before use logs</i></b>
+<?php else : ?>
+	<?= $this->relationRender('logs'); ?>
+<?php endif ?>

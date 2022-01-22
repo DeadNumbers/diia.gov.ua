@@ -1,0 +1,7 @@
+entrepreneur_options:
+    label: Entrepreneur options
+    view:
+        list: ~/plugins/kitsoft/taxsystems/models/entrepreneuroption/columns.yaml
+        toolbarButtons: false 
+        readOnly: true
+        showCheckboxes: false

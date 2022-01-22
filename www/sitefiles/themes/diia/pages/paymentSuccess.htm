@@ -1,0 +1,31 @@
+layout = "404"
+sections = true
+components = true
+hideContent = false
+​
+[page]
+==
+​
+<body>
+<div class="notfound">
+    <div class="container notfound_content">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ '/'|url }}" class="notfound_link">
+                    <div class="notfound_icon">
+                        <div class="notfound_icon-gerb"></div>
+                        <div class="notfound_icon-diya"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12">
+                <div class="notfound_error">
+                    <div class="notfound_error-description">{{ "Вітаємо"|_ }}!</div>
+                    <div class="notfound_error-proposition">{{ "Оплата послуги пройшла успішно"|_ }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlay-full-screen"></div>
+</body>

@@ -1,0 +1,10 @@
+templates: service
+
+title: Контент
+
+tabs:
+  fields:
+    fields[content]:
+      label: Контент
+      type: richeditor
+    

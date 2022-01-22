@@ -1,0 +1,28 @@
+{% if data.items|length %}
+<section class="service-acc_section" data-is-pdf-render="{{ data.isPdfRender }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="service-acc_item">
+					<div class="service-acc_item-quest js-service-acc_item-quest">
+					    {{ data.title }}
+					</div>
+					<div class="collapse service-acc_simple-answer">
+                        <div class="row">
+							{% for item in data.items %}
+                                {% if item.label %}
+                                    <div class="col-12 service-acc_simple-lead">{{ item.label }}</div>
+                                {% endif %}
+								
+								{% partial 'site/sections/serviceInfoBlocks/items' items = item.items|slice(0, (item.items|length / 2)|round) %}
+								
+								{% partial 'site/sections/serviceInfoBlocks/items' items = item.items|slice((item.items|length / 2)|round) %}
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}

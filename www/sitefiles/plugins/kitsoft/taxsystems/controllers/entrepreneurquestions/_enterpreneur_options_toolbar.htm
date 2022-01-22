@@ -1,0 +1,31 @@
+<?php if($this->user->isSuperUser()) : ?>
+    <div class="control-toolbar">
+        <div class="toolbar-item toolbar-primary">
+
+            <div data-control="toolbar" data-disposable="">
+
+                <a data-control="popup" data-size="huge" data-handler="onRelationButtonCreate" href="javascript:;" class="btn btn-sm btn-secondary oc-icon-file">
+                    <?= trans('kitsoft.taxsystems::lang.entrepreneur_options.create_entrepreneur_options'); ?>
+                </a>
+
+                <a href="<?= Backend::url('kitsoft/taxsystems/entrepreneuroptions/reorder?entrepreneur_question_id=' . $this->vars['formModel']->id); ?>" class="btn btn-sm btn-secondary oc-icon-list">
+                    <?= trans('kitsoft.taxsystems::lang.other.reorder'); ?>
+                </a>
+                
+                <button
+                    class="btn btn-sm btn-secondary oc-icon-trash-o control-disabled"
+                    onclick="$(this).data('request-data', {
+                        checked: $('.form-group[data-field-name=entrepreneur_options] .control-list').listWidget('getChecked')
+                    })"
+                    disabled=""
+                    data-request="onRelationButtonDelete"
+                    data-request-confirm="<?= trans('kitsoft.taxsystems::lang.other.delete_confirm'); ?>"
+                    data-trigger-action="enable"
+                    data-trigger=".form-group[data-field-name=entrepreneur_options] .control-list input[type=checkbox]" data-trigger-condition="checked"
+                    data-stripe-load-indicator=""
+                ><?= e(trans('backend::lang.list.delete_selected')) ?></button>
+
+            </div>
+        </div>        
+    </div>
+<?php endif ?>

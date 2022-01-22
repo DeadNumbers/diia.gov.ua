@@ -1,0 +1,7 @@
+{% for locale, title in __SELF__.locales if not (locale == __SELF__.activeLocale) %}
+    <li class="change-lang">
+    	{% set url = attribute(__SELF__.links, locale) %}
+        <div class="icon"></div>
+        <span onclick="$(this).request('onSwitchLocale', {data: {locale: '{{ locale }}', url: '{{ url }}'}}); return false;">{{ title }}</span>
+    </li>
+{% endfor %}

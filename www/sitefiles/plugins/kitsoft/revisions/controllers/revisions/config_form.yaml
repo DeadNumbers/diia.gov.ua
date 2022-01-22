@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Revision
+
+# Model Form Field configuration
+form: $/kitsoft/revisions/models/revision/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Revisions\Models\Revision
+
+# Default redirect location
+defaultRedirect: kitsoft/revisions/revisions
+
+# Preview page
+preview:
+    title: Preview Revision

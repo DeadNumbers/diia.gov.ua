@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    api_allowed_ips:
+      label: Api allowed ips
+      comment: /api/news
+      type: repeater
+      span: auto
+      tab: Api News
+      form:
+        fields:
+          ip:
+            label: IP

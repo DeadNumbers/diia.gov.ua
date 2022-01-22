@@ -1,0 +1,20 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    enable:
+      label: Enable
+      type: switch
+      tab: Sentry
+    dsn:
+      label: DSN
+      span: auto
+      tab: Sentry
+    error_level:
+      label: Error level
+      type: dropdown
+      emptyOption: -- Select error level --
+      span: auto
+      tab: Sentry

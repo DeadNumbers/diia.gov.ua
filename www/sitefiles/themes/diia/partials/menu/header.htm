@@ -1,0 +1,78 @@
+<nav class="menu-m">
+    <div class="menu-m_content">
+        <div class="menu-m_top">
+            <a href="{{ url('/')|url }}" class="menu-m_logo">
+                <div class="menu-m_logo-gerb"></div>
+                <div class="menu-m_logo-diya"></div>
+            </a>
+            <div class="menu-m_search">Пошук</div>
+            <div class="menu-m_close"></div>
+        </div>
+        <ul class="menu-m_list">
+            {% for item in items %}
+                {% if not loop.last %}
+                    {% if not item.isHidden %}
+                        {% if not item.items|length %}
+                            <li class="menu-m_list-item">
+                                <a href="{{ item.url ? item.url|url : 'javascript:void(0)' }}" {% if item.isExternal %}target="_blank" {% endif %} class="menu-m_link">{{ item.title }}</a>
+                            </li>
+                        {% else %}
+                            <li class="menu-m_list-item">
+                                <a href="javascript:void(0)" class="menu-m_link-childs">{{ item.title }}</a>
+                                <div class="menu-m-sub_wrap">
+                                    {% for child in item.items if not child.isHidden %}
+                                        {% if child.items|length %}
+                                            <div class="menu-m-sub">
+                                                <a href="{{ child.url ? child.url|url : 'javascript:void(0)' }}" {% if child.isExternal %}target="_blank" {% endif %} class="menu-m-sub_link-childs">{{ child.title }}</a>
+                                                <div class="menu-m-sub-sub">
+                                                    <div class="menu-m-sub-sub_top">
+                                                        <div class="menu-m-sub-sub_back">{{ child.title }}</div>
+                                                        <div class="menu-m-sub-sub_close"></div>
+                                                    </div>
+                                                    {% for subChild in child.items if not subChild.isHidden %}
+                                                    <div class="menu-m-sub-sub_item">
+                                                        <a href="{{ subChild.url ? subChild.url|url : 'javascript:void(0)' }}"
+                                                           class="menu-m-sub-sub_link"
+                                                           {% if subChild.isExternal %} target="_blank" {% endif %}>{{ subChild.title }}</a>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <div class="menu-m-sub">
+                                                <a href="{{ child.url ? child.url|url : 'javascript:void(0)' }}" {% if child.isExternal %}target="_blank" {% endif %} class="menu-m-sub_link">{{ child.title }}</a>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% else %}
+                    {% if not item.isHidden %}
+                        {% if item.items|length %}
+                            <li class="menu-m_list-item">
+                                <a href="javascript:void(0)" class="menu-m_link-childs">{{ item.title }}</a>
+                                <div class="menu-m-sub_wrap">
+                                    {% for child in item.items %}
+                                        {% if child.items|length %}
+                                        <div class="menu-m-sub">
+                                            {% for subChild in child.items if not subChild.isHidden %}
+                                                <div class="menu-m-sub-sub_item">
+                                                    <a href="{{ subChild.url ? subChild.url|url : 'javascript:void(0)' }}"
+                                                       class="menu-m-sub-sub_link"
+                                                       {% if subChild.isExternal %} target="_blank" {% endif %}>{{ subChild.title }}</a>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

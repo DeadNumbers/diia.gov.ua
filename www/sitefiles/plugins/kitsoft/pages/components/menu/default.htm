@@ -1,0 +1,13 @@
+{% set icon = 'assets/images/svg/' ~ __SELF__.property('code') ~ '_icon.svg' %}
+
+{% if __SELF__.menuItems %}
+    <div class="col-md-4">
+        <div class="main-themes-item">
+            <object data="{{ icon|theme }}" type="image/svg+xml"></object>
+            <h3>{{ __SELF__.menu.name }}</h3>
+            <ul class="{{ __SELF__.property('class') }}">
+                {% partial __SELF__ ~ "::items" items=__SELF__.menuItems %}
+            </ul>
+        </div>
+    </div>
+{% endif %}

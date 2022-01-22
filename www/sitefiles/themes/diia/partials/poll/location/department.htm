@@ -1,0 +1,14 @@
+<select name="department" class="custom_select">
+    <option>{{ 'Оберіть департамент'|_ }}</option>
+    {% for item in __SELF__.departments %}
+    	<option value="{{ item.slug }}">{{ item.title }}</option>
+    {% endfor %}
+</select>
+
+<script type="text/javascript">
+    $('select[name=department]').on('change', function () {
+        $('#poll-departments').request('onDepartment', {
+            update: {'@location/info': '.departments-result'}
+        })
+    })
+</script>

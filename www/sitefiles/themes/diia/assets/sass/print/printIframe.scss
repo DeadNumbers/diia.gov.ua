@@ -1,0 +1,141 @@
+@import "../modules/var";
+@import "../modules/var-media";
+@import "../modules/mixins";
+@import "../components/editor-content/editor-content";
+
+
+@media print {
+
+    * {
+        &:before {
+            display: none !important;
+        }
+
+        &:after {
+            display: none !important;
+        }
+    }
+
+    /* Убирает баг с наездом текста */
+
+    * {
+        -webkit-print-color-adjust: economy; // Принудительная печать фона
+        print-color-adjust: economy;
+    }
+
+    @page {
+        margin: 1.5cm;
+    }
+
+    /* Убирает баг с наездом текста */
+
+    .editor-content {
+        font-size: 18px;
+
+        a[target] {
+            padding-right: 0;
+        }
+
+        *,
+        p,
+        div {
+            font-size: 18px !important;
+            line-height: 1.2 !important;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        span,
+        b,
+        strong,
+        a {
+            font-size: 18px !important;
+            line-height: 1.2 !important;
+            margin: 0 !important;
+        }
+
+        h1 {
+            font-size: 26px !important;
+            line-height: 1.2 !important;
+            margin: 15px 0 !important;
+        }
+
+        h2,
+        .service-acc_item-quest {
+            font-size: 24px !important;
+            line-height: 1.2 !important;
+            margin: 15px 0 !important;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 22px !important;
+            line-height: 1.2 !important;
+            margin: 15px 0 !important;
+        }
+
+        h4,
+        h5,
+        h6,
+        .service-acc_simple-lead {
+            font-size: 20px !important;
+            line-height: 1.2 !important;
+            margin: 10px 0 !important;
+            font-weight: 600;
+        }
+
+        ol,
+        ul {
+            padding: 5px 0 !important;
+            margin: 0 !important;
+            list-style-position: inside;
+
+            li {
+                font-size: 18px !important;
+                line-height: 1.2 !important;
+                padding: 5px 0;
+                margin: 0 !important;
+
+                ol,
+                ul {
+                    padding: 10px 0 !important;
+                    margin: 0 !important;
+
+                    li {
+                        font-size: 16px !important;
+                        line-height: 1.2 !important;
+                        padding: 5px 0;
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+
+        ul {
+            list-style-type: disc !important;
+        }
+
+        ol {
+            list-style-type: decimal !important;
+        }
+
+        .service-acc_big {
+            padding: 5px 0;
+
+            &-inner {
+                padding: 5px 20px;
+                border: 2px solid #000;
+            }
+        }
+    }
+
+    @-moz-document url-prefix() {
+        * {
+            background: #fff !important;
+        }
+
+        .row {
+            display: block !important;
+        }
+    }
+}

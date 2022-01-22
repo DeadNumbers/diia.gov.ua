@@ -1,0 +1,38 @@
+<div class="clearfix"></div>
+
+<div class="form-group span-left p-b-0">
+    <?= $this->makePartial('model_field'); ?>
+</div>
+
+<div class="form-group span-right p-b-0">
+    
+    <?= $this->makePartial('id_field'); ?>
+
+    <?= $this->makePartial('custom_url_field'); ?>
+
+    <?= $this->makePartial('checkbox_field'); ?>
+
+</div>
+
+<script type="text/javascript">
+    $('select[id=<?= $this->getId('model'); ?>]').on('change', function (data) {
+        var widget = $(this).closest('.widget-field')
+        var select = widget.find('select[id=<?= $this->getId('id'); ?>]')
+
+        select.val('').change()
+
+        if (!$(this).val()) {
+            widget.find('.relationfinder-object').hide();
+            widget.find('.relationfinder-input').show()
+            return
+        }
+
+        widget.find('.relationfinder-object').show();
+        widget.find('.relationfinder-input').hide();
+        
+        var value = $(this).val().replace(/\\/g, '\\\\')
+
+        select.find('option').remove()
+        select.removeAttr('data-request-data').data('request-data', "model: '" + value + "'").val('').change()
+    })
+</script>

@@ -1,0 +1,10 @@
+<a
+	href="<?= $url; ?>"
+	class="font-weight-bold toolbar-pages-count"
+>
+	<?php if ($active) : ?> 
+		<b><u>Корзина</u></b> (<?= $count; ?>)
+	<?php else : ?>
+		<b>Корзина</b> (<?= $count; ?>)
+	<?php endif ?>
+</a>

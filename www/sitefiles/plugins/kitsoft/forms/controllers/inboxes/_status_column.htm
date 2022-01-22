@@ -1,0 +1,1 @@
+<?= trans($model->getStatusOptions()[$model->status]); ?>

@@ -1,0 +1,54 @@
+layout = "404"
+sections = true
+components = true
+hideContent = false
+
+[page]
+==
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+<body>
+    <div class="not-found">
+		<div class="container not-found_content">
+            <div class="row">
+                <div class="col-12">
+                    <a href="{{ '/'|url }}" class="not-found_link">
+                        <div class="not-found_icon">
+                            <div class="not-found_icon-gerb"></div>
+                            <div class="not-found_icon-diya"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div class="not-found_error">
+                        <div id="successMessage" class="hidden">
+                            <div class="not-found_error-description">{{ "Вітаємо"|_ }}!</div>
+                            <div class="not-found_error-proposition">{{ "Оплата послуги пройшла успішно"|_ }}</div>
+                        </div>
+                        <div id="failsMessage" class="hidden">
+                            <div class="not-found_error-description">{{ "Увага"|_ }}!</div>
+                            <div class="not-found_error-proposition">{{ "Не вдалось здійснити оплату послуги"|_ }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-full-screen"></div>
+</body>
+
+<script>
+    const findParam = window.location.search;
+    const params = findParam.split('&');
+    for (let i = 0; i < params.length; i++) {
+        const paramKey = params[i].split('=')[0];
+        const paramVal = params[i].split('=')[1];
+        if(paramKey === 'status' || paramKey === '?status')  {
+            paramVal === 'true' && document.getElementById('successMessage').classList.remove('hidden');
+            paramVal !== 'true' && document.getElementById('failsMessage').classList.remove('hidden');
+        }
+    }
+</script>

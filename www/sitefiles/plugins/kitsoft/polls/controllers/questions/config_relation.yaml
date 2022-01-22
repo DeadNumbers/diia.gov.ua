@@ -1,0 +1,8 @@
+options:
+    label: Options
+    view:
+        list: $/kitsoft/polls/models/option/columns.yaml
+        toolbarButtons: create|link|unlink|delete
+        toolbarPartial: $/kitsoft/polls/controllers/questions/_relation_toolbar.htm
+    manage:
+        form: $/kitsoft/polls/models/option/fields.yaml

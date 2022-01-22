@@ -1,0 +1,24 @@
+{% if service.service.related_services|length %}
+<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="service-acc_item">
+                    <div class="service-acc_item-quest js-service-acc_item-quest">
+                        {{ data.title }}
+                    </div>
+                    <div class="collapse service-acc_item-answer">
+                        <div class="service-acc_item-link-box">
+                            {% for item in service.service.related_services %}
+	                            <a href="{{ item.url|url }}" {% if item.link.target %}target="_blank" {% endif %} class="service-acc_item-link">
+		                            {{ item.title }}
+		                        </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,17 @@
+<?php if ($model->action == 'create') : ?>
+	<p class="flash-message static info">
+		<b><?= trans("kitsoft.revisions::lang." . $model->action); ?></b>
+	</p>
+<?php elseif ($model->action == 'update') : ?>
+	<p class="flash-message static success">
+		<b><?= trans("kitsoft.revisions::lang." . $model->action); ?></b>
+	</p>
+<?php elseif ($model->action == 'delete') : ?>
+	<p class="flash-message static error">
+		<b><?= trans("kitsoft.revisions::lang." . $model->action); ?></b>
+	</p>
+<?php elseif ($model->action == 'rollback') : ?>
+	<p class="flash-message static warning">
+		<b><?= trans("kitsoft.revisions::lang." . $model->action); ?></b>
+	</p>
+<?php endif ?>

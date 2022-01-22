@@ -1,0 +1,89 @@
+{% set question = __SELF__.option ? __SELF__.option.question : __SELF__.poll.question %}
+
+<div class="form-poll_wrap">
+<form 
+    data-request="onAnswerPoll"
+    data-request-validate
+    data-request-update="'@step': '#poll-form-step'" 
+    data-request-success="$('.custom_select').chosen({disable_search: true});"
+    id="smartReguestForm" 
+    class="form-poll">
+    <input type="hidden" name="step" value="{{ __SELF__.step }}">
+    <input type="hidden" name="log" value="{{ __SELF__.log }}">
+    <div class="form-poll_content">
+        <div class="form-poll_content-lead">{{ question.title }}</div>
+            {% if question.type == 'select' %}
+                <select name="option_ids[]" class="custom_select">
+                    {% for item in question.options %}
+                        <option value="{{ item.id }}">{{ item.text }}</option>
+                    {% endfor %}
+                </select>
+                {% if item.comment %}
+                    <textarea 
+                        id="option_{{ item.id }}_comment" 
+                        class="d-none js-textarea" 
+                        type="text" 
+                        name="comments[{{ item.id }}]" 
+                        placeholder="{{ item.comment_placeholder }}">
+                    </textarea>
+                {% endif %}
+            {% elseif question.type == 'radio' %}
+                {% for item in question.options %}
+                    <div class="agree_wrap">
+                        <label for="option_{{ item.id }}" class="agree_wrap-inner">
+                            <input id="option_{{ item.id }}" class="radio" type="radio" name="option_ids[]" value="{{ item.id }}">
+                            <label for="option_{{ item.id }}"></label>
+                            <div class="checkbox_text">{{ item.text }}</div>
+                        </label>
+                        {% if item.comment %}
+                            <textarea 
+                                id="option_{{ item.id }}_comment" 
+                                class="d-none js-textarea" 
+                                type="text" 
+                                name="comments[{{ item.id }}]"
+                                minlength="0"
+                                maxLength="1024"
+                                placeholder="{{ item.comment_placeholder }}"></textarea>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% elseif question.type == 'checkbox' %}
+                {% for item in question.options %}
+                    <div class="agree_wrap">
+                        <label for="option_{{ item.id }}" class="agree_wrap-inner">
+                            <input id="option_{{ item.id }}" class="checkbox" type="checkbox" name="option_ids[]" value="{{ item.id }}">
+                            <label for="option_{{ item.id }}"></label>
+                            <div class="checkbox_text">{{ item.text }}</div>
+                        </label>
+                        {% if item.comment %}
+                            <textarea 
+                                id="option_{{ item.id }}_comment" 
+                                class="d-none js-textarea" 
+                                type="text" 
+                                name="comments[{{ item.id }}]" 
+                                minlength="0"
+                                maxLength="1024"
+                                placeholder="{{ item.comment_placeholder }}"></textarea>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+    </div>
+    <div data-validate-error class="error_validation"></div>
+</form>
+
+<button class="btn btn-fill" form="smartReguestForm">{{ 'Далі'|_ }}</button>
+{% if __SELF__.step > 1 %}
+    <button
+        class="btn btn-fill"
+        data-request="onPollLoad"
+        data-request-update="'@default': '#poll'"
+        data-request-success="$('.custom_select').chosen({disable_search: true});"
+    >{{ 'Почати спочатку'|_ }}</button>
+    <script>
+        setTimeout(function() {
+            window.inputToggler('smartReguestForm');
+        }, 300);
+    </script>
+{% endif %}
+</div>

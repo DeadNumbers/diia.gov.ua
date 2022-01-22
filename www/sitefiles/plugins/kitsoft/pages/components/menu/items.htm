@@ -1,0 +1,15 @@
+{% for item in __SELF__.menuItems if not item.isHidden %}
+    <li class="{{ __SELF__.property('classItem') }}">
+        {% if item.url %}
+            <a href="{{ item.url|url }}" {{ item.isExternal ? 'target="_blank"' }}>
+                {{ item.title }}
+            </a>
+        {% else %}
+            <span>{{ item.title }}</span>
+        {% endif %}
+
+        {% if item.__SELF__.menuItems %}
+            {% partial __SELF__ ~ "::items" items=item.items %}
+        {% endif %}
+    </li>
+{% endfor %}

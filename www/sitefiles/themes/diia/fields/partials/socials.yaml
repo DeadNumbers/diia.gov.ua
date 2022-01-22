@@ -1,0 +1,23 @@
+tabs:
+  fields:
+    fields[items]:
+      label: Соцiальнi мережi
+      type: repeater
+      tab: Головне
+      maxItems: 5
+      form:
+        fields:
+          url:
+            label: Посилання
+            span: auto
+          icon:
+            type: balloon-selector
+            label: Iконка
+            span: auto
+            options:
+              facebook: Facebook
+              twitter: Twitter
+              telegram: Telegram
+              youtube: Youtube
+              instagram: Instagram
+              viber: Viber

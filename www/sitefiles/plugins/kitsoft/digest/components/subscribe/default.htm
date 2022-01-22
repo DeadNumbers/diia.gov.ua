@@ -1,0 +1,10 @@
+<form
+	data-request="onSubscribe"
+	data-request-update="'@success': '#success-subscribe'"
+>
+	<h2>{{ 'Підписатись на розсилку'|_ }}</h2>
+	<input type="email" name="email" placeholder="введіть email">
+	<span>{{ 'На вказаний email буде відплавлено посилання для налаштування підписки'|_ }}</span>
+	<input type="submit" value="{{ 'Відправити'|_ }}">
+</form>
+<div id="success-subscribe"></div>

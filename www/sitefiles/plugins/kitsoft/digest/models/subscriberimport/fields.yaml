@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    list_id:
+        label: Підписати на лист
+        emptyOption: -- Оберіть лист --
+        type: dropdown
+        options: getListsOptions
+        span: auto
+        comment: працює тільки, якщо поле confirmed = true
+
+    content_types:
+        label: Типи контенту
+        type: checkboxlist
+        options: getContentTypesOptions
+        span: auto

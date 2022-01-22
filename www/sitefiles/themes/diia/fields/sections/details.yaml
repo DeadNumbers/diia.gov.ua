@@ -1,0 +1,17 @@
+title: Випадаючі списки контенту Html
+
+tabs:
+  fields:
+    fields[items]:
+      label: Контент
+      type: repeater
+      prompt: Додати пункт
+      tab: Головне
+      form:
+        fields:
+          title:
+            label: Заголовок
+          content:
+            label: Зміст
+            type: richeditor
+            size: giant

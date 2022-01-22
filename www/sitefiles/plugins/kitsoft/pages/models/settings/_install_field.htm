@@ -1,0 +1,3 @@
+<?php if (BackendAuth::getUser()->isSuperUser()) : ?>
+	<button class="btn btn-default oc-icon-cogs" data-request="onInstallPages" data-request-confirm="Почати установку?">Install</button>
+<?php endif ?>

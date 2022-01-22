@@ -1,0 +1,11 @@
+related_questions:
+    label: Пов'язані запитання
+    view:
+        list: ~/plugins/kitsoft/faq/models/question/columns.yaml
+        toolbarButtons: link|unlink
+        defaultSort:
+            column: question
+            direction: asc
+        recordOnClick: "window.open('/backend/kitsoft/faq/questions/update/:id', '_blank')"
+    manage:
+        form: ~/plugins/kitsoft/faq/models/question/fields.yaml

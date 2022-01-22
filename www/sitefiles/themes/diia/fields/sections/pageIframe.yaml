@@ -1,0 +1,8 @@
+title: Створення Iframe
+
+templates: pageIframe
+
+tabs:
+  fields:
+    fields[url]:
+      tab: Посилання

@@ -1,0 +1,35 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+[page]
+==
+
+{% partial 'site/breadcrumbs' %}
+
+<section class="services-byletter_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				{% for letter, services in servicesByLetter.letters %}
+					<div class="services-byletter_item">
+						<div class="services-byletter_letter">{{ letter }}</div>
+						{% if services|length %}
+							{% for service in services %}
+								<div class="services-byletter_title">
+									<a href="{{ service.url|url }}">{{ service.title }}</a>
+								</div>
+							{% endfor %}
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

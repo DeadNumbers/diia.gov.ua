@@ -1,0 +1,21 @@
+1573817017a:1:{s:32:"site/sections/serviceContent.htm";a:5:{s:8:"fileName";s:32:"site/sections/serviceContent.htm";s:7:"content";s:295:"<section class="editor-content_section">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <div class="editor-content">
+                    {{ data.content|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1573572179;s:6:"markup";s:295:"<section class="editor-content_section">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <div class="editor-content">
+                    {{ data.content|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:4:"code";N;}}

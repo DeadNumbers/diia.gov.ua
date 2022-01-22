@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
+    <meta name="x-apple-disable-message-reformatting" />
+    <style type="text/css">
+    /* CLIENT-SPECIFIC STYLES */
+    body,
+    table,
+    td,
+    a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
+
+    #outlook a {
+        padding: 0;
+    }
+
+    /* END Client-specific Styles */
+    /* RESET STYLES */
+    img {
+        border: 0;
+        outline: none;
+        text-decoration: none;
+    }
+
+    /* END RESET STYLES */
+    /* iOS BLUE LINKS */
+    a.apple {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        text-align: left !important;
+    }
+
+    /* END iOS BLUE LINKS */
+    /* Force Outlook to provide a "view in browser" menu link. */
+    body {
+        width: 100% !important;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .text-item {}
+
+    .service-title {
+        color: #000;
+        font-family: "Open-Sans", Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 26px;
+        padding: 0 0 20px 0;
+        letter-spacing: -0.02em;
+    }
+
+    .service-title-link {
+        text-decoration: none;
+        color: #000;
+        font-family: 'Open-Sans', Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 26px;
+        letter-spacing: -0.02em;
+        display: inline-block;
+    }
+
+    .title-item {
+        color: #000;
+        font-family: 'Open-Sans', Arial, Helvetica, sans-serif;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 26px;
+        letter-spacing: -0.02em;
+        display: block;
+        width: 100%;
+    }
+
+    .editor-item {
+        border: none !important;
+    }
+
+    .editor-item * {
+        font-size: 16px;
+        line-height: 20px;
+        color: #000 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 20px !important;
+        border: none !important;
+        font-family: 'Open-Sans', Arial, Helvetica, sans-serif;
+    }
+
+    .editor-item a {
+        color: #000;
+        border-bottom: 1px solid #000 !important;
+        text-decoration: none;
+        line-height: 18px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        font-family: 'Open-Sans', Arial, Helvetica, sans-serif;
+    }
+
+    @media all and (max-width: 768px) {
+        .tableInner {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+
+        #tableHeader {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+
+        #tableFooter {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+            padding-bottom: 20px !important;
+        }
+
+        .btn-default {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding: 16px 20px !important;
+        }
+
+        #body {
+            background-color: #fff !important;
+        }
+    }
+
+    </style>
+</head>
+
+<body style="margin: 0;font-family: 'Open-Sans', Arial, Helvetica, sans-serif; letter-spacing: -0.02em; padding: 0px;" id="body">
+    <!-- Start of header -->
+    <center>
+        <table width="640" bgcolor="#fff" cellpadding="0" cellspacing="0" border="0" id="mainTable" style='padding-top:0px; padding-bottom:0px;'>
+            <tbody>
+                <tr>
+                    <td style='height: 20px;' width="640"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tableHeader" width="640" cellpadding="0" cellspacing="0" border="0" style="margin: 0px auto; padding: 20px 50px 50px;" align="left">
+                            <tbody>
+                                <tr>
+                                    <td width="100" height="50" align="left">
+                                        <img src='{{ url("themes/diia/assets/images/mailrender/mail-logo.png") }}' alt='image' width="100" height="50" border="0" style="display: block;">
+                                    </td>
+                                    <td align="left" style='font-size: 16px; line-height: 20px; padding-left: 15px; max-width: 95px; display: inline-block;margin-top: 5px; margin-bottom:0; font-family: "Open-Sans", Arial, Helvetica, sans-serif; letter-spacing: -0.02em;'>
+                                        Цифрова держава
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                {{ content|raw }}
+                <tr>
+                    <td width="640">
+                        <table id="tableFooter" width="640" bgcolor="#000" cellpadding="0" cellspacing="0" border="0" style="padding: 20px 50px 80px;margin: 0 auto;">
+                            <tbody>
+                                <tr>
+                                    <td style="color: #fff; margin-bottom: 5px;font-size: 10px;font-family: 'Open-Sans', Arial, Helvetica, sans-serif;" width="640" align="left">
+                                        <a class="apple" href="javascript:void(0)" style="color: #fff; margin-bottom: 5px;font-size: 10px;font-family: 'Open-Sans', Arial, Helvetica, sans-serif;">
+                                            Михайла Грушевського 12/2, Київ
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="640" bgcolor="grey" style="height: 0; opacity: 0; display: none;">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color: #fff; margin-bottom: 5px;font-size: 10px;font-family: 'Open-Sans', Arial, Helvetica, sans-serif;" width="640" align="left">
+                                        <a class="apple" href="javascript:void(0)" style="color: #fff; margin-bottom: 5px;font-size: 10px;font-family: 'Open-Sans', Arial, Helvetica, sans-serif;">
+                                            Україна
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="display: none;">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam porro sit a consequuntur, ullam qui animi, recusandae rem doloribus ipsa nemo, quibusdam aut distinctio nobis quos nihil delectus quam.
+        </div>
+    </center>
+</body>
+
+</html>

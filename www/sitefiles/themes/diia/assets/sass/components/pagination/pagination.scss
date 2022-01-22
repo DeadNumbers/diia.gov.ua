@@ -1,0 +1,209 @@
+.pagination {
+	padding: 35px 0;
+	border-top: 2px solid $black;
+	border-radius: 0;
+	margin: 40px 30px 0;
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	@include media("<lg") {
+		margin: 0px 15px;
+		padding: 15px 0;
+	}
+
+	li {
+		position: relative;
+
+		&.disabled {
+			pointer-events: none;
+			opacity: 0.3;
+		}
+
+		&.active {
+			a,
+			span {
+				color: $black;
+				border: 2px solid $black;
+			}
+		}
+
+		a,
+		span {
+			width: 32px;
+			flex: 0 0 32px;
+			height: 32px;
+			border: 2px solid transparent;
+			@include transition(.2s ease-in-out);
+			border-radius: 50%;
+			margin: 0 1px;
+			font-size: 13px;
+			line-height: 32px;
+			display: flex;
+			align-items: center;
+			color: $black;
+			justify-content: center;
+
+			&:hover {
+				color: $black;
+				border: 2px solid $black;
+			}
+		}
+
+		&:first-child,
+		&:last-child {
+			display: flex;
+			align-items: center;
+
+			a,
+			span {
+				color: transparent !important;
+				position: relative;
+				@include transition(.2s ease-in-out);
+				width: auto;
+				height: auto;
+
+				&:hover {
+					opacity: 0.3;
+					cursor: pointer;
+					border: 2px solid transparent;
+				}
+
+				&:before {
+					content: '';
+					width: 24px;
+					flex: 0 0 24px;
+					height: 24px;
+				}
+
+				&:after {
+					font-size: 13px;
+					line-height: 16px;
+					color: $black;
+					white-space: nowrap;
+					flex: 0 1 150px;
+					@include media("<md") {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&:first-child {
+			margin-right: auto;
+
+			a,
+			span {
+
+				&:before {
+					@include background(contain, '../../images/icons/svg/ic_arrow_small_left.svg');
+				}
+
+				&:after {
+					content: 'Попередня сторінка';
+				}
+			}
+		}
+
+		&:last-child {
+			margin-left: auto;
+
+			a,
+			span {
+				flex-direction: row-reverse;
+
+				&:before {
+					@include background(contain, '../../images/icons/svg/ic_arrow_small.svg');
+				}
+
+				&:after {
+					content: 'Наступна сторінка';
+				}
+			}
+		}
+	}
+}
+
+/* .pagination {
+    padding: 35px 0;
+    border-top: 2px solid $black;
+    border-radius: 0;
+    margin: 40px 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_item {
+        &-prev,
+        &-next {
+            a {
+                display: block;
+                color: $black;
+                font-size: 13px;
+                line-height: 16px;
+                position: relative;
+                @include transition(.2s ease-in-out);
+                &:hover {
+                    opacity: 0.3;
+                    color: $black;
+                }
+                &.disabled {
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &-prev {
+            margin-right: auto;
+            a {
+                padding-left: 40px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -12px;
+                    width: 24px;
+                    height: 24px;
+                    @include background(cover, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjMiIHZpZXdCb3g9IjAgMCAyNCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnPgogICAgICAgIDxwYXRoIGQ9Ik0yMyAxMS42MDY1TDEuNzQxMzMgMTEuNjUyTTEuNzQxMzMgMTEuNjUyTDEyLjM5MzMgMU0xLjc0MTMzIDExLjY1MkwxMi4zNDc5IDIyLjI1ODYiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgIDwvZz4KPC9zdmc+');
+                }
+            }
+
+        }
+
+        &-next {
+            margin-left: auto;
+
+            a {
+                padding-right: 40px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -12px;
+                    width: 24px;
+                    height: 24px;
+                    @include background(cover, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjMiIHZpZXdCb3g9IjAgMCAyNCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xIDExLjYwNjVMMjIuMjU4NyAxMS42NTJNMjIuMjU4NyAxMS42NTJMMTEuNjA2NyAxTTIyLjI1ODcgMTEuNjUyTDExLjY1MjEgMjIuMjU4NiIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiAvPgo8L3N2Zz4=');
+                }
+            }
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 2px solid transparent;
+            @include transition(.2s ease-in-out);
+            border-radius: 50%;
+            margin: 0 1px;
+            &:hover,
+            &.active {
+                color: $black;
+                border: 2px solid $black;
+            }
+        }
+    }
+} */

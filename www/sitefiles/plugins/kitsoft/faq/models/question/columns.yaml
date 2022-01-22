@@ -1,0 +1,28 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: kitsoft.faq::lang.question.columns.id
+        searchable: true
+    question:
+        label: kitsoft.faq::lang.question.columns.question
+        searchable: true
+    published:
+        label: kitsoft.faq::lang.question.columns.published
+        type: switch
+        searchable: false
+    categories:
+        label: kitsoft.faq::lang.question.columns.categories
+        relation: categories
+        select: name
+        searchable: true
+        sortable: false
+    is_top:
+        label: Закріплено
+        type: switch
+        searchable: false
+    created_at:
+        label: kitsoft.faq::lang.question.columns.created_at
+        type: timesince

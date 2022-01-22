@@ -1,0 +1,133 @@
+.table-responsive {
+    margin-bottom: 25px;
+    @include media ("<lg") {
+        margin-bottom: 10px;
+    }
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $black;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+        height: 4px;
+    }
+
+    .table,
+    table {
+        border-collapse: collapse;
+        font-size: 16px;
+
+        thead {
+            tr {
+                background-color: #E7EEF3;
+
+                th {
+                    font-size: 13px;
+                    line-height: 16px;
+                    padding: 15px 10px;
+                    min-width: 100px;
+                    border: 2px solid #E7EEF3;
+                    font-weight: 400;
+
+                    a {
+                        font-size: 13px;
+                        line-height: 16px;
+
+                        @include media ("<lg") {
+                            font-size: 11px;
+                            line-height: 14px;
+                        }
+                    }
+
+                    @include media ("<lg") {
+                        font-size: 11px;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                vertical-align: top;
+
+                td {
+                    padding: 15px 10px;
+                    font-size: 13px;
+                    line-height: 16px;
+                    border: 2px solid #E7EEF3;
+                    font-weight: 400;
+                    font-weight: 300;
+
+                    @include media ("<lg") {
+                        font-size: 11px;
+                        line-height: 14px;
+                    }
+
+                    &>* {
+                        font-size: 13px;
+                        line-height: 16px;
+
+                        @include media ("<lg") {
+                            font-size: 11px;
+                            line-height: 14px;
+                        }
+                    }
+
+                    a {
+                        font-size: 13px;
+                        line-height: 16px;
+
+                        @include media ("<lg") {
+                            font-size: 11px;
+                            line-height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    td.attachment {
+        height: 100%;
+        display: table-cell !important;
+
+        a {
+            display: inline-block !important;
+        }
+    }
+
+
+    tbody {
+        &.even {
+            tr {
+                &:nth-child(even) {
+                    background: #E7EEF3;
+                }
+
+                &:nth-child(odd) {
+                    background: $white;
+                }
+            }
+        }
+    }
+
+    tbody {
+        &.odd {
+            tr {
+                &:nth-child(even) {
+                    background: $white;
+                }
+
+                &:nth-child(odd) {
+                    background: #E7EEF3;
+                }
+            }
+        }
+    }
+}

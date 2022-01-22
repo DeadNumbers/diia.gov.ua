@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Answer
+
+# Model Form Field configuration
+form: $/kitsoft/polls/models/answer/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Polls\Models\Answer
+
+# Default redirect location
+defaultRedirect: kitsoft/polls/answers
+
+# Create page
+create:
+    title: Create Answer
+    redirect: kitsoft/polls/answers/update/:id
+    redirectClose: kitsoft/polls/answers
+
+# Update page
+update:
+    title: Edit Answer
+    redirect: kitsoft/polls/answers
+    redirectClose: kitsoft/polls/answers
+
+# Preview page
+preview:
+    title: Preview Answer

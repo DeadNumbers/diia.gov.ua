@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.taxsystems::lang.entrepreneur_questions.title
+
+# Model Form Field configuration
+form: $/kitsoft/taxsystems/models/entrepreneurquestion/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\TaxSystems\Models\EntrepreneurQuestion
+
+# Default redirect location
+defaultRedirect: kitsoft/taxsystems/entrepreneurquestions
+
+# Create page
+create:
+    title: kitsoft.taxsystems::lang.entrepreneur_questions.create_entrepreneur_question
+    redirect: kitsoft/taxsystems/entrepreneurquestions/update/:id
+    redirectClose: kitsoft/taxsystems/entrepreneurquestions
+
+# Update page
+update:
+    title: kitsoft.taxsystems::lang.entrepreneur_questions.update_entrepreneur_question
+    redirect: kitsoft/taxsystems/entrepreneurquestions
+    redirectClose: kitsoft/taxsystems/entrepreneurquestions
+
+# Preview page
+preview:
+    title: Preview Entrepreneur Question

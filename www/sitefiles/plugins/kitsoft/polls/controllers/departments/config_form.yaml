@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Department
+
+# Model Form Field configuration
+form: $/kitsoft/polls/models/department/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Polls\Models\Department
+
+# Default redirect location
+defaultRedirect: kitsoft/polls/departments
+
+# Create page
+create:
+    title: Create Department
+    redirect: kitsoft/polls/departments/update/:id
+    redirectClose: kitsoft/polls/departments
+
+# Update page
+update:
+    title: Edit Department
+    redirect: kitsoft/polls/departments
+    redirectClose: kitsoft/polls/departments
+
+# Preview page
+preview:
+    title: Preview Department

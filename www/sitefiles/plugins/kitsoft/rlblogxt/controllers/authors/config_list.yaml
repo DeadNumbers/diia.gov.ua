@@ -1,0 +1,38 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: ~/plugins/kitsoft/rlblogxt/models/author/columns.yaml
+
+# Model Class name
+modelClass: KitSoft\RLBlogXT\Models\Author
+
+# List Title
+title: kitsoft.rlblogxt::lang.authors.list_title
+
+# Link URL for each record
+recordUrl: kitsoft/rlblogxt/authors/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 5
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+showTree: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+
+

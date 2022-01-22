@@ -1,0 +1,25 @@
+<span class="pull-right"><?= trans('kitsoft.services::lang.category.services'); ?></span>
+<div class="field-checkboxlistreorder" style="padding: 20px 10px;border-radius: 3px; background: #fff; border: 1px solid #e2e2e2;">
+	<!-- Reorder List -->
+	<form method="POST">
+	    <div
+	        id="reorderTreeList"
+	        class="control-treelist"
+	        data-control="treelist"
+	        data-handle="> li > .record > a.move"
+	        data-stripe-load-indicator>
+
+	        <?php if ($model->subcategories_tree->count()) : ?>
+	            
+	            <?= $this->makePartial('reorder_subcategories_records', ['items' => $model->subcategories_tree]); ?>
+
+	        <?php else: ?>
+	            <p><?= Lang::get('backend::lang.reorder.no_records'); ?></p>
+	        <?php endif ?>
+	    </div>
+	</form>
+</div>
+
+<script>
+    $.oc.reorderBehavior.initSorting('nested')
+</script>

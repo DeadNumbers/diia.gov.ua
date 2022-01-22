@@ -1,0 +1,13 @@
+{% set og = partial('og').fields %}
+
+<meta property="og:url" content="{{ url_current() }}" />
+<meta property="og:title" content="{{ this.page.meta_title ?? this.page.title }}" />
+<meta property="og:description" content="{{ this.page.meta_description }}" />
+
+{% if this.page.og_image %}
+    <meta property="og:image" content="{{ this.page.og_image }}" />
+{% elseif og.image %}
+    <meta property="og:image" content="{{ url(og.image|media) }}" />
+{% else %}
+    <meta property="og:image" content="{{ 'assets/images/default_photo.png'|theme }}" />
+{% endif %}

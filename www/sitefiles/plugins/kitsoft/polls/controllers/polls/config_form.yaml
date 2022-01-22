@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Poll
+
+# Model Form Field configuration
+form: $/kitsoft/polls/models/poll/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Polls\Models\Poll
+
+# Default redirect location
+defaultRedirect: kitsoft/polls/polls
+
+# Create page
+create:
+    title: Create Poll
+    redirect: kitsoft/polls/polls/update/:id
+    redirectClose: kitsoft/polls/polls
+
+# Update page
+update:
+    title: Edit Poll
+    redirect: kitsoft/polls/polls
+    redirectClose: kitsoft/polls/polls
+
+# Preview page
+preview:
+    title: Preview Poll

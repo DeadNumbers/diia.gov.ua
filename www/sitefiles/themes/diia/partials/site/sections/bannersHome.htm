@@ -1,0 +1,32 @@
+{% if data.bannerPc|length and data.bannerMobile|length %}
+<section class="banner-top-v2">
+    <div class="container">
+        <div class="banner-top-v2_bg">
+            <a href="{{ data.link }}"
+               target="_blank" rel="nofollow"
+               class="banner-top-v2_box">
+                <div class="banner-top-v2_item-desktop">
+                    {% for banner in data.bannerPc %}
+                    <picture>
+                        <source src="{{ banner.image|media }}" media="(min-width: 768px)">
+                        <img src="{{ banner.image|media }}"
+                             alt="Державні послуги онлайн"
+                             class="banner-top-v2_item-image img-fluid" loading=lazy>
+                    </picture>
+                    {% endfor %}
+                </div>
+                <div class="banner-top-v2_item-mobile">
+                    {% for banner in data.bannerMobile %}
+                    <picture>
+                        <source src="{{ banner.image|media }}" media="(max-width: 767px)">
+                        <img src="{{ banner.image|media }}"
+                             alt="Державні послуги онлайн"
+                             class="banner-top-v2_item-image img-fluid" loading=lazy>
+                    </picture>
+                    {% endfor %}
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}

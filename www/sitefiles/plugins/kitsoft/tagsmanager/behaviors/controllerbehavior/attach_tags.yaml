@@ -1,0 +1,4 @@
+fields:
+  tags:
+    label: kitsoft.tagsmanager::lang.tag.name
+    type: checkboxlist

@@ -1,0 +1,32 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    revisionable_id:
+        label: Revisionable ID
+    type:
+        label: Тип
+        searchable: false
+        sortable: false
+    user:
+        label: Користувач
+        relation: user
+        select: login
+        searchable: true
+
+    fieldTitle:
+        label: Поле
+        searchable: false
+        sortable: false
+
+    action:
+        label: Дія
+        type: partial
+        path: $/kitsoft/revisions/controllers/revisions/_action.htm
+        searchable: false
+        sortable: false
+
+    created_at:
+        label: Дата
+        type: timesince

@@ -1,0 +1,13 @@
+templates: home
+
+title: Життєві ситуації
+tabs:
+  fields:
+    fields[title]:
+      label: Заголовок
+      tab: Головне
+    fields[description]:
+      label: Описання
+      type: textarea
+      size: small
+      tab: Головне

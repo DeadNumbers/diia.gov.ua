@@ -1,0 +1,24 @@
+<div class="gov-news">
+    {% for post in posts %}
+        {% if loop.index % 4 == 1 %}
+            <div class="col-md-4">
+            <ul class="news-list">
+        {% endif %}
+        <li>
+            {% if post.featured_images.count %}
+                <a href="{{ post.url|url }}" class="preview"
+                   style="background-image: url({{ post.featured_images|first.path|resize(680,480) }});"></a>
+            {% endif %}
+            <div class="date">
+                {{ post.published_at|date('H:i') }},
+                {{ post.published_at|date('d F Y')}}
+            </div>
+            <a href="{{ post.url|url }}"
+               class="title"><span>{{ post.title }}</span></a>
+        </li>
+        {% if loop.index % 4 == 0 or loop.last %}
+            </ul>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

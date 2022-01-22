@@ -1,0 +1,69 @@
+<!-- news last block (+) -->
+<div class="news__last">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="lastnews">
+                <h2 class="block-title">
+                    {{ 'Останні новини'|_ }}
+                </h2>
+                <div class="row">
+                    {% for lastPost in last_news %}
+                        {% if loop.first %}
+                            <div class="col-md-5">
+                                <div class="lastnews__main">
+                                    {% if lastPost.featured_images.count %}
+                                        <div class="background"
+                                             style="background-image:url({{ lastPost.featured_images|first.path }})">
+                                        </div>
+                                    {% else %}
+                                        <div class="background"></div>
+                                    {% endif %}
+                                    <div class="background-filter"></div>
+                                    <div class="text">
+                                        <a href="{{ lastPost.url|url }}" class="title white">
+                                            <span>
+                                               {{ lastPost.title }}
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="addition">
+                                        <div class="time">
+                                            {{ lastPost.published_at|date('d F, H:i') }}
+                                        </div>
+                                        {% if post.categories.count %}
+                                            {% for category in post.categories %}
+                                                <a href="{{ category.url|url }}" class="tag">{{ category.name }}</a>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% if lastPosts.count > 1 %}
+                                <div class="col-md-7"><ul class="lastnews__list">
+                            {% endif %}
+                        {% else %}
+                            <li>
+                                <span class="clearfix">
+                                    <span class="date pull-left">
+                                        <span>{{ lastPost.published_at|date('H:i') }}</span>, <span>{{ lastPost.published_at|date('d F') }}</span>
+                                    </span>
+                                    {% if post.categories.count %}
+                                        {% for category in post.categories %}
+                                            <a href="{{ category.url|url }}" class="tag">{{ category.name }}</a>
+                                        {% endfor %}
+                                    {% endif %}
+                                </span>
+                                <a href="{{ lastPost.url|url }}"
+                                   class="text">{{ lastPost.title }}</a>
+                            </li>
+                            {% if loop.last %}
+                                </ul></div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /news last block -->

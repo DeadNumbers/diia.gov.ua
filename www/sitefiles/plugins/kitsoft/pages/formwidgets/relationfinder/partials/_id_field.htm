@@ -1,0 +1,21 @@
+<?php $relation = ($this->object->relationFinderType == 'object'); ?>
+
+<div
+    class="relationfinder-object"
+    <?php if (!$relation) : ?>style="display: none"<?php endif ?>
+>
+    <label for="<?= $this->getId('id'); ?>">Об'єкт</label>
+    <select
+        id="<?= $this->getId('id'); ?>"
+        name="<?= $this->getInputName('id'); ?>"
+        class='form-control custom-select'
+        data-handler='onGetModelsOptions'
+        data-minimum-input-length='1'
+        data-ajax--delay='300'
+        data-request-data="model: '<?= addslashes($model); ?>'"
+    >
+        <?php if ($relation) : ?>
+            <option value="<?= $this->object->id; ?>" selected="true"><?= $this->object->relationTitle; ?></option>
+        <?php endif ?>
+    </select>
+</div>

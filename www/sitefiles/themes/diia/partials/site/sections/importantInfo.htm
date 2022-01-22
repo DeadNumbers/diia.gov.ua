@@ -1,0 +1,4 @@
+{% for item in data.items %}
+  <div class="important-info">{{ item.importantly }}</div>
+  {{ item.additionalInfo|raw }}
+{% endfor %}

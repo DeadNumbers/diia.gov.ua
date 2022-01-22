@@ -1,0 +1,86 @@
+<?php $mapId = $this->getId('map'); ?>
+
+<div
+    id="<?= $this->getId(); ?>"
+    class="field-openstreetmap-place">
+    <div id="<?= $mapId; ?>" style="height: 300px; width: 100%"></div>
+    <input
+        type="hidden"
+        name="<?= $this->getName('latitude'); ?>"
+        id="<?= $this->getId('latitude'); ?>"
+        value="<?= $latitude; ?>"
+        class="form-control"
+    />
+    <input
+        type="hidden"
+        name="<?= $this->getName('longitude'); ?>"
+        id="<?= $this->getId('longitude'); ?>"
+        value="<?= $longitude; ?>"
+        class="form-control"
+    />
+    <input
+        type="hidden"
+        name="<?= $this->getName('zoom'); ?>"
+        id="<?= $this->getId('zoom'); ?>"
+        value="<?= $zoom; ?>"
+        class="form-control"
+    />
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+       function setFormValueZoom(zoom) {
+            if ( zoom ) {
+                document.getElementById(zoomInputId).setAttribute('value', zoom);
+            }
+
+        }
+
+       function setFormValueCoords(item) {
+            if ( item ) {
+                document.getElementById(latitudeInputId).setAttribute('value', item.lat);
+                document.getElementById(longitudeInputId).setAttribute('value', item.lng);
+            }
+        }
+
+        var mapId = '<?= $mapId; ?>';
+        var tabItem = $('#' + mapId).parents('.control-tabs').find('.nav-tabs > li');
+
+        var latitudeInputId = '<?= $this->getId('latitude'); ?>';
+        var longitudeInputId = '<?= $this->getId('longitude'); ?>';
+        var zoomInputId = '<?= $this->getId('zoom'); ?>';
+
+        var latitude = '<?= $latitude; ?>';
+        var longitude = '<?= $longitude; ?>';
+        var zoom = '<?= $zoom; ?>';
+
+        var MAP = L.map(mapId);
+        var MARKER = L.marker([latitude, longitude]);
+        var LAYER = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            id: 'mapbox.streets'
+        });
+
+        MAP.setView([latitude, longitude], zoom);
+        MARKER.addTo(MAP);
+        LAYER.addTo(MAP);
+
+        MAP.on('zoom', function() {
+            var CurrentZoom = MAP.getZoom();
+            setFormValueZoom(CurrentZoom);
+        });
+        MAP.on('click', function(e) {
+            MARKER.setLatLng(e.latlng);
+            setFormValueCoords(e.latlng);
+        });
+        MAP.on('resize', function() {
+            MAP.invalidateSize();
+        });
+        $(tabItem).on('click', function() {
+            setTimeout(function(){
+                MAP.invalidateSize(true);
+            },500);
+        });
+    })
+
+</script>

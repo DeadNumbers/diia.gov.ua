@@ -1,0 +1,12 @@
+<?php if ($record->parent) : ?>
+	<span><?= $value; ?></span>
+	<br>
+	<i>
+	Розташування:<br> - <span><?= $record->locationPath; ?></span>
+	</i>
+<?php else : ?>
+	<?php for($i = 0; $i < $record->nest_depth; $i++) : ?>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<?php endfor ?>
+	<span><?= $value; ?></span>
+<?php endif ?>

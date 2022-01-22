@@ -1,0 +1,70 @@
+1.0.1: First version of Pages
+1.0.2:
+  - Create Pages Table
+  - create_pages_table.php
+1.0.3:
+  - Create Menus And Menu Items Tables
+  - create_menus_table.php
+  - create_menu_items_table.php
+1.0.4:
+  - Create components tables
+  - create_components_table.php
+1.0.5:
+  - Create partials table
+  - create_partials_table.php
+1.0.6:
+  - Create sections table
+  - create_sections_table.php
+1.0.7:
+  - Create entities table
+  - create_entities_table.php
+1.0.8:
+  - Alter sections table, add title
+  - 2018_01_11_alter_sections_table.php
+1.0.9:
+  - Alter pages table, add published_at
+  - 2018_02_28_add_published_at_column.php
+1.0.10:
+  - Create pages permissions table
+  - 2018_03_01_create_pages_permissions_table.php
+1.0.11:
+  - Publish all sections
+  - 2018_06_26_publish_all_sections.php
+1.0.12:
+  - Alter Table pages - trashable & archivable
+  - 2018_07_16_alter_table_pages_trash_archive.php
+1.0.13:
+  - Alter Table System Files - column field_type
+  - 2018_12_13_alter_table_system_files.php
+1.0.14:
+  - Alter Table Pages, add is_system column
+  - 2019_01_14_alter_table_pages_is_system.php
+1.0.15:
+  - Copy created_at to published_at if published_at is empty for pages (DELETED)
+1.0.16:
+  - Created user granted permissions table
+  - 2020_01_15_create_pages_permissions_granted_table.php
+1.1.0:
+  - 2020-03-17. Added content faker
+1.2.0:
+  - 2020-03-26. Add published option for components. Set published column values - true.
+  - 2020_03_26_alter_components_table_add_published.php
+1.2.1:
+  - 2020-03-27. Fix slug generation in content faker
+1.2.2:
+  - 2020-03-31. Fix RelationFinder title in adminpanel
+1.2.3:
+  - 2020-04-06. Fix installer, add published param for components
+1.2.4:
+  - 2020-04-07. NestedTree bug with children delete events. Add locking to delete pages, which have childrens.
+1.3.0:
+  - 2020-04-09. Add searchable param to pages
+  - 2020_04_09_alter_pages_table_add_searchable.php
+1.3.1:
+  - 2020-04-13. Disable pages with sluggable segments [:id/:slug/etc] in pages controller.
+1.3.2:
+  - 2020-05-07. Extend fields for component extension. Refactor relation field for components and sections.
+1.4.0:
+  - 2020-05-12. Add components list config for any layouts, unique by themes.
+1.4.1:
+  - 2020-05-15. Implement [Settings] model by revisons.

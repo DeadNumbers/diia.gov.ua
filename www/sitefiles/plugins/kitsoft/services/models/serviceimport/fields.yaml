@@ -1,0 +1,10 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    is_published:
+        label: Published
+        type: checkbox
+        default: false
+        span: left

@@ -1,0 +1,29 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        sortable: false
+    text:
+        label: Option
+        searchable: true
+        sortable: false
+    action:
+        label: Наступний крок
+        sortable: false
+    question:
+        label: Наступне запитання
+        relation: question
+        select: title
+        sortable: false
+    answer:
+        label: Відповідь
+        relation: answer
+        select: title
+        sortable: false
+    votes:
+        label: Статистика
+        sortable: false

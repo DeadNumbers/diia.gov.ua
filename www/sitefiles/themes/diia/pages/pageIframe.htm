@@ -1,0 +1,28 @@
+layout = "default"
+sections = true
+components = false
+hideContent = false
+
+[page]
+==
+{% set page = page.data %}
+
+<section class="content-wrapper">
+	<div class="row">
+		<div class="col-md-9">
+			{% if page.content|length > 0 %}
+				<div class="editor-content">
+					{{ page.content|raw }}
+				</div>
+			{% endif %}
+
+			{% for section in page.raw_sections if section.published %}
+				{% partial 'site/sections/' ~ section.name data = section.fields %}
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

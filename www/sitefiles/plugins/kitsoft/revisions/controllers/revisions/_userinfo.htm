@@ -1,0 +1,16 @@
+<?php if($model->user) : ?>
+	<ul>
+		<li>
+			<strong>Login:</strong> <a href="<?= Backend::url("backend/users/update/{$model->user->id}") ;?>" target="_blank"><?= $model->user->login; ?>&nbsp;<i class="icon-external-link"></i></a>
+		</li>
+		<li>
+			<strong>First Name:</strong> <?= $model->user->first_name; ?>
+		</li>
+		<li>
+			<strong>Last Name:</strong> <?= $model->user->last_name; ?>
+		</li>
+		<li>
+			<strong>Email:</strong> <a href="mailto:<?= $model->user->email; ?>"><?= $model->user->email; ?></a>
+		</li>
+	</ul>
+<?php endif ?>

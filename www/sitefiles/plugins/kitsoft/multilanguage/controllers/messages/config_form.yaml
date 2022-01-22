@@ -1,0 +1,7 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+form: ~/plugins/kitsoft/multilanguage/models/message/fields.yaml
+modelClass: KitSoft\MultiLanguage\Models\Message
+defaultRedirect: kitsoft/multilanguage/messages

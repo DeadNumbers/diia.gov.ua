@@ -1,0 +1,50 @@
+title = "404"
+layout = "404"
+url = "404"
+[menu]
+code = "header"
+==
+
+{% set header = partial('header').fields %}
+
+<body class="not-found">
+    <div class="header_menu">
+        {% partial 'menu/header' items = menu.menuItems class = 'header-menu' %}
+        <div class="header_sign-mob">
+            <a href="{{ header.registerLink|relationFinder.url|url }}" class="btn btn_register" {% if header.registerLink.target %}target="_blank" {% endif %}>{{ header.registerLink|relationFinder.title }}</a>
+            <a href="{{ header.loginLink|relationFinder.url|url }}" class="btn_sign js-btn_sign" {% if header.loginLink.target %}target="_blank" {% endif %}>{{ header.loginLink|relationFinder.title }}</a>
+        </div>
+    </div>
+    <div class="header_find">
+        <form class="form form-search-m" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-mobile">
+            <button class="btn form-search-m_btn"></button>
+            <input type="search" name="key" class="input form-search-m_input" placeholder="{{ 'Пошук'|_ }}" autocomplete="off">
+            <div class="form-search-m_close"></div>
+        </form>
+        <div class="form-search-m_error" id="form-search-mobile-error"></div>
+    </div>
+    <div class="header_toggle header_toggle-404">
+        <div class="header_toggle-icon js-header_toggle-icon"></div>
+    </div>
+    <div class="container not-found_content">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ '/'|url }}" class="not-found_link">
+                    <div class="not-found_icon">
+                        <div class="not-found_icon-gerb"></div>
+                        <div class="not-found_icon-diya"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12">
+                <div class="not-found_error">
+                    <div class="not-found_error-code">404</div>
+                    <div class="not-found_error-description">{{ "Такої сторінки не існує"|_ }}</div>
+                    <div class="not-found_error-proposition">{{ "Схоже, це неправильна адреса, або сторінка переїхала"|_ }}</div>
+                    <a href="{{ '/'|url }}" class="btn btn-fill">{{ "На головну"|_ }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-full-screen"></div>
+</body>

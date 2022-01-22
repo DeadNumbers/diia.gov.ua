@@ -1,0 +1,12 @@
+<br>
+<?php foreach ($value as $row) : ?>
+	<p><b><?= array_get($row, 'title'); ?></b></p>
+	<?php foreach (array_get($row, 'options', []) as $row) : ?>
+		<p>
+			&mdash;&nbsp;<?= array_get($row, 'text'); ?>
+			<?php if ($comment = array_get($row, 'comment')) : ?>
+				[<i><?= $comment; ?></i>]
+			<?php endif ?>
+		</p>
+	<?php endforeach ?>
+<?php endforeach ?>

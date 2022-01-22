@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        status:
+            label: kitsoft.core::lang.app.statusLabel
+            type: switch
+            tab: kitsoft.core::lang.app.mainTab
+        code:
+            label: kitsoft.core::lang.app.codeLabel
+            type: codeeditor
+            language: txt
+            tab: kitsoft.core::lang.app.mainTab
+            trigger:
+                action: show
+                field: status
+                condition: checked
+        description:
+            type: partial
+            path: $/kitsoft/core/partials/codeDescription.htm
+            tab: kitsoft.core::lang.app.descriptionTab

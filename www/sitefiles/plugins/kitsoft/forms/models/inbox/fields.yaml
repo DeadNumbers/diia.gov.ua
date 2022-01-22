@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: kitsoft.forms::lang.inbox.fields.id
+        disabled: true
+        span: auto
+    created_at:
+        label: kitsoft.forms::lang.inbox.fields.created_at
+        disabled: true
+        span: auto
+    status_label:
+        label: kitsoft.forms::lang.inbox.fields.status_label
+        span: auto
+    ip:
+        label: kitsoft.forms::lang.inbox.fields.ip
+        disabled: true
+        span: auto
+    fields:
+        label: kitsoft.forms::lang.inbox.fields.fields
+        type: partial
+        path: "$/kitsoft/forms/controllers/inboxes/_fields_field.htm"
+    files:
+        label: kitsoft.forms::lang.inbox.fields.files
+        type: partial

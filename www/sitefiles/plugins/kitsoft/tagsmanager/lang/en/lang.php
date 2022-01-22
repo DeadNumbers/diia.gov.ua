@@ -1,0 +1,36 @@
+<?php
+
+return [
+    'tag' => [
+        'caption' => 'Caption',
+        'slug' => 'Slug',
+        'name' => 'Tags',
+        'tagmanager' => 'Tags Manager',
+        'tab_manage' => 'Manage',
+        'tags' => 'Tags',
+        'saving' => 'Saving',
+        'save' => 'Save',
+        'save_and_close' => 'Save and close',
+        'deleting' => 'Deleting',
+        'delete_confirm' => 'Delete?',
+        'or' => 'or',
+        'cancel' => 'Cancel',
+        'return_to_list' => 'Return to list',
+        'new_tag' => 'New tag',
+        'manage_tags' => 'Manage tags',
+        'creating' => 'Creating',
+        'create' => 'Create',
+        'create_and_close' => 'Create and close',
+        'record_name' => 'Tag',
+        'create_title' => 'Creting',
+        'update_title' => 'Updating',
+        'preview_title' => 'Preview',
+        'icon' => 'Icon',
+    ],
+    'access' => [
+        'tab' => 'Tag Manager',
+        'label' => 'Access to manage tags',
+    ],
+    'confirm_update_slugs' => 'Confirm update slugs?',
+    'generate_slugs' => 'Generate Slugs',
+];

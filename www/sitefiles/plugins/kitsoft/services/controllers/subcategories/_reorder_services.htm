@@ -1,0 +1,42 @@
+<div class="field-checkboxlistreorder" style="padding: 20px 10px;border-radius: 3px; background: #fff; border: 1px solid #e2e2e2;">
+	<!-- Reorder List -->
+	<form method="POST">
+	    <div
+	        id="reorderTreeList"
+	        class="control-treelist"
+	        data-control="treelist"
+	        data-nested="0"
+	        data-handle="> li > .record > a.move"
+	        data-stripe-load-indicator>
+
+	        <?php if ($model->services->count()) : ?>
+	            <ol id="reorderRecords">
+	                <?php foreach ($model->services as $row): ?>
+
+					    <li data-record-id="<?= $row->id; ?>"
+					        data-record-sort-order="sort_order"
+					    >
+					        <div class="record">
+					            <a href="javascript:;" class="move"></a>
+					            <span>
+					            	<a href="<?= Backend::url('kitsoft/services/services/update/' . $row->id); ?>" target="_blank">
+					            		<?= $row->title; ?>
+					            	</a>
+					            </span>
+					            <input name="reorder_services_ids[]" type="hidden" value="<?= $row->id; ?>" />
+					        </div>				     
+					    </li>
+
+					<?php endforeach ?>
+
+	            </ol>
+	        <?php else: ?>
+	            <p><?= Lang::get('backend::lang.reorder.no_records'); ?></p>
+	        <?php endif ?>
+	    </div>
+	</form>
+</div>
+
+<script>
+    $.oc.reorderBehavior.initSorting('simple')
+</script>

@@ -1,0 +1,29 @@
+.field-multilanguage {
+  position: relative;
+}
+.field-multilanguage .ml-btn {
+  background: transparent;
+  position: absolute;
+  color: #7b7b7b;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  width: 44px;
+  padding-right: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  z-index: 2;
+}
+.field-multilanguage .ml-btn:hover {
+  color: #555555;
+}
+.field-multilanguage.field-multilanguage-text .form-control {
+  padding-right: 44px;
+}
+.field-multilanguage.field-multilanguage-text .ml-btn {
+  right: 4px;
+  top: 50%;
+  margin-top: -44px;
+  height: 88px;
+}

@@ -1,0 +1,36 @@
+layout = "simple"
+components = false
+sections = true
+hideContent = false
+deletable = true
+
+[page]
+==
+<div class="privacy_body">
+    <div class="privacy_container">
+        <div class="privacy_header">
+            <div class="privacy_header-link-w">
+                <a href="{{ '/'|url }}" class="privacy_header-link">
+                    <img src="{{ 'assets/images/mail-logo-reverse.png'|theme }}" alt="logo" class="privacy_header-img img-fluid">
+                </a>
+            </div>
+            <div class="privacy_header-title">
+                {{ page.data.title }}
+            </div>
+        </div>
+        <div class="privacy_content">
+            <div class="editor-content">
+                {{ page.data.content|raw }}
+
+                {% for section in page.data.raw_sections if section.published %}
+                    {% partial 'site/sections/' ~ section.name data = section.fields %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

@@ -1,0 +1,15 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import subscribers
+    modelClass: KitSoft\Digest\Models\SubscriberImport
+    list: $/kitsoft/digest/models/subscriberimport/columns.yaml
+    form: $/kitsoft/digest/models/subscriberimport/fields.yaml
+    redirect: kitsoft/digest/subscribers
+
+export:
+    title: Export subscribers
+    modelClass: KitSoft\Digest\Models\SubscriberExport
+    list: $/kitsoft/digest/models/subscriberexport/columns.yaml

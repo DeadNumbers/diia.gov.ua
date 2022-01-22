@@ -1,0 +1,59 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: kitsoft.taxsystems::lang.entrepreneur_question.title
+        type: text
+        span: left
+    slug:
+        label: kitsoft.taxsystems::lang.entrepreneur_question.slug
+        span: right
+        preset:
+            field: title
+            type: slug
+
+tabs:
+    fields:
+      content:
+          label: kitsoft.taxsystems::lang.entrepreneur_question.question
+          type: richeditor
+          tab: kitsoft.taxsystems::lang.entrepreneur_question.main
+
+      description:
+          label: kitsoft.taxsystems::lang.entrepreneur_question.description
+          type: textarea
+          tab: kitsoft.taxsystems::lang.entrepreneur_question.main
+          size: small
+
+      entrepreneur_options:
+          type: partial
+          tab: kitsoft.taxsystems::lang.entrepreneur_question.answer
+
+secondaryTabs:
+    fields:
+        published:
+            label: kitsoft.taxsystems::lang.entrepreneur_question.published
+            type: checkbox
+        is_required:
+            label: kitsoft.taxsystems::lang.entrepreneur_question.is_required
+            type: checkbox
+            default: true
+        type:
+            label: kitsoft.taxsystems::lang.entrepreneur_question.type
+            type: balloon-selector
+            options:
+              radio: kitsoft.taxsystems::lang.entrepreneur_question.radio
+              checkbox: kitsoft.taxsystems::lang.entrepreneur_question.checkbox
+            default: radio
+        depends_on_question:
+            label: kitsoft.taxsystems::lang.entrepreneur_question.depends_on_question
+            type: relation
+            nameFrom: title
+            emptyOption: -- Оберіть запитання --
+        depends_on_option:
+            label: kitsoft.taxsystems::lang.entrepreneur_question.depends_on_option
+            type: dropdown
+            emptyOption: -- Оберіть відповідь --
+            dependsOn: depends_on_question

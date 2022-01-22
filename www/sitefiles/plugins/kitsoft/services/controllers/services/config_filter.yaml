@@ -1,0 +1,25 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    category:
+        label: kitsoft.services::lang.categories.title
+        modelClass: KitSoft\Services\Models\Category
+        nameFrom: name
+        scope: filterCategories
+
+    subcategory:
+        label: kitsoft.services::lang.subcategories.title
+        modelClass: KitSoft\Services\Models\SubCategory
+        nameFrom: name
+        scope: filterSubCategories
+
+    published:
+        label: kitsoft.pages::lang.page.fields.published
+        type: switch
+        conditions:
+            - published <> '1'
+            - published = '1'
+

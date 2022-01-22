@@ -1,0 +1,28 @@
+<ol id="reorderRecords">
+	<?php foreach ($items as $row): ?>
+
+	    <li data-record-id="<?= $row->id; ?>"
+	        data-record-sort-order="sort_order"
+	    >
+	        <div class="record">
+	            <a href="javascript:;" class="move"></a>
+	            <span>
+	            	<a href="<?= Backend::url('kitsoft/services/subcategories/update/' . $row->id); ?>" target="_blank">
+	            		<?= $row->name; ?>
+	            	</a>
+	            </span>
+	            <span class="pull-right">
+	            	<?= $row->services->count(); ?>
+	            </span>
+	            <input name="reorder_subcategories_ids[]" type="hidden" value="<?= $row->id; ?>" />
+	        </div>
+
+	        <?php if ($row->children->count()) : ?>
+	        	<?= $this->makePartial('reorder_subcategories_records', ['items' => $row->children]); ?>
+	        <?php else : ?>
+	        	<ol></ol>
+	        <?php endif ?>
+	    </li>
+
+	<?php endforeach ?>
+</ol>

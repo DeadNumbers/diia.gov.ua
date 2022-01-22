@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Service
+
+# Model Form Field configuration
+form: $/kitsoft/services/models/service/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Services\Models\Service
+
+# Default redirect location
+defaultRedirect: kitsoft/services/services
+
+# Create page
+create:
+    title: kitsoft.services::lang.services.create_service
+    redirect: kitsoft/services/services/update/:id
+    redirectClose: kitsoft/services/services
+
+# Update page
+update:
+    title: kitsoft.services::lang.services.edit_service
+    redirect: kitsoft/services/services
+    redirectClose: kitsoft/services/services
+
+# Preview page
+preview:
+    title: Preview Service

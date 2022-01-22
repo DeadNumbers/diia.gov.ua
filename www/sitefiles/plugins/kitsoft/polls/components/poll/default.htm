@@ -1,0 +1,16 @@
+<div id="poll">
+    <h3 class="main_headline">
+        {{ __SELF__.poll.title }}
+    </h3>
+
+    <div class="stepper">
+        <div class="headline">
+            {{ __SELF__.poll.description|raw }}
+        </div>
+
+        <div id="poll-form-step">
+    	    {% partial 'poll::form' %}
+    	</div>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+templates: lifesituation
+
+title: Контент
+
+tabs:
+  fields:
+    fields[content]:
+      label: Контент
+      type: richeditor
+    fields[items]:
+      label: Items
+      type: repeater
+      tab: Items
+      form:
+        fields:
+          title:
+            label: Заголовок
+          text:
+            label: Текст
+            type: richeditor
+            size: small

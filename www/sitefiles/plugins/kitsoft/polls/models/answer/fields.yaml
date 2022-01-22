@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: Заголовок
+tabs:
+  fields:
+    text:
+      label: Відповідь
+      type: richeditor
+      tab: Головне
+    departments:
+      tab: Департаменти
+      type: relation
+      nameFrom: title

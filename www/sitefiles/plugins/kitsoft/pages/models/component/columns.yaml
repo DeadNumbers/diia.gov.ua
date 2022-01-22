@@ -1,0 +1,31 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+  id:
+    label: ID
+    sortable: false
+
+  icon:
+   label: ''
+   type: partial
+   path: $/kitsoft/pages/controllers/components/columns/__icon_field.php
+   sortable: false
+
+  name:
+    label: kitsoft.pages::lang.components.fields.name
+    width: 50%
+    sortable: false
+
+  alias:
+    label: kitsoft.pages::lang.components.fields.alias
+    width: 45%
+    sortable: false
+
+  published:
+    label: Опубліковано
+    width: 5%
+    type: switch
+    sortable: false

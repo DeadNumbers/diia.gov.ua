@@ -1,0 +1,19 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: kitsoft.pages::lang.menuitems.fields.title
+        type: partial
+        path: ~/plugins/kitsoft/pages/models/menuitem/_title_column.htm
+        searchable: true
+        sortable: false
+    isHidden:
+      label: kitsoft.pages::lang.menuitems.fields.isHidden
+      type: switch
+      sortable: false
+    type:
+        label: kitsoft.pages::lang.menuitems.fields.type
+        searchable: true
+        sortable: false

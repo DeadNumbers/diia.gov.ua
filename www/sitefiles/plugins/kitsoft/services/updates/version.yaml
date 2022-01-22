@@ -1,0 +1,52 @@
+1.0.1:
+  - Second version of Services
+  - create_categories_table.php
+  - create_sub_categories_table.php
+  - create_services_table.php
+1.0.2:
+  - Adding SEO fields
+  - alter_table_services_add_seo_fields.php
+1.0.3:
+  - Alter categories table add is top columns
+  - 2019_03_19_alter_categories_table.php
+1.0.4:
+  - Alter Table services, add action_hits column
+  - 2019_03_28_alter_table_services_action_hits.php
+1.0.5:
+  - Alter Subcategories Categories Table, add parent_id pivot column
+  - 2019_10_11_alter_subcategories_categories_table.php
+1.0.6:
+  - Create Entities Table
+  - 2019_10_11_create_services_entities_table.php
+1.0.7:
+  - Move Content to sections
+  - 2019_10_16_move_content_to_section.php
+1.0.8:
+  - Add fields to subcategories table
+  - 2019_11_04_add_fields_for_subcategories.php
+1.1.0:
+  - Create Life Situations Table
+  - create_life_situations_table.php
+1.1.1:
+  - Add translation (uk and en)
+1.2.0:
+  - 2020-03-19. Added content faker
+1.2.1:
+  - 2020-03-20. fixed translate
+1.2.2:
+  - 2020-03-27. Fix slug generation in content faker
+1.3.0:
+  - 2020-03-30. Send service info to email
+1.3.1:
+  - 2020-04-01. Fix subcategory query params
+1.3.2:
+  - 2020-04-01. Add subcategory getUrl and getFullUrl functions
+1.3.3:
+  - 2020-04-22. Service, remove field login_required, add link_description
+1.3.4:
+  - 2020-04-27. Categories component, fix collapsed serices limit
+1.4.0:
+  - 2020-05-07. Add manual services setter possibility for categories component.
+1.4.1:
+  - 2020-05-15. Implement [Settings] model by revisons.
+  

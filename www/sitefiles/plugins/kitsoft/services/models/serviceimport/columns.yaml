@@ -1,0 +1,17 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+    title: title
+    slug: slug
+    content: content
+    description: description
+    type: type
+    is_top: is_top
+    published: published
+    hits: hits
+    created_at: created_at
+    updated_at: updated_at
+    subcategories_names: subcategories
+    related_services_slugs: related_services

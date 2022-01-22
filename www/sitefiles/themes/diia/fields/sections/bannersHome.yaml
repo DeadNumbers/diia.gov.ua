@@ -1,0 +1,30 @@
+templates: home
+title: Банери для завантаження
+
+tabs:
+  fields:
+    fields[link]:
+      label: Посилання
+      tab: Головне
+    fields[bannerPc]:
+      tab: Банер Десктоп
+      type: repeater
+      maxItems: 1
+      prompt: Додати банер
+      form:
+        fields:
+          image:
+            label: Зображення
+            type: mediafinder
+            mode: image
+    fields[bannerMobile]:
+      tab: Банер Мобільний
+      type: repeater
+      maxItems: 1
+      prompt: Додати банер
+      form:
+        fields:
+          image:
+            label: Зображення
+            type: mediafinder
+            mode: image

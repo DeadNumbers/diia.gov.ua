@@ -1,0 +1,94 @@
+.scrollbar {
+	scrollbar-color: $black $white;
+	scrollbar-width: thin;
+
+	/* 1 - скроллбар */
+	&::-webkit-scrollbar {
+		// -webkit-appearance: none;
+		width: 10px;
+		height: 10px;
+		background-color: #f5f5f5;
+		border: 2px solid transparent;
+
+		&:horizontal {
+		}
+	}
+
+	/* 2 - кнопка */
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+
+	/* 3 - трек */
+	&::-webkit-scrollbar-track {
+		border-radius: 0px;
+		width: 10px;
+		background: $white;
+		border: none;
+	}
+
+	/* 4 - видимая часть трека */
+	&::-webkit-scrollbar-track-piece {
+	}
+
+	/* 5 - ползунок */
+	&::-webkit-scrollbar-thumb {
+		background: $black;
+		background-clip: padding-box;
+		border: 2px solid transparent;
+		border-radius: 10px;
+		height: 50px;
+
+		&:hover {
+		}
+
+		&:active {
+		}
+	}
+
+	/* 6 - уголок */
+	&::-webkit-scrollbar-corner {
+		display: none;
+	}
+
+	/* 7 - изменение размеров */
+	&::-webkit-resizer {
+	}
+
+	&.scrollbar-gray {
+	}
+
+	&.scrollbar-bg-none {
+		&::-webkit-scrollbar {
+			background: transparent;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
+		}
+	}
+
+	&-thin {
+		&::-webkit-scrollbar {
+			width: 3px;
+			height: 3px;
+			border: none;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border: none;
+		}
+	}
+
+	/*&-html {
+		&::-webkit-scrollbar-thumb {
+			&:hover {
+				background-color: $blue;
+				border: 1px solid transparent;
+			}
+
+			&:active {
+			}
+		}
+	}*/
+}

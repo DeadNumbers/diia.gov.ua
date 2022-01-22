@@ -1,0 +1,142 @@
+1573817019a:1:{s:26:"site/sections/newsLast.htm";a:5:{s:8:"fileName";s:26:"site/sections/newsLast.htm";s:7:"content";s:3146:"{# the page must has newsLast component #}
+
+{% if data and newsLast.posts|length %}
+<section class="main-item_news-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="article-level-1 text-white">{{ data.title }}</div>
+            </div>
+            <div class="col-6">
+                <div class="wrap-all-link">
+                    <a href="{{ getPageByTemplate('posts').url|url }}" class="wrap-all-link_link-white">
+                        <span>{{ data.link.title }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                {% for item in newsLast.posts|slice(0,1) %}
+                <div class="main-item_news-top">
+                    {% if item.featured_images|length %}
+                        <div class="main-item_news-preview" style="background-image: url('{{ item.featured_images|first.path }}')">
+                        </div>
+                    {% else %}
+                        <div class="main-item_news-preview" style="background-image: url('{{ 'assets/images/main_news-preview.jpg'|theme }}');">
+                        </div>
+                    {% endif %}
+                    <div class="main-item_news-content">
+                        {% if item.published_at %}
+                        <div class="main-item_news-content-date">
+                            {{ item.published_at|date('d.m.Y') }}
+                        </div>
+                        {% else %}
+                        <div class="main-item_news-content-date">
+                            {{ item.created_at|date('d.m.Y') }}
+                        </div>
+                        {% endif %}
+                        <a href="{{ item.url|url }}" class="main-item_news-content-title">
+                            {{ item.title }}
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    {% for item in newsLast.posts|slice(1,5) %}
+                    <div class="col-6">
+                        <div class="main-item">
+                            <div class="main-item_content">
+                                {% if item.published_at %}
+                                <div class="main-item_content-date">
+                                    {{ item.published_at|date('d.m.Y') }}
+                                </div>
+                                {% else %}
+                                <div class="main-item_content-date">
+                                    {{ item.created_at|date('d.m.Y') }}
+                                </div>
+                                {% endif %}
+                                <a href="{{ item.url|url }}" class="main-item_content-title">{{ item.title }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+";s:5:"mtime";i:1573667092;s:6:"markup";s:3145:"{# the page must has newsLast component #}
+
+{% if data and newsLast.posts|length %}
+<section class="main-item_news-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="article-level-1 text-white">{{ data.title }}</div>
+            </div>
+            <div class="col-6">
+                <div class="wrap-all-link">
+                    <a href="{{ getPageByTemplate('posts').url|url }}" class="wrap-all-link_link-white">
+                        <span>{{ data.link.title }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                {% for item in newsLast.posts|slice(0,1) %}
+                <div class="main-item_news-top">
+                    {% if item.featured_images|length %}
+                        <div class="main-item_news-preview" style="background-image: url('{{ item.featured_images|first.path }}')">
+                        </div>
+                    {% else %}
+                        <div class="main-item_news-preview" style="background-image: url('{{ 'assets/images/main_news-preview.jpg'|theme }}');">
+                        </div>
+                    {% endif %}
+                    <div class="main-item_news-content">
+                        {% if item.published_at %}
+                        <div class="main-item_news-content-date">
+                            {{ item.published_at|date('d.m.Y') }}
+                        </div>
+                        {% else %}
+                        <div class="main-item_news-content-date">
+                            {{ item.created_at|date('d.m.Y') }}
+                        </div>
+                        {% endif %}
+                        <a href="{{ item.url|url }}" class="main-item_news-content-title">
+                            {{ item.title }}
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    {% for item in newsLast.posts|slice(1,5) %}
+                    <div class="col-6">
+                        <div class="main-item">
+                            <div class="main-item_content">
+                                {% if item.published_at %}
+                                <div class="main-item_content-date">
+                                    {{ item.published_at|date('d.m.Y') }}
+                                </div>
+                                {% else %}
+                                <div class="main-item_content-date">
+                                    {{ item.created_at|date('d.m.Y') }}
+                                </div>
+                                {% endif %}
+                                <a href="{{ item.url|url }}" class="main-item_content-title">{{ item.title }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}";s:4:"code";N;}}

@@ -1,0 +1,22 @@
+scopes:
+
+    revisionable_type:
+        label: Тип
+        type: group
+        conditions: revisionable_type in (:filtered)
+        modelClass: KitSoft\Revisions\Models\Revision
+        options: getRevisionableTypeOptions
+
+    action:
+        label: Дія
+        type: group
+        conditions: action in (:filtered)
+        options:
+            create: Створено
+            update: Оновлено
+            delete: Видалено
+
+    created_at:
+        label: Date
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'

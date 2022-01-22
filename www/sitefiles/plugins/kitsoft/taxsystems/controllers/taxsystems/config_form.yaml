@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.taxsystems::lang.taxsystems.update_tax_system_pop_up
+
+# Model Form Field configuration
+form: $/kitsoft/taxsystems/models/taxsystem/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\TaxSystems\Models\TaxSystem
+
+# Default redirect location
+defaultRedirect: kitsoft/taxsystems/taxsystems
+
+# Create page
+create:
+    title: kitsoft.taxsystems::lang.taxsystems.create_tax_system
+    redirect: kitsoft/taxsystems/taxsystems/update/:id
+    redirectClose: kitsoft/taxsystems/taxsystems
+
+# Update page
+update:
+    title: kitsoft.taxsystems::lang.taxsystems.update_tax_system
+    redirect: kitsoft/taxsystems/taxsystems
+    redirectClose: kitsoft/taxsystems/taxsystems
+
+# Preview page
+preview:
+    title: Preview Tax System

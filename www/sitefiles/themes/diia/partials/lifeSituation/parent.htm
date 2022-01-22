@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row align-items-lg-center life-sit_type">
+		<div class="col-lg-6">
+			{% if lifeSituation.item.title %}
+				<div class="life-sit_type-title">{{ lifeSituation.item.title }}</div>
+			{% endif %}
+			{% if lifeSituation.item.excerpt %}
+				<div class="life-sit_type-excerpt">{{ lifeSituation.item.excerpt|raw }}</div>
+			{% endif %}
+		</div>
+		<div class="col-lg-6">
+			{% if lifeSituation.item.image.path %}
+				<img src="{{ lifeSituation.item.image.path }}" alt="{{ lifeSituation.item.title }}" class="img-fluid life-sit_type-img">
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{% if lifeSituation.item.childs|length %}
+<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+        	<div class="col-12">
+                {% for item in lifeSituation.item.childs %}
+                    <div class="service-acc_item">
+                        <a href="{{ item.url|url }}" class="service-acc_item-service">{{ item.title }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

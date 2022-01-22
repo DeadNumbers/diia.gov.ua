@@ -1,0 +1,30 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: kitsoft.multilanguage::lang.locales.fields.name
+        span: auto
+
+    label:
+        label: kitsoft.multilanguage::lang.locales.fields.label
+        span: auto
+
+    code:
+        label: kitsoft.multilanguage::lang.locales.fields.code
+        span: auto
+
+    is_enabled:
+        label: kitsoft.multilanguage::lang.locales.fields.is_enabled
+        type: checkbox
+        comment: kitsoft.multilanguage::lang.locales.fields.is_enabled_comment
+        commentHtml: true
+        span: left
+
+    is_default:
+        label: kitsoft.multilanguage::lang.locales.fields.is_default
+        type: checkbox
+        comment: kitsoft.multilanguage::lang.locales.fields.is_default_comment
+        commentHtml: true
+        span: auto

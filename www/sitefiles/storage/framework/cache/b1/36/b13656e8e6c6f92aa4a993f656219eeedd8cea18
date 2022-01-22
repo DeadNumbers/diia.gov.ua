@@ -1,0 +1,219 @@
+1573816982a:1:{s:22:"serviceSubCategory.htm";a:11:{s:8:"fileName";s:22:"serviceSubCategory.htm";s:7:"content";s:4139:"layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->serviceCategorySubcategory->subcategory->name;
+}
+?>
+==
+{% set breadcrumbs = page.breadcrumbs %}
+{% set link = serviceCategorySubcategory.subcategory.fields.link %}
+
+{% if breadcrumbs|length %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" href="{{ '/'|url }}">{{ "Головна"|_ }}</a>
+                        </li>
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" href="{{ getPageByTemplate('services').url|url }}">
+                            {{ "Послуги"|_ }}</a>
+                        </li>
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" 
+                                href="{{ getPageByTemplate('services').url|url }}/categories/{{ serviceCategorySubcategory.category.slug }}">
+                                {{ serviceCategorySubcategory.category.name }}
+                            </a>
+                        </li>
+                        <li class="breadcrumb_item active">
+                            {{ serviceCategorySubcategory.subcategory.name }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="article-level-1">{{ serviceCategorySubcategory.subcategory.name }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="article-level-1 mt-0">{{ "Послуги"|_ }}</div>
+            </div>
+        	<div class="col-12">
+        	{% for subcategory in serviceCategorySubcategory.subcategory.children %}
+                <div class="service-acc_item">
+                	{#  href="{{ (serviceCategorySubcategory.category.url ~ '/' ~ subcategory.slug)|url }}" #}
+                    <div class="service-acc_item-quest">
+						{{ subcategory.name }}
+                    </div>
+                    <div class="collapse service-acc_item-answer">
+                        <div class="service-acc_item-link">
+                        	{% for service in subcategory.services %}
+								<a href="{{ service.url|url }}">{{ service.title }}</a>
+							{% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+             </div>
+        </div>
+    </div>
+</section>
+
+<section>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-12">
+				<a href="{{ getPageByTemplate('services').url|url }}?subcategories={{ serviceCategorySubcategory.subcategory.slug }}">{{ 'Від А до Я'|_ }}</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% if link %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="service_not-found">
+                        <div class="service_not-found-title">
+                            {{ serviceCategorySubcategory.subcategory.fields.link_description|raw }}
+                        </div>
+                        <div class="service_not-found-btn">
+                            <a href="{{ link|relationFinder.url }}" class="btn btn_filled" {% if link.target %}target="_blank"{% endif %}>{{ link|relationFinder.title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/serviceitem.bundle.js']|theme }}"></script>
+{% endput %}";s:5:"mtime";i:1573755205;s:6:"markup";s:3925:"{% set breadcrumbs = page.breadcrumbs %}
+{% set link = serviceCategorySubcategory.subcategory.fields.link %}
+
+{% if breadcrumbs|length %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" href="{{ '/'|url }}">{{ "Головна"|_ }}</a>
+                        </li>
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" href="{{ getPageByTemplate('services').url|url }}">
+                            {{ "Послуги"|_ }}</a>
+                        </li>
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" 
+                                href="{{ getPageByTemplate('services').url|url }}/categories/{{ serviceCategorySubcategory.category.slug }}">
+                                {{ serviceCategorySubcategory.category.name }}
+                            </a>
+                        </li>
+                        <li class="breadcrumb_item active">
+                            {{ serviceCategorySubcategory.subcategory.name }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="article-level-1">{{ serviceCategorySubcategory.subcategory.name }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="article-level-1 mt-0">{{ "Послуги"|_ }}</div>
+            </div>
+        	<div class="col-12">
+        	{% for subcategory in serviceCategorySubcategory.subcategory.children %}
+                <div class="service-acc_item">
+                	{#  href="{{ (serviceCategorySubcategory.category.url ~ '/' ~ subcategory.slug)|url }}" #}
+                    <div class="service-acc_item-quest">
+						{{ subcategory.name }}
+                    </div>
+                    <div class="collapse service-acc_item-answer">
+                        <div class="service-acc_item-link">
+                        	{% for service in subcategory.services %}
+								<a href="{{ service.url|url }}">{{ service.title }}</a>
+							{% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+             </div>
+        </div>
+    </div>
+</section>
+
+<section>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-12">
+				<a href="{{ getPageByTemplate('services').url|url }}?subcategories={{ serviceCategorySubcategory.subcategory.slug }}">{{ 'Від А до Я'|_ }}</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% if link %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="service_not-found">
+                        <div class="service_not-found-title">
+                            {{ serviceCategorySubcategory.subcategory.fields.link_description|raw }}
+                        </div>
+                        <div class="service_not-found-btn">
+                            <a href="{{ link|relationFinder.url }}" class="btn btn_filled" {% if link.target %}target="_blank"{% endif %}>{{ link|relationFinder.title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/serviceitem.bundle.js']|theme }}"></script>
+{% endput %}";s:4:"code";s:99:"function onEnd()
+{
+    $this->page->title = $this->serviceCategorySubcategory->subcategory->name;
+}";s:6:"layout";s:7:"default";s:10:"components";s:1:"1";s:8:"sections";s:0:"";s:11:"hideContent";s:1:"1";s:9:"deletable";s:0:"";s:4:"page";a:0:{}}}

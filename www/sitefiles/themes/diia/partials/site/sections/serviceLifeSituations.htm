@@ -1,0 +1,40 @@
+{% if service.service.life_situations|length %}
+<section class="life-sit_service-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="life-sit_service-box">
+                    <div class="row">
+                        <div class="col-12">
+                            {% if data.title %}
+                            	<div class="life-sit_service-lead">{{ data.title }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% for item in service.service.life_situations|slice(0,1)  %}
+                    <div class="row life-sit_service-item">
+                        <div class="col-lg-6 col-xl-5">
+                            {% if item.title %}
+                            <div class="life-sit_service-title">{{ item.title }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-lg-6 col-xl-5">
+                            {% if item.excerpt %}
+                            <div class="life-sit_service-excerpt">
+                                {{ item.excerpt|raw }}
+                            </div>
+                            {% endif %}
+                            {% if item.url %}
+                            	<a href="{{ item.url|url }}" class="btn_default" target="_blank">
+                            		<span>{{ 'Дізнатись більше'|_ }}</span>
+                            	</a>
+                        	{% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

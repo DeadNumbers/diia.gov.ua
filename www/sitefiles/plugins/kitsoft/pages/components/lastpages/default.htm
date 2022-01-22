@@ -1,0 +1,26 @@
+<div class="col-lg-6 updates-all">
+    <h3 class="main_headline">{{ lastPages.label }}</h3>
+    <nav class="nav">
+        {% if lastPages.pages %}
+            <ul class="nav__list">
+                {% for page in lastPages.pages %}
+                    <li class="nav__item">
+                        <p class="nav__date">
+                            {% if page.published_at %}
+                                {{ page.published_at|date('d F Y') }}
+                            {% else %}
+                                {{ page.created_at|date('d F Y') }}
+                            {% endif %}
+                        </p>
+                        <a href="{{ page.slug|url }}" class="nav__link">{{ page.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </nav>
+    <div class="wrap-all-link">
+        <a href="{{ getPageByTemplate('timeline').url }}" class="all-news">
+            <span>{{ lastPages.buttonLabel }}</span>
+        </a>
+    </div>
+</div>

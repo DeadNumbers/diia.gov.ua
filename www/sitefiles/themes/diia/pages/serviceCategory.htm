@@ -1,0 +1,63 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->serviceCategory->item->name;
+}
+?>
+==
+{# custom breabcrumbs #}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb_item">
+                        <a class="breadcrumb_item-link" href="{{ '/'|url }}">{{ "Головна"|_ }}</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{# end custom breabcrumbs #}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="article-level-1">{{ serviceCategory.item.name }}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- services_section -->
+    <div class="services_section-inner">
+        <div class="container">
+            <div class="row">
+                {% for subcategory in serviceCategory.item.subcategories_tree %}
+                <div class="col-6 col-md-4">
+                    <div class="services_item">
+                        {% if subcategory.name %}
+                        <a href="{{ (serviceCategory.item.url ~ '/' ~ subcategory.slug)|url }}" class="services_item-title-inner">{{ subcategory.name }}</a>
+                        {% endif %}
+                        {% if subcategory.description %}
+                        <div class="services_item-info-inner">{{ subcategory.description|raw }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- services_section -->
+</section>
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

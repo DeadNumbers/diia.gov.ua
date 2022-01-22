@@ -1,0 +1,23 @@
+<?php if ($enabled) : ?>
+<div class="callout fade in callout-success">
+	<div class="header">
+		<i class="icon-check"></i>
+		<h3>
+			<?php if ($type == 'gtm') : ?>
+			Google Tag Manager
+			<?php elseif ($type == 'ga') : ?>
+			Google Analytics
+			<?php endif ?>
+		</h3>
+		<p>Ідентифікатор відстеження налаштовано</p>
+	</div>
+</div>
+<?php else : ?>
+<div class="callout fade in callout-warning">
+	<div class="header">
+		<i class="icon-warning"></i>
+		<h3>Analytics</h3>
+		<p>Ідентифікатор відстеження не налаштовано</p>
+	</div>
+</div>
+<?php endif ?>

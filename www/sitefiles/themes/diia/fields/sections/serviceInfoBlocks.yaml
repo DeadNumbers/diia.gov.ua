@@ -1,0 +1,48 @@
+templates: service
+
+title: Інформативні блоки
+
+tabs:
+  fields:
+    fields[title]:
+      tab: Головне
+      span: auto
+    fields[isPdfRender]:
+      label: Додати до pdf
+      tab: Головне
+      type: switch
+      span: auto
+    fields[items]:
+      tab: Головне
+      type: repeater
+      form:
+        fields:
+          label:
+            label: Заголовок
+          email_custom_style:
+            label: Стилізований заголовок в email
+            type: checkbox
+            trigger:
+              action: show
+              field: ^isPdfRender
+              condition: checked
+          items:
+            type: repeater
+            form:
+              fields:
+                text:
+                  label: Текст
+                  type: richeditor
+                  size: small
+                type:
+                  label: Тип
+                  span: auto
+                  type: balloon-selector
+                  default: simple
+                  options:
+                    simple: Simple
+                    big: Big
+                link:
+                  label: Посилання
+                  type: relationfinder
+                  span: auto

@@ -1,0 +1,17 @@
+templates: service
+
+title: Посилання
+
+tabs:
+  fields:
+    fields[title]:
+      label: Заголовок
+      tab: Головне
+    fields[items]:
+      label: Посилання
+      type: repeater
+      tab: Головне
+      form:
+        fields:
+          link:
+            type: relationfinder 

@@ -1,0 +1,74 @@
+<?php if(!$this->model->id) : ?>
+<div>
+    <i><?= e(trans('kitsoft.pages::lang.pages.before_save')) ?></i>
+</div>
+<?php else : ?>
+<div
+    id="<?= $this->getId() ?>"
+    class="field-fileupload style-image-multi is-sortable is-multi <?= count($fileList) ? 'is-populated' : '' ?> <?= $this->previewMode ? 'is-preview' : '' ?>"
+    data-control="fileupload"
+    data-sort-handler="<?= $this->getEventHandler('onSortAttachments') ?>"
+    data-unique-id="<?= $this->getId() ?>"
+    <?php if ($useCaption): ?>data-config-handler="<?= $this->getEventHandler('onLoadAttachmentConfig') ?>"<?php endif ?>
+>
+
+    <!-- Find Button -->
+    <div class="field-mediafinder style-image-single <?= $this->previewMode ? 'is-preview' : '' ?>" data-control="multimediafinder" >
+        <a href="javascript:;" class="find-button">
+            <span class="find-button-icon oc-icon-image"></span>
+        </a>
+    </div>
+
+    <!-- Existing files -->
+    <div class="upload-files-container">
+        <?php foreach ($fileList as $file): ?>
+            <div class="upload-object is-success" data-id="<?= $file->id ?>">
+                <div class="icon-container image">
+                    <img src="<?= $file->path; ?>" alt="" />
+                </div>
+                <div class="info">
+                    <h4 class="filename">
+                        <span data-dz-name><?= e($file->title ?: $file->file_name) ?></span>
+                        <a
+                            href="javascript:;"
+                            class="upload-remove-button"
+                            data-request="<?= $this->getEventHandler('onRemoveAttachment') ?>"
+                            data-request-confirm="<?= e(trans('backend::lang.fileupload.remove_confirm')) ?>"
+                            data-request-data="file_id: <?= $file->id ?>"
+                            ><i class="icon-times"></i></a>
+                    </h4>
+                    <p class="size" data-dz-size><?= e($file->title ? $file->disk_name : '') ?></p>
+                </div>
+                <div class="meta">
+                    <a href="javascript:;" class="drag-handle"><i class="icon-bars"></i></a>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+</div>
+
+<!-- Template for new files -->
+<!-- upload-object dz-preview dz-processing dz-image-preview dz-success is-success dz-complete -->
+<script type="text/template" id="<?= $this->getId('template') ?>">
+    <div class="upload-object is-success" data-id="{{{fileId}}}">
+        <div class="icon-container image">
+            <img data-dz-thumbnail alt="" src="{{{publicUrl}}}" />
+        </div>
+        <div class="info">
+            <h4 class="filename">
+                <span data-dz-name>{{title}}</span>
+                <a
+                    href="javascript:;"
+                    class="upload-remove-button"
+                    data-request="<?= $this->getEventHandler('onRemoveAttachment') ?>"
+                    data-request-confirm="<?= e(trans('backend::lang.fileupload.remove_confirm')) ?>"
+                    data-request-data="file_id: {{{fileId}}}"
+                    ><i class="icon-times"></i></a>
+            </h4>
+        </div>
+        <div class="meta">
+            <a href="javascript:;" class="drag-handle"><i class="icon-bars"></i></a>
+        </div>
+    </div>
+</script>
+<?php endif ?>

@@ -1,0 +1,51 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/kitsoft/pages/models/page/columns_archived.yaml
+
+# Model Class name
+modelClass: KitSoft\Pages\Models\Page
+
+# List Title
+title: kitsoft.pages::lang.pages.name
+
+# Link URL for each record
+recordUrl: kitsoft/pages/pages/preview/:id
+
+listUrl: kitsoft/pages/pages?archived
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 20
+
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: false
+
+showTree: true
+
+# Default sorting column
+# defaultSort:
+#     column: deleted_at
+#     direction: desc
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt

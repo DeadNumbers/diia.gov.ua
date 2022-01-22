@@ -1,0 +1,178 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+editorContentClass = editor-content_post
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->blogPost->post->title;
+}
+?>
+==
+{% set post = blogPost.post %}
+{% set nextPost = post.getNext() %}
+{% set prevPost = post.getPrev() %}
+
+{% partial 'site/breadcrumbs' %}
+
+<!-- news post -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page_title">
+                    <div class="page_title-text">{{ post.title|raw }}</div>
+                    <div class="page_title-date">{{ post.published_at|date('d/m/Y') }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-lg-between">
+            <div class="col-lg-8">
+                <div class="editor-content {{ this.page.editorContentClass }}">
+                    {% if blogPost.post.featured_images|length == 1 %}
+                        {% for image in blogPost.post.featured_images %}
+                            <img src="{{ image.path|resize(730, 410) }}"  alt="{{ image.description ? image.description : post.title }}"  title="{{ image.description }}" class="img-fluid">
+                        {% endfor %}
+                    {% endif %}
+                    {% if post.excerpt|length %}
+                    <div class="page_title-excerpt">
+                        {{ post.excerpt|raw }}
+                    </div>
+                    {% endif %}
+                    {{ post.content|raw }}
+                    {% if blogPost.post.featured_images|length > 1 %}
+                        {#{% set image = blogPost.post.featured_images|first %}#}
+                        <div class="swiper_news-box">
+                            <div class="swiper-container swiper_news js-swiper_news">
+                                <div class="swiper-wrapper swiper_news-wrapper">
+                                    {% for image in blogPost.post.featured_images %}
+                                    <div class="swiper-slide swiper_news-slide"  title="{{ image.description }}" datasize="{{ image.file_size }}" srcOrigin="{{ image.path }}" href="{{ image.path|resize(820, 360) }}" style="background-image: url('{{ image.path|resize(730, 410) }}')">
+                                        {#{% if image.description %}
+                                        <div class="slide_info">
+                                            {{ image.title }} <br />
+                                            {{ "Автор фото – "|_ }}{{ image.description }}
+                                        </div>
+                                        {% endif %}#}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="swiper_news-nav">
+                                <div class="swiper_news-btn-prev"></div>
+                                <div class="swiper-container swiper_news-thumbs js-swiper_news-thumbs">
+                                    <div class="swiper-wrapper swiper_news-thumbs-wrapper">
+                                        {% for image in blogPost.post.featured_images %}
+                                        <div class="swiper-slide swiper_news-thumbs-slide" style="background-image: url('{{ image.path|resize(140, 80) }}');"></div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="swiper_news-btn-next"></div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="d-none d-lg-block col-lg-3">
+                <div class="btn-action_wrap">
+                    <div class="btn-action_title">{{ 'Поділитись новиною'|_ }}</div>
+                    <div class="btn-action_box">
+                        <div class="btn btn-action btn-action_fb" tabindex="0" role="button" aria-pressed="false" data-type="facebook"></div>
+                        <div class="btn btn-action btn-action_tw" tabindex="0" role="button" aria-pressed="false" data-type="twitter"></div>
+                        <div class="btn btn-action btn-action-tel d-none" tabindex="0" role="button" aria-pressed="false" data-type="telegram"></div>
+                    </div>
+                </div>
+                <!-- sidebar -->
+				{% if blogPost.relatedPosts|length %}
+					<div class="sidebar">
+					    <div class="sidebar_title">{{ 'Інші новини'|_ }}</div>
+                        {% if blogPost.relatedPosts|length %}
+                            <div class="sidebar-list">
+                                {% for item in blogPost.relatedPosts %}
+                                <div class="sidebar-list_item">
+                                    <div class="sidebar-list_item-date">
+                                        {{ item.published_at|date('d/m/Y') }}
+                                    </div>
+                                    <a href="{{ item.url|url }}" class="sidebar-list_item-title">{{ item.title }}</a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+					</div>
+				{% endif %}
+				<!-- /sidebar -->
+            </div>
+        </div>
+</section>
+
+{% if newsLast.posts|length %}
+    <section class="last-item_news-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="article-level-1">{{ "Останні новини"|_ }}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {% for item in newsLast.posts|slice(0,1) %}
+                    <div class="last-item_news-top">
+                        {% if item.featured_images|length %}
+                            <div class="last-item_news-preview" style="background-image: url('{{ item.featured_images|first.path }}')">
+                            </div>
+                        {% else %}
+                            <div class="last-item_news-preview" style="background-image: url('{{ 'assets/images/posts_item-preview.svg'|theme }}');">
+                            </div>
+                        {% endif %}
+                        <div class="last-item_news-content">
+                            {% if item.published_at %}
+                            <div class="last-item_news-content-date">
+                                {{ item.published_at|date('d/m/Y') }}
+                            </div>
+                            {% else %}
+                            <div class="last-item_news-content-date">
+                                {{ item.created_at|date('d/m/Y') }}
+                            </div>
+                            {% endif %}
+                            <a href="{{ item.url|url }}" class="last-item_news-content-title">
+                                {{ item.title }}
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        {% for item in newsLast.posts|slice(1,5) %}
+                        <div class="col-6">
+                            <div class="last-item">
+                                <div class="last-item_content">
+                                    {% if item.published_at %}
+                                    <div class="last-item_content-date">
+                                        {{ item.published_at|date('d/m/Y') }}
+                                    </div>
+                                    {% else %}
+                                    <div class="last-item_content-date">
+                                        {{ item.created_at|date('d/m/Y') }}
+                                    </div>
+                                    {% endif %}
+                                    <a href="{{ item.url|url }}" class="last-item_content-title">{{ item.title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ 'assets/javascript/build/post.bundle.js'|theme }}"></script>
+{% endput %}

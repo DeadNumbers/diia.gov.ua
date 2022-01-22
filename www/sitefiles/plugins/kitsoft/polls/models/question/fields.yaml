@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: Заголовок
+tabs:
+  fields:
+    text:
+      label: Текст
+      type: richeditor
+      tab: Головне
+    options:
+      label: Відповіді
+      type: partial
+      tab: Головне
+secondaryTabs:
+  fields:
+    type:
+      label: Тип
+      type: radio
+      default: radio

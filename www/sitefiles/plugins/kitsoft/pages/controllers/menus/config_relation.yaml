@@ -1,0 +1,7 @@
+items:
+    label: kitsoft.pages::lang.menu.items
+    view:
+        list: ~/plugins/kitsoft/pages/models/menuitem/columns.yaml
+        toolbarPartial: $/kitsoft/pages/controllers/menuitems/_relation_toolbar.htm
+    manage:
+        form: ~/plugins/kitsoft/pages/models/menuitem/fields.yaml

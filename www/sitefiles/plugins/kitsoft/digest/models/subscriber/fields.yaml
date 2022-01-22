@@ -1,0 +1,44 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  email@create:
+    label: Email
+    span: auto
+  email@update:
+    label: Email
+    disabled: true
+    span: auto
+  sync_id:
+    label: Sync ID
+    disabled: true
+    span: auto
+tabs:
+  fields:
+    confirmed:
+      label: Confirmed
+      type: checkbox
+      tab: rainlab.blog::lang.post.tab_manage
+    content_types:
+      label: Content Types
+      type: checkboxlist
+      tab: rainlab.blog::lang.post.tab_manage
+      span: auto
+    lists:
+      label: Lists
+      type: relation
+      tab: rainlab.blog::lang.post.tab_manage
+      nameFrom: title
+      span: auto
+    created_at@update:
+      label: Created at
+      disabled: true
+      tab: rainlab.blog::lang.post.tab_manage
+      span: auto
+    updated_at@update:
+      label: Updated at
+      disabled: true
+      tab: rainlab.blog::lang.post.tab_manage
+      span: auto
+    

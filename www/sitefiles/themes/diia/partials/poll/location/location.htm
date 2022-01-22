@@ -1,0 +1,39 @@
+<form id="poll-departments">
+	<input type="hidden" name="answer_id" value="{{ __SELF__.option.answer.id }}">
+    <div class="tab-content">
+        <div class="tab-pane fade in show active" role="tabpanel">
+            <div class="form">
+            	 <label>
+                    {{ 'Оберіть район та департамент для уточнення інформації'|_ }}
+                </label>
+				<div class="row">
+					<div class="col-md-6">
+		                <select name="location" class="custom_select">
+		                	<option>{{ 'Оберіть локацію'|_ }}</option>
+		                    {% for item in __SELF__.locations %}
+		                    	<option value="{{ item.slug }}">{{ item.title }}</option>
+		                    {% endfor %}
+		                </select>
+					</div>
+					<div id="department-select" class="col-md-6"></div>
+				</div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="departments-result"></div>
+
+<script type="text/javascript">
+	$('select[name=location]').on('change', function () {
+		$('#poll-departments').request('onLoadDepartments', {
+			update: {'@location/department': '#department-select'},
+			success: function(data) {
+				this.success(data).done(function() {
+					$('.custom_select').chosen({disable_search: true})
+					$('.departments-result').text('')
+				})
+			}
+		})
+	})
+</script>

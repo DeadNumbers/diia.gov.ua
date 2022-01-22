@@ -1,0 +1,55 @@
+.multilanguage-active-title {
+	min-width: 70px;
+}
+#languagesSwitcher {
+	padding: 15px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #ffffff;
+	border: 1px solid #e2e2e2
+}
+#languagesSwitcher ul {
+	padding: 0;
+	padding-left: 10px;
+	margin: 0;
+}
+#languagesSwitcher li {
+	padding: 3px 0;
+	margin: 0;
+	list-style: none;
+}
+#languagesSwitcher li a {
+	margin-right: 10px;
+	float: right;
+}
+#languagesSwitcher hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#languagesSwitcher li.translates {
+	margin-bottom: 10px;
+}
+
+nav#layout-mainmenu ul.mainmenu-toolbar li.mainmenu-multilanguage{margin-right:0}
+nav#layout-mainmenu ul.mainmenu-toolbar li.mainmenu-multilanguage > a{padding:0 15px 0 10px;font-size:13px;position:relative}
+nav#layout-mainmenu ul.mainmenu-toolbar li.mainmenu-multilanguage ul{line-height:23px}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu{position:fixed;top:0;right:20px;background:#f9f9f9;z-index:600;display:none;-webkit-box-shadow:0 1px 6px rgba(0,0,0,0.12),0 1px 4px rgba(0,0,0,0.24);box-shadow:0 1px 6px rgba(0,0,0,0.12),0 1px 4px rgba(0,0,0,0.24);border-radius:3px}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu.active{display:block}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu:after{content:'';display:block;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-bottom:7px solid #f9f9f9;left:30px;top:-7px;position:absolute}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu ul{float:none;display:block;overflow:visible}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li{padding:0;margin:0;font-weight:normal;text-align:left;display:block}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li a{display:block;padding:10px 30px;text-align:left;font-size:14px;color:#666666;text-shadow:none}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li a:hover,nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li a:focus{background:#4ea5e0;color:#ffffff;text-shadow:0 -1px 0 rgba(0,0,0,0.3)}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li a:active{background:#3498db;color:#ffffff;text-shadow:0 -1px 0 rgba(0,0,0,0.3)}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li:first-child a:hover:after,nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li:first-child a:focus:after,nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li:first-child a:active:after{content:'';display:block;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-bottom:7px solid #4ea5e0;position:absolute;left:30px;top:-7px;z-index:102}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li:first-child a:active:after{content:'';display:block;width:0;height:0;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-bottom:7px solid #3498db}
+nav#layout-mainmenu ul li .mainmenu-multilanguagemenu li.divider{height:1px;width:100%;background-color:#e0e0e0}
+nav#layout-mainmenu.navbar-mode-inline ul.mainmenu-toolbar li.mainmenu-multilanguage > a{height:60px;line-height:60px}
+nav#layout-mainmenu.navbar-mode-inline ul li .mainmenu-multilanguagemenu{top:70px}
+nav#layout-mainmenu.navbar-mode-tile ul.mainmenu-toolbar li.mainmenu-multilanguage > a{height:78px;line-height:78px}
+nav#layout-mainmenu.navbar-mode-tile ul li .mainmenu-multilanguagemenu{top:88px}
+nav#layout-mainmenu.navbar-mode-collapse ul.mainmenu-toolbar li.mainmenu-multilanguage > a{height:45px;line-height:45px}
+nav#layout-mainmenu.navbar-mode-collapse ul li .mainmenu-multilanguagemenu{top:55px}
+nav#layout-mainmenu.navbar-mode-collapse ul.mainmenu-toolbar li.mainmenu-multilanguage > a{padding-right:0}

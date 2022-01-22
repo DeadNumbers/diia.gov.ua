@@ -1,0 +1,96 @@
+layout = "testService"
+components = true
+sections = false
+hideContent = true
+deletable = false
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->taxSystem->item->title;
+}
+?>
+==
+{% set isRefererFromTest = get('choise') %}
+<section class="test-fop_wrap">
+    <div class="test-fop_container">
+        <div class="test-fop_result">
+            <div class="test-fop_head">
+                <div class="col-6 pl-0">
+                    <div class="test-fop_head-logo-big">
+                        <a href="/">
+                            <div class="icn-logo_gerb-b"></div>
+                            <div class="icn-logo_diia-b"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="test-fop_content-title">
+                {% if isRefererFromTest %}<span class="test-fop_content-title-icn"></span>{{ 'Вам підходить'|_ }}{% endif %} {{ taxSystem.item.title }}
+            </div>
+            <div class="test-fop_content-print">
+                <div class="service-type_link-box">
+                    <a href="{{ taxSystem.full_url }}?pdf" target="_blank" rel="noopener noreferrer" class="service-type_link print"><span>{{ 'Роздрукувати'|_ }}</span></a>
+                    <a href="javascript:void(0)" class="service-type_link email" data-toggle="modal" data-target="#exampleModal"><span>{{ 'Відправити на email '|_ }}</span></a>
+                </div>
+            </div>
+            <div class="test-fop_content-res">
+                {% if taxSystem.item.fields.info.title %}
+                <div class="h5">{{ taxSystem.item.fields.info.title }}</div>
+                <div class="test-fop_result-info">
+                    <div class="test-fop_result-bg">
+                        {% for item in taxSystem.item.fields.info.items %}
+                        <div class="test-fop_result-info-item">
+                            <div class="test-fop_result-info-title">{{ item.label }}</div>
+                            <div class="test-fop_result-info-sub">{{ item.text }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                {% if taxSystem.item.content|length %}
+                <div class="editor-content editor-content_test-fop">
+                    {{ taxSystem.item.content|raw }}
+                </div>
+                {% endif %}
+                {% if isRefererFromTest %}
+                <a href="{{ url('/') }}" class="btn btn-fill btn-fill-sm btn-start">{{ 'Дякую'|_ }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal -->
+<div class="modal modal-service fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-service_dialog" role="document">
+        <div class="modal-content modal-service_content">
+            <div class="modal-service_close icn_modal-close-service" data-dismiss="modal" aria-label="Close"></div>
+            <div class="modal-service_body">
+                <div class="modal-service_title">
+                    {{ "Відправити результат на email"|_ }}
+                </div>
+                <form class="form form-service" accept-charset="utf-8" id="modal-send-email">
+                    <div class="input-border-gradient">
+                        <input type="email" name="email" class="input form-service_input" placeholder="Твій email">
+                        <div class="border-gradient"></div>
+                    </div>
+                    <button {#data-request="onPdfServiceSendToMail" #} class="btn btn-fill" id="modal-send-email-btn">{{ "Відправити результат"|_ }}</button>
+                </form>
+            </div>
+            <div class="modal-service_done">
+                <div class="modal-service_done-icn"></div>
+                <div class="modal-service_done-title">{{ "Результат відправлений на пошту"|_ }}</div>
+                <div class="modal-service_done-text">{{ __SELF__.form.success_text|raw }}</div>
+                <div class="modal-service_done-btn">
+                    <a href="/" class="btn btn_default"><span>На головну</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+{% put scripts %}
+<script type="text/javascript" src="{{ 'assets/vendor/validate-1.19.1/jquery.validate.min.js'|theme }}"></script>
+<script type="text/javascript" src="{{ ['assets/javascript/build/testFop.bundle.js']|theme }}"></script>
+{% endput %}

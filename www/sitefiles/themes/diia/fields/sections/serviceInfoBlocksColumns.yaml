@@ -1,0 +1,39 @@
+templates: service
+
+title: Інформативні блоки (2 колонки)
+
+tabs:
+  fields:
+    fields[title]:
+      title: Заголовок
+      tab: Головне
+
+    fields[primary][items]:
+      tab: Ліва колонка
+      type: repeater
+      form:
+        fields:
+          label:
+            label: Заголовок
+          text:
+            label: Текст
+            type: richeditor
+            size: small
+          link:
+            label: Посилання
+            type: relationfinder
+
+    fields[secondary][items]:
+      tab: Права колонка
+      type: repeater
+      form:
+        fields:
+          label:
+            label: Заголовок
+          text:
+            label: Текст
+            type: richeditor
+            size: small
+          link:
+            label: Посилання
+            type: relationfinder

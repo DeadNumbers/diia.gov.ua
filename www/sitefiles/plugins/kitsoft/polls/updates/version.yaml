@@ -1,0 +1,31 @@
+1.0.1:
+  - Create Polls, Questions and Options tables
+  - create_questions_table.php
+  - create_polls_table.php
+  - create_answers_table.php
+  - create_options_table.php
+1.0.2:
+  - Fix sortable Options
+  - 2018_11_06_fix_sortable.php
+1.0.3:
+  - Create Locations & Departments tables
+  - create_locations_table.php
+  - create_departments_table.php
+1.0.4:
+  - Alter table Polls, add use_departments table
+  - 2019_01_02_alter_polls_table_add_departments.php
+1.0.5:
+  - Alter answers Table, switch title type from string to text
+  - 2019_02_06_alter_answers_table.php
+1.0.6:
+  - Alter polls Table, add info column
+  - 2019_02_07_alter_polls_table.php
+1.1.0:
+  - 2020-04-16. Add types for answer, radio/checkbox.
+  - 2020_04_16_add_multi_select.php
+1.2.0:
+  - 2020-04-21. Add polls logs, statistic and optional comments for options
+  - 2020_04_21_add_polls_logs_and_comments.php
+1.3.0:
+  - 2020-04-29. Rebuild statistic, add options logger
+  - 2020_04_29_create_option_logs_table.php

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/kitsoft/services/models/category/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Services\Models\Category
+
+# Default redirect location
+defaultRedirect: kitsoft/services/categories
+
+# Create page
+create:
+    title: kitsoft.services::lang.categories.create_category
+    redirect: kitsoft/services/categories/update/:id
+    redirectClose: kitsoft/services/categories
+
+# Update page
+update:
+    title: kitsoft.services::lang.categories.edit_category
+    redirect: kitsoft/services/categories
+    redirectClose: kitsoft/services/categories
+
+# Preview page
+preview:
+    title: Preview Category

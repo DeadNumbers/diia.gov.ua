@@ -1,0 +1,140 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: kitsoft.services::lang.service.title
+        type: text
+        span: left
+    slug:
+        label: kitsoft.services::lang.service.slug
+        span: right
+        preset:
+            field: title
+            type: slug
+
+tabs:
+    fields:
+        sections:
+            type: partial
+            path: $/kitsoft/pages/controllers/pages/_sections.htm
+            tab: kitsoft.services::lang.tabs.main
+            trigger:
+                action: show
+                field: type
+                condition: value[content]
+        description:
+            label: kitsoft.services::lang.service.description
+            type: richeditor
+            tab: kitsoft.services::lang.tabs.description
+        fields[client_time]:
+            label: kitsoft.services::lang.service.client_time
+            span: auto
+            tab: kitsoft.services::lang.tabs.description
+        fields[register_time]:
+            label: kitsoft.services::lang.service.register_time
+            span: auto
+            tab: kitsoft.services::lang.tabs.description
+        fields[link_label]:
+            label: kitsoft.services::lang.service.link_label
+            tab: kitsoft.services::lang.tabs.description
+            span: auto
+        fields[link]:
+            label: kitsoft.services::lang.service.link
+            tab: kitsoft.services::lang.tabs.description
+            span: auto
+            attributes:
+                maxlength: 500
+        fields[link_description]:
+            label: kitsoft.services::lang.service.link_description
+            span: left
+            tab: kitsoft.services::lang.tabs.description
+        fields[target]:
+            label: kitsoft.services::lang.service.target
+            tab: kitsoft.services::lang.tabs.description
+            type: checkbox
+            span: right
+        fields[link_modal]:
+            label: kitsoft.services::lang.service.link_modal
+            span: left
+            type: checkbox
+            tab: kitsoft.services::lang.tabs.description
+        fields[link_modal_text]:
+            label: kitsoft.services::lang.service.link_modal_text
+            size: small
+            span: left
+            type: textarea
+            tab: kitsoft.services::lang.tabs.description
+            trigger:
+                action: show
+                field: fields[link_modal]
+                condition: checked        
+        subcategories:
+            label: kitsoft.services::lang.service.subcategories
+            type: relation
+            tab: kitsoft.services::lang.tabs.subcategories
+        related_services:
+            label: kitsoft.services::lang.service.related_services
+            type: relation
+            nameFrom: title
+            tab: kitsoft.services::lang.tabs.related_services
+        life_situations:
+            label: kitsoft.services::lang.tabs.life_situations
+            type: relation
+            nameFrom: title
+            scope: getAllRoot
+            tab: kitsoft.services::lang.tabs.life_situations
+        fields[links]:
+            label: kitsoft.services::lang.service.links
+            type: repeater
+            tab: kitsoft.services::lang.tabs.links
+            form:
+              fields:
+                item:
+                  type: relationfinder
+
+        meta_title:
+            tab: kitsoft.services::lang.tabs.seo
+            label: kitsoft.services::lang.service.seo.meta_title
+
+        meta_description:
+            tab: kitsoft.services::lang.tabs.seo
+            type: textarea
+            label: kitsoft.services::lang.service.seo.meta_description
+
+        og_image:
+            tab: kitsoft.services::lang.tabs.seo
+            label: kitsoft.services::lang.service.seo.og_image
+            type: mediafinder
+            mode: image
+            span: auto
+
+secondaryTabs:
+    fields:
+        preview_button@update:
+            type: partial
+        published:
+            label: kitsoft.services::lang.service.published
+            type: checkbox
+        is_top:
+            label: kitsoft.services::lang.service.is_top
+            type: checkbox  
+        type:
+            label: kitsoft.services::lang.service.type
+            type: radio
+            default: content
+            options:
+                content: kitsoft.services::lang.service.content
+                link: kitsoft.services::lang.service.link
+        image:
+            label: kitsoft.services::lang.service.image
+            type: fileupload
+            mode: image
+        hits@update:
+            label: kitsoft.services::lang.service.hits
+            disabled: true
+        action_hits@update:
+            label: kitsoft.services::lang.service.action_hits
+            disabled: true
+

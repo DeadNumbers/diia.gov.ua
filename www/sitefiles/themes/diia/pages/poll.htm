@@ -1,0 +1,42 @@
+layout = "default"
+sections = false
+components = true
+hideContent = true
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->poll->poll->title;
+}
+?>
+==
+{% partial 'site/breadcrumbs' %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            {% if page.data.title %}
+            <div class="col-12">
+                <div class="page_title">
+                    {% if 'зворотного зв’язку' in page.data.title %}
+                        <div class="page_title-text"></div>
+                    {% else %}
+                        <h1 class="page_title-text">{{ page.data.title }}</h1>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-md-10 col-lg-9">
+                <div id="poll">
+                    {% component 'poll' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/poll.bundle.js']|theme }}"></script>
+{% endput %}

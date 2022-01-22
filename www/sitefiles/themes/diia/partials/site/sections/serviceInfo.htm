@@ -1,0 +1,38 @@
+<section class="service-info_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="service-info">
+					<div class="service-info_first">
+						<div class="service-info_content">
+							{% for item in data.primary %}
+						        <div class="service-info_first-item">
+						        	{% if item.label %}
+										<div class="service-info_first-label">{{ item.label }}</div>
+									{% endif %}
+									{% if item.text %}
+									<div class="service-info_first-text">{{ item.text|raw }}</div>
+									{% endif %}
+								</div>
+						    {% endfor %}
+						</div>
+					</div>
+					<div class="service-info_second">
+						<div class="service-info_content">
+							{% for item in data.secondary %}
+						        <div class="service-info_second-item">
+						        	{% if item.label %}
+										<div class="service-info_second-label">{{ item.label }}</div>
+									{% endif %}
+									{% if item.text %}
+									<div class="service-info_second-text">{{ item.text|raw }}</div>
+									{% endif %}
+								</div>
+						    {% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

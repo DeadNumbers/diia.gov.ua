@@ -1,0 +1,56 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: kitsoft.taxsystems::lang.taxsystem.title
+        type: text
+        span: left
+    slug:
+        label: kitsoft.taxsystems::lang.taxsystem.slug
+        span: right
+        preset:
+            field: title
+            type: slug
+
+tabs:
+    fields:
+      content:
+          label: kitsoft.taxsystems::lang.taxsystem.content
+          type: richeditor
+          tab: kitsoft.taxsystems::lang.taxsystem.main
+
+      excerpt:
+          label: kitsoft.taxsystems::lang.taxsystem.excerpt
+          type: textarea
+          size: small
+          tab: kitsoft.taxsystems::lang.taxsystem.main
+
+      fields[info][title]:
+          label: kitsoft.taxsystems::lang.taxsystem.title
+          tab: kitsoft.taxsystems::lang.taxsystem.info
+
+      fields[info][items]:
+          type: repeater
+          tab: kitsoft.taxsystems::lang.taxsystem.info
+          form:
+            fields:
+              label:
+                label: kitsoft.taxsystems::lang.taxsystem.title
+              text:
+                label: kitsoft.taxsystems::lang.taxsystem.text
+                type: textarea
+                size: small
+
+      entrepreneur_options:
+          type: partial
+          tab: kitsoft.taxsystems::lang.taxsystem.entrepreneur_options
+
+secondaryTabs:
+    fields:
+        preview_button@update:
+            type: partial
+        published:
+            label: kitsoft.taxsystems::lang.taxsystem.published
+            type: checkbox

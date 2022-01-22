@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    deleteThumbnails:
+      type: partial
+      path: $/kitsoft/resizer/models/settings/_deletethumbnails.htm
+      tab: Resizer
+      span: right
+
+    watermark:
+      label: Watermark image (.png)
+      type: fileupload
+      mode: image
+      fileTypes: png
+      tab: Resizer
+      span: left

@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: kitsoft.pages::lang.pages.reorder
+
+# Attribute name
+nameFrom: title
+
+# Model Class name
+modelClass: KitSoft\Services\Models\LifeSituation
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

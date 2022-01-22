@@ -1,0 +1,105 @@
+1573817019a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:2566:"[menu]
+code = "header"
+==
+{% set header = partial('header').fields %}
+{% set socials = partial('socials').fields %}
+
+<header id="layout-header" class="header">
+
+    {% partial 'menu/header_pc_main_page' items = menu.menuItems class = 'header-menu' %}
+    
+    <div class="header_bg">
+        <div class="header_toggle">
+            <div class="header_toggle-icn"></div>
+        </div>
+        <div class="header_menu">
+            {% partial 'menu/header' items = menu.menuItems class = 'header-menu' %}
+            <div class="header_sign-mob">
+                <a href="javascript:void(0)" class="btn btn_register">Зареєструватись</a>
+                <a href="javascript:void(0)" class="btn_sign">Увійти</a>
+            </div>
+        </div>
+        <div class="header_content">
+            <a href="/" class="header_logo">
+                <div class="header_logo-gerb"></div>
+                <div class="header_logo-diya"></div>
+            </a>
+            <div class="header_title">
+                Державні послуги онлайн
+            </div>
+            <form class="form form-search" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-site">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <div class="form-group_inner">
+                            <input name="key" type="search" placeholder="Назва послуги або життєва ситуація" class="input form-search_input">
+                            <button class="btn btn_search-main"></button>
+                        </div>
+                        <div class="form-search_error" id="form-search-site-error"></div>
+                        <div class="form-search_text">
+                            Наприклад: <span>відкрити ФОП</span> або <span>Розпочати бізнес</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="header_find">
+            <form class="form form-search-m" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-mobile">
+                <button class="btn form-search-m_btn"></button>
+                <input type="search" name="key" class="input form-search-m_input" placeholder="Пошук">
+                <div class="form-search-m_close"></div>
+            </form>
+            <div class="form-search-m_error" id="form-search-mobile-error"></div>
+        </div>
+    </div>
+</header>
+";s:5:"mtime";i:1573755205;s:6:"markup";s:2539:"{% set header = partial('header').fields %}
+{% set socials = partial('socials').fields %}
+
+<header id="layout-header" class="header">
+
+    {% partial 'menu/header_pc_main_page' items = menu.menuItems class = 'header-menu' %}
+    
+    <div class="header_bg">
+        <div class="header_toggle">
+            <div class="header_toggle-icn"></div>
+        </div>
+        <div class="header_menu">
+            {% partial 'menu/header' items = menu.menuItems class = 'header-menu' %}
+            <div class="header_sign-mob">
+                <a href="javascript:void(0)" class="btn btn_register">Зареєструватись</a>
+                <a href="javascript:void(0)" class="btn_sign">Увійти</a>
+            </div>
+        </div>
+        <div class="header_content">
+            <a href="/" class="header_logo">
+                <div class="header_logo-gerb"></div>
+                <div class="header_logo-diya"></div>
+            </a>
+            <div class="header_title">
+                Державні послуги онлайн
+            </div>
+            <form class="form form-search" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-site">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <div class="form-group_inner">
+                            <input name="key" type="search" placeholder="Назва послуги або життєва ситуація" class="input form-search_input">
+                            <button class="btn btn_search-main"></button>
+                        </div>
+                        <div class="form-search_error" id="form-search-site-error"></div>
+                        <div class="form-search_text">
+                            Наприклад: <span>відкрити ФОП</span> або <span>Розпочати бізнес</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="header_find">
+            <form class="form form-search-m" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-mobile">
+                <button class="btn form-search-m_btn"></button>
+                <input type="search" name="key" class="input form-search-m_input" placeholder="Пошук">
+                <div class="form-search-m_close"></div>
+            </form>
+            <div class="form-search-m_error" id="form-search-mobile-error"></div>
+        </div>
+    </div>
+</header>";s:4:"code";N;s:4:"menu";a:1:{s:4:"code";s:6:"header";}}}

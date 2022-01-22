@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: Reorder
+
+# Attribute name
+nameFrom: text
+
+# Model Class name
+modelClass: KitSoft\TaxSystems\Models\EntrepreneurOption
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Option Log
+
+# Model Form Field configuration
+form: $/kitsoft/polls/models/optionlog/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Polls\Models\OptionLog
+
+# Default redirect location
+defaultRedirect: kitsoft/polls/optionlogs
+
+# Create page
+create:
+    title: Create Option Log
+    redirect: kitsoft/polls/optionlogs/update/:id
+    redirectClose: kitsoft/polls/optionlogs
+
+# Update page
+update:
+    title: Edit Option Log
+    redirect: kitsoft/polls/optionlogs
+    redirectClose: kitsoft/polls/optionlogs
+
+# Preview page
+preview:
+    title: Preview Option Log

@@ -1,0 +1,24 @@
+<div data-control="toolbar">
+    <a
+        href="javascript:;"
+        onclick="$.translateMessages.createRecord()"
+        class="btn btn-primary oc-icon-plus">
+        <?= trans('kitsoft.multilanguage::lang.messages.create'); ?>
+    </a>
+
+    <!-- <a
+        href="javascript:;"
+        data-control="popup"
+        data-handler="onScanMessages"
+        class="btn oc-icon-refresh btn-default"><?= e(trans('kitsoft.multilanguage::lang.messages.scan_messages_link')); ?>
+    </a> -->
+
+    <a
+        href="javascript:;"
+        data-request="onImportFromRainLabTranslate"
+        data-request-confirm="<?= e(trans('kitsoft.multilanguage::lang.messages.confirm_import')); ?>"
+        data-request-success="$(this).prop('disabled', true)"
+        data-stripe-load-indicator
+        class="btn btn-default oc-icon-download"><?= e(trans('kitsoft.multilanguage::lang.messages.import_rainlab')); ?>
+    </a>
+</div>

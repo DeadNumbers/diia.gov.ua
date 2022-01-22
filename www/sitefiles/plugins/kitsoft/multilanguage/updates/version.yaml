@@ -1,0 +1,38 @@
+1.0.1:
+    - First version of MultiLanguage
+    - create_locales_table.php
+    - create_entities_table.php
+1.0.2:
+    - Messages translations
+    - create_messages_table.php
+1.0.3:
+    - Messages add unique index
+    - alter_table_add_unique_message.php
+1.0.4:
+    - Make Entities for Mails
+    - make_entities_for_mail.php
+1.0.5:
+    - Add indexes
+    - 2018_08_02_add_indexes.php
+1.2.0:
+    - Create fields table
+    - create_fields_table.php
+1.3.0:
+    - Copy relations attachOne and attachMany, after translate model
+1.3.1:
+    - 2020-03-23. Fix. Disable site content for disabled locales
+1.3.2:
+    - 2020-03-24. Hotfix current lang detection
+1.3.3:
+    - 2020-03-26. Fix relation finder extension
+1.3.4:
+    - 2020-04-02. Fix relation finder extension - beforeSetHost event
+1.3.5:
+    - 2020-04-13. Fix ML copy galleries error, multi-mediafinder.
+1.3.6:
+    - 2020-04-13. Fix crash error for frontend locale switcher empty links
+1.3.7:
+    - 2020-05-13. Add fn createIfNotExist for entity model.
+1.3.8:
+    - 2020-05-14. Add ml params for Settings model to hidden
+    

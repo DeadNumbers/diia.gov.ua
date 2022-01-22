@@ -1,0 +1,20 @@
+<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="service-acc_item">
+                    <div class="service-acc_item-quest js-service-acc_item-quest">
+                        {{ data.title }}
+                    </div>
+                    <div class="collapse service-acc_item-answer">
+                        <div class="service-acc_item-link-box">
+                            {% for item in data.items %}
+	                            <a href="{{ item.link|relationFinder.url }}" {% if item.link.target %}target="_blank" {% endif %} class="service-acc_item-link">{{ item.link|relationFinder.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

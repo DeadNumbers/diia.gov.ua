@@ -1,0 +1,9 @@
+title: Контент Html
+
+tabs:
+  fields:
+    fields[content]:
+      label: Контент
+      type: richeditor
+      size: giant
+      tab: Головне

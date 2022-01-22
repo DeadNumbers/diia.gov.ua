@@ -1,0 +1,22 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    # Page title
+    title: kitsoft.services::lang.services.import_services
+
+    # Import List Column configuration
+    list: $/kitsoft/services/models/serviceimport/columns.yaml
+
+    # Import Form Field configuration
+    form: $/kitsoft/services/models/serviceimport/fields.yaml
+
+    # Import Model class
+    modelClass: KitSoft\Services\Models\ServiceImport
+
+    # Redirect when finished
+    redirect: kitsoft/services/services
+
+    # Required permissions
+    permissions: kitsoft.services.access_import_export

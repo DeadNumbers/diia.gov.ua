@@ -1,0 +1,29 @@
+templates: service
+
+title: Інфо
+
+tabs:
+  fields:
+    fields[primary]:
+      tab: Primary
+      type: repeater
+      form:
+        fields:
+          label:
+            label: Заголовок
+          text:
+            label: Текст
+            type: richeditor
+            size: small
+    fields[secondary]:
+      tab: Secondary
+      type: repeater
+      form:
+        fields:
+          label:
+            label: Заголовок
+          text:
+            label: Текст
+            type: richeditor
+            size: small
+    

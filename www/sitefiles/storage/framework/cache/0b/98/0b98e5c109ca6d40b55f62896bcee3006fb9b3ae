@@ -1,0 +1,63 @@
+1573816982a:1:{s:19:"site/thinHeader.htm";a:6:{s:8:"fileName";s:19:"site/thinHeader.htm";s:7:"content";s:1337:"[menu]
+code = "header"
+==
+{% set header = partial('header').fields %}
+{% set socials = partial('socials').fields %}
+
+<header id="layout-header" class="header-sm">
+	<div class="header-sm_toggle">
+		<a href="/" class="header-sm_logo">
+            <div class="header-sm_logo-gerb"></div>
+            <div class="header-sm_logo-diya"></div>
+        </a>
+        <div class="header_toggle-icn"></div>
+    </div>
+
+    {% partial 'menu/header_pc_inner' items = menu.menuItems class = 'header-menu' %}
+
+    <div class="header_menu">
+        {% partial 'menu/header' items = menu.menuItems class = 'header-menu' %}
+        <div class="header_sign-mob">
+            <a href="javascript:void(0)" class="btn btn_register">Зареєструватись</a>
+            <a href="javascript:void(0)" class="btn_sign">Увійти</a>
+        </div>
+    </div>
+    <div class="header_find">
+        <form class="form form-search-m" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-mobile">
+            <button class="btn form-search-m_btn"></button>
+            <input type="search" name="key" class="input form-search-m_input" placeholder="Пошук">
+            <div class="form-search-m_close"></div>
+        </form>
+        <div class="form-search-m_error" id="form-search-mobile-error"></div>
+    </div>
+</header>
+";s:5:"mtime";i:1573755205;s:6:"markup";s:1310:"{% set header = partial('header').fields %}
+{% set socials = partial('socials').fields %}
+
+<header id="layout-header" class="header-sm">
+	<div class="header-sm_toggle">
+		<a href="/" class="header-sm_logo">
+            <div class="header-sm_logo-gerb"></div>
+            <div class="header-sm_logo-diya"></div>
+        </a>
+        <div class="header_toggle-icn"></div>
+    </div>
+
+    {% partial 'menu/header_pc_inner' items = menu.menuItems class = 'header-menu' %}
+
+    <div class="header_menu">
+        {% partial 'menu/header' items = menu.menuItems class = 'header-menu' %}
+        <div class="header_sign-mob">
+            <a href="javascript:void(0)" class="btn btn_register">Зареєструватись</a>
+            <a href="javascript:void(0)" class="btn_sign">Увійти</a>
+        </div>
+    </div>
+    <div class="header_find">
+        <form class="form form-search-m" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-mobile">
+            <button class="btn form-search-m_btn"></button>
+            <input type="search" name="key" class="input form-search-m_input" placeholder="Пошук">
+            <div class="form-search-m_close"></div>
+        </form>
+        <div class="form-search-m_error" id="form-search-mobile-error"></div>
+    </div>
+</header>";s:4:"code";N;s:4:"menu";a:1:{s:4:"code";s:6:"header";}}}

@@ -1,0 +1,39 @@
+1573817017a:1:{s:30:"site/sections/serviceLinks.htm";a:5:{s:8:"fileName";s:30:"site/sections/serviceLinks.htm";s:7:"content";s:826:"<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="service-acc_item">
+                    <div class="service-acc_item-quest">
+                        {{ data.title }}
+                    </div>
+                    <div class="collapse service-acc_item-answer">
+                        <div class="service-acc_item-link">
+                            {% for item in data.items %}
+	                            <a href="{{ item.link|relationFinder.url }}" {% if item.link.target %}target="_blank" {% endif %}>{{ item.link|relationFinder.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1573572179;s:6:"markup";s:826:"<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="service-acc_item">
+                    <div class="service-acc_item-quest">
+                        {{ data.title }}
+                    </div>
+                    <div class="collapse service-acc_item-answer">
+                        <div class="service-acc_item-link">
+                            {% for item in data.items %}
+	                            <a href="{{ item.link|relationFinder.url }}" {% if item.link.target %}target="_blank" {% endif %}>{{ item.link|relationFinder.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:4:"code";N;}}

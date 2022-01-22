@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: Title
+        searchable: true
+    code:
+        label: Code
+        searchable: true
+    system:
+        label: System
+        searchable: true

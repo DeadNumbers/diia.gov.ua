@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        sortable: false
+    title:
+        label: kitsoft.taxsystems::lang.entrepreneur_question.title
+        searchable: true
+        sortable: false
+    slug:
+        label: kitsoft.taxsystems::lang.entrepreneur_question.slug
+        searchable: true
+        sortable: false
+    published:
+        label: kitsoft.taxsystems::lang.entrepreneur_question.published
+        type: switch
+        searchable: false
+        sortable: false

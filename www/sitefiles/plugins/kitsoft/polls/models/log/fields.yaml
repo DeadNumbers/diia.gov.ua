@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    created_at:
+        label: Створено
+        span: auto
+    ip:
+        label: IP
+        span: auto
+    log:
+        type: partial

@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: Title
+    span: auto
+  code:
+    label: Code
+    span: auto
+tabs:
+  fields:
+    sync_id:
+      label: Sync Id
+    

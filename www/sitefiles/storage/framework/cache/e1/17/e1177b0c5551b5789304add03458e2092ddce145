@@ -1,0 +1,90 @@
+1573816982a:1:{s:12:"question.htm";a:11:{s:8:"fileName";s:12:"question.htm";s:7:"content";s:1410:"layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->faqQuestion->question->title;
+}
+?>
+==
+{% partial 'site/breadcrumbs' %}
+
+<section>
+	<div class="container">
+		<div class="row">
+            <div class="col-12">
+                <div class="page_title">
+                    <div class="page_title-text">{{ faqQuestion.question.question }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-xl-between">
+	        <div class="col-md-8">
+	            <div class="editor-content">
+	                {{ faqQuestion.question.answer|raw }}
+	            </div>
+	        </div>
+	        {% if faqQuestion.question.related_questions|length %}
+	        	<div class="col-md-4 col-xl-3">
+					<div class="sidebar sidebar-question">
+						<div class="sidebar_title">{{ 'Пов`язані запитання'|_ }}</div>
+						{% for item in faqQuestion.question.related_questions %}
+						    <div class="sidebar_item">
+						        <a href="{{ item.url|url }}" class="sidebar_item-title">{{ item.question }}</a>
+						    </div>
+						{% endfor %}
+					</div>
+	        	</div>
+	        {% endif %}
+	    </div>
+	</div>
+</section>
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}
+";s:5:"mtime";i:1573755205;s:6:"markup";s:1212:"{% partial 'site/breadcrumbs' %}
+
+<section>
+	<div class="container">
+		<div class="row">
+            <div class="col-12">
+                <div class="page_title">
+                    <div class="page_title-text">{{ faqQuestion.question.question }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-xl-between">
+	        <div class="col-md-8">
+	            <div class="editor-content">
+	                {{ faqQuestion.question.answer|raw }}
+	            </div>
+	        </div>
+	        {% if faqQuestion.question.related_questions|length %}
+	        	<div class="col-md-4 col-xl-3">
+					<div class="sidebar sidebar-question">
+						<div class="sidebar_title">{{ 'Пов`язані запитання'|_ }}</div>
+						{% for item in faqQuestion.question.related_questions %}
+						    <div class="sidebar_item">
+						        <a href="{{ item.url|url }}" class="sidebar_item-title">{{ item.question }}</a>
+						    </div>
+						{% endfor %}
+					</div>
+	        	</div>
+	        {% endif %}
+	    </div>
+	</div>
+</section>
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}";s:4:"code";s:82:"function onEnd()
+{
+    $this->page->title = $this->faqQuestion->question->title;
+}";s:6:"layout";s:7:"default";s:10:"components";s:1:"1";s:8:"sections";s:0:"";s:11:"hideContent";s:1:"1";s:9:"deletable";s:0:"";s:4:"page";a:0:{}}}

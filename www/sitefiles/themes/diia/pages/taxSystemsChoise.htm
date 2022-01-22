@@ -1,0 +1,138 @@
+layout = "testService"
+components = true
+sections = false
+hideContent = false
+deletable = false
+
+[page]
+==
+
+{% if taxSystemChoise.questions|length %}
+<section class="test-fop_wrap">
+    <div class="test-fop_container">
+        <form accept-charset="utf-8" class="form form-t-fop" id="form-t-fop">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                	<div class="swiper-slide">
+                        <div class="test-fop_box">
+                            <div class="test-fop_view">
+                                <div class="test-fop_view-logo">
+                                    <a href="/">
+                                        <div class="icn-logo_gerb-b"></div>
+                                        <div class="icn-logo_diia-b"></div>
+                                    </a>
+                                </div>
+                                <div class="test-fop_view-lead">{{ page.data.title }}</div>
+                                {% if page.data.content %}
+                                <div class="test-fop_view-sub">
+                                    {{ page.data.content|raw }}
+                                </div>
+                                {% endif %}
+                                <div class="test-fop_view-btn test-fop_view-btn-start">
+                                    <a href="/services/reyestraciya-fop" class="btn btn_default">
+                                        <span>{{ 'Назад'|_ }}</span>
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-fill btn-start">{{ 'Почати'|_ }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                	{% for question in taxSystemChoise.questions %}
+	                    <div class="swiper-slide" {% if question.depends_on_option_id %}data-depends-on-option="{{ question.depends_on_option_id }}"{% endif %}
+							{% if not question.is_required %}data-required="not_required"{% endif %}>
+	                    	<input type="hidden" name="questions[]" value="{{ question.id }}">
+	                        <div class="test-fop_box">
+	                            <div class="test-fop_head">
+	                            	{#
+	                            	<div class="col-6 pl-0">
+	                                    <div class="test-fop_head-count">{{ 'Питання'|_ }} {{ loop.index }} {{ 'з'|_ }} {{ taxSystemChoise.questions|length }}</div>
+	                                </div>
+	                                #}
+	                                <div class="col-12 pr-0">
+	                                    <div class="test-fop_head-logo">
+                                            <a href="/">
+                                                <div class="icn-logo_gerb-b"></div>
+                                                <div class="icn-logo_diia-b"></div>
+                                            </a>
+	                                    </div>
+	                                </div>
+	                            </div>
+                                {% if question.title %}
+                                    <div class="test-fop_content-lead">{{ question.title }}</div>
+                                {% endif %}
+	                            <div class="test-fop_content">
+	                            	{% if question.description %}
+	                                    <div class="test-fop_content-descr">{{ question.description }}</div>
+	                                {% endif %}
+	                                <div class="form-group">
+	                                	{% for option in question.entrepreneur_options %}
+											{% if option.type == 'option' %}
+												<div class="agree_wrap">
+													<label for="option_{{ option.id }}" class="agree_wrap-inner">
+														{% if question.type == 'radio' %}
+															<input class="radio" type="radio" name="{{ question.input_name }}" id="option_{{ option.id }}" value="{{ option.id }}">
+														{% elseif question.type == 'checkbox' %}
+															<input class="checkbox" type="checkbox" name="{{ question.input_name }}[]" id="option_{{ option.id }}" value="{{ option.id }}">
+														{% endif %}
+														<label for="option_{{ option.id }}"></label>
+														<div class="checkbox_text">{{ option.text }}</div>
+													</label>
+													{% if option.description %}
+                                                        <div class="checkbox_text-alert-wrap">
+                                                            <div class="checkbox_text-alert">{{ option.description }}</div>
+                                                        </div>
+					                                {% endif %}
+												</div>
+											{% elseif option.type == 'label' %}
+												<div class="form-group_title">{{ option.text }}</div>
+											{% endif %}
+										{% endfor %}
+	                                </div>
+	                            </div>
+	                            <div class="test-fop_view-btn">
+	                                <a href="javascript:void(0)" class="btn btn_default btn-prev">
+	                                   	<span>{{ 'Назад'|_ }}</span>
+	                                </a>
+	                                <a href="javascript:void(0)" class="btn btn-fill btn-next disabled">{{ 'Далі'|_ }}</a>
+	                                {% if not question.is_required %}
+	                                   	<a href="javascript:void(0)" class="btn btn_default btn-next-not-required">
+		                                   	<span>{{ 'Не планую цим займатися '|_ }}</span>
+		                                </a>
+		                            {% endif %}
+	                                {#
+	                                    {% if loop.last %}
+	                                    	 <button data-request="onChoiseTaxSystem" class="btn btn-fill btn-next disabled" id="onChoiseTaxSystem">{{ 'Завершити'|_ }}</button>
+	                                    {% else %}
+	                                    	<a href="javascript:void(0)" class="btn btn-fill btn-next disabled">{{ 'Далі'|_ }}</a>
+	                                    {% endif %}
+	                                #}
+	                            </div>
+	                        </div>
+	                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="form-t-fop_preloader">
+                <div class="form-t-fop_preloader-svg"></div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endif %}
+<!-- Modal Error Get Result Test -->
+<div class="modal modal-service fade" id="ModalError" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-service_dialog" role="document">
+        <div class="modal-content modal-service_content">
+            <div class="modal-service_close icn_modal-close-service" data-dismiss="modal" aria-label="Close"></div>
+            <div class="modal-service_body">
+                <div class="modal-service_error">
+                    {{ "Потрібно заповнити хоч одне поле"|_ }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Error Get Result Test -->
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/testFop.bundle.js']|theme }}"></script>
+{% endput %}

@@ -1,0 +1,9 @@
+<?php if (BackendAuth::getUser()->isSuperUser()) : ?>
+<a
+    href="<?= Backend::url('kitsoft/core/domainchanging'); ?>"
+    class="btn btn-default oc-icon-cog"
+    data-request="onReplaceDomain"
+    data-request-form=""
+    data-request-confirm="<?= trans('kitsoft.core::lang.domain_changing.alerts.confirm'); ?>"
+><?= trans('kitsoft.core::lang.domain_changing.buttons.replace'); ?></a>
+<?php endif ?>

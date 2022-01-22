@@ -1,0 +1,160 @@
+/*@-webkit-keyframes granimate {
+    0%,
+    100% {
+        background-position: 0 25%
+    }
+
+    25%,
+    75% {
+        background-position: 50% 50%
+    }
+
+    50% {
+        background-position: 100% 100%
+    }
+}*/
+
+@keyframes granimate {
+	0%,
+	100% {
+		background-position: 0 25%
+	}
+
+	25%,
+	75% {
+		background-position: 50% 50%
+	}
+
+	50% {
+		background-position: 100% 100%
+	}
+}
+
+/*@-webkit-keyframes granimateSafari {
+    0%,
+    100% {
+        background-position: 0 25%
+    }
+
+    25%,
+    75% {
+        background-position: 50% 50%
+    }
+
+    50% {
+        background-position: 100% 100%
+    }
+}*/
+
+@keyframes granimateSafari {
+	0% {
+		background-position: 0 25%
+	}
+
+	25%,
+	50% {
+		background-position: 50% 50%
+	}
+
+	60%,
+	100% {
+		background-position: 75% 75%
+	}
+}
+
+.diia-animated {
+	opacity: 0;
+	transform: translateY(-50px);
+	transition: transform 300ms ease, opacity 600ms ease;
+
+	&:nth-child(1),
+	&:nth-child(2) {
+		//-webkit-transition-delay: 60ms;
+		transition-delay: 60ms;
+	}
+
+	&:nth-child(3),
+	&:nth-child(4) {
+        //-webkit-transition-delay: 100ms;
+		transition-delay: 100ms;
+	}
+
+	&:nth-child(5),
+	&:nth-child(6) {
+        //-webkit-transition-delay: 140ms;
+		transition-delay: 140ms;
+	}
+
+	&:nth-child(7),
+	&:nth-child(8) {
+        //-webkit-transition-delay: 180ms;
+		transition-delay: 180ms;
+	}
+
+	&:nth-child(9),
+	&:nth-child(10) {
+        //-webkit-transition-delay: 220ms;
+		transition-delay: 220ms;
+	}
+
+	&:nth-child(11),
+	&:nth-child(12) {
+        //-webkit-transition-delay: 260ms;
+		transition-delay: 260ms;
+	}
+
+	&:nth-child(11),
+	&:nth-child(12) {
+        //-webkit-transition-delay: 300ms;
+		transition-delay: 300ms;
+	}
+
+	&:nth-child(11),
+	&:nth-child(12) {
+        //-webkit-transition-delay: 340ms;
+		transition-delay: 340ms;
+	}
+
+	&:nth-child(13),
+	&:nth-child(14) {
+        //-webkit-transition-delay: 380ms;
+		transition-delay: 380ms;
+	}
+
+	&:nth-child(15),
+	&:nth-child(16) {
+        //-webkit-transition-delay: 400ms;
+		transition-delay: 400ms;
+	}
+
+	&:nth-child(17),
+	&:nth-child(18) {
+        //-webkit-transition-delay: 420ms;
+		transition-delay: 420ms;
+	}
+
+	&:nth-child(19),
+	&:nth-child(20),
+	&:nth-child(21),
+	&:nth-child(22),
+	&:nth-child(23),
+	&:nth-child(24) {
+        //-webkit-transition-delay: 440ms;
+		transition-delay: 440ms;
+	}
+
+}
+
+// $transitionDelay: (1: 60ms, 2: 100ms, 3: 140ms, 4: 160ms, 5: 200ms, 6: 240ms, 7: 280ms, 8: 320ms, 9: 360ms, 10: 400ms);
+
+/* @each $item,
+$time in $transitionDelay {
+    .menu-sub_list-item.diia-animated:nth-child(odd):nth-of-type(#{$item}) {
+        transition-delay: $time;
+    }
+
+    .menu-sub_list-item.diia-animated:nth-child(even):nth-child(#{$item}) {
+        transition-delay: $time;
+    }
+
+} */

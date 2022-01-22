@@ -1,0 +1,4 @@
+fields:
+  label:
+    label: Sitemap Settings
+    type: section

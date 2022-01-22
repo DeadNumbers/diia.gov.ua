@@ -1,0 +1,51 @@
+<div class="header" style="
+	background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #2d5ca6;
+">
+    <table>
+        <tbody>
+        <tr>
+            <td style="vertical-align: middle">
+                <div class="rind-icon" style="
+                	width: 215px;
+	                height: 92px;
+	                background-repeat: no-repeat;
+	                background-size: cover;
+	                background-image: url('{{ 'assets/images/icons/ringwithbg.png'|theme }}');
+	                background-position: -35px -65px;
+                "></div>
+            </td>
+            <td style="vertical-align: middle">
+                <h1 style="
+                	letter-spacing: 3px;
+                   	color: #fff;
+                   	font-size: 19px;
+                   	text-transform: uppercase;
+                   	margin: 0;
+                ">
+                    {{ this.theme.config.name }}
+                </h1>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+{% partial __SELF__ ~ '::content' %}
+
+<div class="action-links-block" style="text-align: center; margin-top: 30px;">
+
+    <a class="action-link" href="{{ url('digest/settings/' ~ __SELF__.subscriber.sync_uuid) }}"
+        style="
+        	color: #2d5ca6;
+        	font-size: 14px;
+            display: inline-block;
+            cursor: pointer;
+            border-bottom: 1px solid #2d5ca6;
+            margin-right: 10px;
+            text-decoration: none;
+        "
+    >Налаштування підписки</a>
+
+</div>

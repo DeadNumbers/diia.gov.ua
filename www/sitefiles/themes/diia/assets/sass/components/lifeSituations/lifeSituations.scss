@@ -1,0 +1,286 @@
+.life-sit {
+    &_type {
+        margin-top: 15px;
+        margin-bottom: 80px;
+
+        @include media ("<lg") {
+            margin-bottom: 25px;
+        }
+
+        &-img {
+            margin-left: auto;
+
+            @include media ("<lg") {
+                margin: 0 auto;
+            }
+        }
+
+        &-title {
+            font-size: 56px;
+            line-height: 60px;
+            margin-bottom: 25px;
+
+            @include media ("<lg") {
+                margin-bottom: 15px;
+                font-size: 26px;
+                line-height: 30px;
+            }
+        }
+
+        &-excerpt {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 15px;
+
+            @include media ("<lg") {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &_item {}
+
+    &_service {
+        &-section {
+            margin: 80px 0;
+
+            @include media ("<md") {
+                margin: 25px 0;
+            }
+        }
+
+        &-box {
+            background-color: #E7EEF3;
+            padding: 40px 60px;
+            @include media ("<lg") {
+                padding: 10px 20px 5px 20px;
+            }
+        }
+
+        &-lead {
+            font-size: 16px;
+            line-height: 24px;
+            opacity: 0.5;
+            padding: 8px 0;
+            position: relative;
+            display: inline-flex;
+            margin-bottom: 40px;
+            @include media ("<lg") {
+                margin-bottom: 25px;
+                font-size: 13px;
+                line-height: 18px;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, #C3AAB2 0%, #99EECC 57.66%, #80C0C8 76.7%, #4B8BFA 100%);
+            }
+        }
+        &-title {
+            font-size: 38px;
+            line-height: 40px;
+            margin-bottom: 25px;
+            @include media ("<lg") {
+                font-size: 20px;
+                line-height: 24px;
+                margin-bottom: 15px;
+            }
+        }
+        &-excerpt {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 30px;
+            @include media ("<lg") {
+                font-size: 13px;
+                line-height: 18px;
+                margin-bottom: 15px;
+            }
+        }
+        &-item {
+            margin-bottom: 20px;
+            @include media ("<lg") {
+                margin-bottom: 10px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .btn_default {
+                margin-top: 0;
+                span {
+                    background-color: #E7EEF3;
+                }
+            }
+        }
+    }
+
+    &_repiter {
+        position: relative;
+        padding: 0;
+        border-bottom: 2px solid $black;
+
+        &:after {
+            content: '';
+            width: 9px;
+            height: 7px;
+            position: absolute;
+            top: 35px;
+            right: 1px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgOSA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTQuNSA2TDAuNjAyODg1IDAuNzVMOC4zOTcxMSAwLjc1MDAwMUw0LjUgNloiIGZpbGw9ImJsYWNrIiAvPgo8L3N2Zz4=');
+
+            @include media ("<lg") {
+                top: 25px;
+            }
+        }
+        &-gradient {
+            background-image: linear-gradient(35.8deg,#c3aab2 -4.77%,#9ec 46.72%,#80c0c8 90.23%,#4b8bfa 134.46%);
+            padding: 2px;
+            margin-bottom: 60px;
+            @include media ("<lg") {
+                margin-bottom: 20px;
+            }
+        }
+        &-container {
+            background-color: #FFF7E3;
+            padding: 38px;
+            @include media ("<lg") {
+                padding: 18px 13px;
+            }
+        }
+
+        &.first {
+            border-top: 2px solid $black;
+        }
+
+        &.active {
+            &:after {
+                transform: rotate(180deg);
+            }
+        }
+
+        &-title {
+            font-size: 20px;
+            line-height: 24px;
+            padding: 25px 10px 25px 0;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            @include media ("<lg") {
+                margin: 0;
+                padding: 15px 10px 15px 0;
+                font-size: 16px;
+                line-height: 28px;
+                color: $black;
+            }
+        }
+
+        &-content {}
+    }
+
+    &-acc {
+        &_section {
+            &+.life-sit-acc_section {
+                .life-sit-acc_item {
+                    border-top: none;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 80px;
+
+                @include media ("<md") {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        &_item {
+            border-top: 2px solid $black;
+
+            &:last-child {
+                border-bottom: 2px solid $black;
+            }
+
+            &-quest {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 35px 100px 35px 0;
+                font-size: 38px;
+                line-height: 40px;
+                letter-spacing: -0.02em;
+                color: $black;
+                transition: padding .4s, background .4s;
+                cursor: pointer;
+
+                @include media (">=lg", "<xl") {
+                    padding: 25px 80px 25px 0;
+                }
+
+                @include media ("<lg") {
+                    font-size: 16px;
+                    line-height: 28px;
+                    padding: 15px 25px 15px 0;
+                    min-height: auto;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -12px;
+                    right: 3px;
+                    width: 24px;
+                    height: 24px;
+                    @include transition(.2s ease-in-out);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuMDAwMSAzSDExLjAwMDFWMTFMMyAxMVYxM0gxMS4wMDAxVjIxSDEzLjAwMDFWMTNIMjFWMTFMMTMuMDAwMSAxMVYzWiIgZmlsbD0iYmxhY2siIC8+Cjwvc3ZnPg==');
+
+                    @include media ("<lg") {
+                        width: 16px;
+                        height: 16px;
+                        margin-top: -8px;
+                    }
+                }
+
+                &.active {
+                    &:before {
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMSAxMVYxM0wzIDEzTDMgMTFMMjEgMTFaIiBmaWxsPSJibGFjayIgLz4KPC9zdmc+');
+                    }
+                }
+
+                &:hover:not(.active) {
+                    padding-left: 35px;
+                    background: $black;
+                    color: $white;
+
+                    @include media ("<lg") {
+                        padding-left: 25px;
+                    }
+
+                    &:before {
+                        right: 35px;
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTMuMDAwMSAzSDExLjAwMDFWMTFMMyAxMVYxM0gxMS4wMDAxVjIxSDEzLjAwMDFWMTNIMjFWMTFMMTMuMDAwMSAxMVYzWiIgZmlsbD0id2hpdGUiIC8+Cjwvc3ZnPg==');
+
+                        @include media ("<lg") {
+                            right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

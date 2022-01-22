@@ -1,0 +1,217 @@
+.situations,
+.question {
+    &_section {
+        padding: 80px 0 20px;
+
+        @include media ("<lg") {
+            padding: 25px 0 40px;
+        }
+
+        &-all {
+            @include media (">=lg") {
+                max-width: 320px;
+            }
+
+            .wrap-all-link {
+                @include media ("<sm") {
+                    &:before {
+                        position: static;
+                    }
+
+                    a {
+                        display: block;
+                        height: 25px;
+                    }
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &_head {
+        &-title {
+            font-size: 56px;
+            line-height: 56px;
+            letter-spacing: -0.02em;
+            color: $black;
+            margin-bottom: 80px;
+
+            @include media ("<lg") {
+                font-size: 26px;
+                line-height: 26px;
+                margin-bottom: 30px;
+            }
+        }
+
+        &-text {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            color: $black;
+            margin-bottom: 80px;
+            max-width: 500px;
+
+            @include media ("<lg") {
+                font-size: 13px;
+                line-height: 18px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    &_item {
+        @include media ("<lg") {
+            border-bottom: 2px solid $black;
+        }
+
+        @include media (">=lg") {
+            max-width: 320px;
+            padding: 0 0 40px;
+        }
+
+        &.first {
+            @include media ("<lg") {
+                border-top: 2px solid $black;
+            }
+        }
+
+        &.active {
+            @include media ("<lg") {
+                .question_item-content {
+                    max-height: 2000px;
+                    @include transition(.3s ease-in-out);
+                }
+
+                .question_item-category-text {
+                    &:after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        &-category,
+        &-title {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 8px;
+            @include transition(.2s ease-in-out);
+
+            @include media (">=lg") {
+                display: flex;
+                align-items: center;
+                // height: 56px;
+                height: 32px;
+            }
+
+            &:after {
+                @include media (">=lg") {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    //background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 50.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+                    background: linear-gradient(90deg, #C3AAB2 0%, #99EECC 57.66%, #80C0C8 76.7%, #4B8BFA 100%);
+                    animation: 15s infinite granimate;
+                    background-size: 150% 150%;
+                }
+            }
+
+            &-text {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+                color: rgba(0, 0, 0, 0.5);
+                max-width: 100%;
+                flex: 0 1 100%;
+                // @include text-cut(2);
+                // @include text-cut(1);
+                @include truncate(100%);
+                @include transition(.2s ease-in-out);
+
+                @include media ("<lg") {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 16px;
+                    line-height: 28px;
+                    color: $black;
+                }
+            }
+        }
+
+        &-category {
+            @include media ("<lg") {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                line-height: 28px;
+                color: $black;
+            }
+
+            &-text {
+                @include media ("<lg") {
+                    position: relative;
+                    padding: 0 12px 0 0;
+                    margin: 15px 0 10px;
+
+                    &:after {
+                        content: '';
+                        width: 9px;
+                        height: 7px;
+                        position: absolute;
+                        // top: 38px;
+                        top: 50%;
+                        margin-top: -3px;
+                        right: 1px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgOSA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTQuNSA2TDAuNjAyODg1IDAuNzVMOC4zOTcxMSAwLjc1MDAwMUw0LjUgNloiIGZpbGw9ImJsYWNrIiAvPgo8L3N2Zz4=');
+                    }
+                }
+            }
+        }
+
+        &-content {
+            @include media ("<lg") {
+                max-height: 0;
+                overflow: hidden;
+            }
+        }
+
+        &-text {
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: -0.02em;
+            color: $black;
+            margin-bottom: 20px;
+            display: block;
+
+            @include media ("<lg") {
+                font-size: 13px;
+                line-height: 18px;
+                margin: 15px 0;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.question {
+    &_section {
+        background: #E7EEF3;
+    }
+}

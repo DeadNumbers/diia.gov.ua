@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Lists Sync
+
+# Model Form Field configuration
+form: $/kitsoft/digest/models/listsync/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Digest\Models\ListSync
+
+# Default redirect location
+defaultRedirect: kitsoft/digest/listssync
+
+# Create page
+create:
+    title: Create Lists Sync
+    redirect: kitsoft/digest/listssync/update/:id
+    redirectClose: kitsoft/digest/listssync
+
+# Update page
+update:
+    title: Edit Lists Sync
+    redirect: kitsoft/digest/listssync
+    redirectClose: kitsoft/digest/listssync
+
+# Preview page
+preview:
+    title: Preview Lists Sync

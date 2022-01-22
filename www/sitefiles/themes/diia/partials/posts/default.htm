@@ -1,0 +1,28 @@
+<section>
+    <div class="container" id="posts-container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="article-level-1">
+                    {{ page.data.title }}
+                </h1>
+            </div>
+        </div>
+        <div class="row" id="posts-items-box">
+            {% partial 'posts/items' %}
+        </div>
+    </div>
+    {% if __SELF__.posts.currentPage < __SELF__.posts.lastPage %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <a href="javascript:void(0)" class="btn btn_more-news" id="btn_more-news">{{ 'Більше новин'|_ }}</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>
+<section>
+    <nav aria-label="post page navigation" id="post-navigation">
+        {{ __SELF__.posts|raw }}
+    </nav>
+</section>

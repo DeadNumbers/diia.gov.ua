@@ -1,0 +1,113 @@
+.tabs {
+
+    &_default,
+    &_services {
+        flex-wrap: nowrap;
+        border-bottom: none;
+        margin: 15px 0;
+
+        @include media ("<xl") {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+
+            &::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #577db8;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #ddd;
+                height: 2px;
+            }
+        }
+
+        &-wrap {
+            @include media ("<md") {
+                position: relative;
+                padding-top: 100px;
+            }
+        }
+
+        .nav {
+            &-item {
+                margin-right: 50px;
+                margin-bottom: 0;
+                @include media ("<lg") {
+                    margin-right: 30px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            &-link {
+                position: relative;
+                border: none;
+                @include font(28px, rgba(0, 0, 0, 0.3), 400, 32px);
+                border-bottom: 2px solid transparent;
+                letter-spacing: -0.02em;
+                padding: 0 0px 6px;
+                text-decoration: none !important;
+                border-radius: 0;
+                white-space: nowrap;
+                @include media ("<lg") {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+
+                &:hover,
+                &.active {
+                    cursor: pointer;
+                    border-bottom-color: $black;
+                    color: $black;
+                    @include transition(.2s);
+                }
+            }
+        }
+    }
+
+    &_services {
+        margin: 0 auto 90px;
+        padding: 0 15px;
+        @include media (">=xl") {
+            max-width: 100%;
+            padding: 0 80px;
+        }
+        @include media (">=sm", "<xl") {
+            padding: 0 64px;
+        }
+        @include media ("<lg") {
+            margin-bottom: 35px;
+        }
+        .nav-link {
+            position: relative;
+            &:after {
+                position: absolute;
+                content: '';
+                height: 2px;
+                background-color: #000;
+            }
+        }
+    }
+}
+
+.tab-content {
+    &_slider {
+        &>.tab-pane {
+            display: block;
+            height: 0;
+            overflow: hidden;
+
+            &.active {
+                height: auto;
+            }
+        }
+
+    }
+}

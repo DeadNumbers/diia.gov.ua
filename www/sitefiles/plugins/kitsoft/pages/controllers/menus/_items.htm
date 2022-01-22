@@ -1,0 +1,6 @@
+<?php if($this->action == 'create') : ?>
+	<br>
+	<b><i><?= trans('kitsoft.pages::lang.menu.save_before_use_relation'); ?></i></b>
+<?php else : ?>
+	<?= $this->relationRender('items') ?>
+<?php endif ?>

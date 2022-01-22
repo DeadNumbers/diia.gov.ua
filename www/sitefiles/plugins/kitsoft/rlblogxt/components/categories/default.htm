@@ -1,0 +1,6 @@
+{% for category in __SELF__.items %}
+    {{ category.title }}
+    {% for post in category.posts %}
+        {{ post.title }}
+    {% endfor %}
+{% endfor %}

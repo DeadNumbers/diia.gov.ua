@@ -1,0 +1,24 @@
+<div class="finish-box">
+    <div class="finish-logo">
+        <a href="/">
+            <div class="icn-logo_gerb-b"></div>
+            <div class="icn-logo_diia-b"></div>
+        </a>
+    </div>
+    <div class="article-level-2 text-center">
+        {{ __SELF__.option.answer.title }}
+    </div>
+    <div class="finish-content">
+        {{ __SELF__.option.answer.text|raw }}
+    </div>
+</div>
+<script>
+setTimeout(function() {
+    var container = document.getElementById('poll-form-step');
+    container.scrollIntoView({ 
+    	behavior: 'smooth',
+    	block: 'center' 
+    });
+}, 4);
+
+</script>

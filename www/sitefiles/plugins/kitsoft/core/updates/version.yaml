@@ -1,0 +1,17 @@
+1.0.1: First version of Core
+1.0.2:
+    - Set Robots Txt Settings
+    - set_robotstxt_settings.php
+1.0.3:
+  - Set default widgets for users, google analytics & robots txt
+  - set_default_widgets.php
+1.1.0:
+  - 2020-03-12. Added content faker
+1.2.0:
+  - 2020-03-18. Collection extension, add method sortByCollator
+1.2.1:
+  - 2020-03-26. Added disable image to content faker
+1.2.2:
+  - 2020-04-07. Fix sortByCollator for empty collection
+1.2.3:
+  - 2020-05-15. Implement [GoogleAnalytics, RobotsTxt, Sentry, Settings] models by revisons.

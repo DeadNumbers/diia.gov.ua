@@ -1,0 +1,154 @@
+paths:
+  /tagsmanager/tags:
+    get:
+      tags:
+        - Tags
+      summary: List tags
+      parameters:
+        - $ref: '#/components/parameters/Lang'
+        - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Paginator'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tag'
+        '422':
+          description: Validation
+        '400':
+          description: Error
+    post:
+      tags:
+        - Tags
+      summary: Create tag
+      parameters:
+        - $ref: '#/components/parameters/Lang'
+        - name: name
+          required: true
+          in: query
+          description: name
+          schema:
+            type: string
+        - name: slug
+          required: true
+          in: query
+          description: slug
+          schema:
+            type: string
+        - name: description
+          in: query
+          description: description
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: Validation
+        '400':
+          description: Error
+
+  /tagsmanager/tags/{id}:
+    get:
+      tags:
+        - Tags
+      summary: List tags
+      parameters:
+        - $ref: '#/components/parameters/Lang'
+        - $ref: '#/components/parameters/TagId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                $ref: '#/components/schemas/Tag'
+        '404':
+          description: Not Found
+        '400':
+          description: Error
+    put:
+      tags:
+        - Tags
+      description: Update tag
+      parameters:
+        - $ref: '#/components/parameters/Lang'
+        - $ref: '#/components/parameters/TagId'
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: slug
+          in: query
+          description: slug
+          schema:
+            type: string
+        - name: description
+          in: query
+          description: description
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: Validation
+        '404':
+          description: Not Found
+        '400':
+          description: Error
+    delete:
+      tags:
+        - Tags
+      description: Delete tag
+      parameters:
+        - $ref: '#/components/parameters/Lang'
+        - $ref: '#/components/parameters/TagId'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+        '400':
+          description: Error
+
+components:
+  schemas:
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        created_at:
+          type: integer
+          format: datetime
+          example: "2019-05-21 17:13:51"
+        updated_at:
+          type: integer
+          format: datetime
+          example: "2019-05-21 17:13:51"
+        slug:
+          type: string
+        description:
+          type: string
+  parameters:
+    TagId:
+      name: id
+      required: true
+      in: path
+      description: Tag ID
+      schema:
+        type: integer
+        

@@ -1,0 +1,37 @@
+<?= Form::open(['class' => 'layout']); ?>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Імпорт (<?= post('title'); ?>)</h4>
+</div>
+
+<div class="modal-body">
+    <div class="layout-row">
+        <?php if ($importOptionsFormWidget): ?>
+	        <?= $importOptionsFormWidget->render(); ?>
+	    <?php endif ?>
+
+	    <?php if (post('id')): ?>
+	        <input type="hidden" name="id" value="<?= post('id'); ?>"></div>
+	    <?php endif ?>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="popup">
+        <?= e(trans('backend::lang.form.close')); ?>
+    </button>
+    <button
+        type="submit"
+        data-request="onImport"
+        data-hotkey="ctrl+s, cmd+s"
+        data-popup-load-indicator
+        class="btn btn-primary">
+        Імпортувати
+    </button>
+</div>
+
+<?= Form::close(); ?>

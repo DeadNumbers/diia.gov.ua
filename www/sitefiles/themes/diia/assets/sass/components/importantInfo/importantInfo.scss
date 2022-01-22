@@ -1,0 +1,26 @@
+.important-info {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 244, 215, 0.7);
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    border: none;
+    border-radius: 0;
+
+    &:before {
+        content: '☝️';
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-right: 7px;
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    @include media ("<md") {
+        font-size: 13px;
+        line-height: 18px;
+    }
+}

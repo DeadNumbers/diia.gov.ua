@@ -1,0 +1,26 @@
+<?php $switcher = $this->getUpdateSwitcher(); ?>
+
+<?php foreach ($switcher as $lang => $row) : ?>
+	<li>
+		<strong><?= $row['name']; ?></strong>
+		<a  href="javascript:;"
+			data-request="onSwitchLocale"
+			data-request-data="locale: '<?= $lang; ?>', redirect: '<?= $row['url']; ?>'"
+		>
+			<?php if ($row['action'] == 'create') : ?>
+				<i class="icon-plus"></i>
+			<?php elseif ($row['action'] == 'edit') : ?>
+				<i class="icon-pencil"></i>
+			<?php endif ?>
+		</a>
+		<?php if ($row['action'] == 'create') : ?>
+		<a  href="javascript:;"
+			data-request="onSwitchLocale"
+			data-request-data="locale: '<?=$lang?>', redirect: '<?= "{$row['url']}&copy={$this->model->id}"; ?>'"
+		>
+			<i class="icon-copy"></i>
+		</a>
+		<?php endif ?>
+		<input type="hidden" name="languagesSwitcher" data-lang="<?= $lang; ?>" value="<?= $row['url']; ?>" disabled="disabled">
+	</li>	
+<?php endforeach ?>

@@ -1,0 +1,43 @@
+{% set categories = __SELF__.categories %}
+<form class="npa-search-form"
+    action="/npasearch"
+    id="homeNpaSearchForm">
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <label for="searchKeyword">{{ "Ключові слова або номер"|_ }}</label>
+            <input name="key" id="searchKeyword" type="text"/>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <label for="searchDate">{{ "Дата прийняття"|_ }}</label>
+            <input name="date" id="searchDate" class="daterange" type="text"/>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <label>{{ "Тип документа"|_ }}</label>
+
+            <select data-placeholder=" " class="custom-select" name="category">
+                <option value="">{{ "Тип документа не обрано"|_ }}</option>
+                {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+
+        <div class="col-md-12">
+
+            <button class="search-btn" type="submit">
+                {{ "Знайти"|_ }}
+            </button>
+
+            <a href="{{ '/npasearch'|url }}" class="addition-search-items">
+                {{ "Розширений пошук"|_ }}
+            </a>
+        </div>
+    </div>
+
+    <input name="num" class="input hidden" type="text" />
+
+</form>

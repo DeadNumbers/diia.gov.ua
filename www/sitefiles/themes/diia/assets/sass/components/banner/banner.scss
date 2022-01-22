@@ -1,0 +1,162 @@
+.banner {
+	&-top,
+	&-top-v2 {
+		margin: 65px 0 0;
+
+		@include media("<xl") {
+			margin-bottom: 10px;
+			margin-top: 32px;
+		}
+
+		&_bg {
+			border: 2px solid;
+			border-image: radial-gradient(92.76% 76.25% at 7.24% 21%, #B5D39D 0%, #F1ACAC 25.66%, #BF98C6 54.47%, #7179EF 86.04%, #2833D0 100%) 1;
+		}
+
+		&_box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0px 80px;
+			background: #fff;
+
+			@include media(">=1400px") {
+				justify-content: space-around;
+			}
+
+			@include media(">=lg", "<xl") {
+				padding: 0 30px;
+			}
+
+			@include media("<lg") {
+				padding: 0 22px;
+				flex-wrap: wrap;
+			}
+		}
+
+		/*
+		&_logo {
+			 background-position: center;
+			 background-size: cover;
+			 background-repeat: no-repeat;
+			 background-image: url('../../images/banner-top/diia_logo.svg');
+
+			 @include media ("<lg") {
+				 margin: 16px auto;
+			 }
+		 }
+
+		 &_text {
+			 font-size: 24px;
+			 padding: 0 10px;
+			 line-height: 28px;
+			 color: #000000;
+			 flex: 0 1 100%;
+			 max-width: 300px;
+			 margin: 0 auto;
+
+			 @include media ("<xl") {
+				 font-weight: 300;
+				 font-size: 16px;
+				 line-height: 20px;
+				 padding: 0;
+				 text-align: center;
+			 }
+
+			 @include media ("<lg") {
+				 margin-bottom: 24px;
+			 }
+		 }
+
+		 &_img {
+			 position: relative;
+			 height: 133px;
+			 max-width: 194px;
+			 margin: 0 auto;
+
+			 @include media ("<xl") {
+				 max-width: 185px;
+			 }
+
+			 @include media ("<lg") {
+				 margin: 10px auto;
+			 }
+
+			 &-after {
+				 position: absolute;
+				 top: -17px;
+				 left: 0px;
+				 right: 0;
+				 height: 167px;
+				 background-position: center;
+				 background-size: contain;
+				 background-repeat: no-repeat;
+				 background-image: url('../../images/banner-top/full.png');
+			 }
+		 }
+
+		 &_btn {
+			 background: #FFFFFF;
+			 border: 2px solid #007EFF;
+			 border-radius: 40px;
+			 font-size: 11px;
+			 line-height: 24px;
+			 color: #000000;
+			 height: 40px;
+			 display: flex;
+			 flex: 0 1 100%;
+			 align-items: center;
+			 justify-content: center;
+
+			 @include media ("<lg") {
+				 margin-bottom: 8px;
+				 font-size: 13px;
+				 line-height: 18px;
+			 }
+
+			 &-wrap {
+				 flex: 0 0 100%;
+				 max-width: 140px;
+				 margin-left: 10px;
+
+				 @include media ("<lg") {
+					 max-width: 240px;
+					 margin: 10px auto 15px;
+				 }
+			 }
+		 }
+		 */
+	}
+
+	&-top-v2 {
+		&_box {
+			@include media("<lg") {
+				padding: 0;
+			}
+		}
+
+		&_link {
+		}
+
+		&_item {
+			&-desktop {
+				width: 100%;
+				@include media("<md") {
+					display: none;
+				}
+			}
+
+			&-mobile {
+				width: 100%;
+				@include media(">=md") {
+					display: none;
+				}
+			}
+
+			&-image {
+				min-height: 110px;
+				margin: 0 auto;
+			}
+		}
+	}
+}

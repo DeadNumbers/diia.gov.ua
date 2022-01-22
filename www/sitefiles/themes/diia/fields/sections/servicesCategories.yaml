@@ -1,0 +1,20 @@
+templates: home
+
+title: Послуги по категоріям
+tabs:
+  fields:
+    fields[title]:
+      label: Заголовок
+      tab: Головне
+    fields[widget][title]:
+      label: Заголовок
+      tab: Віджет
+    fields[widget][text]:
+      label: Текст
+      type: textarea
+      size: small
+      tab: Віджет
+    fields[widget][link]:
+      label: Посилання
+      type: relationfinder
+      tab: Віджет

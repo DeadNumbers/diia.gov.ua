@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: kitsoft.pages::lang.menuitems.reorder
+
+# Attribute name
+nameFrom: title
+
+# Model Class name
+modelClass: KitSoft\Pages\Models\MenuItem
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

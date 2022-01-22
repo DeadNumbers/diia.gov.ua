@@ -1,0 +1,118 @@
+<?php Block::put('breadcrumb'); ?>
+    <ul>
+        <li><a href="<?= Backend::url('system/settings'); ?>"><?= e(trans('system::lang.settings.menu_label')) ?></a></li>
+        <li><?= e(trans($this->pageTitle)); ?></li>
+    </ul>
+<?php Block::endPut(); ?>
+
+<h2>Elastic Search Indexes</h2>
+
+<div><strong>Enabled:</strong> <?= $settings['is_elastic'] ? 'Yes' : 'No' ; ?></div>
+
+<div><strong>Host:</strong> <?= $settings['elastic_host']; ?></div>
+
+<div><strong>Auth:</strong> <?= $settings['elastic_auth'] ? 'Yes' : 'No' ; ?></div>
+
+<div><strong>Per page:</strong> <?= $settings['elastic_per_page']; ?></div>
+
+<div><strong>Analyzer:</strong> <?= $settings['elastic_analyzer']; ?></div>
+
+<br>
+
+<div class="control-list">
+    <table class="table data">
+        <thead>
+            <tr>
+                <th><span>Тип</span></th>
+                <th><span>Elastic</span></th>
+                <th><span>DB</span></th>
+                <th><span>Індекс</span></th>
+                <th><span>Шаблон</span></th>
+                <th><span>Статус</span></th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<?php foreach($providers as $key => $row) : ?>
+            <tr>
+                <td><strong><?= ucfirst($key); ?></strong></td>
+                <td><span class="es-count" id="es-count-<?= $key; ?>">
+                	<?= isset($row['count'], $row['count']['elastic']) ? $row['count']['elastic'] : null; ?>
+                </span></td>
+                <td><span class="db-count" id="db-count-<?= $key; ?>">
+                    <?= isset($row['count'], $row['count']['db']) ? $row['count']['db'] : null; ?>
+                </span></td>
+                <td><?= $row['index'] ?? null; ?></td>
+                <td><?= $row['template'] ?? null; ?></td>
+                <td align="center">
+                	<span class="oc-icon-circle text-<?= $row['indexExist'] ? 'success' : 'danger'; ?>"></span>
+                </td>
+                <td align="right">
+                    <?php if (!$row['hideSettings']) : ?>
+                    	<button
+                    		type="button"
+                    		onClick="$.editElasticIndex.clickRecord('<?= $key; ?>')"
+                    		class="btn btn-primary btn-sm">
+                    		&nbsp;&nbsp;<i class="oc-icon-cogs"></i>
+                    	</button>
+                    <?php endif ?>
+                    <?php if (!$row['hideReindex']) : ?>
+    	                <button
+    					    type="button"
+    					    data-request="onReindex"
+    					    data-request-confirm="Are you sure to reindex '<?= ucfirst($key); ?>'?"
+    					    data-request-data="type: '<?= $key; ?>'"
+    					    data-request-loading=".loading-indicator-container.<?= $key; ?>"
+    					    data-request-success="$(this).parents('tr').find('.es-count').text('Додано в чергу')"
+    					    class="btn btn-warning btn-sm">
+    					    &nbsp;&nbsp;<i class="oc-icon-refresh"></i>
+    					</button>
+    					<button
+    					    type="button"
+    					    data-request="onDelete"
+    					    data-request-confirm="Are you sure to delete '<?= ucfirst($key); ?>' index?"
+    					    data-request-data="type: '<?= $key; ?>'"
+    					    data-request-loading=".loading-indicator-container.<?= $key; ?>"
+    					    data-request-success="$(this).parents('tr').find('.es-count').text('Видалено')"
+    					    class="btn btn-danger btn-sm"
+    					    <?= !$row['indexExist'] ? 'disabled="true"' : ''; ?>>
+    					    &nbsp;&nbsp;<i class="oc-icon-trash"></i>
+    					</button>
+                    <?php endif ?>
+				</td>
+				<td align="right">
+                	<div class="loading-indicator-container <?= $key; ?>" style="display:none">
+					    <div class="loading-indicator indicator-center" style="background:none">
+					        <span></span>
+					    </div>
+					</div>
+                </td>
+            </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
++function ($) { "use strict";
+
+    var EditElasticIndex = function() {
+
+        this.clickRecord = function(type) {
+            var newPopup = $('<a />')
+
+            newPopup.popup({
+                handler: 'onUpdateForm',
+                extraData: {
+                    'type': type,
+                }
+            })
+        }
+
+    }
+
+    $.editElasticIndex = new EditElasticIndex;
+
+}(window.jQuery);
+</script>

@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: backend::lang.reorder.default_title
+
+# Attribute name
+nameFrom: name
+
+# Model Class name
+modelClass: KitSoft\RLBlogXT\Models\Author
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

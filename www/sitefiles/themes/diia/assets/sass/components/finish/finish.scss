@@ -1,0 +1,46 @@
+.finish {
+    &-box {
+        background: #E6EBE6;
+        background: #E7EEF3;
+        padding: 30px;
+        margin: 40px 0;
+    }
+
+    &-logo {
+        a {
+            display: flex;
+            max-width: 142px;
+            margin: 0 auto;
+
+            @include media ("<md") {
+                max-width: 106px;
+            }
+
+            div {
+                max-width: 66px;
+                flex: 0 0 66px;
+                height: 66px;
+
+                @include media ("<md") {
+                    max-width: 48px;
+                    flex: 0 0 48px;
+                    height: 48px;
+                }
+
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &-content {
+        * {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 300;
+            margin-bottom: 15px !important;
+            text-align: center;
+        }
+    }
+}

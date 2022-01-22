@@ -1,0 +1,16 @@
+.modal-dialog.size-giant {
+	width: 1150px;
+}
+.control-list {
+	overflow: hidden;
+    overflow-x: scroll;
+}
+.modal-dialog ul {
+	list-style: none;
+}
+.modal-dialog ul:first-child {
+	padding: 0;
+}
+.modal-dialog ul:not(:first-child) {
+	padding-left: 10px;
+}

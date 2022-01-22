@@ -1,0 +1,11 @@
+{% if items|length %}
+<nav class="menu_footer">
+    <ul class="menu_footer-list">
+        {% for item in items if not item.isHidden %}
+            <li class="menu_footer-list-item">
+                <a href="{{ item.url|url }}" {% if item.isExternal %}target="_blank" {% endif %} class="menu_footer-list-link">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}

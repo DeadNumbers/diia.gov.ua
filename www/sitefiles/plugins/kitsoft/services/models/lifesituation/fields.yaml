@@ -1,0 +1,78 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: kitsoft.services::lang.life_situation.title
+        type: text
+        span: left
+    slug:
+        label: kitsoft.services::lang.life_situation.slug
+        span: right
+        preset:
+            field: title
+            type: slug
+
+tabs:
+    fields:
+        content:
+            label: kitsoft.services::lang.life_situation.content
+            type: richeditor
+            tab: kitsoft.services::lang.tabs.main
+        excerpt:
+            label: kitsoft.services::lang.life_situation.excerpt
+            type: richeditor
+            tab: kitsoft.services::lang.tabs.main
+            size: small
+        sections:
+            type: partial
+            path: $/kitsoft/pages/controllers/pages/_sections.htm
+            tab: kitsoft.services::lang.tabs.sections
+        # childs
+        childs:
+            tab: kitsoft.services::lang.life_situation.childs
+            type: partial
+            path: $/kitsoft/services/controllers/lifesituations/_childs.htm
+        services:
+            label: kitsoft.services::lang.life_situation.services
+            type: relation
+            nameFrom: title
+            tab: kitsoft.services::lang.tabs.services
+        subcategories:
+            label: kitsoft.services::lang.life_situation.subcategories
+            type: relation
+            nameFrom: name
+            tab: kitsoft.services::lang.tabs.subcategories
+
+        meta_title:
+            tab: kitsoft.services::lang.tabs.seo
+            label: kitsoft.services::lang.life_situation.seo.meta_title
+
+        meta_description:
+            tab: kitsoft.services::lang.tabs.seo
+            type: textarea
+            label: kitsoft.services::lang.life_situation.seo.meta_description
+
+        og_image:
+            tab: kitsoft.services::lang.tabs.seo
+            label: kitsoft.services::lang.life_situation.seo.og_image
+            type: mediafinder
+            mode: image
+            span: auto
+
+secondaryTabs:
+    fields:
+        preview_button@update:
+            type: partial
+        published:
+            label: kitsoft.services::lang.life_situation.published
+            type: checkbox
+        parent_id:
+            label: kitsoft.services::lang.life_situation.parent
+            type: dropdown
+            emptyOption: --
+        image:
+            label: kitsoft.services::lang.life_situation.image
+            type: fileupload
+            mode: image

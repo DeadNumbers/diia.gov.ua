@@ -1,0 +1,143 @@
+1573817017a:1:{s:35:"site/sections/serviceInfoBlocks.htm";a:5:{s:8:"fileName";s:35:"site/sections/serviceInfoBlocks.htm";s:7:"content";s:2282:"<section class="service-acc_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="service-acc_item">
+					<div class="service-acc_item-quest">
+					    {{ data.title }}
+					</div>
+					<div class="collapse service-acc_simple-answer">
+						<div class="row">
+							{% for item in data.items %}
+								{% if item.type == 'simple' %}
+								<div class="col-lg-6">
+									{% if item.label or item.text or item.link|relationFinder.title %}
+									<div class="service-acc_simple">
+										{% if item.label %}
+										<div class="service-acc_simple-label">
+											{{ item.label }}
+										</div>
+										{% endif %}
+										{% if item.text %}
+										<div class="service-acc_simple-title">
+											{{ item.text }}
+										</div>
+										{% endif %}
+										{% if item.link|relationFinder.title %}
+										<a href="{{ item.link|relationFinder.url }}" 
+										   {% if item.link.target %}target="_blank" {% endif %}
+										   class="btn_default"
+										><span>{{ item.link|relationFinder.title }}</span></a>
+										{% endif %}
+									</div>
+									{% endif %}
+								</div>
+								{% elseif item.type == 'big' %}
+								<div class="col-12">
+									{% if item.label or item.text or item.link|relationFinder.title %}
+									<div class="service-acc_big">
+										<div class="service-acc_big-inner">
+											<div class="col-lg-5">
+												{% if item.label %}
+												<div class="service-acc_big-label">
+													{{ item.label }}
+												</div>
+												{% endif %}
+											</div>
+											<div class="col-lg-7">
+												{% if item.text %}
+												<div class="service-acc_simple-title">
+													{{ item.text }}
+												</div>
+												{% endif %}
+												{% if item.link|relationFinder.title %}
+												<a href="{{ item.link|relationFinder.url }}" 
+													{% if item.link.target %}target="_blank" {% endif %}
+													class="btn_default">
+													<span>{{ item.link|relationFinder.title }}</span></a>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+									{% endif %}
+								</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>";s:5:"mtime";i:1573490997;s:6:"markup";s:2282:"<section class="service-acc_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="service-acc_item">
+					<div class="service-acc_item-quest">
+					    {{ data.title }}
+					</div>
+					<div class="collapse service-acc_simple-answer">
+						<div class="row">
+							{% for item in data.items %}
+								{% if item.type == 'simple' %}
+								<div class="col-lg-6">
+									{% if item.label or item.text or item.link|relationFinder.title %}
+									<div class="service-acc_simple">
+										{% if item.label %}
+										<div class="service-acc_simple-label">
+											{{ item.label }}
+										</div>
+										{% endif %}
+										{% if item.text %}
+										<div class="service-acc_simple-title">
+											{{ item.text }}
+										</div>
+										{% endif %}
+										{% if item.link|relationFinder.title %}
+										<a href="{{ item.link|relationFinder.url }}" 
+										   {% if item.link.target %}target="_blank" {% endif %}
+										   class="btn_default"
+										><span>{{ item.link|relationFinder.title }}</span></a>
+										{% endif %}
+									</div>
+									{% endif %}
+								</div>
+								{% elseif item.type == 'big' %}
+								<div class="col-12">
+									{% if item.label or item.text or item.link|relationFinder.title %}
+									<div class="service-acc_big">
+										<div class="service-acc_big-inner">
+											<div class="col-lg-5">
+												{% if item.label %}
+												<div class="service-acc_big-label">
+													{{ item.label }}
+												</div>
+												{% endif %}
+											</div>
+											<div class="col-lg-7">
+												{% if item.text %}
+												<div class="service-acc_simple-title">
+													{{ item.text }}
+												</div>
+												{% endif %}
+												{% if item.link|relationFinder.title %}
+												<a href="{{ item.link|relationFinder.url }}" 
+													{% if item.link.target %}target="_blank" {% endif %}
+													class="btn_default">
+													<span>{{ item.link|relationFinder.title }}</span></a>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+									{% endif %}
+								</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>";s:4:"code";N;}}

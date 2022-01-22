@@ -1,0 +1,64 @@
+[menu]
+code = "header"
+==
+{% set header = partial('header').fields %}
+{% set socials = partial('socials').fields %}
+
+<header id="layout-header" class="header">
+
+    {% partial 'menu/header_pc_main_page' items = menu.menuItems class = 'header-menu' header = header %}
+
+    <div class="header_menu">
+        {% partial 'menu/header' items = menu.menuItems class = 'header-menu' %}
+        <div class="header_sign-wrap">
+            <div class="header_sign-mob" id="header_sign-mob">
+                <a href="{{ header.registerLink|relationFinder.url|url }}" class="btn btn_register" {% if header.registerLink.target %}target="_blank"{% endif %}>{{ header.registerLink|relationFinder.title }}</a>
+                <a href="{{ header.loginLink|relationFinder.url|url }}" class="btn_sign js-btn_sign" {% if header.loginLink.target %}target="_blank"{% endif %}>{{ header.loginLink|relationFinder.title }}</a>
+            </div>
+            <div class="header_sign-mob header_sign-mob-auth" id="header_sign-mob-auth">
+                <a href="{{ header.loginLink|relationFinder.url|url }}" class="btn_sign-auth js-btn_sign-auth" {% if header.loginLink.target %}target="_blank"{% endif %}></a>
+            </div>
+        </div>
+    </div>
+    <div class="header_find">
+        <form class="form form-search-m" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-mobile">
+            <button class="btn form-search-m_btn"></button>
+            <input type="search" name="key" class="input form-search-m_input" placeholder="{{ 'Пошук'|_ }}" autocomplete="off">
+            <div class="form-search-m_close"></div>
+        </form>
+        <div class="form-search-m_error" id="form-search-mobile-error"></div>
+    </div>
+    <div class="header_bg">
+        <div class="header_bg-gradient js-header_bg-gradient"></div>
+        <div class="header_toggle">
+            <div class="header_toggle-icon js-header_toggle-icon"></div>
+        </div>
+        <div class="header_content">
+            <div class="header_content-box">
+                <a href="{{ url('/')|url }}" class="header_logo" title="На головну сторінку">
+                    <div class="header_logo-gerb"></div>
+                    <div class="header_logo-diya"></div>
+                </a>
+            </div>
+            <div class="header_title">
+                {{ 'Державні послуги онлайн'|_ }}
+            </div>
+            <form class="form form-search" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-site">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <div class="form-group_inner">
+                            <label>
+                                <input name="key" type="search" placeholder="{{ 'Назва послуги або життєва ситуація'|_ }}" class="input form-search_input" autocomplete="off">
+                            </label>
+                            <input type="submit" class="btn btn_search-main" value="">
+                        </div>
+                        <div class="form-search_error" id="form-search-site-error"></div>
+                        <div class="form-search_text">
+                            {{ header.searchDescriptions|raw }}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>

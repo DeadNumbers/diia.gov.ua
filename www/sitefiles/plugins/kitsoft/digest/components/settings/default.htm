@@ -1,0 +1,103 @@
+<div class="subscribe-container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="page-title">
+                <h2>
+                    {{ "Налаштування підписки"|_ }}
+                </h2>
+                <div class="description">
+                    {{ "Оберіть теми, які цікавлять вас найбільше, налаштуйте регулярність повідомлень та отримуйте оновлення електронною поштою"|_ }}
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <form data-request="onDigestSettings" data-request-update="'@success': '#success-message'">
+                <h3>
+                    {{ "Як часто надсилати листи"|_ }}
+                </h3>
+                <div class="col-md-4">
+	                <input
+						type="radio"
+						name="list"
+						id="list_empty"
+						class="radio js_check_period"
+						value=""
+						{% if not digestSettings.subscriber.lists.count() %}checked=""{% endif %}> 
+					<label for="list_empty">{{ 'Не отримувати'|_ }}</label>
+				</div>
+				{% for item in digestSettings.lists %}
+					<div class="col-md-4">
+						<input
+							type="radio"
+							name="list"
+							id="list_{{ loop.index }}"
+							class="radio js_check_period"
+							value="{{ item.id }}"
+							{% if item.id in digestSettings.subscriber.lists.lists('id') %}checked=""{% endif %}
+						>	 
+						<label for="list_{{ loop.index }}">{{ item.title }}</label>
+					</div>
+				{% endfor %}
+
+				{% if digestSettings.types|length %}
+					<h3>
+	                    {{ "Типи контенту"|_ }}
+	                </h3>
+	                {% for item, key in digestSettings.types %}
+						<div class="col-md-4 col-sm-4 col-sm-6">
+	                        <input id="content_type_{{ loop.index }}" 
+	                            name="types[]"
+	                            value="{{ item }}"
+	                            type="checkbox" 
+	                            class="checkbox-subscribe js_check_theme"
+	                            {% if item in digestSettings.subscriber.content_types %}checked=""{% endif %}
+	                        >
+	                        <label for="content_type_{{ loop.index }}" class="checkbox-label-subscribe">{{ key }}</label>
+	                    </div>
+					{% endfor %}
+				{% endif %}
+
+				{% if digestSettings.tags|length %}
+	                <h3>
+	                    {{ "Які теми вас цікавлять"|_ }}
+	                </h3>
+	                {% for item in digestSettings.tags %}
+						<div class="col-md-4 col-sm-4 col-sm-6">
+	                        <input id="tag_{{ loop.index }}" 
+	                            name="tags[]"
+	                            value="{{ item.id }}"
+	                            type="checkbox" 
+	                            class="checkbox-subscribe js_check_theme"
+	                            {% if item.id in digestSettings.subscriber.tags.lists('id') %}checked=""{% endif %}
+	                        >
+	                        <label for="tag_{{ loop.index }}" class="checkbox-label-subscribe">{{ item.name }}</label>
+	                    </div>
+					{% endfor %}
+				{% endif %}
+
+                <div class="clearfix"></div>
+
+                <div id="errorContainer"></div>
+
+                <div class="clearfix"></div>
+
+                <div class="col-md-12">
+                    <div class="btn-wrap-sub">
+                        <button type="submit" 
+                            style="background-color: inherit; width: inherit; height: inherit;">
+                            {{ "Зберегти налаштування"|_ }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="col-md-12 align-center">
+            	<div id="success-message"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

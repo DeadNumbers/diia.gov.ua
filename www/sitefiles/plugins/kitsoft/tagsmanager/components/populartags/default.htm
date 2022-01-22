@@ -1,0 +1,10 @@
+<ul>
+	{% for tag in __SELF__.tags %}
+		<li>
+			{# Timeline link with tag filter #}
+			<a href="{{ tagLinkTimeline(tag) }}">{{ tag.name }}</a>
+			{# Tag page link #}
+			<a href="{{ tag.url }}">{{ tag.name }}</a>
+		</li>
+	{% endfor %}
+</ul>

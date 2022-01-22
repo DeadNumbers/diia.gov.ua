@@ -1,0 +1,11 @@
+templates: service
+
+title: Життєві ситуації
+
+tabs:
+  fields:
+    fields[title]:
+      label: Заголовок
+      tab: Головне
+      comment: в цей блок будуть завантажені зв'язані життєві ситуації
+      commentHtml: true

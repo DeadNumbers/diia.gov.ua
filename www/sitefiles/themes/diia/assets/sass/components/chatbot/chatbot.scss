@@ -1,0 +1,188 @@
+/* IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    .chatbot {
+        display: none !important;
+    }
+}
+
+/* IE10+ CSS styles go here */
+
+.chatbot {
+    &_list {
+        padding: 24px;
+
+        @include media ("<md") {
+            padding: 16px;
+        }
+    }
+
+    &_item {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        @include media ("<md") {
+            margin-bottom: 16px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-icn {
+            width: 32px;
+            flex: 0 0 32px;
+            height: 32px;
+
+            @include media ("<md") {
+                width: 24px;
+                flex: 0 0 24px;
+                height: 24px;
+            }
+        }
+
+        &-text {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            color: $black;
+            margin-left: 15px;
+            font-weight: 300;
+
+            @include media ("<md") {
+                bottom: 80px;
+                right: 16px;
+                font-size: 13px;
+                line-height: 18px;
+                margin-left: 8px;
+            }
+        }
+    }
+
+    &_content {
+        width: 216px;
+        background: $white;
+        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        position: fixed;
+        bottom: 104px;
+        right: 24px;
+        z-index: 2;
+        visibility: hidden;
+        animation-duration: 0.5s;
+
+        @include media ("<md") {
+            bottom: 80px;
+            right: 16px;
+            width: 144px;
+        }
+
+        &.fadeInUpChatBot {
+            visibility: visible;
+        }
+    }
+
+    &_btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+        z-index: 3;
+        cursor: pointer;
+        background-color: $black;
+        border: 2px solid $white;
+
+        @include media ("<md") {
+            width: 48px;
+            height: 48px;
+            bottom: 16px;
+            right: 16px;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &:before {
+            width: 20px;
+            flex: 0 0 20px;
+            margin-left: -10px;
+            margin-top: -9px;
+            height: 18px;
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+            transition: transform 0.16s linear 0s, opacity 0.08s linear 0s;
+            background-size: cover;
+            background-image: url('../../images/icons/svg/chatbot/chatbot_open.svg');
+        }
+
+        &:after {
+            width: 16px;
+            flex: 0 0 16px;
+            height: 16px;
+            margin-left: -8px;
+            margin-top: -8px;
+            transform: rotate(-30deg);
+            transition: transform 0.3s linear 0s, opacity 0.08s linear 0s;
+            background-size: auto;
+            background-image: url('../../images/icons/svg/chatbot/chatbot_close.svg');
+            opacity: 0;
+        }
+
+        &.active {
+            &:before {
+                opacity: 0;
+                transform: rotate(30deg) scale(0);
+            }
+
+            &:after {
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.fadeInUpChatBot {
+    -webkit-animation-name: fadeInUpChatBot;
+    animation-name: fadeInUpChatBot;
+}
+
+@-webkit-keyframes fadeInUpChatBot {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 200%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUpChatBot {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 200%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

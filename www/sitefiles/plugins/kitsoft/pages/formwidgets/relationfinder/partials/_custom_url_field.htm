@@ -1,0 +1,24 @@
+<div
+    class="relationfinder-input"
+    <?php if ($this->object->relationFinderType == 'object') : ?>style="display: none"<?php endif ?>
+>
+
+    <label for="<?= $this->getId('title'); ?>">Заголовок</label>
+    <input
+        type="text"
+        id="<?= $this->getId('title'); ?>"
+        name="<?= $this->getInputName('title'); ?>"
+        class='form-control'
+        value="<?= ($this->object->relationFinderType == 'url') ? e($this->object->relationTitle) : null ?>"
+    >
+
+    <label for="<?= $this->getId('url'); ?>">Посилання</label>
+    <input
+        type="text"
+        id="<?= $this->getId('url'); ?>"
+        name="<?= $this->getInputName('url'); ?>"
+        class='form-control'
+        value="<?= ($this->object->relationFinderType == 'url') ? $this->object->url : null ?>"
+    >
+
+</div>

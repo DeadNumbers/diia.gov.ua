@@ -1,0 +1,74 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    driver:
+      label: Driver
+      type: dropdown
+      tab: General
+      span: auto
+      emptyOption: -- Select Driver --
+    limit:
+      label: Limit items for every type (news, events, etc)
+      comment: integer
+      span: auto
+      tab: General
+    tags:
+      label: Tags
+      type: checkbox
+      span: left
+      tab: Subscriber Settings
+    typesEnabled:
+      label: Types
+      type: checkbox
+      span: left
+      tab: Subscriber Settings
+    types:
+      label: Types
+      type: checkboxlist
+      span: left
+      tab: Subscriber Settings
+      trigger:
+        action: show
+        field: typesEnabled
+        condition: checked
+
+    # PHPLIST
+    phplist[apiUrl]:
+      label: Api Url
+      tab: PhpList
+
+    phplist[login]:
+      label: Login
+      span: auto
+      tab: PhpList
+
+    phplist[password]:
+      label: Change Password
+      span: auto
+      type: password
+      tab: PhpList
+
+    phplist[secret]:
+      label: Secret key
+      span: auto
+      tab: PhpList
+
+    checkConnection:
+      label: Check Driver connection
+      type: partial
+      path: $/kitsoft/digest/models/settings/_checkconnection.htm
+      tab: PhpList
+      span: auto
+
+    phplistFaq:
+      type: partial
+      path: $/kitsoft/digest/models/settings/_phplist.htm
+      tab: PhpList
+
+    emptyContent:
+      label: Empty Content
+      type: richeditor
+      tab: Template

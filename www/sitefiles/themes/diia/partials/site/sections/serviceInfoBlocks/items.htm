@@ -1,0 +1,12 @@
+{% if items|length %}
+    <div class="col-lg-6">
+    	{% for item in items if item.type == 'simple' %}
+		     {% partial 'site/sections/serviceInfoBlocks/simple' item = item %}
+		{% endfor %}
+    </div>
+	
+	{% for item in items if item.type == 'big' %}
+	    {% partial 'site/sections/serviceInfoBlocks/big' item = item %}
+	{% endfor %}
+    
+{% endif %}

@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: kitsoft.pages::lang.partials.fields.title
+        searchable: true
+    code:
+        label: kitsoft.pages::lang.partials.fields.code
+        searchable: true

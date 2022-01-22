@@ -1,0 +1,31 @@
+<div class="control-toolbar">
+    <div class="toolbar-item toolbar-primary">
+        <div data-control="toolbar" data-disposable="">
+            <a data-control="popup" data-size="huge" data-handler="onRelationButtonCreate" href="javascript:;" class="btn btn-sm btn-secondary oc-icon-plus">
+                <?= trans('kitsoft.pages::lang.menu.add_item'); ?>
+            </a>
+
+			<a href="<?= Backend::url('kitsoft/pages/menuitems/reorder?menu_id=' . $this->vars['formModel']->id); ?>" class="btn btn-sm btn-secondary oc-icon-list">
+                <?= trans('kitsoft.pages::lang.menu.reorder_items'); ?>
+            </a>
+            
+            <button
+                class="btn btn-sm btn-secondary oc-icon-trash-o control-disabled"
+                onclick="$(this).data('request-data', {
+        checked: $('.form-group[data-field-name=items] .control-list').listWidget('getChecked')
+    })"
+                disabled=""
+                data-request="onRelationButtonDelete"
+                data-request-confirm="<?= trans('kitsoft.pages::lang.menu.delete_confirm'); ?>"
+                data-trigger-action="enable"
+                data-trigger=".form-group[data-field-name=items] .control-list input[type=checkbox]"
+                data-trigger-condition="checked"
+                data-stripe-load-indicator=""
+            >
+                <?= e(trans('backend::lang.list.delete_selected')) ?>
+            </button>
+
+
+        </div>
+    </div>        
+</div>

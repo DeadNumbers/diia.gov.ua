@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    email:
+        label: Email
+        searchable: true
+
+    content_types:
+      label: Content types
+
+    lists_string:
+      label: lists
+
+    created_at:
+      label: Created At
+      type: timesince

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.faq::lang.labels.question
+
+# Model Form Field configuration
+form: $/kitsoft/faq/models/question/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Faq\Models\Question
+
+# Default redirect location
+defaultRedirect: kitsoft/faq/questions
+
+# Create page
+create:
+    title: kitsoft.faq::lang.labels.create_question
+    redirect: kitsoft/faq/questions/update/:id
+    redirectClose: kitsoft/faq/questions
+
+# Update page
+update:
+    title: kitsoft.faq::lang.labels.edit_question
+    redirect: kitsoft/faq/questions
+    redirectClose: kitsoft/faq/questions
+
+# Preview page
+preview:
+    title: kitsoft.faq::lang.labels.preview_question

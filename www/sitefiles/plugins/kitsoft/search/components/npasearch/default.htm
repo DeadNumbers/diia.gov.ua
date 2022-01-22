@@ -1,0 +1,81 @@
+{% set tags = __SELF__.tags %}
+{% set categories = __SELF__.categories %}
+<div class="legislation__wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title">
+                Пошук рішень Уряду
+            </h1>
+        </div>
+    </div>
+
+
+    <form class="legislation__form" id="npaSearchForm">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Ключові слова</label>
+                    <input id="npaSearchKey" type="text" class="form-control" name="key" />
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Дата з</label>
+                    <input id="from" type="text" class="form-control daterange" name="from" />
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Дата по</label>
+                    <input id="to" type="text" class="form-control daterange" name="to" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Тип документа</label>
+                    <select data-placeholder=" " class="custom-select chosen-light" name="category">
+                        <option>Тип документа не обрано</option>
+                        {% for category in categories %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Тема</label>
+                    <select data-placeholder=" " class="custom-select chosen-light" name="tags">
+                        <option>Тему документа не обрано</option>
+                        {% for tag in tags %}
+                            <option value='{{ tag.slug }}'>{{ tag.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>{{ " Номер"|_ }}</label>
+                    <input class="input" style="width: 100%;" type="text" name="num" />
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <button type="submit" class="btn button button__search">Знайти</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>

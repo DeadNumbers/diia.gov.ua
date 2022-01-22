@@ -1,0 +1,54 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: kitsoft.pages::lang.menuitems.fields.title
+        span: left
+
+    type:
+        label: kitsoft.pages::lang.menuitems.fields.type
+        span: right
+        type: dropdown
+
+    value_link:
+        label: kitsoft.pages::lang.menuitems.fields.value_link
+        span: left
+        trigger:
+            action: show
+            field: type
+            condition: value[link]
+
+    value:
+        label: kitsoft.pages::lang.menuitems.fields.value
+        span: left
+        type: dropdown
+        options: getValueOptions
+        dependsOn: type
+        trigger:
+            action: show
+            field: type
+            condition: value[page]||value[cmsPage]
+
+    isExternal:
+        label: kitsoft.pages::lang.menuitems.fields.isExternal
+        type: checkbox
+        span: right
+        trigger:
+            action: show
+            field: type
+            condition: value[page]||value[cmsPage]||value[link]
+
+    isHidden:
+        label: kitsoft.pages::lang.menuitems.fields.isHidden
+        span: right
+        type: checkbox
+
+    icon:
+        label: kitsoft.pages::lang.menuitems.fields.icon
+        type: fileupload
+        mode: image
+        fileTypes: jpeg,jpg,png,svg
+        span: auto

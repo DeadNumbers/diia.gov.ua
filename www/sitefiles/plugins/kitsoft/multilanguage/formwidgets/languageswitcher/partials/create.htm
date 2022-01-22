@@ -1,0 +1,14 @@
+<?php foreach ($this->languages as $lang => $langName) : ?>
+	<?php if ($this->activeLang == $lang) {
+    	continue;
+	} ?>
+	<li>
+		<strong><?= $langName; ?></strong>
+		<a  href="javascript:;"
+			data-request="onSwitchLocale"
+			data-request-data="locale: '<?= $lang; ?>'"
+		>
+			<i class="icon-chevron-circle-right"></i>
+		</a>
+	</li>
+<?php endforeach ?>

@@ -1,0 +1,36 @@
+step: 20
+items:
+  0:
+    title: Шапка сайту
+    code: header
+    fields:
+      title: Державні послуги онлайн
+      placeholder: Назва послуги або життєва ситуація
+      description: '<p>Наприклад: <a href="">відкрити ФОП</a> або <a href="">Розпочати бізнес</a></p>'
+      loginLink: 
+        title: Увійти
+        url: /
+      registerLink:
+        title: Зареєструватись
+        url: /
+  1:
+    title: Соціальні мережі
+    code: socials
+    fields:
+      items:
+        1:
+          name: Facebook
+          url: /
+          icon: facebook
+        2:
+          name: Youtube
+          url: /
+          icon: youtube
+  2:
+    title: Підвал сайту
+    code: footer
+    fields:
+  3:
+    title: Open Graph
+    code: og
+    fields:

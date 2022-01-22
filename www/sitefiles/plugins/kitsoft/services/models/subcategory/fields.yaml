@@ -1,0 +1,52 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+      label: kitsoft.services::lang.subcategory.name
+      span: left
+      type: text
+    slug:
+      label: kitsoft.services::lang.subcategory.slug
+      span: right
+      preset:
+          field: name
+          type: slug
+
+tabs:
+  fields:
+    description:
+      label: kitsoft.services::lang.subcategory.description
+      type: richeditor
+      tab: kitsoft.services::lang.tabs.main
+    services_list:
+      label: kitsoft.services::lang.subcategory.services
+      type: relation
+      nameFrom: title
+      tab: kitsoft.services::lang.tabs.services
+      span: auto
+    reorder_services:
+      label: kitsoft.services::lang.subcategory.reorder
+      type: partial
+      tab: kitsoft.services::lang.tabs.services
+      span: auto
+    categories:
+      label: kitsoft.services::lang.subcategory.categories
+      type: relation
+      tab: kitsoft.services::lang.tabs.categories
+    life_situations:
+      label: kitsoft.services::lang.subcategory.life_situations
+      type: relation
+      nameFrom: title
+      scope: getAllRoot
+      tab: kitsoft.services::lang.tabs.life_situations
+      span: auto
+    fields[link_description]:
+      label: kitsoft.services::lang.subcategory.link_description
+      type: textarea
+      size: small
+      tab: kitsoft.services::lang.tabs.link
+    fields[link]:
+      type: relationfinder
+      tab: kitsoft.services::lang.tabs.link

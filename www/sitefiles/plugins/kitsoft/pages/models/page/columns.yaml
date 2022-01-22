@@ -1,0 +1,35 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: kitsoft.pages::lang.page.fields.id
+        searchable: true
+        sortable: false
+        width: 71px
+    title:
+        label: kitsoft.pages::lang.page.fields.title
+        type: partial
+        path: ~/plugins/kitsoft/pages/models/page/_title_column.htm
+        searchable: true
+        sortable: false
+    slug:
+        label: kitsoft.pages::lang.page.fields.slug
+        searchable: true
+        sortable: false
+    layout:
+        label: Template
+        searchable: true
+        sortable: false
+        invisible: true
+    sluggable:
+        label: Sluggable
+        searchable: false
+        sortable: false
+        invisible: true
+    published:
+        label: Published
+        searchable: false
+        sortable: false
+        invisible: true

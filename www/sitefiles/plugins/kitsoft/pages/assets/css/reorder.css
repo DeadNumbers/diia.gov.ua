@@ -1,0 +1,30 @@
+
+.control-treelist ol ol li{
+    display: none;
+}
+.control-treelist ol .updated + ol>li{
+    display: block;
+}
+
+.not-empty span{
+    cursor: pointer;
+    position: relative;
+}
+.not-empty span:before{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 13px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(64,82,97,0.8);
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.not-empty.active span:before{
+    transform: rotate(180deg);
+}

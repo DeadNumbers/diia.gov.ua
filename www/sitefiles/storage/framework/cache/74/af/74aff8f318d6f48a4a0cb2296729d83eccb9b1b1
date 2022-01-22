@@ -1,0 +1,130 @@
+1573816982a:1:{s:24:"menu/header_pc_inner.htm";a:5:{s:8:"fileName";s:24:"menu/header_pc_inner.htm";s:7:"content";s:3444:"<div class="header-sm_fixed">
+    <div class="header-sm_fixed-inner">
+        <a href="/" class="header-sm_logo">
+            <div class="header-sm_logo-gerb"></div>
+            <div class="header-sm_logo-diya"></div>
+        </a>
+        <nav class="menu">
+            <ul class="menu_list">
+                {% for item in items if not item.isHidden %}
+                    {% if not item.items|length %}
+                        <li class="menu_list-item">
+                            <a href="{{ item.url ? item.url|url : 'javascript:void(0)' }}" {% if item.isExternal %} target="_blank" {% endif %} class="menu_list-link">{{ item.title }}</a>
+                        </li>
+                    {% else %}
+                        <li class="menu_list-item">
+                            <a href="{{ item.url ? item.url|url : 'javascript:void(0)' }}" class="menu_list-link menu_list-link-sub" data-menu-target="menu-sub-{{ loop.index }}">{{ item.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="header-sm_search">
+            <form class="form form-search-sm" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-site-sm">
+                <button class="btn form-search-sm_btn"></button>
+                <input type="search" name="key" class="input form-search-sm_input" placeholder="Пошук">
+                <div class="form-search-sm_error" id="form-search-site-error"></div>
+                <div class="form-search-sm_close"></div>
+            </form>
+        </div>
+        <div class="header_sign">
+            <div class="header_sign-search icn_search"></div>
+            <a href="javascript:void(0)" class="btn btn_register">Зареєструватись</a>
+            <a href="javascript:void(0)" class="btn_sign">Увійти</a>
+        </div>
+    </div>
+    {% for item in items if not item.isHidden %}
+        {% if item.items|length %}
+            <div class="menu-sub" id="menu-sub-{{ loop.index }}">
+                <div class="container">
+                    <div class="row">
+                        {% for child in item.items if not child.isHidden %}
+                            <div class="col-lg-6"> 
+                                <a href="{{ child.url ? child.url|url : 'javascript:void(0)' }}"
+                                {% if child.isExternal %}target="_blank" {% endif %} class="menu-sub_title" >{{ child.title }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                     <div class="row">
+                        {% for child in item.items %}
+                            <div class="col-lg-6"> 
+                                <ul class="menu-sub_list">
+                                    {% for subChild in child.items if not subChild.isHidden %}
+                                        <li class="menu-sub_list-item">
+                                            <a href="{{ subChild.url ? subChild.url|url : 'javascript:void(0)' }}" class="menu-sub_list-link">{{ subChild.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+";s:5:"mtime";i:1573755205;s:6:"markup";s:3443:"<div class="header-sm_fixed">
+    <div class="header-sm_fixed-inner">
+        <a href="/" class="header-sm_logo">
+            <div class="header-sm_logo-gerb"></div>
+            <div class="header-sm_logo-diya"></div>
+        </a>
+        <nav class="menu">
+            <ul class="menu_list">
+                {% for item in items if not item.isHidden %}
+                    {% if not item.items|length %}
+                        <li class="menu_list-item">
+                            <a href="{{ item.url ? item.url|url : 'javascript:void(0)' }}" {% if item.isExternal %} target="_blank" {% endif %} class="menu_list-link">{{ item.title }}</a>
+                        </li>
+                    {% else %}
+                        <li class="menu_list-item">
+                            <a href="{{ item.url ? item.url|url : 'javascript:void(0)' }}" class="menu_list-link menu_list-link-sub" data-menu-target="menu-sub-{{ loop.index }}">{{ item.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="header-sm_search">
+            <form class="form form-search-sm" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form-search-site-sm">
+                <button class="btn form-search-sm_btn"></button>
+                <input type="search" name="key" class="input form-search-sm_input" placeholder="Пошук">
+                <div class="form-search-sm_error" id="form-search-site-error"></div>
+                <div class="form-search-sm_close"></div>
+            </form>
+        </div>
+        <div class="header_sign">
+            <div class="header_sign-search icn_search"></div>
+            <a href="javascript:void(0)" class="btn btn_register">Зареєструватись</a>
+            <a href="javascript:void(0)" class="btn_sign">Увійти</a>
+        </div>
+    </div>
+    {% for item in items if not item.isHidden %}
+        {% if item.items|length %}
+            <div class="menu-sub" id="menu-sub-{{ loop.index }}">
+                <div class="container">
+                    <div class="row">
+                        {% for child in item.items if not child.isHidden %}
+                            <div class="col-lg-6"> 
+                                <a href="{{ child.url ? child.url|url : 'javascript:void(0)' }}"
+                                {% if child.isExternal %}target="_blank" {% endif %} class="menu-sub_title" >{{ child.title }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                     <div class="row">
+                        {% for child in item.items %}
+                            <div class="col-lg-6"> 
+                                <ul class="menu-sub_list">
+                                    {% for subChild in child.items if not subChild.isHidden %}
+                                        <li class="menu-sub_list-item">
+                                            <a href="{{ subChild.url ? subChild.url|url : 'javascript:void(0)' }}" class="menu-sub_list-link">{{ subChild.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>";s:4:"code";N;}}

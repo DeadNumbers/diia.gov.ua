@@ -1,0 +1,252 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->serviceCategorySubcategory->subcategory->name;
+}
+?>
+==
+{% set breadcrumbs = page.breadcrumbs %}
+{% set link = serviceCategorySubcategory.subcategory.fields.link %}
+
+{% if breadcrumbs|length %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" href="{{ '/'|url }}">{{ "Головна"|_ }}</a>
+                        </li>
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link"
+                                href="{{ getPageByTemplate('services').url|url }}/categories/{{ serviceCategorySubcategory.category.slug }}">
+                                {{ serviceCategorySubcategory.category.name }}
+                            </a>
+                        </li>
+                        <li class="breadcrumb_item active">
+                            {{ serviceCategorySubcategory.subcategory.name }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="article-level-1">{{ serviceCategorySubcategory.subcategory.name }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# life situations #}
+{% if serviceCategorySubcategory.subcategory.life_situations|length %}
+    {% if serviceCategorySubcategory.subcategory.life_situations|length == 1 %}
+    <section class="part_section">
+        <div class="container">
+            {% for item in serviceCategorySubcategory.subcategory.life_situations %}
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="part_item-content">
+                            <div class="part_item-type">
+                                <div class="part_item-type-text">
+                                    {{ 'Життєві події та ситуації'|_ }}
+                                </div>
+                            </div>
+                            {% if item.title %}
+                                <div class="part_item-title">{{ item.title }}</div>
+                            {% endif %}
+                            {% if item.excerpt %}
+                                <div class="part_item-short">{{ item.excerpt|raw }}</div>
+                            {% endif %}
+                            {% if item.url %}
+                            <div class="part_item-detail">
+                                <a href="{{ item.url|url }}" class="btn btn-fill">{{ 'Дізнатись більше'|_ }}</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-7 d-none d-lg-block">
+                        {% if item.image.path %}
+                            <div class="part_item-preview" style="background-image: url('{{ item.image.path }}')"></div>
+                        {% else %}
+                            <div class="part_item-preview" style="background-image: url('{{ 'assets/images/default_photo.png'|theme }}');"></div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% else %}
+    <section class="part_section-slider">
+        <div class="container">
+            <!-- Slider main container -->
+            <div class="swiper-container swiper_part js-swiper_part">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper swiper_part-wrapper">
+                <!-- Slides -->
+                {% for item in serviceCategorySubcategory.subcategory.life_situations %}
+                    <div class="swiper-slide swiper_part-slide">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="part_item-content">
+                                    <div class="part_item-type">
+                                        <div class="part_item-type-text">
+                                            {{ 'Життєві події та ситуації'|_ }}
+                                        </div>
+                                    </div>
+                                    {% if item.title %}
+                                        <div class="part_item-title">{{ item.title }}</div>
+                                    {% endif %}
+                                    {% if item.excerpt %}
+                                        <div class="part_item-short">{{ item.excerpt|raw }}</div>
+                                    {% endif %}
+                                    {% if item.url %}
+                                    <div class="part_item-detail">
+                                        <a href="{{ item.url|url }}" class="btn btn-fill">{{ 'Дізнатись більше'|_ }}</a>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-lg-7 d-none d-lg-block">
+                                <div class="part_item-preview-wrap">
+                                    <div class="part_item-type d-lg-none">
+                                        <div class="part_item-type-text">
+                                            {{ 'Життєві події та ситуації'|_ }}
+                                        </div>
+                                    </div>
+                                    {% if item.image.path %}
+                                        <div class="part_item-preview" style="background-image: url('{{ item.image.path }}')"></div>
+                                    {% else %}
+                                        <div class="part_item-preview" style="background-image: url('{{ 'assets/images/default_photo.png'|theme }}');"></div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper_part-btn-box">
+                        <div class="swiper_part-btn-prev swiper-btn-prev"></div>
+                        <div class="swiper_part-btn-next swiper-btn-next"></div>
+                    </div>
+                </div>
+                <div class="col-6 d-none d-lg-block">
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination swiper_part-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endif %}
+{# end life situations #}
+
+<section class="service-acc_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="article-level-2 mt-0">{{ "Послуги"|_ }}</div>
+            </div>
+        	<div class="col-12">
+            	{% for subcategory in serviceCategorySubcategory.subcategory.children %}
+                    <div class="service-acc_item">
+                    	{#  href="{{ (serviceCategorySubcategory.category.url ~ '/' ~ subcategory.slug)|url }}" #}
+                        <div class="service-acc_item-quest js-service-acc_item-quest">
+    						{{ subcategory.name }}
+                        </div>
+                        <div class="collapse service-acc_item-answer">
+                            <div class="service-acc_item-link-box">
+                            	{% for service in subcategory.services %}
+    								<a href="{{ service.url|url }}" class="service-acc_item-link">{{ service.title }}</a>
+    							{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for service in serviceCategorySubcategory.subcategory.services %}
+                    <div class="service-acc_item">
+                        <a href="{{ service.url|url }}" class="service-acc_item-service">{{ service.title }}</a>
+                    </div>
+                {% endfor %}
+                <div class="service-acc_item">
+                    <div class="service-acc_item-quest js-service-acc_item-quest">
+                        {{ 'Від А до Я'|_ }}
+                    </div>
+                    <div class="collapse service-acc_item-answer">
+                        <div class="service-acc_item-link-box row">
+                            {% for letter, services in serviceCategorySubcategory.servicesByLetters %}
+                                <div class="col-md-6 col-xl-4 services-byletter_item">
+                                    <div class="services-byletter_letter">{{ letter }}</div>
+                                    {% if services|length %}
+                                        {% for service in services %}
+                                            <div class="services-byletter_title">
+                                                <a href="{{ service.url|url }}">{{ service.title }}</a>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{#<section>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-12">
+                <div class="service-title_link">
+                    <a href="{{ getPageByTemplate('services').url|url }}?subcategories={{ serviceCategorySubcategory.subcategory.slug }}">{{ 'Від А до Я'|_ }}</a>
+                </div>
+			</div>
+		</div>
+	</div>
+</section>#}
+
+{% if link|relationFinder.title and link|relationFinder.url or serviceCategorySubcategory.subcategory.fields.link_description %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="service_not-found">
+                        {% if serviceCategorySubcategory.subcategory.fields.link_description %}
+                        <div class="service_not-found-title">
+                            {{ serviceCategorySubcategory.subcategory.fields.link_description|raw }}
+                        </div>
+                        {% endif %}
+                        {% if link|relationFinder.title and link|relationFinder.url %}
+                            <div class="service_not-found-btn">
+                                <a href="{{ link|relationFinder.url }}" class="btn btn-fill" {% if link.target %}target="_blank"{% endif %}>{{ link|relationFinder.title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/serviceSubCategory.bundle.js']|theme }}"></script>
+{% endput %}

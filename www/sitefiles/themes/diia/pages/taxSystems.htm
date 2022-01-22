@@ -1,0 +1,15 @@
+layout = "testService"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+[page]
+==		
+{% partial 'site/breadcrumbs' %}
+
+<section>
+    <div class="container">
+		{% component 'taxSystems' %}
+	</div>
+</section>

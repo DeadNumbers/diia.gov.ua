@@ -1,0 +1,60 @@
+layout = "default"
+sections = true
+components = true
+hideContent = false
+
+[page]
+==
+{% set page = page.data %}
+
+{% partial 'site/breadcrumbs' %}
+
+<section>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-12">
+	            <div class="page_title">
+	                <h1 class="page_title-text">{{ page.title }}</h1>
+	                <div class="page_title-date">{{ post.published_at|date('d/m/Y') }}</div>
+	            </div>
+	            {% if page.tags|length %}
+		            <div class="tag_wrap tag_wrap_static-page">
+		                {% for tag in page.tags %}
+		                	<a href="{{ tag.url|url }}" class="tag">{{ tag.name }}</a>
+		                {% endfor %}
+		            </div>
+	            {% endif %}
+	        </div>
+			<div class="col-md-9">
+				<div class="editor-content js-editor-content">
+					{% if page.content|length > 0 %}
+						{{ page.content|raw }}
+					{% endif %}
+
+					{% for section in page.raw_sections if section.published %}
+						{% partial 'site/sections/' ~ section.name data = section.fields %}
+					{% endfor %}
+				</div>
+				{% if page.slug == 'speedtest' %}
+				<div class="pb-60">
+					<script type="text/javascript" src="https://form.jotform.com/jsform/211661780507051"></script>
+				</div>
+				{% endif %}
+			</div>
+	    </div>
+    </div>
+</section>
+
+{#{% if page.childs|length %}
+    {% for child in page.childs %}
+	    {% if child.fields.link.url %}
+	        <a target="{{ child.fields.link.target }}" href="{{ child.fields.link.url|url }}">{{ child.title }}</a>
+	    {% else %}
+	        <a href="{{ child.url|url }}">{{ child.title }}</a>
+	    {% endif %}
+    {% endfor %}
+{% endif %}#}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

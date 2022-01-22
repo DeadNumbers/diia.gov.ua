@@ -1,0 +1,20 @@
+<div class="col-12">
+	<div class="service-acc_big">
+		<div class="service-acc_big-inner">
+			<div class="col-lg-7">
+				{% if item.text %}
+					<div class="service-acc_big-title">
+						{{ item.text|replace({'&nbsp;': ' '})|raw }}
+					</div>
+				{% endif %}
+				{% if item.link|relationFinder.title %}
+					<a href="{{ item.link|relationFinder.url }}" 
+						{% if item.link.target %}target="_blank" {% endif %}
+						class="btn_default">
+						<span>{{ item.link|relationFinder.title }}</span>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

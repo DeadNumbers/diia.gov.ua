@@ -1,0 +1,9 @@
+1.0.1: First version of Sitemap
+1.0.2:
+  - 2020-04-13. Add faq plugin to config.
+1.0.3:
+  - 2020-04-13. Fix apply scopes for models.
+2.0.0:
+  - 2020-05-07. roumen/sitemap repository was deleted. Migrate to laravelium/sitemap.
+2.0.1:
+  - 2020-05-15. Implement [Settings] model by revisons.

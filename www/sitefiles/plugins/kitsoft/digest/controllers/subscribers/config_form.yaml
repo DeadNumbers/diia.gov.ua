@@ -1,0 +1,25 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Subscriber
+
+# Model Form Field configuration
+form: $/kitsoft/digest/models/subscriber/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Digest\Models\Subscriber
+
+# Default redirect location
+defaultRedirect: kitsoft/digest/subscribers
+
+# Update page
+update:
+    title: Edit Subscriber
+    redirect: kitsoft/digest/subscribers
+    redirectClose: kitsoft/digest/subscribers
+
+# Preview page
+preview:
+    title: Preview Subscriber

@@ -1,0 +1,32 @@
+<?php
+
+function renderTree($items, $step = 0) {
+  if (!$items->count() || $step == 30) {
+    return;
+  }
+
+  echo '<ul>';
+  $items->each(function ($item, $key) use ($items, $step) {
+    $url = Backend::url('kitsoft/polls/questions/update/' . $item->id);
+    echo "<li><a href='{$url}' target='_blank'>{$item->title}</a>";
+
+    if (!$item->isConfigured()) {
+      echo '<ul><li><i class="icon-times icon-2x" style="color:red"></i></li></ul>';
+    } elseif ($item->subQuestions->count()) {
+      renderTree($item->subQuestions, ++$step);
+    } else {
+      echo '<ul><li><i class="icon-check icon-2x" style="color:green"></i></li></ul>';
+    }
+
+    echo "</li>";
+  });
+  echo '</ul>';
+}
+
+?>
+
+<div class="tree">
+  <?php if ($model->question) {
+    renderTree(collect([$model->question])); 
+  } ?>
+</div>

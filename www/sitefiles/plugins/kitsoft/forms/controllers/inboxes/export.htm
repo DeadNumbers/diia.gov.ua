@@ -1,0 +1,18 @@
+
+<?= Form::open([
+    'url' => Backend::url('kitsoft/forms/inboxes/download-item/'),
+'method' => 'POST'
+]); ?>
+<label><?= trans('kitsoft.forms::lang.system.labels.download_inboxes_for_period'); ?></label>
+<?= $formWidget->render(); ?>
+
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <button
+            type="submit"
+            class="btn btn-primary">
+            <?= trans('kitsoft.forms::lang.system.buttons.download'); ?>
+        </button>
+    </div>
+</div>
+<?= Form::close(); ?>

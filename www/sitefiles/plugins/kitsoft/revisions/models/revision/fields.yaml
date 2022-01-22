@@ -1,0 +1,50 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    
+    actionFlash:
+        label: Дія
+        type: partial
+        path: $/kitsoft/revisions/controllers/revisions/_actionFlash.htm
+        disabled: true
+
+    type:
+        label: Тип
+        span: left
+        disabled: true
+
+    fieldTitle:
+        label: Поле
+        span: right
+        disabled: true
+
+    revisionable_id:
+        label: Revisionable ID
+        span: left
+        disabled: true
+
+    revisionable_type:
+        label: Revisionable Type
+        span: right
+        disabled: true
+
+    diff:
+        type: partial
+        path: $/kitsoft/revisions/controllers/revisions/_diff.htm
+        disabled: true
+
+    createTimesince:
+        label: Дата
+        span: left
+        type: partial
+        path: $/kitsoft/revisions/controllers/revisions/_createTimesince.htm
+        disabled: true
+
+    userinfo:
+        label: Admin
+        type: partial
+        span: auto
+        path: $/kitsoft/revisions/controllers/revisions/_userinfo.htm
+        disabled: true

@@ -1,0 +1,15 @@
+<div>
+	{% partial 'posts/items' %}
+</div>
+<div>
+	<div>
+        <div
+            id="pagination-info"
+            class="hidden"
+            data-total="{{ __SELF__.posts.total }}"
+            data-currentpage="{{ __SELF__.posts.currentPage }}"
+            data-lastpage="{{ __SELF__.posts.lastPage }}"
+        ></div>
+		{{ __SELF__.posts.render()|raw }}
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="checkbox custom-checkbox p-t">
+
+    <input
+    	type="checkbox"
+    	id="<?= $this->getId('target'); ?>"
+    	name="<?= $this->getInputName('target'); ?>"
+    	value="1"
+    	<?php if ($this->getValue('target')) : ?>checked="true"<?php endif ?>
+    >
+
+    <label for="<?= $this->getId('target'); ?>">Відкрити в новому вікні</label>
+
+</div>

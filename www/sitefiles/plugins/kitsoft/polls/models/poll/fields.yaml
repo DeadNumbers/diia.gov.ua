@@ -1,0 +1,41 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Заголовок
+
+tabs:
+  fields:
+    question:
+      label: Запитання
+      type: relation
+      select: title
+      emptyOption: - Оберіть запитання -
+      tab: Головне
+    description:
+      label: Описання
+      type: richeditor
+      tab: Головне
+    info:
+      label: Інформація
+      type: richeditor
+      tab: Головне
+    tree:
+      type: partial
+      tab: Структура
+    logs:
+      label: Logs
+      type: partial
+      tab: Logs
+secondaryTabs:
+  fields:
+    use_departments:
+      label: Додати інформацію про департаменти
+      type: checkbox
+    downloadStatistic@update:
+      type: partial
+      path: $/kitsoft/polls/classes/statistic/_button.htm
+
+

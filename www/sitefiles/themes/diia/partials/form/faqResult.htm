@@ -1,0 +1,16 @@
+{% if error %}
+
+    <div class="alert alert-danger">Sorry there was an error: {{ error }}</div>
+
+{% else %}
+
+    <div class="modal-service_done">
+        <div class="modal-service_done-icn"></div>
+        <div class="modal-service_done-title">{{ "Дякуємо"|_ }}</div>
+        <div class="modal-service_done-text">{{ __SELF__.form.success_text|raw }}</div>
+        <div class="modal-service_done-btn">
+            <a href="/" class="btn btn_default"><span>На головну</span></a>
+        </div>
+    </div>
+
+{% endif %}

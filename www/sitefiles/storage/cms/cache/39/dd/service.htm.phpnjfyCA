@@ -1,0 +1,8 @@
+<?php 
+class Cms61a8c110ae8af749222848_b9f8a2e7347d1cd2b265998acb4a8e3aClass extends Cms\Classes\PageCode
+{
+public function onEnd()
+{
+    $this->page->title = $this->service->service->title;
+}
+}

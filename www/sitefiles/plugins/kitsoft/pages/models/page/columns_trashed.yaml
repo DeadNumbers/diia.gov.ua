@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: kitsoft.pages::lang.page.fields.id
+        searchable: true
+        sortable: false
+    title:
+        label: kitsoft.pages::lang.page.fields.title
+        type: partial
+        path: ~/plugins/kitsoft/pages/models/page/_title_located_column.htm
+        searchable: true
+        sortable: false
+    deleted_at:
+        label: Видалено
+        type: timetense
+        searchable: false
+        sortable: false

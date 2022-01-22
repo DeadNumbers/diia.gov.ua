@@ -1,0 +1,16 @@
+Text Style: H1 Heading 56 Regular
+Text Style: H2 Heading 38 Regular
+Text Style: H3 Heading 28 Regular
+Text Style: H4 Heading 24 Regular
+Text Style: H5 Heading 20 Regular
+Text Style: H6 Heading 18 Regular
+Text Style: H7 Heading 16 Regular
+
+
+Text Style: H7 Text 16 Light
+Text Style: H8 Text 13 Regular
+Text Style: H9 Text 12 Regular
+Text Style: H10 Text 11 Regular
+
+Font Family: e-Ukraine Regular
+Font Family: e-Ukraine Light

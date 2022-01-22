@@ -1,0 +1,96 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="service_not-found">
+                    <div class="service_not-found-title">
+                        {{ 'Не знайшли потрібної відповіді? Поставте запитання'|_ }}
+                    </div>
+                    <div class="service_not-found-btn">
+                        <a href="#" class="btn btn-fill" data-toggle="modal" data-target="#exampleModal">{{ 'Поставити запитання'|_ }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% set form = __SELF__.form %}
+
+
+
+<div class="modal modal-service fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-service_dialog" role="document">
+        <div class="modal-content modal-service_content">
+            <div class="modal-service_close icn_modal-close-service" data-dismiss="modal" aria-label="Close"></div>
+            <div class="modal-service_body">
+                <form class="form form-service"
+                        {#
+                            data-request="onSubmitForm"
+                            data-request-success="$(this).remove()"
+                            data-request-update="'{{__SELF__}}::faqResult': '.modal-service_body'"
+                            data-request-files
+                        #}
+                        method="POST"
+                        accept-charset="utf-8"
+                        id="form-faq-item">
+
+                    <div class="modal-service_title">{{ form.name }}</div>
+
+                    <input type="hidden" name="form_id" value="{{ form.id }}" class="ignore">
+
+                    <div class="row">
+
+                        {% for field in form.fields|slice(0,2) if field.type == 'text' %}
+
+                            <div class="col-md-6">
+                                <div class="form-service_input-box">
+                                    <div class="input-border-gradient">
+                                        <input type="text"
+                                               name="{{ field.code }}"
+                                               class="input form-service_input"
+                                               placeholder="{{ field.placeholder }}">
+                                        <div class="border-gradient"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    {% for field in form.fields|slice(2,4) if field.type == 'text' %}
+
+                        <div class="form-service_input-box">
+                            <div class="input-border-gradient">
+                                <input type="text"
+                                       name="{{ field.code }}"
+                                       class="input form-service_input"
+                                       placeholder="{{ field.placeholder }}">
+                                <div class="border-gradient"></div>
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+                    {% if form.submit_text %}
+
+                        <button class="btn btn-fill" id="form-faq-item-btn">
+                            {{ form.submit_text }}
+                        </button>
+
+                    {% endif %}
+
+                </form>
+            </div>
+            <div class="modal-service_done">
+                <div class="modal-service_done-icn"></div>
+                <div class="modal-service_done-title">{{ "Дякуємо"|_ }}</div>
+                <div class="modal-service_done-text">{{ __SELF__.form.success_text|raw }}</div>
+                <div class="modal-service_done-btn">
+                    <a href="/" class="btn btn_default"><span>На головну</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

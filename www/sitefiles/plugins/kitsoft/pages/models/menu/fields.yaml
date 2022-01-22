@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: kitsoft.pages::lang.menu.fields.title
+        span: left
+
+    code:
+        label: kitsoft.pages::lang.menu.fields.code
+        span: right
+        preset:
+            field: name
+            type: slug
+
+tabs:
+    fields:
+        items:
+            label: kitsoft.pages::lang.menu.fields.items
+            type: partial
+            path: $/kitsoft/pages/controllers/menus/_items.htm
+            tab: kitsoft.pages::lang.menu.tabs.main

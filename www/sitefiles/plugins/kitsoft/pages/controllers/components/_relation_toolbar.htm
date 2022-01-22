@@ -1,0 +1,23 @@
+<?php if($this->user->hasAccess('kitsoft.pages.components.create')) : ?>
+    <div class="control-toolbar">
+        <div class="toolbar-item toolbar-primary">
+            <div data-control="toolbar" data-disposable="">
+                <a data-control="popup" data-size="huge" data-handler="onRelationButtonCreate" href="javascript:;" class="btn btn-sm btn-secondary oc-icon-plus">
+                    <?= Lang::get('kitsoft.pages::lang.components.add'); ?>
+                </a>
+
+    			<a href="<?= Backend::url('kitsoft/pages/components/reorder?relation_id=' . $this->vars['formModel']->id); ?>" class="btn btn-sm btn-secondary oc-icon-list">
+                    <?= Lang::get('kitsoft.pages::lang.components.reorder'); ?>
+                </a>
+                
+                <button class="btn btn-sm btn-secondary oc-icon-trash-o control-disabled" onclick="$(this).data('request-data', {
+            checked: $('.form-group[data-field-name=components] .control-list').listWidget('getChecked')
+        })" disabled="" data-request="onRelationButtonDelete" data-request-confirm="Are you sure?" data-trigger-action="enable" data-trigger=".form-group[data-field-name=components] .control-list input[type=checkbox]" data-trigger-condition="checked" data-stripe-load-indicator="">
+                    <?= e(trans('backend::lang.list.delete_selected')) ?>
+                </button>
+
+
+            </div>
+        </div>        
+    </div>
+<?php endif ?>

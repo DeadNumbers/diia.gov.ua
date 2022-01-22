@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id: ID
+    email: email
+    confirmed: confirmed
+    contentLabels: content types
+    listsString: lists
+    created_at: created_at
+    updated_at: updated_at
+    tagsString: tags

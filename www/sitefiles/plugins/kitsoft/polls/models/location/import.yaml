@@ -1,0 +1,16 @@
+fields:
+    import_file:
+        label: Файл csv
+        type: fileupload
+        mode: file
+        fileTypes: csv
+    encoding:
+        label: Кодування
+        type: dropdown
+        span: auto
+        options:
+          UTF-8: UTF-8
+          Windows-1251: Windows-1251
+    truncate:
+        label: Перезаписати
+        type: checkbox

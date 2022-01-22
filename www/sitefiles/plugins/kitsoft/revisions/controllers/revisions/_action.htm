@@ -1,0 +1,18 @@
+<?php if ($value == 'create') : ?>
+	<span class="list-badge badge-info">
+        <i class="icon-info"></i>
+    </span>
+<?php elseif ($value == 'update') : ?>
+	<span class="list-badge badge-success">
+        <i class="icon-check"></i>
+    </span>
+<?php elseif ($value == 'delete') : ?>
+	<span class="list-badge badge-danger">
+        <i class="icon-times"></i>
+    </span>
+<?php elseif ($value == 'rollback') : ?>
+	<span class="list-badge badge-warning">
+        <i class="icon-undo"></i>
+    </span>
+<?php endif ?>
+<b><?= trans("kitsoft.revisions::lang." . $value); ?></b>

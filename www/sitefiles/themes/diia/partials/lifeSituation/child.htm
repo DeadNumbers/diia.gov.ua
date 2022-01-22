@@ -1,0 +1,59 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-xl-9">
+			{% if lifeSituation.item.title %}
+				<h1 class="article-level-1">
+					{{ lifeSituation.item.title }}
+				</h1>
+			{% endif %}
+		</div>
+	</div>
+	<div class="row justify-content-xl-between">
+		<div class="col-lg-9 col-xl-8">
+			{% if lifeSituation.item.content %}
+				<div class="editor-content editor-content_life-sit">{{ lifeSituation.item.content|raw }}</div>
+			{% endif %}
+
+			{% if lifeSituation.item.raw_sections|length %}
+				{% for item in lifeSituation.item.raw_sections %}
+                    <section id="section-{{ item.id }}" class="life-sit-acc_section">
+					    {% partial 'site/sections/' ~ item.name data = item.fields title = item.title %}
+                    </section>
+				{% endfor %}
+			{% endif %}
+		</div>
+		<div class="d-none d-lg-block col-lg-3">
+        	<div class="btn-action_wrap full-width">
+                <div class="btn-action_title">Поділитись порадою</div>
+                <div class="btn-action_box">
+                    <div class="btn btn-action btn-action_fb" tabindex="0" role="button" aria-pressed="false" data-type="facebook"></div>
+                    <div class="btn btn-action btn-action_tw" tabindex="0" role="button" aria-pressed="false" data-type="twitter"></div>
+                    <div class="btn btn-action btn-action-tel d-none" tabindex="0" role="button" aria-pressed="false" data-type="telegram"></div>
+                </div>
+            </div>
+			<div class="sidebar">
+				{% if lifeSituation.item.raw_sections|length %}
+					<div class="sidebar_title">{{ 'Зміст сторінки'|_ }}</div>
+					<div class="sidebar-list">
+						{% for item in lifeSituation.item.raw_sections %}
+							<div class="sidebar-list_item">
+								   <a href="#section-{{ item.id }}" class="sidebar-list_item-title">{{ item.title }}</a>
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+				{% if lifeSituation.item.siblings|length %}
+					<div class="sidebar_title">{{ 'Дізнайтесь також'|_ }}</div>
+					<div class="sidebar-list">
+						{% for item in lifeSituation.item.siblings %}
+							<div class="sidebar-list_item">
+								   <a href="{{ item.url|url }}" class="sidebar-list_item-title">{{ item.title }}</a>
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+			<!-- /sidebar -->
+        </div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: kitsoft.rlblogxt::lang.author.name
+        searchable: true
+
+    post_count:
+        label: kitsoft.rlblogxt::lang.author.posts
+        sortable: false

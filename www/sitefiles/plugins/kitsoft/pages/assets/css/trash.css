@@ -1,0 +1,3 @@
+button[data-request="onDelete"] {
+	display: none !important;
+}

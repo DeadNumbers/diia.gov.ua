@@ -1,0 +1,23 @@
+fields:
+    import_file:
+        label: Файл csv
+        type: fileupload
+        mode: file
+        fileTypes: csv
+    poll_id:
+        label: Опитування
+        type: dropdown
+        options: getPollOptions
+        emptyOption: -- Оберіть опитування --
+    encoding:
+        label: Кодування
+        type: dropdown
+        span: auto
+        options:
+          UTF-8: UTF-8
+          Windows-1251: Windows-1251
+    option_id:
+        label: Прив'язати наступне запитання до варіантів відповідей
+        type: checkboxlist
+        options: getOptionsList
+        dependsOn: poll_id

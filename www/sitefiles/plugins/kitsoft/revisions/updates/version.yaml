@@ -1,0 +1,6 @@
+1.0.1: First version of revisions
+1.0.2:
+  - Add action and group column
+  - 2018_07_30_alter_table_add_action.php
+1.0.3:
+  - 2020-05-18. Small refactor. Change config.

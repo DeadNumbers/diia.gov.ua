@@ -1,0 +1,249 @@
+1573816982a:1:{s:10:"search.htm";a:11:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:7631:"layout = "default"
+is_hidden = 0
+components = false
+sections = false
+hideContent = true
+[page]
+==
+{% partial 'site/breadcrumbs' %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form class="form form-search-page" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form_search-page">
+                    <input type="text" class="input" placeholder="Підприємець" id="form_search-page-input">
+                    <button class="btn btn_search-page"></button>
+                </form>
+            </div>
+            <div class="col-12">
+                <div class="search_request-text" id="search_request-text"></div>
+            </div>
+            <div class="col-12">
+                <div class="search_empty" id="search_empty">
+                    <div class="search_empty-msg" id="search_empty-msg">
+                        За вашим запитом, не знайдено матеріалів 
+                    </div>
+                    <div class="search_empty-title">Що з цим робити</div>
+                    <div class="search_empty-list editor-content">
+                        <ul>
+                            <li>Переконайтеся, що всі слова написані правильно.</li>
+                            <li>Спробуйте інші ключові слова.</li>
+                            <li>Спробуйте використати загальніші слова.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-4">
+                <div id="searchSideBarFilters" class="search_tags-wrapper">
+                    <div class="search_tags">
+                        <div class="search_tags-title">За типом матеріалу</div>
+                        <div class="search_tags-list">
+                            <div class="search_tags-list-item">
+                                <div class="search_tags-theme" data-theme="npa">НПА</div>
+                                <div class="search_tags-theme-count">16</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div id="searchResultsContainer" class="search-res_container">
+                    {#<div class="search-res_box" id="npa" data-theme="npa">
+                        <div class="search-res_box-type">НПА</div>
+                        <div class="search-res_list">
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                        </div>
+                    </div>#}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="load_wrap">
+                    <div class="load_more" id="loadMore" style="display: none;">
+                        <span>Завантажуємо ще</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Не натягиваем  -->
+{#<section class="d-none">
+    <nav aria-label="post page navigation">
+        <ul class="pagination">
+            <li class="pagination_item pagination_item-prev">
+                <a class="" href="#">Попередня сторінка</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link active" href="#">1</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">2</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">3</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">4</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">5</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">...</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">10</a>
+            </li>
+            <li class="pagination_item pagination_item-next">
+                <a class="" href="#">Наступна сторінка</a>
+            </li>
+        </ul>
+    </nav>
+</section>#}
+<!-- Не натягиваем  -->
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/search.bundle.js']|theme }}"></script>
+{% endput %}
+";s:5:"mtime";i:1573490997;s:6:"markup";s:7532:"{% partial 'site/breadcrumbs' %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form class="form form-search-page" action="{{ getPageByTemplate('search').url|url }}" method="GET" id="form_search-page">
+                    <input type="text" class="input" placeholder="Підприємець" id="form_search-page-input">
+                    <button class="btn btn_search-page"></button>
+                </form>
+            </div>
+            <div class="col-12">
+                <div class="search_request-text" id="search_request-text"></div>
+            </div>
+            <div class="col-12">
+                <div class="search_empty" id="search_empty">
+                    <div class="search_empty-msg" id="search_empty-msg">
+                        За вашим запитом, не знайдено матеріалів 
+                    </div>
+                    <div class="search_empty-title">Що з цим робити</div>
+                    <div class="search_empty-list editor-content">
+                        <ul>
+                            <li>Переконайтеся, що всі слова написані правильно.</li>
+                            <li>Спробуйте інші ключові слова.</li>
+                            <li>Спробуйте використати загальніші слова.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-4">
+                <div id="searchSideBarFilters" class="search_tags-wrapper">
+                    <div class="search_tags">
+                        <div class="search_tags-title">За типом матеріалу</div>
+                        <div class="search_tags-list">
+                            <div class="search_tags-list-item">
+                                <div class="search_tags-theme" data-theme="npa">НПА</div>
+                                <div class="search_tags-theme-count">16</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div id="searchResultsContainer" class="search-res_container">
+                    {#<div class="search-res_box" id="npa" data-theme="npa">
+                        <div class="search-res_box-type">НПА</div>
+                        <div class="search-res_list">
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                            <div class="search-res_list-item">
+                                <div class="search-res_list-item-date">18 жовтня 2019 р.</div>
+                                <a href="javascript:void(0)" class="search-res_list-item-title">Узагальнення практики Постійно діючої адміністративної колегії АМКУ з розгляду скарг про порушення законодавства щодо місця розташування асфальтобетонних заводів</a>
+                            </div>
+                        </div>
+                    </div>#}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="load_wrap">
+                    <div class="load_more" id="loadMore" style="display: none;">
+                        <span>Завантажуємо ще</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Не натягиваем  -->
+{#<section class="d-none">
+    <nav aria-label="post page navigation">
+        <ul class="pagination">
+            <li class="pagination_item pagination_item-prev">
+                <a class="" href="#">Попередня сторінка</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link active" href="#">1</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">2</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">3</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">4</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">5</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">...</a>
+            </li>
+            <li class="pagination_item">
+                <a class="pagination_item-link" href="#">10</a>
+            </li>
+            <li class="pagination_item pagination_item-next">
+                <a class="" href="#">Наступна сторінка</a>
+            </li>
+        </ul>
+    </nav>
+</section>#}
+<!-- Не натягиваем  -->
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/search.bundle.js']|theme }}"></script>
+{% endput %}";s:4:"code";N;s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:10:"components";s:0:"";s:8:"sections";s:0:"";s:11:"hideContent";s:1:"1";s:4:"page";a:0:{}}}

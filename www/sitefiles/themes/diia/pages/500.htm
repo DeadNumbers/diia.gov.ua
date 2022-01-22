@@ -1,0 +1,28 @@
+title = "500"
+url = "error"
+[multiLanguage]
+==
+
+<!DOCTYPE html>
+<html lang="{{ getActiveLocale() }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ this.page.title }}</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/images/favicon/favicon.png'|theme }}" />
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/javascript/build/style.css'|theme }}" />
+</head>
+
+<body>
+    <div class="not-exist">
+        <div class="not-exist_inner">
+            <img src="{{ 'assets/images/warning-500.svg'|theme }}" alt="not-exist-page" class="not-exist_icn">
+            <h2 class="not-exist_lead">ПОМИЛКА НА СТОРІНЦІ</h2>
+            <p class="not-exist_text">На жаль, сторінка не може бути відображена через помилку.</p>
+            <p class="not-exist_text">Вибачте за тимчасові незручності</p>
+        </div>
+    </div>
+</body>
+
+</html>

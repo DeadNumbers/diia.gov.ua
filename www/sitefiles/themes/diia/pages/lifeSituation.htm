@@ -1,0 +1,51 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+bodyClass = ' wrapper-life-sit'
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->lifeSituation->item->title;
+}
+?>
+==
+
+{# custom breabcrumbs #}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb_item">
+                        <a class="breadcrumb_item-link" href="{{ '/'|url }}">{{ "Головна"|_ }}</a>
+                    </li>
+                    {% for item in lifeSituation.item.parents %}
+                        <li class="breadcrumb_item">
+                            <a class="breadcrumb_item-link" href="{{ item.url|url }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                    <li class="breadcrumb_item active">
+                    	{{ lifeSituation.item.title }}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{# end custom breabcrumbs #}
+
+{% if not lifeSituation.item.parent_id %}
+    {% partial 'lifeSituation/parent' %}
+{% else %}
+    {% partial 'lifeSituation/child' %}
+{% endif %}
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

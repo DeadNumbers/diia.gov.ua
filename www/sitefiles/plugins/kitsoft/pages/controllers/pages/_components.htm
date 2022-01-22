@@ -1,0 +1,8 @@
+<?php if($this->action == 'create') : ?>
+	<br>
+	<b><i>Please Save Page before use components</i></b>
+<?php else : ?>
+
+<?= $this->relationRender('components') ?>
+
+<?php endif ?>

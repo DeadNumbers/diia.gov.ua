@@ -1,0 +1,103 @@
+{% for category in __SELF__.categories %}
+    <div class="tab-pane fade {% if loop.first %}in active{% endif %}" id="news_tab_{{ loop.index }}"
+         role="tabpanel">
+
+        <div class="row">
+            <div class="col-md-12">
+                <a href="/api/rss" target="_blank" rel="nofollow"  class="rss_wrapper hidden-lg hidden-md">
+                    <div class="rssicon-new">
+                        <div class="text">
+                            RSS
+                        </div>
+                    </div>
+                </a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="tags-outer newsTags">
+            <div class="tags-inner">
+                <ul class="nav nav-tabs tags " role="tablist">
+                    <li class="nav-item active js-count-tabs">
+                        <a class="js_update_tabs nav-link active" data-toggle="tab"
+                           href="#news_tab0_tag0" role="tab" aria-controls="home"
+                           aria-expanded="true" data-category="0" data-tag="0"
+                        >{{ 'Усі теми'|_ }}</a>
+                    </li>
+                    {% for tagId, tagName in category.tags %}
+                        <li class="nav-item js-count-tabs">
+                            <a class="js_update_tabs nav-link" data-toggle="tab"
+                               href="#news_tab{{ loop.parent.loop.index }}_tag{{ loop.index }}" role="tab" aria-controls="home"
+                               aria-expanded="true" data-category="{{ category.id }}" data-tag="{{ tagId }}"
+                            >{{ tagName }}</a>
+                        </li>
+                    {% endfor %}
+
+                    <li class="nav-item">
+                        <a class="nav-link yet-themes news-yet-themes hidden-sm hidden-xs">
+                            {{ 'Іще теми'|_ }}
+                        </a>
+                        <ul class="more-tags news-more-tags"></ul>
+                    </li>
+
+                </ul>
+            </div>
+            <a href="/api/rss" target="_blank" rel="nofollow"  class="hidden-xs hidden-sm">
+                <div class="rssicon-new">
+                    <div class="text">
+                        RSS
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="news_tab0_tag0" role="tabpanel">
+                <div class="row">
+                    {% if loop.first %}
+                        {% partial '@primaryNews' posts = category.posts %}
+                    {% else %}
+                        {% partial '@secondaryNews' posts = category.posts %}
+                    {% endif %}
+                </div>
+            </div>
+
+            {% for tagId, tagName in category.tags %}
+                <div class="tab-pane fade in"
+                     id="news_tab{{ loop.parent.loop.index }}_tag{{ loop.index }}" role="tabpanel">
+                    <div class="row">
+                        {% if loop.parent.loop.first %}
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="main-page-news-list">
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 other-news"></div>
+                        {% else %}
+                            <div class="gov-news"></div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="col-md-12">
+                <div class="clearfix"></div>
+                <a href="{{ 'timeline'|page|url }}?&type=posts&category_id={{ category.id }}" class="all-news">
+                    <span>
+                        {% if category.name in ['Інфографіка', 'Пряма мова'] %}
+                            {{ 'Уся'|_ }}
+                        {% else %}
+                            {{ 'Усі'|_ }}
+                        {% endif %}
+                        <span>{{ category.name[:1]|lower ~ category.name[1:] }}</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+{% endfor %}

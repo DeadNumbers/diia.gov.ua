@@ -1,0 +1,40 @@
+.store {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 58px 0 28px;
+
+    @include media ("<lg") {
+        margin: 20px 0 0;
+        justify-content: center;
+    }
+
+    &-apple,
+    &-google,
+    &-app-gallery {
+        width: 166px;
+        height: 52px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0 10px 10px 0;
+
+        @include media ("<sm") {
+            width: 140px;
+            height: 44px;
+        }
+    }
+
+    &-apple {
+        background-image: url('../../images/apple-store.svg');
+    }
+
+    &-google {
+        background-image: url('../../images/google-store.svg');
+        // margin-left: 20px;
+    }
+    &-app-gallery {
+        background-image: url('../../images/AppGallery-store.svg');
+        background-size: cover;
+        margin: 0;
+    }
+}

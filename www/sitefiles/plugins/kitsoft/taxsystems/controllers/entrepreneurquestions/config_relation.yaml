@@ -1,0 +1,9 @@
+entrepreneur_options:
+    label: kitsoft.taxsystems::lang.entrepreneur_options.title
+    view:
+        list: ~/plugins/kitsoft/taxsystems/models/entrepreneuroption/columns.yaml
+        toolbarPartial: $/kitsoft/taxsystems/controllers/entrepreneurquestions/_enterpreneur_options_toolbar.htm
+        showSearch: true
+        showSorting: false
+    manage:
+        form: ~/plugins/kitsoft/taxsystems/models/entrepreneuroption/fields.yaml

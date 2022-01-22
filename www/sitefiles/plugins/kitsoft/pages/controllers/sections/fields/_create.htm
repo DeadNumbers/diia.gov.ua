@@ -1,0 +1,24 @@
+<?php $sections = KitSoft\Pages\Models\Section::getSectionsList(post('template')); ?>
+
+<?php if(count($sections)) : ?>
+    <div class="sections-section">
+        <div id="sections-modal" class="control-list">
+            <select name="Section[name]" id="sections" class="form-control custom-select select2-hidden-accessible">
+                <?php foreach($sections as $key => $row) : ?>
+                    <option value="<?= $key; ?>"><?= ucfirst($row); ?></option>
+                <?php endforeach ?>
+            </select>
+            <input id="section-title" type="hidden" name="Section[title]" value="<?= reset($sections); ?>">
+            <input type="hidden" name="page_id" value="<?= $this->widget->form->model->id; ?>">
+        </div>
+    </div>
+<?php else : ?>
+	<p class="flash-message static error">Для даного шаблону секцій немає.</p>
+<?php endif ?>
+
+<script type="text/javascript">
+	$('select#sections').on('change', function() {
+		var text = $(this).find("option:selected").text()
+		$('input#section-title').val(text)
+	})
+</script>

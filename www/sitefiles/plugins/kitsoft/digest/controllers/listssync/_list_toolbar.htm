@@ -1,0 +1,15 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('kitsoft/digest/listssync/create') ?>"
+        class="btn btn-primary oc-icon-plus">
+        New Lists Sync
+    </a>
+
+    <button
+        class="btn btn-warning"
+        data-request="onExportLists"
+        data-request-confirm="Are you sure?"
+        data-stripe-load-indicator>
+        Export Lists & Campaigns
+    </button>
+</div>

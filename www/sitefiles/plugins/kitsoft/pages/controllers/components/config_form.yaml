@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.pages::lang.components.name
+
+# Model Form Field configuration
+form: $/kitsoft/pages/models/component/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Pages\Models\Component
+
+# Default redirect location
+defaultRedirect: kitsoft/pages/components
+
+# Create page
+create:
+    title: kitsoft.pages::lang.components.create
+    redirect: kitsoft/pages/components/update/:id
+    redirectClose: kitsoft/pages/components
+
+# Update page
+update:
+    title: kitsoft.pages::lang.components.edit
+    redirect: kitsoft/pages/components
+    redirectClose: kitsoft/pages/components
+
+# Preview page
+preview:
+    title: kitsoft.pages::lang.components.preview

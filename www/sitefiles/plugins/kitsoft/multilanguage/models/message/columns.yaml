@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    message:
+        label: kitsoft.multilanguage::lang.messages.fields.message
+        searchable: true
+    translates:
+        label: kitsoft.multilanguage::lang.messages.fields.translates
+        searchable: true

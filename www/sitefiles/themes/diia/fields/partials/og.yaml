@@ -1,0 +1,8 @@
+tabs:
+  fields:
+    fields[image]:
+      label: Зображення за замовчуванням
+      tab: Головне
+      type: mediafinder
+      mode: image
+      span: auto

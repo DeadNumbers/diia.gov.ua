@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+	<loc>https://diia.gov.ua/en/faq</loc>
+		<priority>0.5</priority>
+		<lastmod>2020-09-07T13:23:46+03:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://diia.gov.ua/en/tax-systems/choise</loc>
+		<priority>0.5</priority>
+		<lastmod>2020-09-07T13:23:46+03:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://diia.gov.ua/en/services/categories</loc>
+		<priority>0.5</priority>
+		<lastmod>2020-09-07T13:23:45+03:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+</urlset>
+

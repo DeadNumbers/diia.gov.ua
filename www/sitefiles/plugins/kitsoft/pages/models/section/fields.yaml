@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    section@create:
+      type: partial
+      path: $/kitsoft/pages/controllers/sections/fields/_create.htm
+
+    title@update:
+      label: kitsoft.pages::lang.sections.fields.title
+      span: auto
+
+    name@create:
+      type: partial
+      path: $/kitsoft/pages/controllers/sections/fields/name.htm
+
+    title@create:
+      type: partial
+      path: $/kitsoft/pages/controllers/sections/fields/title.htm
+
+    published@update:
+      type: switch
+      span: auto
+      cssClass: m-t-md

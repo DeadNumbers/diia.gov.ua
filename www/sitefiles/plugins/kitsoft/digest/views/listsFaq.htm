@@ -1,0 +1,33 @@
+<div class="p-a-md">
+	<div class="callout fade in callout-warning">
+	    <button
+	        type="button"
+	        class="close"
+	        data-dismiss="callout"
+	        aria-hidden="true">&times;</button>
+	    <div class="header">
+	        <i class="icon-warning"></i>
+	        <h3>Після експорту, треба налаштувати кампанії в адмінці phpList</h3>
+	        <p>{{ url(driverUrl) }}</p>
+	    </div>
+	    <div class="content">
+	        <ul>
+				<li>Поле "Содержимое" - оберіть пункт "Отправить веб-страницу";</li>
+				<li>
+					Поле "Укажите URL-адрес веб-страницы" - <b>{{ url('digest/template?uuid=[uniqid]&period=MINUTES') }}</b>
+					<br>
+					<i>MINUTES = Дані за кількість хвилин;</i>
+				</li>
+				<li>
+					Поле "Повторять рассылку каждые" - оберіть відповідно <i>MINUTES</i>;
+				</li>
+				<li>
+					Поле "Повторять до" - оберіть дату завершення розсилки.
+				</li>
+			</ul>
+			<span>
+				Після налаштування увімкніть розсилку - "Отправить кампанию в очередь".
+			</span>
+		</div>
+	</div>
+</div>

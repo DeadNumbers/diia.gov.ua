@@ -1,0 +1,27 @@
+{#
+<div class="article-level-2">
+    {{ __SELF__.poll.title }}
+</div>
+#}
+<div class="editor-content pb-0">
+    {{ __SELF__.poll.description|raw }}
+</div>
+<div id="poll-form-step">
+    {#
+    <ul class="nav nav-tabs" role="tablist">
+        {% for i in 1..__SELF__.step %}
+        <li role="presentation">
+            <a class="persistant-disabled {% if i == __SELF__.step %}active{% endif %}">
+                <span class="round-tab">{{ i }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    #}
+    {% partial 'poll::form' %}
+    <script>
+        setTimeout(function() {
+            window.inputToggler('smartReguestForm');
+        }, 300);
+    </script>
+</div>

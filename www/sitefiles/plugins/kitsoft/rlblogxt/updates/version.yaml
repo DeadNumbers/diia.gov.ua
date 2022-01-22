@@ -1,0 +1,45 @@
+1.0.1:
+    - First version of RLBlogXT Plugin
+    - alter_rl_blog_posts_table.php
+1.0.2:
+    - Added new fields is_top and is_fixed for post
+    - alter_rl_blog_posts_table_top_fixed.php
+1.0.3:
+    - Changed title length
+    - alter_table_change_length_title_field.php
+1.0.4:
+    - Adding SEO fields
+    - alter_rl_blog_posts_add_seo_fields.php
+1.0.5:
+    - Adding Authors
+    - create_authors_table.php
+1.0.6:
+    - Adding hits field
+    - alter_add_hits_field.php
+1.0.7:
+    - Adding field `favourite` in category
+    - alter_rl_blog_categories_add_favourite_field.php
+1.0.8:
+    - Adding Authors URI
+    - alter_add_author_uri_field_20180901.php
+1.0.9:
+    - Adding Fields Column for import data
+    - 2018_03_23_alter_table_posts_add_fields.php
+1.0.10:
+    - Add indexes for fixed and top
+    - 2018_08_02_add_indexes.php
+1.0.11:
+    - Adding Fields Column for categories
+    - 2018_11_28_alter_table_categories.php
+1.1.0:
+    - 2020-03-12. Added content faker
+1.1.1:
+    - 2020-03-26. Load only first image for mainNews component.
+1.1.2:
+    - 2020-04-02. Add 3 minute cache for Post component - ajax request onPosts
+1.1.3:
+    - 2020-04-23. Add isPublishedOrPreview scope for post model, use it in post component.
+1.1.4:
+    - 2020-05-14. Main News component - remove limit from featured_images [with] subquery.
+1.1.5:
+    - 2020-05-15. Implement [Settings] model by revisons.

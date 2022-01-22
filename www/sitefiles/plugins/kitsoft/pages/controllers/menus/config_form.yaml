@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.pages::lang.menu.name
+
+# Model Form Field configuration
+form: $/kitsoft/pages/models/menu/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Pages\Models\Menu
+
+# Default redirect location
+defaultRedirect: kitsoft/pages/menus
+
+# Create page
+create:
+    title: Create Menu
+    redirect: kitsoft/pages/menus/update/:id
+    redirectClose: kitsoft/pages/menus
+
+# Update page
+update:
+    title: Edit Menu
+    redirect: kitsoft/pages/menus
+    redirectClose: kitsoft/pages/menus
+
+# Preview page
+preview:
+    title: Preview Menu

@@ -1,0 +1,193 @@
+.cookies {
+	position: fixed;
+	left: 16px;
+	bottom: 16px;
+	background: $white;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+	z-index: 20;
+	min-height: 150px;
+	max-height: 80%;
+	width: 100%;
+	overflow: auto;
+	max-width: 450px;
+	display: none;
+	@include media("<lg") {
+		max-height: 350px;
+	}
+	@include media("<sm") {
+		width: 100%;
+		max-width: 100%;
+		right: 0;
+		left: 0;
+		bottom: 0;
+	}
+
+	&-1,
+	&-2 {
+		position: relative;
+		padding: 32px 40px;
+		@include media("<lg") {
+			padding: 32px 16px 16px;
+		}
+
+		&_btn {
+			font-size: 13px;
+			line-height: 16px;
+			min-width: auto;
+			width: 150px;
+			flex: 0 0 150px;
+			margin: 0;
+			@include media("<lg") {
+				font-size: 12px;
+				width: 120px;
+				flex: 0 0 120px;
+			}
+
+			&:first-child {
+				padding: 11px 8px;
+				transition: none;
+			}
+
+			&:nth-child(2) {
+				margin-left: 8px;
+
+				span {
+					padding: 10px 8px;
+				}
+			}
+
+			&-wrap {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		&_title {
+			font-size: 18px;
+			line-height: 28px;
+			color: $black;
+			margin-bottom: 8px;
+		}
+
+		&_info {
+			font-size: 11px;
+			line-height: 16px;
+			color: $black;
+			margin-bottom: 24px;
+			@include media("<lg") {
+				margin-bottom: 16px;
+			}
+		}
+
+		&_close {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			width: 24px;
+			height: 24px;
+			cursor: pointer;
+			@include transition(.2s ease-in-out);
+			transform: scale(1.0);
+			@include background(cover, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHg9IjcuMjMwNTEiIHk9IjguMjg3MjIiIHdpZHRoPSIxLjUiIGhlaWdodD0iMTIiIHRyYW5zZm9ybT0icm90YXRlKC00NSA3LjIzMDUxIDguMjg3MjIpIiBmaWxsPSJibGFjayIvPgogICAgPHJlY3QgeD0iMTUuNzE1NyIgeT0iNy4yMjY2NyIgd2lkdGg9IjEuNSIgaGVpZ2h0PSIxMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgMTUuNzE1NyA3LjIyNjY3KSIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==');
+
+			&:hover {
+				transform: scale(1.25);
+			}
+		}
+	}
+
+	// &-1 {}
+
+	&-2 {
+		display: none;
+
+		&_btn {
+			&:nth-child(2) {
+				margin-left: 8px;
+				width: 180px;
+				flex: 0 0 180px;
+				@include media("<lg") {
+					width: 150px;
+					flex: 0 0 150px;
+				}
+
+				span {
+					padding: 10px 8px;
+				}
+			}
+
+			&-wrap {
+				padding-top: 60px;
+				@include media("<lg") {
+					padding-top: 20px;
+				}
+			}
+		}
+
+		&_info {
+			font-size: 11px;
+			line-height: 16px;
+			color: $black;
+			margin-bottom: 24px;
+			@include media("<lg") {
+				margin-bottom: 16px;
+			}
+		}
+
+		&-acc {
+			&_i {
+				padding: 16px 0;
+				border-top: 2px solid $black;
+				@include media("<lg") {
+					padding: 12px 0;
+				}
+
+				&:last-child {
+					border-bottom: 2px solid $black;
+				}
+
+				&-top {
+					display: flex;
+					align-items: center;
+				}
+
+				&-check {
+					.checkbox + label {
+						margin-right: 0;
+					}
+
+					.agree_wrap-inner {
+						display: flex;
+					}
+				}
+
+				&-text {
+					font-size: 13px;
+					line-height: 16px;
+					padding: 0 12px;
+					flex: 0 0 calc(100% - 48px);
+				}
+
+				&-info {
+					font-size: 11px;
+					line-height: 16px;
+					padding: 8px 0px 0;
+					@include media(">=lg") {
+						padding: 8px 36px 0;
+					}
+				}
+
+				&-btn {
+					width: 24px;
+					height: 24px;
+					cursor: pointer;
+					@include background(cover, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIgogICAgICAgICAgZD0iTTEzLjAwMDEgM0gxMS4wMDAxVjExTDMgMTFWMTNIMTEuMDAwMVYyMUgxMy4wMDAxVjEzSDIxVjExTDEzLjAwMDEgMTFWM1oiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=');
+
+					&.active {
+						@include background(cover, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMSAxMVYxM0wzIDEzTDMgMTFMMjEgMTFaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K');
+					}
+				}
+			}
+		}
+	}
+}

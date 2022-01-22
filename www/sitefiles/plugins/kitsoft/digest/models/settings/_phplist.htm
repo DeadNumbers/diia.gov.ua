@@ -1,0 +1,32 @@
+<div class="callout fade in callout-warning">
+    <button
+        type="button"
+        class="close"
+        data-dismiss="callout"
+        aria-hidden="true">&times;</button>
+    <div class="header">
+        <i class="icon-warning"></i>
+        <h3>Налаштування PhpList</h3>
+        <p>manual</p>
+    </div>
+    <div class="content">
+		<p><b>1) В config.php встановити:</b>
+			<pre>define('MANUALLY_PROCESS_QUEUE', 0);</pre>
+			<pre>define('USE_REPETITION', 1);</pre>
+			<pre>define('SEND_QUEUE_PROCESSING_REPORT', 0);</pre>
+		</p>
+
+		<p><b>2) Створити команду phplist:</b>
+			<pre>nano /usr/local/bin/phplist</pre>
+			<pre>#!/bin/bash<br>php /path/to/project/lists/admin/index.php -c /path/to/project/lists/config/config.php $*</pre>
+		</p>
+
+		<p><b>3) Встановити права:</b>
+			<pre>chmod 755 /usr/local/bin/phplist</pre>
+		</p>
+
+		<p><b>4) Додати в cron:</b>
+			<pre>* * * * * phplist -pprocessqueue >> /dev/null 2>&1</pre>
+		</p>
+    </div>
+</div>

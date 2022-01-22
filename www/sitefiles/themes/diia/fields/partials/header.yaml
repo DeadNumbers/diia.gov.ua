@@ -1,0 +1,22 @@
+tabs:
+  fields:
+    fields[title]:
+      label: Заголовок
+      tab: Main
+    fields[placeholder]:
+      label: Пошук placeholder
+      tab: Main
+    fields[description]:
+      label: Пошук описання
+      type: richeditor
+      tab: Main
+    fields[loginLink]:
+      type: relationfinder
+      tab: Login
+    fields[registerLink]:
+      type: relationfinder
+      tab: Register
+    fields[searchDescriptions]:
+      label: Описання пошуку
+      type: richeditor
+      tab: Homepage

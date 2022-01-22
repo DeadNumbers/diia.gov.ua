@@ -1,0 +1,12 @@
+<div class="service-acc_simple">
+    {% if item.text %}
+        <div class="service-acc_simple-text editor-content editor-content_service-acc">
+            {{ item.text|replace({'&nbsp;': ' '})|raw }}
+        </div>
+    {% endif %}
+    {% if item.link|relationFinder.title %}
+        <a href="{{ item.link|relationFinder.url }}" {% if item.link.target %}target="_blank" {% endif %} class="btn_default">
+            <span>{{ item.link|relationFinder.title }}</span>
+        </a>
+    {% endif %}
+</div>

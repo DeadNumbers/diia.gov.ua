@@ -1,0 +1,21 @@
+{#
+<ul class="nav nav-tabs d-none" role="tablist">
+	{% for i in 1..__SELF__.step %}
+	    <li role="presentation">
+	        <a class="persistant-disabled {% if i == __SELF__.step %}active{% endif %}">
+	            <span class="round-tab">{{ i }}</span>
+	        </a>
+	    </li>
+	{% endfor %}
+</ul>
+#}
+
+{% if __SELF__.option.action == 'question' %}
+	{% partial 'poll::form' %}
+{% elseif __SELF__.option.action == 'answer' %}
+	{% partial 'poll::answer' %}
+
+	{% if __SELF__.poll.use_departments %}
+		{% partial 'poll::location/location' %}
+	{% endif %}
+{% endif %}

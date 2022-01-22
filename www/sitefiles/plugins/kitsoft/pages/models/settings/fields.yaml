@@ -1,0 +1,15 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    routesSection:
+        label: Configurate routes
+        type: section
+        tab: Routes
+    install:
+        type: partial
+        path: $/kitsoft/pages/models/settings/_install_field.htm
+        tab: Installer
+        comment: Інсталювати контент за замовчуванням

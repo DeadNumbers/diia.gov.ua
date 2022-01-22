@@ -1,0 +1,21 @@
+1573816983a:1:{s:15:"menu/footer.htm";a:5:{s:8:"fileName";s:15:"menu/footer.htm";s:7:"content";s:397:"{% if items|length %}
+<nav class="menu_footer">
+    <ul class="menu_footer-list">
+        {% for item in items if not item.isHidden %}
+            <li class="menu_footer-list-item">
+                <a href="{{ item.url|url }}" {% if item.isExternal %}target="_blank" {% endif %} class="menu_footer-list-link">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}";s:5:"mtime";i:1572889007;s:6:"markup";s:397:"{% if items|length %}
+<nav class="menu_footer">
+    <ul class="menu_footer-list">
+        {% for item in items if not item.isHidden %}
+            <li class="menu_footer-list-item">
+                <a href="{{ item.url|url }}" {% if item.isExternal %}target="_blank" {% endif %} class="menu_footer-list-link">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}";s:4:"code";N;}}

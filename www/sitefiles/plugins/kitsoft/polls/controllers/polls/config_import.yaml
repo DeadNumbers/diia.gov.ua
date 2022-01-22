@@ -1,0 +1,14 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+# Page title
+title: Import
+
+# Import Form Field configuration
+form: $/kitsoft/polls/models/poll/import.yaml
+
+# Import Model class
+modelClass: KitSoft\Polls\Models\Poll
+
+mapping:

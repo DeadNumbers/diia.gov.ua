@@ -1,0 +1,52 @@
+1573816982a:1:{s:20:"site/breadcrumbs.htm";a:6:{s:8:"fileName";s:20:"site/breadcrumbs.htm";s:7:"content";s:1043:"==
+{% set breadcrumbs = page.breadcrumbs %}
+
+{% if breadcrumbs|length %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb_item">
+                        <a class="breadcrumb_item-link" href="{{ '/'|url }}">{{ "Головна"|_ }}</a>
+                    </li>
+                    {% for item in breadcrumbs %}
+                        <li class="breadcrumb_item {{ loop.last ? 'active' : '' }}">
+                            {% if loop.last %}
+                                {{ this.page.title }}
+                            {% else %}
+                                <a class="breadcrumb_item-link" href="{{ item.url|url }}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{ item.title }}</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endif %}";s:5:"mtime";i:1572889007;s:6:"markup";s:1040:"{% set breadcrumbs = page.breadcrumbs %}
+
+{% if breadcrumbs|length %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb_item">
+                        <a class="breadcrumb_item-link" href="{{ '/'|url }}">{{ "Головна"|_ }}</a>
+                    </li>
+                    {% for item in breadcrumbs %}
+                        <li class="breadcrumb_item {{ loop.last ? 'active' : '' }}">
+                            {% if loop.last %}
+                                {{ this.page.title }}
+                            {% else %}
+                                <a class="breadcrumb_item-link" href="{{ item.url|url }}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{ item.title }}</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endif %}";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

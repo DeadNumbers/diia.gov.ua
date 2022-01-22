@@ -1,0 +1,10 @@
+{% for item in data.items %}
+
+    <details class="cms-s_acc-d">
+        <summary class="cms-s_acc-d-summary">{{ item.title }}</summary>
+        <div class="cms-s_acc-d-content">
+            {{ item.content|raw }}
+        </div>
+    </details>
+
+{% endfor %}

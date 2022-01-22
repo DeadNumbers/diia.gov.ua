@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Life Situation
+
+# Model Form Field configuration
+form: $/kitsoft/services/models/lifesituation/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Services\Models\LifeSituation
+
+# Default redirect location
+defaultRedirect: kitsoft/services/lifesituations
+
+# Create page
+create:
+    title: kitsoft.services::lang.life_situations.create_life_situation
+    redirect: kitsoft/services/lifesituations/update/:id
+    redirectClose: kitsoft/services/lifesituations
+
+# Update page
+update:
+    title: kitsoft.services::lang.life_situations.edit_life_situation
+    redirect: kitsoft/services/lifesituations
+    redirectClose: kitsoft/services/lifesituations
+
+# Preview page
+preview:
+    title: Preview Life Situation

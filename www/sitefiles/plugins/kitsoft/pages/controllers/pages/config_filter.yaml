@@ -1,0 +1,20 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    published:
+        label: kitsoft.pages::lang.page.fields.published
+        type: switch
+        conditions:
+            - published <> '1'
+            - published = '1'
+
+    searchable:
+        label: kitsoft.pages::lang.page.fields.searchable
+        type: switch
+        conditions:
+            - searchable <> '1'
+            - searchable = '1'
+

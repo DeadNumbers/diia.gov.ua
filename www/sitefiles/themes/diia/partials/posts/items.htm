@@ -1,0 +1,27 @@
+{% for item in __SELF__.posts %}
+    <div class="col-sm-6 col-lg-4">
+        <div class="posts_item">
+            {% if item.featured_images|first %}
+                <a href="{{ item.url|url }}" class="posts_item-preview" style="background-image:url('{{ item.featured_images|first.path|resize(1280) }}')"></a>
+            {% else %}
+                <a href="{{ item.url|url }}" class="posts_item-preview" style="background-image:url(' {{ 'assets/images/posts_item-preview.svg'|theme }}')"></a>
+            {% endif %}
+            <a href="{{ item.url|url }}" class="posts_item-title">
+                {{ item.title }}
+            </a>
+            <div class="posts_item-date">
+                {{ item.published_at ? item.published_at|date('d/m/Y') : item.created_at|date('d/m/Y') }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{# ajax request with page and lang params, to onPosts octobercms ajax handler #}
+
+<div
+    id="pagination-info"
+    class="hidden d-none"
+    data-total="{{ __SELF__.posts.total }}"
+    data-currentpage="{{ __SELF__.posts.currentPage }}"
+    data-lastpage="{{ __SELF__.posts.lastPage }}"
+></div>

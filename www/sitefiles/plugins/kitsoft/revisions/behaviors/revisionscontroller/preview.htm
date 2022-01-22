@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="popup">&times;</button>
+    <h4 class="modal-title">Деталі змінення</h4>
+</div>
+
+<div class="modal-body">
+	<?= $this->render(); ?>
+</div>
+
+<div class="modal-footer">
+	<?php if ($this->model->action == 'update') : ?>
+	<button
+		type="button"
+		class="btn btn-success"
+		data-request="onRevisionRollback"
+		data-request-confirm="Вiдновити поле [<?= $this->model->fieldTitle; ?>] до стану на <?= $this->model->created_at; ?>?"
+		data-request-data="revision_id: <?= $this->model->id; ?>"
+		data-request-success="location.reload()"
+		data-request-redirect="">
+		<i class="oc-icon-undo"></i>Відновити
+	</button>
+	<?php endif ?>
+    <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="popup">
+        <?= e(trans('backend::lang.form.close')); ?>
+    </button>
+</div>

@@ -1,0 +1,9 @@
+logs:
+    label: Logs
+    readOnly: true
+    view:
+        list: $/kitsoft/polls/models/log/columns.yaml
+        recordsPerPage: 10
+        showSearch: false
+    manage:
+        form: $/kitsoft/polls/models/log/fields.yaml

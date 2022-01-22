@@ -1,0 +1,264 @@
+step: 10
+selectable: false
+routes:
+  RainLab\Blog\Models\Post: news/:slug
+  KitSoft\Faq\Models\Question: faq/:id
+  KitSoft\Services\Models\Service: services/:slug
+  KitSoft\Services\Models\LifeSituation: life-situations/:slug
+  KitSoft\Services\Models\Category: services/categories/:slug
+  KitSoft\TaxSystems\Models\TaxSystem: tax-systems/:slug
+items:
+  homepage:
+    attributes:
+      title: Головна
+      slug: /
+      layout: home
+      sluggable: false
+      is_system: true
+    sections:
+      servicesCategories:
+        name: Послуги по категоріям
+        published: true
+        attributes:
+          title: Популярні послуги
+          widget:
+            title: Як отримати електронний підпис?
+            text: Електронний цифровий підпис надає юридичної сили електронному документу аналогічно власноручному підпису та мокрій печатці на папері.
+            link:
+              title: Дізнатися більше
+              url: /
+      lifeSituations:
+        name: Життєві ситуації
+        published: false
+        attributes:
+          title: Життєві події та ситуації
+          description: Що варто знати, куди звертатись та як діяти у випадку приємних та не дуже, очікуванних або несподіваних подій та ситуацій.
+      newsLast:
+        name: Останні новини
+        published: true
+        attributes:
+          title: Новини
+          link:
+            title: Всі новини
+      faq:
+        name: Faq
+        published: true
+        attributes:
+          title: Питання та відповіді
+          link:
+            title: Всі питання та відповіді
+    components:
+      servicesCategories:
+        class: KitSoft\Services\Components\Categories
+        attributes:
+          isLoadServices: true
+          isTopFilter: true
+          countServices: 8
+      newsLast:
+        class: KitSoft\RLBlogXT\Components\LastNews
+        attributes:
+          count: 5
+          isFixedOrder: true
+          isTopOrder: true
+      faqCategories:
+        class: KitSoft\Faq\Components\Categories
+        attributes:
+          isTopFilter: true
+          isTopQuestionsFilter: true
+          countQuestions: 3
+
+  news:
+    attributes:
+      title: Новини
+      slug: news
+      layout: posts
+      sluggable: false
+      is_system: true
+    components:
+      posts:
+        class: KitSoft\RLBlogXT\Components\Posts
+        published: true
+        attributes:
+          count: 12
+          isFixedOrder: true
+          isFixedOrder: true
+      blogCategories:
+        class: RainLab\Blog\Components\Categories
+        published: true
+        attributes:
+    childs:
+      newsitem:
+        attributes:
+          title: Новина
+          slug: :slug
+          sluggable: true
+          layout: post
+          is_system: true
+        components:
+          blogPost:
+            class: KitSoft\RLBlogXT\Components\Post
+            published: true
+            attributes:
+              slug: "{{ :slug }}"
+              loadRelated: true
+              relatedType: category
+              relatedCount: 5
+          newsLast:
+            name: Інші новини
+            class: KitSoft\RLBlogXT\Components\LastNews
+            published: true
+            attributes:
+              count: 5
+              isFixedOrder: true
+              isTopOrder: true
+              excludeCurrentSlug: true
+
+  services:
+    attributes:
+      title: Послуги
+      slug: services
+      sluggable: false
+      layout: services
+      is_system: true
+    components:
+      servicesByLetter:
+        class: KitSoft\Services\Components\ServicesByLetter
+        attributes:
+          subcategoriesFilterByGetParam: true
+    childs:
+      categories:
+        attributes:
+          title: Категорії
+          slug: categories
+          sluggable: false
+          layout: page
+          is_system: true
+        childs:
+          category:
+            attributes:
+              title: Категорія
+              slug: :slug
+              sluggable: true
+              layout: serviceCategory
+              is_system: true
+            components:
+              serviceCategory:
+                class: KitSoft\Services\Components\Category
+                attributes:
+            childs:
+              subcategory:
+                attributes:
+                  title: Підкатегорія
+                  slug: :category_slug/:subcategory_slug
+                  sluggable: true
+                  layout: serviceSubCategory
+                  is_system: true
+                components:
+                  serviceCategorySubcategory:
+                    class: KitSoft\Services\Components\CategorySubcategory
+                    attributes:
+      service:
+        attributes:
+          title: Послуга
+          slug: :slug
+          sluggable: true
+          layout: service
+          is_system: true
+        components:
+          service:
+            class: KitSoft\Services\Components\Service
+
+  lifeSituations:
+    attributes:
+      title: Життєві ситуації
+      slug: life-situations
+      sluggable: false
+      layout: lifeSituations
+      is_system: true
+    components:
+    childs:
+      lifeSituation:
+        attributes:
+          title: Життєва ситуація
+          slug: :slug
+          sluggable: true
+          layout: lifeSituation
+          is_system: true
+        components:
+          lifeSituation:
+            class: KitSoft\Services\Components\LifeSituation
+
+  questions:
+    attributes:
+      title: Поширені запитання
+      slug: faq
+      sluggable: false
+      layout: questions
+      is_system: true
+    components:
+      faqCategories:
+        class: KitSoft\Faq\Components\Categories
+        attributes:
+          isTopFilter: false
+          isTopQuestionsFilter: false
+          countQuestions: null
+      form:
+        class: KitSoft\Forms\Components\Form
+    childs:
+      faqQuestion:
+        attributes:
+          title: Запитання
+          slug: :id
+          sluggable: true
+          layout: question
+          is_system: true
+        components:
+          faqQuestion:
+            class: KitSoft\Faq\Components\Question
+            published: true
+            attributes:
+
+  contacts:
+    attributes:
+      title: Куди звертатись
+      slug: contacts
+      sluggable: false
+      layout: contacts
+      is_system: true
+    sections:
+
+  taxSystems:
+    attributes:
+      title: Податкові системи підприємців
+      slug: tax-systems
+      sluggable: false
+      layout: taxSystems
+      is_system: true
+    components:
+      taxSystems:
+        class: KitSoft\TaxSystems\Components\TaxSystems
+        published: true
+        attributes:
+    childs:
+      taxSystem:
+        attributes:
+          title: Податкова система підприємців
+          slug: :slug
+          sluggable: true
+          layout: taxSystem
+          is_system: true
+        components:
+          taxSystem:
+            class: KitSoft\TaxSystems\Components\TaxSystem
+      choise:
+        attributes:
+          title: "Тест: Який тип оподаткування підходить вам"
+          slug: choise
+          sluggable: false
+          layout: taxSystemsChoise
+          is_system: true
+        components:
+          taxSystemChoise:
+            class: KitSoft\TaxSystems\Components\TaxSystemChoise
+            published: true
+            attributes:

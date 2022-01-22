@@ -1,0 +1,124 @@
+{% set tags = __SELF__.tags %}
+{% set categories = __SELF__.categories %}
+<div class="main-search search-btn" id="searchShow">
+    <div class="icon"></div>
+    <span>
+                        {{ "Пошук"|_ }}
+                    </span>
+</div>
+
+<div class="search-form">
+
+    <div class="close-icon" id="closeSearch"></div>
+
+    <div class="btns-wrap">
+        <a id="searchPortal" class="active">
+            <span>
+               {{ "Шукати на порталі"|_ }}
+            </span>
+        </a>
+        <span class="or">
+            {{ "або"|_ }}
+        </span>
+        <a id="searchNPA">
+            <span>
+               {{ "серед актів Кабінету Міністрів"|_ }}
+            </span>
+        </a>
+    </div>
+
+
+    <form id="searchPortalForm"
+          action="/searchresult"
+          method="GET"
+          class="search-portal-form active">
+
+        <div class="col-md-10">
+            <label for="">
+                {{ "Ключові слова"|_ }}
+                <input class="input" name="key" type="text"/>
+            </label>
+        </div>
+        <div class="col-md-2">
+            <label class="submit-label" for="">
+                <input type="submit" class="search-btn" value='Знайти'/>
+            </label>
+        </div>
+
+        <div class="clearfix"></div>
+    </form>
+
+    <form id="searchNPAForm"
+          action="/npasearch"
+          method="GET"
+          class="search-NPA-form-header">
+
+        <div class="col-md-4">
+            <label for="">
+                {{ "Тип документа"|_ }}
+                <select class="custom-select" name="category">
+                    <option>Тип документа не обрано</option>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+
+        <div class="col-md-4">
+            <label for="">
+                {{ "Тема "|_ }}
+                <select class="custom-select" name="tags">
+                    <option>Тему документа не обрано</option>
+                    {% for tag in tags %}
+                    <option value='{{ tag.slug }}'>{{ tag.name }}</option>
+                    {% endfor %}
+                    
+                </select>
+            </label>
+        </div>
+
+        <div class="col-md-4">
+            <div class="daterange-group">
+
+                <div class="item pull-left">
+                    <label>
+                        {{ " Дата прийняття з"|_ }}
+                        <input name="from" class="input daterange" type="text">
+                    </label>
+                </div>
+
+                <div class="item pull-right">
+                    <label >
+                        {{ " по"|_ }}
+                        <input name="to" class="input daterange" type="text">
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="col-md-4">
+            <label>
+                {{ " Ключові слова у назві або тексті"|_ }}
+                <input class="input" name="key" type="text"/>
+            </label>
+        </div>
+
+        <div class="col-md-4">
+            <label>
+                {{ " Номер"|_ }}
+                <input class="input" name="num" type="text"/>
+            </label>
+        </div>
+
+        <div class="col-md-4">
+            <label class="submit-label">
+                <input type="submit" class="search-btn" value='{{ "Знайти"|_ }}'/>
+            </label>
+        </div>
+
+        <div class="clearfix"></div>
+    </form>
+</div>

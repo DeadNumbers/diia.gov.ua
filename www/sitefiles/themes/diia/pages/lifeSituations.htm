@@ -1,0 +1,16 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+bodyClass = ' wrapper-life-situation'
+
+[page]
+==
+
+{% partial 'site/breadcrumbs' %}
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

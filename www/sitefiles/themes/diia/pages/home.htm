@@ -1,0 +1,45 @@
+layout = "default"
+sections = true
+components = true
+hideContent = false
+deletable = false
+
+[page]
+==
+
+{#
+<section class="banner-top">
+	<div class="container">
+	    <div class="banner-top_bg">
+	        <div class="banner-top_box">
+	        	<div class="col-lg-3">
+	        		<img src="{{ 'assets/images/banner-top/diia_logo.svg'|theme }}" alt="Державні послуги онлайн" class="banner-top_logo img-fluid">
+	        	</div>
+	        	<div class="col-lg-3 col-xl-4">
+	        		<div class="banner-top_text">Цифрові документи в смартфоні</div>
+	        	</div>
+	        	<div class="col-lg-3">
+	        		<div class="banner-top_img">
+	            	<div class="banner-top_img-left"></div>
+	            	<div class="banner-top_img-right"></div>
+	            	<div class="banner-top_img-after"></div>
+	            </div>
+	        	</div>
+	        	<div class="col-lg-3 col-xl-2">
+	        		<div class="banner-top_btn-wrap">
+		                <a href="https://go.diia.app" class="banner-top_btn" target="_blank" rel="noopener noreferer">Завантажити</a>
+		            </div>
+	        	</div>
+	        </div>
+	    </div>
+	</div>
+</section>
+#}
+
+{% for key, item in page.data.sections %}
+	{% partial 'site/sections/' ~ key data = attribute(page.data.sections, key).fields %}
+{% endfor %}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/home.bundle.js']|theme }}"></script>
+{% endput %}

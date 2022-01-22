@@ -1,0 +1,79 @@
+1573817019a:1:{s:21:"site/sections/faq.htm";a:5:{s:8:"fileName";s:21:"site/sections/faq.htm";s:7:"content";s:1495:"<section class="question_section">
+    <div class="container">
+        <div class="row align-items-center align-items-lg-end justify-content-lg-between">
+            <div class="col-8 col-lg-6">
+                <div class="article-level-1">Питання та відповіді</div>
+            </div>
+            <div class="col-4">
+            	<div class="question_section-all">
+            		<div class="wrap-all-link">
+	                    <a href="{{ getPageByTemplate('questions').url|url }}" class="wrap-all-link_link">
+	                        <span>Всі питання та відповіді</span>
+	                    </a>
+	                </div>
+            	</div>
+            </div>
+        </div>
+        <div class="row">
+        	{% if faqCategories.categories|length %}
+				{% for category in faqCategories.categories if category.questions|length %}
+					<div class="col-lg-4">
+						<div class="question_item {% if loop.first %}first{% endif %}">
+							<div class="question_item-category">
+							 	<div class="question_item-category-text">
+							 		{{ category.name }}
+							 	</div>
+							</div>
+							{% if category.questions|length %}
+							<div class="question_item-content">
+							 	{% for item in category.questions %}
+									<a href="{{ item.url|url }}" class="question_item-text">{{ item.question }}</a>
+								{% endfor %}
+							 </div>
+							{% endif %}
+						</div>
+					</div>
+				{% endfor %}
+			{% endif %}
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1573667092;s:6:"markup";s:1495:"<section class="question_section">
+    <div class="container">
+        <div class="row align-items-center align-items-lg-end justify-content-lg-between">
+            <div class="col-8 col-lg-6">
+                <div class="article-level-1">Питання та відповіді</div>
+            </div>
+            <div class="col-4">
+            	<div class="question_section-all">
+            		<div class="wrap-all-link">
+	                    <a href="{{ getPageByTemplate('questions').url|url }}" class="wrap-all-link_link">
+	                        <span>Всі питання та відповіді</span>
+	                    </a>
+	                </div>
+            	</div>
+            </div>
+        </div>
+        <div class="row">
+        	{% if faqCategories.categories|length %}
+				{% for category in faqCategories.categories if category.questions|length %}
+					<div class="col-lg-4">
+						<div class="question_item {% if loop.first %}first{% endif %}">
+							<div class="question_item-category">
+							 	<div class="question_item-category-text">
+							 		{{ category.name }}
+							 	</div>
+							</div>
+							{% if category.questions|length %}
+							<div class="question_item-content">
+							 	{% for item in category.questions %}
+									<a href="{{ item.url|url }}" class="question_item-text">{{ item.question }}</a>
+								{% endfor %}
+							 </div>
+							{% endif %}
+						</div>
+					</div>
+				{% endfor %}
+			{% endif %}
+        </div>
+    </div>
+</section>";s:4:"code";N;}}

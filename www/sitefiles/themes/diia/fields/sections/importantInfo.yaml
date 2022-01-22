@@ -1,0 +1,16 @@
+title: Важлива інформація
+
+tabs:
+  fields:
+    fields[items]:
+      type: repeater
+      prompt: Додати пункт
+      tab: Головне
+      form:
+        fields:
+          importantly:
+            label: Важлива інформація
+            type: text
+          additionalInfo:
+            label: Додаткова інформація
+            type: richeditor

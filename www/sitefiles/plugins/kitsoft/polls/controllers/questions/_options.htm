@@ -1,0 +1,8 @@
+<?php if($this->action == 'create') : ?>
+	<br>
+	<b><i>Please Save Question before use options</i></b>
+<?php else : ?>
+
+	<?= $this->relationRender('options'); ?>
+
+<?php endif ?>

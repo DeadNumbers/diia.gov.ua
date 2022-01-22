@@ -1,0 +1,43 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    # published@update:
+    #   type: switch
+    #   span: right
+    
+    description@update:
+      type: partial
+      path: $/kitsoft/pages/controllers/components/__component_description_field.php
+      span: auto
+
+    published@update:
+      type: switch
+      span: auto
+      cssClass: m-t-md
+      
+    component@create:
+      type: partial
+      path: $/kitsoft/pages/controllers/components/__component_component_field.php
+
+    name@create:
+      type: partial
+      path: $/kitsoft/pages/controllers/components/__component_name_field.php
+
+    class@create:
+      type: partial
+      path: $/kitsoft/pages/controllers/components/__component_class_field.php
+
+    name@update:
+      label: kitsoft.pages::lang.components.fields.name
+      span: auto
+      disabled: true
+
+    alias@update:
+      label: kitsoft.pages::lang.components.fields.alias
+      span: auto
+
+    class@update:
+      label: class
+      disabled: true

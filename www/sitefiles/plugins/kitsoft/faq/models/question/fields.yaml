@@ -1,0 +1,53 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+tabs:
+  fields:
+    question:
+      label: kitsoft.faq::lang.question.fields.question
+      type: textarea
+      tab: kitsoft.faq::lang.question.tabs.main
+      size: small
+    answer:
+      label: kitsoft.faq::lang.question.fields.answer
+      type: richeditor
+      tab: kitsoft.faq::lang.question.tabs.main
+      trigger:
+        action: hide
+        field: answer_type
+        condition: value[link]
+    link:
+      label: kitsoft.faq::lang.question.fields.link
+      type: text
+      tab: kitsoft.faq::lang.question.tabs.main
+      trigger:
+        action: hide
+        field: answer_type
+        condition: value[answer]
+    related_questions:
+      label: Пов'язані запитання
+      context: [update]
+      type: partial
+      tab: Пов'язані запитання
+
+secondaryTabs:
+  fields:
+    preview_button@update:
+      type: partial
+    published:
+      label: kitsoft.faq::lang.question.fields.published
+      type: checkbox
+    is_top:
+      label: Закріплено
+      type: checkbox
+    answer_type:
+      label: kitsoft.faq::lang.question.fields.answer_type
+      type: radio
+      default: answer
+    categories:
+      label: kitsoft.faq::lang.question.fields.categories
+      type: relation
+      nameFrom: name

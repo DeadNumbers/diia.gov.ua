@@ -1,0 +1,24 @@
+{% if digestTemplate.totalItems %}
+	{% for contentType in digestTemplate.content if contentType.items|length %}
+		<h3 class="digest-title" style="margin-bottom: 20px; margin-top: 30px; font-size: 22px; padding-left: 15px; padding-right: 15px; font-weight: bold;">
+        	{{ contentType.title }}
+    	</h3>
+    	{% for item in contentType.items %}
+	    	<div class="digest-item" style="margin-bottom: 30px; padding-left: 15px; padding-right: 15px;">
+	            <div class="date" style="color: #a7a9af; margin-bottom: 5px; font-size: 14px;">
+	                {{ item.published_at|date('d F Y H:i') }}
+	            </div>
+	            <a href="{{ url(item.url) }}" class="link" style="
+	                font-size: 16px;
+	                line-height: 1.5;
+	                font-weight: bold;
+	                text-decoration: none;
+	            ">
+	            	{{ item.title }}
+	            </a>
+	        </div>
+	    {% endfor %}
+	{% endfor %}
+{% else %}
+	{{ digestTemplate.emptyContent|raw }}
+{% endif %}

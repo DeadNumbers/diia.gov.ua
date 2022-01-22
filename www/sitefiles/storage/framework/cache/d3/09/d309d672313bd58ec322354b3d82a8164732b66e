@@ -1,0 +1,140 @@
+1573816982a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:2482:"description = "Default layout"
+
+[multiLanguage]
+[googleAnalytics]
+==
+<!DOCTYPE html>
+<html lang="{{ getActiveLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+        <title>{{ this.page.title }} | {{ "Дія"|_ }}</title>
+
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="generator" content="">
+
+        {% partial 'site/favicon' %}
+        {% partial 'site/openGraph' %}
+
+        {% styles %}
+
+        <link rel="stylesheet" type="text/css" href="{{ [
+            'assets/vendor/swiper-5.2.0/css/swiper.min.css',
+            'assets/javascript/build/style.css'
+        ]|theme }}"/>
+
+        {% component 'googleAnalytics' %}
+
+        {% component 'googleTracker' %}
+    </head>
+    <body>
+        <div class="wrapper">
+            {% if this.page.url == '/' %}
+                {% partial 'site/header' %}
+            {% else %}
+                {% partial 'site/thinHeader' %}
+            {% endif %}
+            
+            <main id="layout-main">
+                {% page %}
+            </main>
+            {% partial 'site/footer' %} 
+        </div>
+
+        <div class="d-none" id="page-hash" data-hash="{{ this.page.hash }}"></div>
+
+        <div class="overlay-full-screen"></div>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2Cdefault%2Cblissfuljs"></script>
+        <script type="text/javascript" src="{{ [
+            'assets/vendor/jquery-3.4.0/jquery-3.4.0.min.js',
+            'assets/vendor/bootstrap-4.3.1/bootstrap.bundle.min.js',
+            'assets/vendor/moment-2.24.0/moment.min.js',
+            'assets/vendor/moment-2.24.0/locale/uk.js',
+            '@framework',
+            '@framework.extras',
+            'assets/javascript/ajax.js'
+        ]|theme }}">
+        </script>
+        
+        {% scripts %}
+
+        {#
+            'assets/vendor/datepicker-1.9.0/bootstrap-datepicker-1.9.0.min.js',
+            'assets/vendor/datepicker-1.9.0/bootstrap-datepicker-1.9.0.uk.min.js',
+            'assets/vendor/magnific-popup/jquery.magnific-popup.min.js',
+            'assets/vendor/chosen-1.8.7/chosen.jquery.min.js',
+            
+        #}
+    </body>
+</html>";s:5:"mtime";i:1573730792;s:6:"markup";s:2413:"<!DOCTYPE html>
+<html lang="{{ getActiveLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+        <title>{{ this.page.title }} | {{ "Дія"|_ }}</title>
+
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="generator" content="">
+
+        {% partial 'site/favicon' %}
+        {% partial 'site/openGraph' %}
+
+        {% styles %}
+
+        <link rel="stylesheet" type="text/css" href="{{ [
+            'assets/vendor/swiper-5.2.0/css/swiper.min.css',
+            'assets/javascript/build/style.css'
+        ]|theme }}"/>
+
+        {% component 'googleAnalytics' %}
+
+        {% component 'googleTracker' %}
+    </head>
+    <body>
+        <div class="wrapper">
+            {% if this.page.url == '/' %}
+                {% partial 'site/header' %}
+            {% else %}
+                {% partial 'site/thinHeader' %}
+            {% endif %}
+            
+            <main id="layout-main">
+                {% page %}
+            </main>
+            {% partial 'site/footer' %} 
+        </div>
+
+        <div class="d-none" id="page-hash" data-hash="{{ this.page.hash }}"></div>
+
+        <div class="overlay-full-screen"></div>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2Cdefault%2Cblissfuljs"></script>
+        <script type="text/javascript" src="{{ [
+            'assets/vendor/jquery-3.4.0/jquery-3.4.0.min.js',
+            'assets/vendor/bootstrap-4.3.1/bootstrap.bundle.min.js',
+            'assets/vendor/moment-2.24.0/moment.min.js',
+            'assets/vendor/moment-2.24.0/locale/uk.js',
+            '@framework',
+            '@framework.extras',
+            'assets/javascript/ajax.js'
+        ]|theme }}">
+        </script>
+        
+        {% scripts %}
+
+        {#
+            'assets/vendor/datepicker-1.9.0/bootstrap-datepicker-1.9.0.min.js',
+            'assets/vendor/datepicker-1.9.0/bootstrap-datepicker-1.9.0.uk.min.js',
+            'assets/vendor/magnific-popup/jquery.magnific-popup.min.js',
+            'assets/vendor/chosen-1.8.7/chosen.jquery.min.js',
+            
+        #}
+    </body>
+</html>";s:4:"code";N;s:11:"description";s:14:"Default layout";s:13:"multiLanguage";a:0:{}s:15:"googleAnalytics";a:0:{}}}

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Section
+
+# Model Form Field configuration
+form: $/kitsoft/pages/models/section/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Pages\Models\Section
+
+# Default redirect location
+defaultRedirect: kitsoft/pages/sections
+
+# Create page
+create:
+    title: Create Section
+    redirect: kitsoft/pages/sections/update/:id
+    redirectClose: kitsoft/pages/sections
+
+# Update page
+update:
+    title: Edit Section
+    redirect: kitsoft/pages/sections
+    redirectClose: kitsoft/pages/sections
+
+# Preview page
+preview:
+    title: Preview Section

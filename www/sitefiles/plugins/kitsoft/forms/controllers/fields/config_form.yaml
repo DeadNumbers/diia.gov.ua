@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.forms::lang.system.labels.field
+
+# Model Form Field configuration
+form: $/kitsoft/forms/models/field/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Forms\Models\Field
+
+# Default redirect location
+defaultRedirect: kitsoft/forms/fields
+
+# Create page
+create:
+    title: kitsoft.forms::lang.system.labels.create_field
+    redirect: kitsoft/forms/fields/update/:id
+    redirectClose: kitsoft/forms/fields
+
+# Update page
+update:
+    title: kitsoft.forms::lang.system.labels.edit_field
+    redirect: kitsoft/forms/fields
+    redirectClose: kitsoft/forms/fields
+
+# Preview page
+preview:
+    title: kitsoft.forms::lang.system.labels.preview_field

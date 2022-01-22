@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        sortable: false
+    title:
+        label: kitsoft.services::lang.life_situation.title
+        searchable: true
+        sortable: false

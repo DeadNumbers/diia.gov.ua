@@ -1,0 +1,17 @@
+<div data-control="toolbar">
+    <a
+        href="javascript:;"
+        onclick="$.translateLocales.createRecord()"
+        class="btn btn-primary oc-icon-plus">
+        <?= trans('kitsoft.multilanguage::lang.locales.create'); ?>
+    </a>
+
+    <a
+        href="javascript:;"
+        data-request="onMakeEntities"
+        data-request-confirm="<?= e(trans('kitsoft.multilanguage::lang.locales.make_entities_confirm')); ?>"
+        data-request-success="$(this).prop('disabled', true)"
+        data-stripe-load-indicator
+        class="btn btn-default"><?= e(trans('kitsoft.multilanguage::lang.locales.make_entities')); ?>
+    </a>
+</div>

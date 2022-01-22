@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        model:
+            label: kitsoft.core::lang.domain_changing.fields.model
+            type: dropdown
+            span: right
+            tab: kitsoft.core::lang.domain_changing.tabs.main
+            default: KitSoft\Pages\Models\Page
+        oldValue:
+            label: kitsoft.core::lang.domain_changing.fields.old_value
+            type: text
+            span: left
+            tab: kitsoft.core::lang.domain_changing.tabs.main
+            comment: kitsoft.core::lang.domain_changing.fields.old_value_comment
+        newValue:
+            label: kitsoft.core::lang.domain_changing.fields.new_value
+            type: text
+            span: left
+            tab: kitsoft.core::lang.domain_changing.tabs.main
+            comment: kitsoft.core::lang.domain_changing.fields.new_value_comment
+        replacePath:
+            type: partial
+            path: $/kitsoft/core/models/domainchanging/_replace_field.htm
+            tab: kitsoft.core::lang.domain_changing.tabs.main

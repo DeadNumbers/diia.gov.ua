@@ -1,0 +1,8 @@
+{% for item in __SELF__.categories %}
+    <li class="nav-item newsTab {% if loop.first %}active{% endif %}">
+        <a class="nav-link" data-toggle="tab"
+           href="#news_tab_{{ loop.index }}" role="tab" aria-controls="home" aria-expanded="true">
+            {{ item.name }}
+        </a>
+    </li>
+{% endfor %}

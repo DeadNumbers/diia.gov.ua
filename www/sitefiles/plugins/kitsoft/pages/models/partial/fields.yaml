@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+      label: kitsoft.pages::lang.partials.fields.title
+      span: auto
+    code:
+      label: kitsoft.pages::lang.partials.fields.code 
+      span: auto
+
+tabs:
+  fields:

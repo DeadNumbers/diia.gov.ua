@@ -1,0 +1,11 @@
+questions:
+    label: Запитання
+    view:
+        list: ~/plugins/kitsoft/faq/models/question/columns.yaml
+        toolbarButtons: link|unlink
+        recordUrl: kitsoft/faq/questions/update/:id
+        showSearch: true
+        recordsPerPage: 10
+    manage:
+        form: ~/plugins/kitsoft/faq/models/question/fields.yaml
+        showSearch: true

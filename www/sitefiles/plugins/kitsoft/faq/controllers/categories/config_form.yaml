@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.faq::lang.labels.category
+
+# Model Form Field configuration
+form: $/kitsoft/faq/models/category/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Faq\Models\Category
+
+# Default redirect location
+defaultRedirect: kitsoft/faq/categories
+
+# Create page
+create:
+    title: kitsoft.faq::lang.labels.create_category
+    redirect: kitsoft/faq/categories/update/:id
+    redirectClose: kitsoft/faq/categories
+
+# Update page
+update:
+    title: kitsoft.faq::lang.labels.edit_category
+    redirect: kitsoft/faq/categories
+    redirectClose: kitsoft/faq/categories
+
+# Preview page
+preview:
+    title: kitsoft.faq::lang.labels.preview_category

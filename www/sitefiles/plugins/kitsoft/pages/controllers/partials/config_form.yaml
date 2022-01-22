@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.pages::lang.partials.name
+
+# Model Form Field configuration
+form: $/kitsoft/pages/models/partial/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Pages\Models\Partial
+
+# Default redirect location
+defaultRedirect: kitsoft/pages/partials
+
+# Create page
+create:
+    title: kitsoft.pages::lang.partials.create
+    redirect: kitsoft/pages/partials/update/:id
+    redirectClose: kitsoft/pages/partials
+
+# Update page
+update:
+    title: kitsoft.pages::lang.partials.edit
+    redirect: kitsoft/pages/partials
+    redirectClose: kitsoft/pages/partials
+
+# Preview page
+preview:
+    title: Preview Partial

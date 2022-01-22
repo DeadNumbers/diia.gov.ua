@@ -1,0 +1,26 @@
+.cms {
+	/* section */
+	&-s {
+		/* accordion */
+		&_acc {
+			/* details tag */
+			&-d {
+				display: block;
+				margin-bottom: 30px;
+
+				@include media ("<lg") {
+					font-size: 13px;
+					line-height: 18px;
+					margin: 15px 0 25px;
+				}
+
+				&-summary {
+					margin-bottom: 12px;
+					font-weight: 700;
+					//display: block;
+				}
+				&-content {}
+			}
+		}
+	}
+}

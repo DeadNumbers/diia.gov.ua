@@ -1,0 +1,6 @@
+{% for item in __SELF__.posts %}
+    <div style="background-image: url('{{ item.featured_images|first.path }}')"></div>
+    <div>
+        <a href="{{ item.url|url }}">{{ item.title }}</a>
+    </div>
+{% endfor %}

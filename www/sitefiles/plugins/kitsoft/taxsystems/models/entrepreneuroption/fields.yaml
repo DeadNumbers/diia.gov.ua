@@ -1,0 +1,37 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  published:
+    label: kitsoft.taxsystems::lang.entrepreneur_question.published
+    type: checkbox
+    span: left
+    default: true
+
+  type:
+    label: kitsoft.taxsystems::lang.entrepreneur_question.type
+    type: balloon-selector
+    options:
+      option: Відповідь
+      label: kitsoft.taxsystems::lang.entrepreneur_question.title
+    default: option
+    span: left
+
+  text:
+    label: kitsoft.taxsystems::lang.entrepreneur_question.text
+    type: textarea
+    size: small
+    
+  description:
+    label: kitsoft.taxsystems::lang.entrepreneur_question.description
+    type: textarea
+    size: small
+
+  tax_systems:
+    label: kitsoft.taxsystems::lang.entrepreneur_question.tax_systems
+    type: checkboxlist
+    trigger:
+      action: hide
+      field: type
+      condition: value[label]

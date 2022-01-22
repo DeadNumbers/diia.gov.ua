@@ -1,0 +1,16 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+[page]
+==
+{% set postsPage = getPageByTemplate('posts') %}
+
+{% partial 'site/breadcrumbs' %}
+
+{% component 'posts' %}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/posts.bundle.js']|theme }}"></script>
+{% endput %}

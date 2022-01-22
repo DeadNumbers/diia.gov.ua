@@ -1,0 +1,59 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    text:
+        label: Текст
+    action:
+        label: Наступний крок
+        type: balloon-selector
+        options:
+          question: Запитання
+          answer: Відповідь
+    question:
+        label: Наступне запитання
+        trigger:
+          action: show
+          field: action
+          condition: value[question]
+        type: recordfinder
+        list: $/kitsoft/polls/models/question/columns.yaml
+        prompt: Click the %s button to find a question
+        nameFrom: title
+        descriptionFrom: text
+    answer:
+        label: Відповідь
+        type: recordfinder
+        list: $/kitsoft/polls/models/answer/columns.yaml
+        prompt: Click the %s button to find a answer
+        nameFrom: title
+        descriptionFrom: text
+        trigger:
+          action: show
+          field: action
+          condition: value[answer]
+    _hr:
+      type: section
+    comment:
+        label: Додати поле для коментаря
+        type: switch
+        span: auto
+    comment_placeholder:
+        comment: Placeholder
+        span: right
+        trigger:
+          action: show
+          field: comment
+          condition: checked
+    comment_is_required:
+        label: обов'язково для заповнення
+        type: checkbox
+        span: right
+        trigger:
+          action: show
+          field: comment
+          condition: checked
+    _parent_question:
+      type: partial
+      path: $/kitsoft/polls/controllers/options/_parent_question.htm

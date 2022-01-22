@@ -1,0 +1,81 @@
+step: 30
+items:
+  header:
+    attributes:
+      name: Header
+      code: header
+    importPages: false
+    items:
+      1:
+        title: Послуги
+        type: page
+        value: slug::services
+        items:
+          1:
+            title: Громодянам
+            type: page
+            value: 
+          2:
+            title: Бізнесу
+            type: page
+            value: 
+      2:
+        title: Як це працює
+        type: page
+        value: slug::how-it-works
+      3:
+        title: Новини
+        type: page
+        value: slug::news
+      4:
+        title: Підтримка
+        type: page
+        value: slug::contacts
+      4:
+        title: Про проект
+        type: page
+        value: slug::about-us
+      5:
+        title: Ще
+        type: page
+        value: 
+        items:
+          1:
+            title: 1
+            type: page
+            value: 
+          2:
+            title: 2
+            type: page
+            value: 
+  header:
+    attributes:
+      name: Footer
+      code: footer
+    importPages: false
+    items:
+      1:
+        title: Новини
+        type: page
+        value: slug::news
+      2:
+        title: Як це працює
+        type: page
+        value: slug::how-it-works
+      3:
+        title: Питання та відповіді
+        type: page
+        value: slug::faq
+      4:
+        title: Підтримка
+        type: page
+        value: slug::contacts
+      5:
+        title: Увійти
+        type: page
+        value: 
+      6:
+        title: Зареєструватись
+        type: page
+        value: 
+  

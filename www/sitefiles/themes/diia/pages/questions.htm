@@ -1,0 +1,47 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+[page]
+==
+
+{% partial 'site/breadcrumbs' %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="article-level-1">{{ page.data.title }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container faq_container">
+        {% for category in faqCategories.categories %}
+            <div class="faq_item">
+                <div class="col-md-4 col-xl-3 faq_item-title-box">
+                    <div class="faq_item-title js-faq_item-title">{{ category.name }}</div>
+                </div>
+                <div class="faq_item-list">
+                    {% for item in category.questions %}
+                    <div class="faq_item-answer">
+                        <a href="{{ item.url|url }}" class="faq_item-answer-link" {% if item.answer_type=='link' %}target="_blank" {% endif %}>
+                            {{ item.question }}
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <div class="hr-faq-container"></div>
+    </div>
+</section>
+
+{% component 'form::faqForm' %}
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ 'assets/vendor/validate-1.19.1/jquery.validate.min.js'|theme }}"></script>
+	<script type="text/javascript" src="{{ ['assets/javascript/build/faq.bundle.js']|theme }}"></script>
+{% endput %}

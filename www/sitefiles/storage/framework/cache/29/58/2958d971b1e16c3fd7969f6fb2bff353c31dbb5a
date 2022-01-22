@@ -1,0 +1,131 @@
+1573816982a:1:{s:15:"site/footer.htm";a:7:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:2838:"[menu]
+code = "footer"
+[servicesCategories servicesCategoriesFooter]
+isLoadServices = false
+==
+{% set footer = partial('footer').fields %}
+{% set socials = partial('socials').fields %}
+
+<footer id="layout-footer" class="footer">
+    <div class="container footer_top">
+        <div class="row">
+        {% for category in servicesCategoriesFooter.categories if category.subcategoriesTree|length %}
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="services-short_item-title">{{ category.name }}</div>
+                    {% if category.subcategoriesTree|length %}
+                    <div class="services-short_item-box">
+                        {% for subcategory in category.subcategoriesTree %}
+                            <div class="services-short_item">
+                                <a href="{{ getPageByTemplate('services').url|url }}?categories={{ subcategory.slug }}" class="services-short_item-link">{{ subcategory.name }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <hr class="footer_hr">
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-9">
+                    {% partial 'menu/footer' items = menu.menuItems class = 'footer-menu' %}
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex d-sm-block">
+                	
+				    {% if socials.items|length %}
+				    	<div class="socials_footer-title">{{ 'Слідкуй за нами тут'|_ }}:</div>
+					    <ul class="socials socials_footer fa-white">
+					    	{% for item in socials.items %}
+						    	<li>
+		                            <a href="{{ item.url }}" target="_blank" rel="nofollow">
+		                                <i class="fa fa-{{ item.icon }}"></i>
+		                            </a>
+		                        </li>
+					        {% endfor %}
+					        {# {{ item.icon }} #}
+					    </ul>
+				    {% endif %}
+                </div>
+                <div class="col-12">
+                    <div class="dev-company">
+                        <div class="dev-company_icon">
+                            <div class="dev-company_icon-item dev-company_icon-gerb"></div>
+                            <div class="dev-company_icon-item dev-company_icon-diya"></div>
+                        </div>
+                        <div class="dev-company_text">
+                            <p>diia.gov.ua 2019.</p>
+                            <p>Всі права захищені.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+";s:5:"mtime";i:1573755205;s:6:"markup";s:2742:"{% set footer = partial('footer').fields %}
+{% set socials = partial('socials').fields %}
+
+<footer id="layout-footer" class="footer">
+    <div class="container footer_top">
+        <div class="row">
+        {% for category in servicesCategoriesFooter.categories if category.subcategoriesTree|length %}
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="services-short_item-title">{{ category.name }}</div>
+                    {% if category.subcategoriesTree|length %}
+                    <div class="services-short_item-box">
+                        {% for subcategory in category.subcategoriesTree %}
+                            <div class="services-short_item">
+                                <a href="{{ getPageByTemplate('services').url|url }}?categories={{ subcategory.slug }}" class="services-short_item-link">{{ subcategory.name }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <hr class="footer_hr">
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-9">
+                    {% partial 'menu/footer' items = menu.menuItems class = 'footer-menu' %}
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex d-sm-block">
+                	
+				    {% if socials.items|length %}
+				    	<div class="socials_footer-title">{{ 'Слідкуй за нами тут'|_ }}:</div>
+					    <ul class="socials socials_footer fa-white">
+					    	{% for item in socials.items %}
+						    	<li>
+		                            <a href="{{ item.url }}" target="_blank" rel="nofollow">
+		                                <i class="fa fa-{{ item.icon }}"></i>
+		                            </a>
+		                        </li>
+					        {% endfor %}
+					        {# {{ item.icon }} #}
+					    </ul>
+				    {% endif %}
+                </div>
+                <div class="col-12">
+                    <div class="dev-company">
+                        <div class="dev-company_icon">
+                            <div class="dev-company_icon-item dev-company_icon-gerb"></div>
+                            <div class="dev-company_icon-item dev-company_icon-diya"></div>
+                        </div>
+                        <div class="dev-company_text">
+                            <p>diia.gov.ua 2019.</p>
+                            <p>Всі права захищені.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>";s:4:"code";N;s:4:"menu";a:1:{s:4:"code";s:6:"footer";}s:43:"servicesCategories servicesCategoriesFooter";a:1:{s:14:"isLoadServices";s:0:"";}}}

@@ -1,0 +1,17 @@
+<h4>{{ serviceCategorySubcategory.category.name }}</h4>
+<h4>{{ serviceCategorySubcategory.subcategory.name }}</h4>
+
+<ul>
+	{% for subcategory in serviceCategorySubcategory.subcategory.children %}
+		<li>
+			<a href="{{ (serviceCategorySubcategory.category.url ~ '/' ~ subcategory.slug)|url }}">
+				{{ subcategory.name }}
+			</a>
+			<ul>
+				{% for service in subcategory.services %}
+					<li><a href="{{ service.url|url }}">{{ service.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</li>
+	{% endfor %}
+</ul>

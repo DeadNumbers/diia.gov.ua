@@ -1,0 +1,12 @@
+<?php foreach ($record->langs->unique('lang.id')->values()->sortBy('lang.name') as $key => $row) : ?>
+	
+	<?php $redirect = str_replace(':id', $row->entity_id, $column->config['recordUrl']); ?>
+
+	<a 
+		href="#"
+		class="btn btn-secondary btn-xs"
+		data-request="onSwitchLocale"
+		data-request-data="'locale': '<?= $row->lang->code; ?>','redirect': '<?= $redirect; ?>'"
+	><?= $row->lang->name; ?> </a>
+
+<?php endforeach ?>

@@ -1,0 +1,12 @@
+fields:
+    label: kitsoft.forms::lang.system.labels.field
+    view:
+        list: ~/plugins/kitsoft/forms/models/field/columns.yaml
+        toolbarButtons: create|delete
+        toolbarPartial: $/kitsoft/forms/controllers/fields/_relation_toolbar.htm
+        defaultSort:
+            column: id
+            direction: asc
+        # recordOnClick: "$.oc.relationBehavior.clickViewListRecord(:id, 'Pages-update-RelationController-components');fixTranslateJsonable();"
+    manage:
+        form: ~/plugins/kitsoft/forms/models/field/fields.yaml

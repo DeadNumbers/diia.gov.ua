@@ -1,0 +1,12 @@
+templates: home
+
+title: Останні новини
+tabs:
+  fields:
+    fields[title]:
+      label: Заголовок
+      tab: Головне
+    fields[link][title]:
+      label: Текст посилання
+      tab: Головне
+      

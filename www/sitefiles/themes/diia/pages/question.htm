@@ -1,0 +1,55 @@
+layout = "default"
+components = true
+sections = false
+hideContent = true
+deletable = false
+
+[page]
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->faqQuestion->question->title;
+}
+?>
+==
+{% partial 'site/breadcrumbs' %}
+
+<section class="page-question">
+	<div class="container">
+		<div class="row">
+            <div class="col-12">
+                <div class="page_title page_title-faq">
+                    <h1 class="page_title-text">{{ faqQuestion.question.question }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-xl-between">
+	        <div class="col-md-8">
+	            <div class="editor-content">
+	                {{ faqQuestion.question.answer|raw }}
+	            </div>
+	        </div>
+	        {% if faqQuestion.question.related_questions|length %}
+	        	<div class="col-md-4 col-xl-3">
+					<div class="sidebar sidebar-question">
+						<div class="sidebar_title">{{ "Пов'язані запитання"|_ }}</div>
+                        {% if faqQuestion.question.related_questions|length %}
+                            <div class="sidebar-list">
+                                {% for item in faqQuestion.question.related_questions %}
+                                    <div class="sidebar-list_item">
+                                        <a href="{{ item.url|url }}" class="sidebar-list_item-title" {% if item.answer_type == 'link' %}target="_blank"{% endif %}>{{ item.question }}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+					</div>
+	        	</div>
+	        {% endif %}
+	    </div>
+	</div>
+</section>
+
+{% put scripts %}
+	<script type="text/javascript" src="{{ ['assets/javascript/build/static.bundle.js']|theme }}"></script>
+{% endput %}

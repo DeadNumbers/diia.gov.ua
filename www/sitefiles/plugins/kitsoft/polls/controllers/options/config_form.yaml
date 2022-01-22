@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Option
+
+# Model Form Field configuration
+form: $/kitsoft/polls/models/option/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Polls\Models\Option
+
+# Default redirect location
+defaultRedirect: kitsoft/polls/options
+
+# Create page
+create:
+    title: Create Option
+    redirect: kitsoft/polls/options/update/:id
+    redirectClose: kitsoft/polls/options
+
+# Update page
+update:
+    title: Edit Option
+    redirect: kitsoft/polls/options
+    redirectClose: kitsoft/polls/options
+
+# Preview page
+preview:
+    title: Preview Option

@@ -1,0 +1,35 @@
+{% if service.service.questions|length %}
+<section class="service-acc_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="service-acc_item">
+					<div class="service-acc_item-quest js-service-acc_item-quest">
+					    {{ data.title }}
+					</div>
+					<div class="collapse service-acc_simple-answer">
+						<div class="row">
+							{% for item in service.service.questions %}
+								<div class="col-lg-6">
+									<div class="service-acc_simple">
+										{% if item.question %}
+											<a href="{{ item.url|url }}" class="service-acc_simple-label">
+												{{ item.question }}
+											</a>
+										{% endif %}
+										{% if item.answer %}
+											<div class="service-acc_simple-title">
+												{{ item.answer|raw }}
+											</div>
+										{% endif %}
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}

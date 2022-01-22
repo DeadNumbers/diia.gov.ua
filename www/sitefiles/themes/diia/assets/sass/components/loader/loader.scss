@@ -1,0 +1,99 @@
+.load_more {
+    @include f-s(18);
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0 auto;
+    width: 260px;
+    position: relative;
+    display: none;
+    margin-bottom: 80px;
+    margin-top: 60px;
+
+    @include media ("<lg") {
+        margin: 20px auto 50px;
+    }
+    &:before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin-top: -12px;
+        //background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjQgNDQ4Ij4NCiAgICA8cGF0aCBkPSJNMjEyLjUgN1EyMzEgNyAyNDQgMjAuNVQyNTcgNTJ0LTEzIDMxLjVUMjEyLjUgOTcgMTgxIDgzLjUgMTY4IDUydDEzLTMxLjVUMjEyLjUgN3pNMzM3IDU0cTIyIDAgMzcuNSAxNnQxNS41IDM3LjUtMTUuNSAzNy41LTM3LjUgMTYtMzgtMTYtMTYtMzcuNVQyOTkgNzB0MzgtMTZ6TTkxLjUgNjRxMTYuNSAwIDI4IDEydDExLjUgMjguNS0xMS41IDI4LjUtMjggMTJUNjMgMTMzdC0xMi0yOC41VDYzIDc2dDI4LjUtMTJ6TTM0IDE5OHExNCAwIDI0IDEwdDEwIDI0LTEwIDI0LTI0IDEwLTI0LTEwLTEwLTI0IDEwLTI0IDI0LTEwem0zNTUgMHExNCAwIDI0IDEwdDEwIDI0LTEwIDI0LTI0IDEwLTI0LTEwLTEwLTI0IDEwLTI0IDI0LTEwek04NSAzMjVxMTQgMCAyNCAxMHQxMCAyNC0xMCAyNC0yNCAxMC0yNC0xMC0xMC0yNCAxMC0yNCAyNC0xMHptMjU1IDBxMTQgMCAyNCAxMHQxMCAyNC0xMCAyNC0yNCAxMC0yNC0xMC0xMC0yNCAxMC0yNCAyNC0xMHptLTEyOCA0N3ExNCAwIDI0LjUgMTAuNVQyNDcgNDA3dC0xMC41IDI0LTI0LjUgMTAtMjQtMTAtMTAtMjQgMTAtMjQuNSAyNC0xMC41eiIgZmlsbD0iIzJENUNBNiIgLz4NCiAgICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNDI0IiBoZWlnaHQ9IjQ0OCIgZmlsbD0icmdiYSgwLCAwLCAwLCAwKSIgLz48L3N2Zz4NCg==');
+        background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjQgNDQ4Ij4NCiAgICA8cGF0aCBkPSJNMjEyLjUgN1EyMzEgNyAyNDQgMjAuNVQyNTcgNTJ0LTEzIDMxLjVUMjEyLjUgOTcgMTgxIDgzLjUgMTY4IDUydDEzLTMxLjVUMjEyLjUgN3pNMzM3IDU0cTIyIDAgMzcuNSAxNnQxNS41IDM3LjUtMTUuNSAzNy41LTM3LjUgMTYtMzgtMTYtMTYtMzcuNVQyOTkgNzB0MzgtMTZ6TTkxLjUgNjRxMTYuNSAwIDI4IDEydDExLjUgMjguNS0xMS41IDI4LjUtMjggMTJUNjMgMTMzdC0xMi0yOC41VDYzIDc2dDI4LjUtMTJ6TTM0IDE5OHExNCAwIDI0IDEwdDEwIDI0LTEwIDI0LTI0IDEwLTI0LTEwLTEwLTI0IDEwLTI0IDI0LTEwem0zNTUgMHExNCAwIDI0IDEwdDEwIDI0LTEwIDI0LTI0IDEwLTI0LTEwLTEwLTI0IDEwLTI0IDI0LTEwek04NSAzMjVxMTQgMCAyNCAxMHQxMCAyNC0xMCAyNC0yNCAxMC0yNC0xMC0xMC0yNCAxMC0yNCAyNC0xMHptMjU1IDBxMTQgMCAyNCAxMHQxMCAyNC0xMCAyNC0yNCAxMC0yNC0xMC0xMC0yNCAxMC0yNCAyNC0xMHptLTEyOCA0N3ExNCAwIDI0LjUgMTAuNVQyNDcgNDA3dC0xMC41IDI0LTI0LjUgMTAtMjQtMTAtMTAtMjQgMTAtMjQuNSAyNC0xMC41eiIgZmlsbD0iIzAwMCIgLz4NCiAgICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNDI0IiBoZWlnaHQ9IjQ0OCIgZmlsbD0icmdiYSgwLCAwLCAwLCAwKSIgLz48L3N2Zz4NCg==');
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-animation: spin 4s linear infinite;
+        -moz-animation: spin 4s linear infinite;
+        animation: spin 4s linear infinite;
+    }
+    &-text {
+        padding-left: 20px;
+    }
+    &_wrap {}
+    &_hint {
+        width: 280px;
+        display: block;
+
+        &:before {
+            left: -15px;
+        }
+
+        &:before {
+            display: none;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            background-repeat: no-repeat;
+            background-size: 130%;
+            background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzMCAzMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiMyMjRGOTE7fQ0KPC9zdHlsZT4NCjx0aXRsZT5hcnJvdy1zbWFsbDwvdGl0bGU+DQo8ZyBpZD0iTGF5ZXJfMTAiPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTkuNCwxNSAxOCwxMy42IDE1LjcsMTUuOSAxNS43LDEwLjMgMTMuNywxMC4zIDEzLjcsMTUuOSAxMS40LDEzLjYgMTAsMTUgMTQuNywxOS43IAkiLz4NCjwvZz4NCjwvc3ZnPg0K');
+        }
+
+        &.for_click {
+            width: 160px;
+            cursor: pointer;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: -25px;
+                top: 3px;
+                width: 25px;
+                height: 25px;
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                background-size: cover;
+                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAL0SURBVHgBnVU/T1NRFD/33PdAiCHVumjBQBNrDEPrqBuSGIcWqIOr/QAExE/AxKZFQuLgIKwO0thG4yC6OdIOJtIQIIBxAdNEA8H23es59/FMoX/eK2do773v3PP73fNXQBu5mpztvQB9o4AYEyDCGiDM5xrEoQC1p7Rcq1mi9GNl8qCVDdHsMJJeDHc5tQx9jkEA0Vp9rVp2vhlQA8D15ItRRJEUoHuZKV0vAqpSVdi7noHIw1f9tvpzBRTGycBd1xDpKl3YLEx/agkwlHyeApRJwwpE8Vj9Wv5ZmD2ENsKvtR0n6QGBcgpbhaf5BgBmLhEemUOEN5u500z8JJpeTGrHSZn7iu6fvAQ9FuwW81HKfKfGWTZXJgsOETMbssU2/wPYtWrK+JyCxYpwTtkhYuxaTbbcJCEARhIC7/CGM6HV5ejYQnZwIpvwA+G4uckhYpzmaNV0nD8w+1b5PJjKZkDoJ6jxsx+ImxSUeSQ9InSPXO/c5o2w5FqrS9v5mSWtYZmWoSAgUFMlQ1rATdSA/byRAg7a3dl6N50JClLttncNaap+5ODyZuPt1B74SBOQUDM9z9XcWhA6FCGErtuG/PTpBa5rIum5sJ9ydHzhNfHK0LKihBrZzs1sN9O7Nv5swJChbKIYaAPQBRf7OzRebKXbVcUTsnoX6cHrZllzs6mp8bHsbFDjRiS4CaCghEe6ssprFDLOhdFMXyHM00u/BDFeX7jHtixaXBhDY/NlilysBy8/pvOXZy+R0Qr9jUAA4bbD3dIt3OkDk0V/pbXE5U0sE1HqqnBO4XbP7NmW13Yk//z+/v6o79aDGkV8mEI/fOnGfVEpfyx3YtwdVJjmNSKs7OSmvvH61MCp7+ntxmC9cNy6ybVUsCawpt3XdeTGkTlBTJQ7Mj0gcKpFS1/Y3/jgVntkdC5sd1sDIO0EWYx74xWRRmauzcj0pGEM+gjprR9LuRxo6J8FskDHpaMSCsSA9yoUYl9rKlApy0fV/dV2c/sfEpBu6HC9MpwAAAAASUVORK5CYII=");
+                @include rotate(90deg);
+            }
+        }
+    }
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

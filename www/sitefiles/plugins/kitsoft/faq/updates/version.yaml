@@ -1,0 +1,16 @@
+1.0.1:
+  - First version of Faq
+  - create_questions_table.php
+  - create_categories_table.php
+  - seed_faq_form.php
+1.0.2:
+  - add answer_type and link fields
+  - 2019_04_01_add_answer_type_and_link_fields.php
+1.0.3:
+  - Add is_top for categories and questions
+  - 2019_11_28_add_is_top.php
+1.0.4:
+  - Create table for related questions
+  - 2019_11_28_create_questions_related_table.php
+1.0.5:
+  - 2020-03-31. Categories component, hide categories without questions

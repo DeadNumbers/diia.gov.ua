@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0 justify-content-between">
+	<a class="navbar-brand" href="<?= Backend::url(); ?>">
+    	<img src="/modules/backend/assets/images/october-logo.svg" height="17" class="d-inline-block align-middle pl-2" alt="">
+  	</a>
+	<ul class="navbar-nav">
+		<?php if ($edit_url) : ?>
+			<li class="nav-item">
+				<a href="<?= $edit_url; ?>" class="nav-link pt-0 pb-0"><?= trans('kitsoft.pages::lang.backend_toolbar.edit'); ?></a>
+			</li>
+		<?php endif ?>
+		<li class="nav-item">
+			<a href="<?= Backend::url('backend/users/myaccount'); ?>" class="nav-link pt-0 pb-0">
+    			<?= $user->first_name ?? $user->login; ?>
+  			</a>
+		</li>
+	</ul>
+</nav>

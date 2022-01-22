@@ -1,0 +1,23 @@
+1.0.1: First version of Search
+1.0.2:
+  - add elastic index manage
+  - create_elastic_indices_table.php
+1.0.3:
+  - delete elastic index manage
+  - delete_elastic_indices_table.php
+1.1.0:
+  - 2020-03-20. Add Elastic Authorozation. Update console command search:elastic-enable.
+1.1.1:
+  - 2020-04-03. Fix statistic in admin panel.
+1.2.0:
+  - 2020-04-03. Add validation rules to eloquent and elastic providers.
+1.2.1:
+  - 2020-04-07. Elastic response handler, add aggregations data support
+1.2.2:
+  - 2020-04-13. Add function to elastic providers [extendDefaultFilter]. Always apply [selected_searchable] filter for pages.
+1.2.3:
+  - 2020-04-15. Add [prepareResponse] function to elastic provider.
+1.2.4:
+  - 2020-05-05. Move alias setter to helper for providers. Mofify provider serPerPage fn, make it public.
+1.2.5:
+  - 2020-05-15. Implement [ProviderSettings, Settings] models by revisons.

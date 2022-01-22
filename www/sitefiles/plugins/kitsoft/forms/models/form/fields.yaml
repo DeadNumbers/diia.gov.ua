@@ -1,0 +1,58 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    name:
+      label: kitsoft.forms::lang.form.fields.name
+      tab: kitsoft.forms::lang.form.tabs.main
+      span: auto
+    code:
+      label: kitsoft.forms::lang.form.fields.code
+      tab: kitsoft.forms::lang.form.tabs.main
+      span: auto
+    description:
+      label: kitsoft.forms::lang.form.fields.description
+      type: richeditor
+      tab: kitsoft.forms::lang.form.tabs.main
+    success_text:
+      label: kitsoft.forms::lang.form.fields.success_text
+      type: richeditor
+      tab: kitsoft.forms::lang.form.tabs.main
+    send:
+      label: kitsoft.forms::lang.form.fields.send
+      type: switch
+      tab: kitsoft.forms::lang.form.tabs.send_mail
+    template:
+      label: kitsoft.forms::lang.form.fields.template
+      type: relation
+      nameFrom: code
+      tab: kitsoft.forms::lang.form.tabs.send_mail
+      commentHtml: true
+      comment: kitsoft.forms::lang.form.fields.template_comment
+      trigger:
+        action: show
+        field: send
+        condition: checked
+    emails:
+      label: kitsoft.forms::lang.form.fields.emails
+      type: repeater
+      tab: kitsoft.forms::lang.form.tabs.send_mail
+      prompt: kitsoft.forms::lang.form.fields.emails_prompt
+      form:
+        fields:
+          email:
+            label: kitsoft.forms::lang.form.fields.emails_form.email
+      trigger:
+        action: show
+        field: send
+        condition: checked
+    submit_text:
+      label: kitsoft.forms::lang.form.fields.submit_text
+      tab: kitsoft.forms::lang.form.tabs.main
+    fields:
+      label: kitsoft.forms::lang.form.fields.fields
+      type: partial
+      path: $/kitsoft/forms/controllers/forms/_fields.htm
+      tab: kitsoft.forms::lang.form.tabs.fields

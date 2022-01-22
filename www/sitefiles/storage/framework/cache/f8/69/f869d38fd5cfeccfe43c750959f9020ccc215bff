@@ -1,0 +1,21 @@
+1573816982a:1:{s:8:"home.htm";a:11:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:384:"layout = "default"
+sections = true
+components = true
+hideContent = false
+deletable = false
+
+[page]
+==
+{% for key, item in page.data.sections %}
+    {% partial 'site/sections/' ~ key data = attribute(page.data.sections, key).fields %}
+{% endfor %}
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/home.bundle.js']|theme }}"></script>
+{% endput %}";s:5:"mtime";i:1572889007;s:6:"markup";s:282:"{% for key, item in page.data.sections %}
+    {% partial 'site/sections/' ~ key data = attribute(page.data.sections, key).fields %}
+{% endfor %}
+
+{% put scripts %}
+    <script type="text/javascript" src="{{ ['assets/javascript/build/home.bundle.js']|theme }}"></script>
+{% endput %}";s:4:"code";N;s:6:"layout";s:7:"default";s:8:"sections";s:1:"1";s:10:"components";s:1:"1";s:11:"hideContent";s:0:"";s:9:"deletable";s:0:"";s:4:"page";a:0:{}}}

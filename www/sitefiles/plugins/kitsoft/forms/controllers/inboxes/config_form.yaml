@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kitsoft.forms::lang.system.labels.inbox
+
+# Model Form Field configuration
+form: $/kitsoft/forms/models/inbox/fields.yaml
+
+# Model Class name
+modelClass: KitSoft\Forms\Models\Inbox
+
+# Default redirect location
+defaultRedirect: kitsoft/forms/inboxes
+
+# Preview page
+preview:
+    title: kitsoft.forms::lang.system.labels.preview_inbox

@@ -1,0 +1,5 @@
+<ul>
+    {% for item in __SELF__.subCategories %}
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+    {% endfor %}
+</ul>

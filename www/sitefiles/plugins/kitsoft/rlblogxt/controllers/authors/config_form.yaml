@@ -1,0 +1,18 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: kitsoft.rlblogxt::lang.rlblogxt.create_author
+form: ~/plugins/kitsoft/rlblogxt/models/author/fields.yaml
+modelClass: KitSoft\RLBlogXT\Models\Author
+defaultRedirect: kitsoft/rlblogxt/authors
+
+create:
+    title: backend::lang.form.create
+    redirect: kitsoft/rlblogxt/authors/update/:id
+    redirectClose: kitsoft/rlblogxt/authors
+
+update:
+    title: backend::lang.list.refresh
+    redirect: kitsoft/rlblogxt/authors
+    redirectClose: kitsoft/rlblogxt/authors

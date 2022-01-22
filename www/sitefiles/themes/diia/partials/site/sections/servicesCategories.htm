@@ -1,0 +1,138 @@
+{% if data and servicesCategories.categories|length %}
+<section class="services_section">
+    <ul class="nav nav-tabs tabs_services" role="tablist">
+        {% for category in servicesCategories.categories if category.services|length %}
+        <li class="nav-item">
+            <a class="nav-link {% if loop.first %}active{% endif %}" id="{{ category.slug }}-tab" data-toggle="tab" href="#{{ category.slug }}" role="tab" aria-controls="{{ category.slug }}" aria-selected="{{ loop.first }}">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="tab-content tab-content_slider">
+        {% for category in servicesCategories.categories if category.services|length %}
+        <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="{{ category.slug }}" role="tabpanel" aria-labelledby="{{ category.slug }}-tab">
+            <div class="swiper_services-box">
+                <div class="swiper_services swiper-container js-swiper_services">
+                    <div class="swiper_services-top">
+                        <div class="swiper_services-title">{{ 'Популярні послуги'|_ }}</div>
+                        <div class="swiper_services-btn-box">
+                            <div class="swiper_services-btn-prev swiper-btn-prev"></div>
+                            <div class="swiper_services-btn-next swiper-btn-next"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-wrapper swiper_services-wrapper">
+                        {% for item in category.services %}
+                        <div class="swiper-slide swiper_services-slide">
+                            <div class="swiper_services-slide-hover">
+                                {% if item.image %}
+                                    <a href="{{ item.url|url }}" class="swiper_services-slide-image" style="background-image: url('{{ item.image.path }}');"></a>
+                                {% else %}
+                                    <a href="{{ item.url|url }}" class="swiper_services-slide-image" style="background-image: url('{{ 'assets/images/posts_item-preview.svg'|theme }}');"></a>
+                                {% endif %}
+                                {% if item.title %}
+                                    <div class="swiper_services-slide-content">
+                                        <a href="{{ item.url|url }}" class="swiper_services-slide-title">{{ item.title }}</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="swiper_services-slide-content">
+                                {% if item.fields.client_time or item.fields.register_time %}
+                                <div class="swiper_services-slide-about">
+                                    {% if item.fields.client_time %}
+                                    <div class="swiper_services-slide-short">
+                                        <span>{{ 'Вашого часу'|_ }}:</span><span> {{ item.fields.client_time }}</span>
+                                    </div>
+                                    {% endif %}
+                                    {% if item.fields.register_time %}
+                                    <div class="swiper_services-slide-short">
+                                        <span>{{ 'Реєстрація'|_ }}:</span><span> {{ item.fields.register_time }}</span>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                                {% if item.fields.link_description %}
+                                    <div class="swiper_services-slide-info">{{ item.fields.link_description }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-pagination swiper_services-pagination"></div>
+                </div>
+            </div>
+            <!-- services_section -->
+            <div class="services_section-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="row">
+                                {% for subcategory in category.subcategories_tree|slice(0,4) %}
+                                <div class="col-6">
+                                    <div class="services_item">
+                                        {% if subcategory.name %}
+                                        <a href="{{ (category.url ~ '/' ~ subcategory.slug)|url }}" class="services_item-title">{{ subcategory.name }}</a>
+                                        {% endif %}
+                                        {% if subcategory.description %}
+                                        <div class="services_item-info">{{ subcategory.description|raw }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4 d-none d-lg-block">
+                            {% if data.widget.title %}
+                            <div class="services_item-white">
+                                {% if data.widget.title %}
+                                <div class="services_item-lead">{{ data.widget.title }}</div>
+                                {% endif %}
+                                {% if data.widget.text %}
+                                <div class="services_item-info services_item-info-m">{{ data.widget.text }}</div>
+                                {% endif %}
+                                {% if data.widget.link|relationFinder.title %}
+                                <a href="{{ data.widget.link|relationFinder.url }}" {% if data.widget.link.target %}target="_blank" {% endif %} class="btn btn-fill">
+                                    {{ data.widget.link|relationFinder.title }}
+                                </a>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for item in category.subcategories_tree|slice(4) %}
+                        <div class="col-6 col-lg-4">
+                            <div class="services_item">
+                                {% if item.name %}
+                                <a href="{{ (category.url ~ '/' ~ item.slug)|url }}" class="services_item-title">{{ item.name }}</a>
+                                {% endif %}
+                                {% if item.description %}
+                                <div class="services_item-info">{{ item.description|raw }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="col-12 d-lg-none text-center">
+                            {% if data.widget.title %}
+                            <div class="services_item-white">
+                                {% if data.widget.title %}
+                                <div class="services_item-lead">{{ data.widget.title }}</div>
+                                {% endif %}
+                                {% if data.widget.text %}
+                                <div class="services_item-info">{{ data.widget.text }}</div>
+                                {% endif %}
+                                {% if data.widget.link|relationFinder.title %}
+                                <a href="{{ data.widget.link|relationFinder.url }}" {% if data.widget.link.target %}target="_blank" {% endif %} class="btn btn-fill">
+                                    {{ data.widget.link|relationFinder.title }}
+                                </a>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- services_section -->
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

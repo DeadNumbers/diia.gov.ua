@@ -1,0 +1,45 @@
+[subCategoriesLifeSituations]
+==
+
+<section class="situations_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="situations_head-title">{{ data.title }}</div>
+            </div>
+            <div class="col-lg-6">
+                {% if data.description %}                
+                    <div class="situations_head-text">{{ data.description }}</div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            {% if subCategoriesLifeSituations.subcategories|length %}
+            	{% for subcategory in subCategoriesLifeSituations.subcategories %}
+    	            <div class="col-lg-4">
+                        <div class="question_item {% if loop.first %}first{% endif %}">
+                            <div class="question_item-category js-question_item-category">
+                                <div class="question_item-category-text">
+                                    {{ subcategory.name }}
+                                </div>
+                            </div>
+                            {% if subcategory.life_situations|length %}
+                            <div class="question_item-content">
+                                {% for item in subcategory.life_situations %}
+                                    <a href="{{ item.url|url }}" class="question_item-text">{{ item.title }}</a>
+                                {% endfor %}
+                             </div>
+                            {% endif %}
+                        </div>
+    	                {#<div class="situations_item">
+    	                    <div class="situations_item-title">{{ subcategory.name }}</div>
+    	                    {% for item in subcategory.life_situations %}
+    							<a href="{{ item.url|url }}" class="situations_item-text">{{ item.title }}</a>
+    						{% endfor %}
+    	                </div>#}
+    	            </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>

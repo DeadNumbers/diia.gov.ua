@@ -1,0 +1,42 @@
+<div class="control-list list-scrollable" data-control="listwidget">
+    <table class="table data" data-control="rowlink">
+        <thead>
+            <tr>
+            	<th>
+            		<span>
+            			<?= trans('kitsoft.pages::lang.page.fields.title'); ?>
+            		</span>
+            	</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<?php $childs = $model->getChildren(); ?>
+            <?php if (count($childs)): ?>
+            	<?php renderItems($childs); ?>
+            <?php else: ?>
+                <tr class="no-data">
+                    <td class="nolink">
+                        <p class="no-data"><?= trans('kitsoft.pages::lang.page.childs_not_found'); ?></p>
+                    </td>
+                </tr>
+            <?php endif ?>
+        </tbody>
+    </table>
+</div>
+
+<?php function renderItems($items, $depth = 0) {
+	$items->each(function ($item) use ($depth) { ?>
+		<tr>
+			<td>
+				<a href='<?= Backend::url("/kitsoft/pages/pages/update/{$item->id}"); ?>'>
+					<span style="margin-left:<?= $depth * 30; ?>px"><?= $item->title; ?></span>
+				</a>
+			</tr>
+		</td>
+		<?php
+		// disable, because page can have a lot of subchilds and very slowing pageload speed
+		/* if($item->children) {
+			renderItems($item->children, ++$depth);
+		} */
+	});
+}

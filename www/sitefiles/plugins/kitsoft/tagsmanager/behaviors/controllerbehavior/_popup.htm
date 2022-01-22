@@ -1,0 +1,54 @@
+<?= Form::open(['class' => 'layout']); ?>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Додати/видалити теги до обраних рядків (<?= count($checked); ?>)</h4>
+</div>
+
+<div class="modal-body">
+    <div class="layout-row">
+        <?php if (count($checked)) : ?>
+
+            <div data-control="balloon-selector" class="control-balloon-selector">
+                <ul>
+                    <li data-value="attach" class="active">додати</li>
+                    <li data-value="detach">видалити</li>
+                </ul>
+
+                <input type="hidden" name="action" value="attach" />
+            </div>
+
+            <?php foreach ($checked as $row) : ?>
+                <input type="hidden" name="checked[]" value="<?= $row; ?>">
+            <?php endforeach ?>
+
+            <?= $widget->renderField('tags'); ?>
+
+        <?php else : ?>
+
+            <br>
+            <p>Будь ласка, оберіть хоча б один рядок.</p>
+            <br>
+
+        <?php endif ?>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="popup">
+        <?= e(trans('backend::lang.form.close')); ?>
+    </button>
+    <button
+        type="submit"
+        data-request="onAttachTags"
+        data-hotkey="ctrl+s, cmd+s"
+        data-popup-load-indicator
+        class="btn btn-primary">
+        Протегувати
+    </button>
+</div>
+
+<?= Form::close(); ?>

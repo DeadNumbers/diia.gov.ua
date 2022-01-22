@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Заголовок
+        span: left
+
+    slug:
+        label: Посилання
+        span: right
+        preset:
+            field: title
+            type: slug
+
+tabs:
+  fields:
+    text:
+      label: Текст
+      type: richeditor
+    departments:
+      tab: Департаменти
+      type: relation
+      nameFrom: title

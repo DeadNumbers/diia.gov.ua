@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        type:
+            tab: kitsoft.core::lang.app.analyticsTab
+            label: Виберіть інструментами аналітики
+            type: radio
+        code:
+            label: 'Щоб користуватись інструментами аналітики Google Analytics, необхідно створити обліковий запис Google, отримати ідентифікатор відстеження та ввести його у поле нижче:'
+            span: auto
+            tab: kitsoft.core::lang.app.GA
+            placeholder: 'Приклад: UA-123456789-1'
+            commentHtml: true
+            comment: '<br><h4 id="trackingID">Як знайти ідентифікатор відстеження</h4><p>Виконайте наступні дії:</p><ol><li>Увійдіть в <a href="https://www.google.com/analytics/web/#home/" target="_blank">аккаунт Google&nbsp;Analytics</a>.</li><li>Натисніть <a class="glossary-term" href="/analytics/answer/6132368" data-answer="6132368" target="_blank"data-stats-ve="40">Адміністратор</a>.</li><li>У випадаючому меню в колонці <em>АККАУНТ</em> оберіть потрібний обліковий запис.</li><li>В меню <em>РЕСУРС</em> оберіть потрібний ресурс.</li><li>У розділі <em>РЕСУРС</em> оберіть <strong>Відстеження&nbsp;&gt; Код відстеження</strong>. <aclass="glossary-term" href="/analytics/answer/7372977" data-answer="7372977" data-stats-ve="40">Ідентифікатор відстеження</a> буде представлений у верхній частині сторінки.</li></ol>'
+        codeGTM:
+            label: 'Щоб користуватись інструментами аналітики Google tag manager, необхідно створити обліковий запис Google, отримати ідентифікатор відстеження та ввести його у поле нижче:'
+            span: auto
+            tab: kitsoft.core::lang.app.GTM
+            placeholder: 'Приклад: GTM-QWE4ASD'
+            commentHtml: true
+            comment: '<br><h4 id="trackingID">Як знайти ідентифікатор відстеження</h4><p>Виконайте наступні дії:</p><ol><li>Увійдіть в <a href="https://tagmanager.google.com/#/home" target="_blank">аккаунт Google&nbsp;Tag&nbsp;Manager </a>.</li><li>В списку знайти потрібний контейнер та його ідентифікатор.</li></ol>'

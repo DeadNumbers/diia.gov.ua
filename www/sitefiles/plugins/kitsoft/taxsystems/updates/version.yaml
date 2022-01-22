@@ -1,0 +1,25 @@
+1.0.1:
+  - First version of TaxSystems
+  - Create Table Tax Systems
+  - Create Table Entrepreneur Questions
+  - Create Table Entrepreneur Options
+  - create_tax_systems_table.php
+  - create_entrepreneur_questions_table.php
+  - create_entrepreneur_options_table.php
+1.1.0:
+  - Alter Tax Systems Table, add fields column
+  - alter_tax_systems_table_add_fields.php
+1.1.1:
+  - Change option text length
+  - 2019_12_03_change_option_text_length.php
+1.2.1:
+  - Alter Questions Table, add dependencies question and option
+  - 2020_01_11_alter_questions_table.php
+1.2.2:
+  - Alter Options and Questions Tables
+  - 2020_01_22_alter_options_question_tables.php
+1.2.3:
+  - Alter Questions Table, add description
+  - 2020_02_11_alter_questions_table_add_description.php
+1.2.4:
+ - 2020_03_31 Added translate

@@ -1,0 +1,118 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: kitsoft.forms::lang.field.fields.title
+    span: auto
+  code:
+    label: kitsoft.forms::lang.field.fields.code
+    span: auto
+    preset:
+      field: title
+      type: slug
+    trigger:
+      action: hide
+      field: type
+      condition: value[recaptcha]|value[label]
+  type:
+    label: kitsoft.forms::lang.field.fields.type
+    type: balloon-selector
+    span: auto
+    options:
+      text: kitsoft.forms::lang.field.fields.type_options.text
+      textarea: kitsoft.forms::lang.field.fields.type_options.textarea
+      select: kitsoft.forms::lang.field.fields.type_options.select
+      selecttree: kitsoft.forms::lang.field.fields.type_options.selecttree
+      checkbox: kitsoft.forms::lang.field.fields.type_options.checkbox
+      multicheckbox: kitsoft.forms::lang.field.fields.type_options.multicheckbox
+      radio: kitsoft.forms::lang.field.fields.type_options.radio
+      recaptcha: kitsoft.forms::lang.field.fields.type_options.recaptcha
+      label: kitsoft.forms::lang.field.fields.type_options.label
+      file: kitsoft.forms::lang.field.fields.type_options.file
+      phone: kitsoft.forms::lang.field.fields.type_options.phone
+  rules:
+    label: kitsoft.forms::lang.field.fields.rules
+    span: auto
+    type: checkboxlist
+    options:
+        required: kitsoft.forms::lang.field.fields.rules_options.required
+        numeric: kitsoft.forms::lang.field.fields.rules_options.numeric
+        email: kitsoft.forms::lang.field.fields.rules_options.email
+        recaptcha: kitsoft.forms::lang.field.fields.rules_options.recaptcha
+        image: kitsoft.forms::lang.field.fields.rules_options.image
+        limit: kitsoft.forms::lang.field.fields.rules_options.limit
+    dependsOn:
+        - type
+    trigger:
+      action: hide
+      field: type
+      condition: value[recaptcha]|value[label]
+  placeholder:
+    label: kitsoft.forms::lang.field.fields.placeholder
+    span: auto
+    trigger:
+      action: hide
+      field: type
+      condition: value[checkbox]|value[recaptcha]|value[radio]|value[label]|value[file]|value[multicheckbox]|value[phone]
+  rules_options[limit][min]:
+      label: kitsoft.forms::lang.field.fields.rules_options.min
+      span: left
+      dependsOn:
+          - type
+          - rules
+      trigger:
+          action: show
+          field: rules[]
+          condition: value[limit]
+  rules_options[limit][max]:
+      label: kitsoft.forms::lang.field.fields.rules_options.max
+      span: left
+      dependsOn:
+          - type
+          - rules
+      trigger:
+          action: show
+          field: rules[]
+          condition: value[limit]
+
+  options:
+    label: kitsoft.forms::lang.field.fields.options
+    type: repeater
+    prompt: kitsoft.forms::lang.field.fields.options_prompt
+    trigger:
+      action: show
+      field: type
+      condition: value[select]|value[radio]|value[multicheckbox]|value[selecttree]
+    form:
+      fields:
+        title:
+          label:  kitsoft.forms::lang.field.fields.options_form.title
+          span: auto
+        value:
+          label:  kitsoft.forms::lang.field.fields.options_form.value
+          span: auto
+        options:
+          type: repeater
+          trigger:
+            action: show
+            field: ^type
+            condition: value[selecttree]
+          form:
+            fields:
+              title:
+                label:  kitsoft.forms::lang.field.fields.options_form.title
+                span: auto
+              value:
+                label:  kitsoft.forms::lang.field.fields.options_form.value
+                span: auto
+  file_extensions:
+    label: kitsoft.forms::lang.field.fields.file_extensions
+    commentHtml: true
+    comment: kitsoft.forms::lang.field.fields.file_extensions_comment
+    span: right
+    trigger:
+      action: show
+      field: type
+      condition: value[file]

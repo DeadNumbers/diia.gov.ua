@@ -1,0 +1,56 @@
+{% set question = __SELF__.option ? __SELF__.option.question : __SELF__.poll.question %}
+
+<form
+	data-request="onAnswerPoll"
+	data-request-update="'@step': '#poll-form-step'"
+	data-request-success="$('.custom_select').chosen({disable_search: true});"
+	id="smartReguestForm"
+>
+	<input type="hidden" name="step" value="{{ __SELF__.step }}">
+    <input type="hidden" name="log" value="{{ __SELF__.log }}">
+
+    <div class="tab-content">
+        <div class="tab-pane fade in show active" role="tabpanel">
+            <div class="form">
+                <label>
+                    {{ question.title }}
+                </label>
+
+                {% if question.type == 'select' %}
+
+                    <select name="option_ids[]" class="custom_select">
+                        {% for item in question.options %}
+                        	<option value="{{ item.id }}">{{ item.text }}</option>
+                        {% endfor %}
+                    </select>
+                    {% if item.comment %}
+                        <input id="option_{{ item.id }}_comment" type="text" name="comments[{{ item.id }}]" placeholder="{{ item.comment_placeholder }}">
+                    {% endif %}
+
+                {% elseif question.type == 'radio' %}
+
+                    {% for item in question.options %}
+                        <input type="radio" name="option_ids[]" value="{{ item.id }}">{{ item.text }}
+                    {% endfor %}
+                    {% if item.comment %}
+                        <input id="option_{{ item.id }}_comment" type="text" name="comments[{{ item.id }}]" placeholder="{{ item.comment_placeholder }}">
+                    {% endif %}
+
+                {% elseif question.type == 'checkbox' %}
+
+                    {% for item in question.options %}
+                        <input type="checkbox" name="option_ids[]" value="{{ item.id }}">{{ item.text }}
+                    {% endfor %}
+                    {% if item.comment %}
+                        <input id="option_{{ item.id }}_comment" type="text" name="comments[{{ item.id }}]" placeholder="{{ item.comment_placeholder }}">
+                    {% endif %}
+
+                {% endif %}
+
+                <button class="submit button">
+                    {{ 'Далі'|_ }}
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
